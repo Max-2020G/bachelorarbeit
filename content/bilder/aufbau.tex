@@ -1,0 +1,133 @@
+\documentclass[tikz, border=10pt]{standalone}
+\usepackage{optikz}
+\begin{document}
+\begin{tikzpicture}
+% ----------------------------------Amplifier strahl ------Punkte
+    \coordinate (A0) at (0,0);
+    \coordinate (A1) at (2,0);
+% ----------------------------------Probe Strahl
+    \coordinate (PR1) at (2,-8-2);
+    \coordinate (PR2) at (4,-8-2);
+    \coordinate (PR3) at (4,-8-1);
+    \coordinate (PR4) at (4,-4-1);
+    \coordinate (PR5) at (6,-4-1);
+    \coordinate (PR6) at (6,-8-2);
+    \coordinate (PR7) at (8,-8-2);
+    \coordinate (PR8) at (8,-6);
+% ----------------------------------Probe Apperate
+    \coordinate (PRL) at (6,-7);
+    \coordinate (PRL4)at (2,-2);
+    \coordinate (PRP) at (2,-3);
+% ----------------------------------Pump Strahl
+    \coordinate (PU1) at (8,0);
+    \coordinate (PU2) at (8,-2);
+    \coordinate (PU3) at (4,-2);
+    \coordinate (PU4) at (4,-3);
+    \coordinate (PU5) at (10,-3);
+    \coordinate (PU6) at (10,-0);
+    \coordinate (PU7) at (16,-0);
+    \coordinate (PU8) at (16,-4);
+    \coordinate (PU9) at (12,-4);
+    \coordinate (PU10)at (12,-6);
+% ----------------------------------Pump Apperate
+    \coordinate (PUL) at (11,0);
+    \coordinate (PUF) at (14,-4);
+
+% ----------------------------------EOS Punkte
+    \coordinate (E0) at (14,-6);
+    \coordinate (E1) at (15,-6);
+    \coordinate (E2) at (16.5,-6);
+    \coordinate (E31) at (19,-5);
+    \coordinate (E32) at (19,-7);
+    \coordinate (E41) at (20,-4.6);
+    \coordinate (E42) at (20,-7.4);
+    % \coordinate (E51) at (19.5,-5.5);
+    % \coordinate (E52) at (19.5,-6);    
+
+% ----------------------------------Ab hier linien keine Punkte
+    \draw[very thick] (A0) -- (A1);
+    %Probe Strahl
+    \draw[very thick][color=orange] (A1) -- (PR1) -- (PR2) -- (PR3) -- (PR4) -- (PR5) -- (PR6) -- (PR7) -- (PR8) -- (E0);
+
+    %Pump Strahl
+    \draw[very thick][color=green] (A1) -- (PU1) -- (PU2) -- (PU3) -- (PU4) -- (PU5) -- (PU6) -- (PUL);
+
+    \drawbeam[draw color = green, fill color = green , width start =0, width end =0.4]
+    {PUL}{PU7}{0}{45}
+
+    \drawbeam[draw color = green, fill color = green , width start =0.4, width end =0.4]
+    {PU7}{PU8}{45}{-45}
+
+    \drawbeam[draw color = green, fill color = green , width start =0.4, width end =0]
+    {PU8}{PUF}{-45}{0}
+
+    \drawbeam[draw color = green, fill color = green , width start =0, width end =0.4]
+    {PUF}{PU9}{0}{-45}
+
+    \drawbeam[draw color = green, fill color = green , width start =0.4, width end =0.4]
+    {PU9}{PU10}{45}{-135}
+
+    \drawbeam[draw color = green, fill color = green , width start =0.4, width end =0]
+    {PU10}{E0}{-135}{0}
+
+% ----------------------------------Spiegel und sowas Probe
+    \laser[name=Amplifier] at (A0);
+
+    \splitter[angle=45] at      (A1);
+    \mirror[angle=-135] at      (PR1);
+    \mirror[angle=-45]  at      (PR2);
+    \mirror[angle=135]  at      (PR4);
+    \mirror[angle=45]   at      (PR5);
+    \mirror[angle=-135] at      (PR6);
+    \mirror[angle=-45]  at      (PR7);
+    \mirror[angle=135]  at      (PR8);
+
+
+    \planconvexlens[angle=-90] at (PRL);
+    \tinysplitter[angle=90] at (PRL4);
+    \node[anchor=east] at (1.5,-1.9){$\lambda/4$};
+    \tinysplitter[angle=90, color=black] at (PRP);
+    \node[anchor=east] at (1.5,-2.9){GTP};
+% ----------------------------------Delay stage
+    \node[anchor=west] (A) at (3,-0.8){delay stage };
+    \filldraw[fill opacity = 0.1, rounded
+    corners =1mm , very thick]
+    (3,-1) rectangle (5.5 ,-4);
+% ----------------------------------Spiegel und sowas Pump  
+
+    \mirror[angle=45] at      (PU1);
+    \mirror[angle=-45]  at      (PU2);
+    \mirror[angle=135]  at      (PU3);   
+    \mirror[angle=-135]  at      (PU4);
+    \mirror[angle=-45]   at      (PU5);
+    \mirror[angle=135] at      (PU6);
+
+    \splitter[color=green] at (12,0);
+    \node[anchor=south]   at (12.15,0.5){Anorganischer Kristall};
+    \planconvexlens[angle=0]     at      (PUL);
+    \parabola[angle=90] at     (PU7);
+    \parabola[angle=0] at     (PU8);
+    \parabola[angle=180] at     (PU9);
+    \parabola[angle=270] at     (PU10);
+
+    
+
+% ----------------------------------EOS Linien
+    \draw[very thick,color=red] (E0) -- (E2);
+    \draw[very thick,color=red] (E2) -- (E31) -- (E41);
+    \draw[very thick,color=red] (E2) -- (E32) -- (E42);
+
+% ----------------------------------EOS Apperaturen
+
+    \splitter[color=black] at (E1);
+    \node[anchor=south]   at (15.15,-7){$\lambda/4$};
+    \splitter[color=black] at (E2);
+    \node[anchor=south]   at (16.65,-6.9){WK};
+    \splitter[color=orange] at (E0);
+    \node[anchor=south]   at (14.15,-5.5){ZnTe};
+    \planconvexlens[angle=21.80140949,width=0.7]     at      (E31);
+    \planconvexlens[angle=-21.80140949,width=0.7]     at      (E32);
+    \diode[angle=21.80140949] at (E41);
+    \diode[angle=-21.80140949] at (E42);
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,565 @@
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.4.13)  15 JUL 2026 19:55
+ restricted system commands enabled.
+**content/bilder/aufbau.tex
+(./content/bilder/aufbau.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-03-26>
+Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
+Lua module: lualibs 2023-07-13 v2.76 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2023-07-13 v2.76 ConTeXt Lua libraries -- extended 
+collection.
+luaotfload | conf : Root cache directory is "/home/max/.local/texlive/2025/texmf
+-var/luatex-cache/generic/names".
+luaotfload | init : Loading fontloader "fontloader-2023-12-28.lua" from kpse-res
+olved path "/home/max/.local/texlive/2025/texmf-dist/tex/luatex/luaotfload/fontl
+oader-2023-12-28.lua".
+Lua-only attribute luaotfload@noligature = 1
+luaotfload | init : Context OpenType loader version 3.134
+Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' in `hpack_filter'.
+Inserting `luaotfload.glyph_stream' in `glyph_stream_provider'.
+Inserting `luaotfload.define_font' in `define_font'.
+Lua-only attribute luaotfload_color_attribute = 2
+luaotfload | conf : Root cache directory is "/home/max/.local/texlive/2025/texmf
+-var/luatex-cache/generic/names".
+Inserting `luaotfload.harf.strip_prefix' in `find_opentype_file'.
+Inserting `luaotfload.harf.strip_prefix' in `find_truetype_file'.
+Removing  `luaotfload.glyph_stream' from `glyph_stream_provider'.
+Inserting `luaotfload.harf.glyphstream' in `glyph_stream_provider'.
+Inserting `luaotfload.harf.finalize_vlist' in `post_linebreak_filter'.
+Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
+Inserting `luaotfload.cleanup_files' in `wrapup_run'.
+Inserting `luaotfload.harf.finalize_unicode' in `finish_pdffile'.
+Inserting `luaotfload.glyphinfo' in `glyph_info'.
+Lua-only attribute luaotfload.letterspace_done = 3
+Inserting `luaotfload.aux.set_sscale_dimens' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_font_index' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.patch_cambria_domh' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.fixup_fontdata' in `luaotfload.patch_font_unsafe'.
+Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
+Inserting `tracingstacklevels' in `input_level_string'. (/home/max/.local/texli
+ve/2025/texmf-dist/tex/latex/standalone/standalone.cls
+Document Class: standalone 2025/02/22 v1.5a Class to compile TeX sub-files stan
+dalone
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks17
+\XKV@tempa@toks=\toks18
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count195
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\sa@internal=\count196
+\c@sapage=\count197
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/standalone/standalone.cfg
+File: standalone.cfg 2025/02/22 v1.5a Default configuration file for 'standalon
+e' class
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+luaotfload | db : Font names database loaded from /home/max/.local/texlive/2025/
+texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz)
+\c@part=\count198
+\c@section=\count199
+\c@subsection=\count266
+\c@subsubsection=\count267
+\c@paragraph=\count268
+\c@subparagraph=\count269
+\c@figure=\count270
+\c@table=\count271
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen145
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/luatex85/luatex85.sty
+Package: luatex85 2016/06/15 v1.4 pdftex aliases for luatex
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+\pdftexcmds@toks=\toks19
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfutil-com
+mon.tex
+\pgfutil@everybye=\toks20
+\pgfutil@tempdima=\dimen146
+\pgfutil@tempdimb=\dimen147
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfutil-lat
+ex.def
+\pgfutil@abb=\box53
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code
+.tex (/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/pgf.revision.tex
+)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: luatex.def on input line 106.
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/graphics-def/luatex.def
+File: luatex.def 2024/04/13 v1.2e Graphics/color driver for luatex
+))
+\Gin@req@height=\dimen148
+\Gin@req@width=\dimen149
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.co
+de.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeys.cod
+e.tex
+\pgfkeys@pathtoks=\toks21
+\pgfkeys@temptoks=\toks22
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibr
+aryfiltered.code.tex
+\pgfkeys@tmptoks=\toks23
+))
+\pgf@x=\dimen150
+\pgf@y=\dimen151
+\pgf@xa=\dimen152
+\pgf@ya=\dimen153
+\pgf@xb=\dimen154
+\pgf@yb=\dimen155
+\pgf@xc=\dimen156
+\pgf@yc=\dimen157
+\pgf@xd=\dimen158
+\pgf@yd=\dimen159
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count272
+\c@pgf@countb=\count273
+\c@pgf@countc=\count274
+\c@pgf@countd=\count275
+\t@pgf@toka=\toks24
+\t@pgf@tokb=\toks25
+\t@pgf@tokc=\toks26
+\pgf@sys@id@count=\count276
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-luatex.def
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-lu
+atex.def
+File: pgfsys-luatex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-co
+mmon-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssof
+tpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count277
+\pgfsyssoftpath@bigbuffer@items=\count278
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsyspro
+tocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: luatex.def on input line 274.
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.co
+de.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathutil.code
+.tex)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathparser.co
+de.tex
+\pgfmath@dimen=\dimen160
+\pgfmath@count=\count279
+\pgfmath@box=\box54
+\pgfmath@toks=\toks27
+\pgfmath@stack@operand=\toks28
+\pgfmath@stack@operation=\toks29
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions
+.code.tex)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions
+.basic.code.tex)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions
+.trigonometric.code.tex)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions
+.random.code.tex)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions
+.comparison.code.tex)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions
+.base.code.tex)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions
+.round.code.tex)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions
+.misc.code.tex)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions
+.integerarithmetics.code.tex)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code
+.tex)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfloat.cod
+e.tex
+\c@pgfmathroundto@lastzeros=\count280
+))
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoi
+nts.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen161
+\pgf@picmaxx=\dimen162
+\pgf@picminy=\dimen163
+\pgf@picmaxy=\dimen164
+\pgf@pathminx=\dimen165
+\pgf@pathmaxx=\dimen166
+\pgf@pathminy=\dimen167
+\pgf@pathmaxy=\dimen168
+\pgf@xx=\dimen169
+\pgf@xy=\dimen170
+\pgf@yx=\dimen171
+\pgf@yy=\dimen172
+\pgf@zx=\dimen173
+\pgf@zy=\dimen174
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepat
+hconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen175
+\pgf@path@lasty=\dimen176
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepat
+husage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen177
+\pgf@shorten@start@additional=\dimen178
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoresco
+pes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box55
+\pgf@hbox=\box56
+\pgf@layerbox@main=\box57
+\pgf@picture@serial@count=\count281
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregra
+phicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen179
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretra
+nsformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen180
+\pgf@pt@y=\dimen181
+\pgf@pt@temp=\dimen182
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequi
+ck.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobj
+ects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepat
+hprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearr
+ows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen183
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoresha
+de.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen184
+\pgf@sys@shading@range@num=\count282
+\pgf@shadingcount=\count283
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreima
+ge.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreext
+ernal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box58
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelay
+ers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretra
+nsparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepat
+terns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf
+.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmoduleshap
+es.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box59
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot
+.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-v
+ersion-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen185
+\pgf@nodesepend=\dimen186
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-v
+ersion-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+))
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeys.cod
+e.tex))
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+))
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgffor.code
+.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen187
+\pgffor@skip=\dimen188
+\pgffor@stack=\toks30
+\pgffor@toks=\toks31
+))
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/ti
+kz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryp
+lothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count284
+\pgfplotmarksize=\dimen189
+)
+\tikz@lastx=\dimen190
+\tikz@lasty=\dimen191
+\tikz@lastxsaved=\dimen192
+\tikz@lastysaved=\dimen193
+\tikz@lastmovetox=\dimen194
+\tikz@lastmovetoy=\dimen195
+\tikzleveldistance=\dimen196
+\tikzsiblingdistance=\dimen197
+\tikz@figbox=\box60
+\tikz@figbox@bg=\box61
+\tikz@tempbox=\box62
+\tikz@tempbox@bg=\box63
+\tikztreelevel=\count285
+\tikznumberofchildren=\count286
+\tikznumberofcurrentchild=\count287
+\tikz@fig@count=\count288
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmodulematr
+ix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count289
+\pgfmatrixcurrentcolumn=\count290
+\pgf@matrix@numberofcolumns=\count291
+)
+\tikz@expandcount=\count292
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/li
+braries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+\sa@box=\box64
+) (./content/bilder/optikz.sty
+Package: optikz 2026/02/16 optikz
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks32
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/l3packages/xparse/xparse.st
+y (/home/max/.local/texlive/2025/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2025-03-26 L3 programming layer (loader) 
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-luatex.
+def
+File: l3backend-luatex.def 2025-03-14 L3 backend support: PDF output (LuaTeX)
+\l__color_backend_stack_int=\count293
+Inserting `l3color' in `luaotfload.parse_color'.))
+Package: xparse 2024-08-16 L3 Experimental document command parser
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/li
+braries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/li
+braries/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (./content/bilder/aufbau.aux)
+\openout1 = aufbau.aux
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count294
+\scratchdimen=\dimen198
+\scratchbox=\box65
+\nofMPsegments=\count295
+\nofMParguments=\count296
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count297
+\MPscratchDim=\dimen199
+\MPnumerator=\count298
+\makeMPintoPDFobject=\count299
+\everyMPtoPDFconversion=\toks34
+)
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.
+sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cf
+g
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    Trying to load font information for U+msa on input line 88.
+
+ (/home/max/.local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 88.
+
+
+(/home/max/.local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+[1
+
+
+Non-PDF special ignored!{/home/max/.local/texlive/2025/texmf-var/fonts/map/pdfte
+x/updmap/pdftex.map}] (./content/bilder/aufbau.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-03-26>
+ ***********
+)
+
+Here is how much of LuaTeX's memory you used:
+ 14607 strings out of 471941
+ 100000,794899 words of node,token memory allocated
+ 413 words of node memory still in use:
+   3 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 5 attribute, 48 glue_spec,
+ 5 attribute_list, 2 write nodes
+   avail lists: 2:5336,3:4949,4:22,5:28,6:2,7:2981,8:3,9:1437,11:12
+ 40768 multiletter control sequences out of 65536+600000
+ 34 fonts using 1971607 bytes
+ 117i,7n,114p,424b,751s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman8-regu
+lar.otf></home/max/.local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi8.pfb></home/max/.local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr8.pfb>
+Output written on aufbau.pdf (1 page, 25362 bytes).
+
+PDF statistics: 42 PDF objects out of 1000 (max. 8388607)
+ 25 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 131072)
+ 96 words of extra memory for PDF output out of 10000 (max. 100000000)
+
