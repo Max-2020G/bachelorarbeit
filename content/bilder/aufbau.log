@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.4.13)  15 JUL 2026 19:55
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.4.13)  16 JUL 2026 12:56
  restricted system commands enabled.
 **content/bilder/aufbau.tex
 (./content/bilder/aufbau.tex
@@ -548,7 +548,7 @@ Here is how much of LuaTeX's memory you used:
  413 words of node memory still in use:
    3 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 5 attribute, 48 glue_spec,
  5 attribute_list, 2 write nodes
-   avail lists: 2:5336,3:4949,4:22,5:28,6:2,7:2981,8:3,9:1437,11:12
+   avail lists: 2:5336,3:4949,4:22,5:28,6:2,7:2975,8:3,9:1437,11:12
  40768 multiletter control sequences out of 65536+600000
  34 fonts using 1971607 bytes
  117i,7n,114p,424b,751s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -556,7 +556,7 @@ Here is how much of LuaTeX's memory you used:
 lar.otf></home/max/.local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmmi8.pfb></home/max/.local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmr8.pfb>
-Output written on aufbau.pdf (1 page, 25362 bytes).
+Output written on aufbau.pdf (1 page, 25371 bytes).
 
 PDF statistics: 42 PDF objects out of 1000 (max. 8388607)
  25 compressed objects within 1 object stream

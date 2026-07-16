@@ -1,5 +1,6 @@
 all: build/thesis.pdf
 
+en: build/thesis_en.pdf
 
 TeXOptions = -lualatex \
 			 -interaction=nonstopmode \
@@ -10,6 +11,9 @@ FIGURES = content/bilder/aufbau.pdf
 
 build/thesis.pdf: FORCE $(FIGURES) | build
 	latexmk $(TeXOptions) thesis.tex
+
+build/thesis_en.pdf: FORCE $(FIGURES) | build
+	latexmk $(TeXOptions) thesis_en.tex
 
 content/bilder/%.pdf: content/bilder/%.tex
 	latexmk -lualatex -interaction=nonstopmode -halt-on-error -output-directory=content/bilder $<

@@ -1,0 +1,52 @@
+\chapter{Analysis}
+
+\section{Figures}
+
+Make sure your plots have sufficiently large axis labels, sufficiently thick lines, and clearly
+distinguishable colors.
+Ideally, the plot and the thesis should use the same font size and typeface.
+This can be achieved by creating the plot at the correct size and including it with the optional
+argument \texttt{scale=1}. An example is shown in \autoref{fig:bsp}.
+
+Use vector graphics (pdf) whenever possible, and raster graphics such as .png or .jpg only as an
+exception.
+Place a period after figure captions.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=1]{./Plots/Histogramm.pdf}
+    \caption{A histogram with error bars for two data sets; the font size and typeface match those
+    of the document.}
+    \label{fig:bsp}
+\end{figure}
+
+\section{Tables}
+
+Tables should be as simple as possible; avoid using too many lines. In almost all cases, three
+horizontal lines are sufficient: one above and one below the table, and one between the column
+headers and the actual table body.
+
+The \texttt{booktabs} package provides \verb_\toprule_, \verb_\midrule_, and
+\verb_\bottomrule_ for this purpose.
+The \texttt{siunitx} package provides an extremely powerful new column type: \texttt{S}, with
+which numbers and units can be set very cleanly and well aligned.
+
+This template assumes table captions above the table; if you would instead like table captions
+below it, remove the corresponding optional argument for the document class in the preamble.
+
+An example is Table~\ref{tab:bsp}.
+\begin{table}
+    \centering
+    \caption{Example table with arbitrary values; the S column option from \texttt{siunitx} was
+    used for the numerical values.}
+    \label{tab:bsp}
+    \begin{tabular}{S[table-format=4.2] S[table-format=3.2]}
+        \toprule
+        {$p \mathrel{/} \si{\pascal}$}  & {$T \mathrel{/} \si{\kelvin}$} \\
+        \midrule
+        1024.23 & 273.15 \\
+        1025.31 & 274.5 \\
+        1026.27 & 276.2 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
