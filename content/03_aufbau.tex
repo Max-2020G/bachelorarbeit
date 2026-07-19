@@ -9,6 +9,13 @@ durch den Generatorkristall geht und der Probe strahl, der eine geringere Intens
 Anschließend werden die kombinerten Strahlen durch ein EOS Setup geleiitet und dort gemessen.
 Der Genaue aufbau wird im folgenden erkläutert.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/bilder/aufbau.pdf}
+    \caption{Schematischer Aufbau zur Erzeugung intensiver THz-Strahlung.}
+    \label{fig:thz-aufbau}
+\end{figure}
+
 \section{Terahertz-Zeitbereichsspektroskopie}
 Zu begin kommt der Strahl mit einer Leistung von $Platzhalter\,\unit{mW}$ in das Setup. 
 Dies ist in \autoref{fig:thz-aufbau} oben Links zu sehen. 
@@ -18,22 +25,45 @@ Der Reflektive Teil des Strahl, welcher $1\%$ der Leistung des ausgangsstrahl be
 dann der Probe beam, welcher in Orange in \autoref{fig:thz-aufbau} dargestellt wird, welcher in \autoref{sec:probe} weiter erläuter wird.
 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{content/bilder/aufbau.pdf}
-    \caption{Schematischer Aufbau zur Erzeugung intensiver THz-Strahlung.}
-    \label{fig:thz-aufbau}
-\end{figure}
 
 \section{Pump-Strahl}
 \label{sec:pump}
+Der Pump strahl geht zu erst durch ein $\lambda/2$ Plättchen gefolgt von einem Glan-Thompson prisma. 
+Dort wird mit dem $\lambda/2$ Plättchen die Polarisation des Strahls eingestellt und anschließend 
+durch den Glan-Thompson Prisma eine Beliebige Intensiität des Strahls gefiltet. 
+Somit lässt sich über diesen Aufbau die Intenistät des Strahls Beliebig einstellen. 
+Nach dieser Intensitäts einstellung wird der Pump-Strahl in die Delay-station geleitet. 
+Die Delay-station ist ein Paar von beweglichen Spiegeln, welche nach vorne und zurckfahren können 
+diese Delay-Station hat eine Pfadlänge welche sie sich bewegen kann, welche $20\,\unit{\milli\meter}$ beträgt. 
+Auf die Delay-Station folgt eine Plankonvexe Linse mit einer Brennweite von $100\,\unit{\milli\meter}$. 
+Dieser Fokuspunt liegt $100\,\unit{\milli\meter}$ vor dem Ersten darrauffolgend Parabolspiegek, 
+da dieser auch eine Brennweite von $100\,\unit{\milli\meter}$ besitzt und somit nach dem ersten 
+Parabolspiegel einen kolinearen Strahl erzeugt. 
+Zwischen dem ersten Parabolspiegel und der Linse befindet sich der Generatorkristall, welcher 
+im ersten Scrhitt eine ZnTe Kristall ist um einen Grundwert zu bestimmen und im Anschluss durch die 
+zwei verschiedenen Organischen Kristallsamples ersetzt wird um diese auf ihre Fähigkeit THz-Strahlung 
+zu erzeugen zu testen. 
+Die Optischen Kristalle werden auf einem halter platziert, welcher in der x-, y- und z-Koordinate genau 
+verstellbar ist, damit die Organischen Kristalle genau so platziert werden können das sie vollständig von 
+dem Laser getroffen werden. 
+Anschließend durchläuft der Laser 3 Weitere Parabolspiegel. 
+Der 4. und Letzte Parabolspiegel fokusiert den Strahl auf den Detektionskristall bei welchem ein 
+Räumlichen Überlapp mit dem Probe-Strahl erzeugt werden muss. 
+Das bedeutet, dass die beiden Fokuspunkte vom Probe- und Pump-Strahl am selben Ort liegen, dies 
+wird durch eine Kamere und das verstellen des letzten Parabolspiegels beim Pump-Strahls und 
+verstellen des letzten normalen spiegel des Probe-Strahls. 
+
 
 \section{Probe-Strahl}
 \label{sec:probe}
 Der Probe strahl geht zu begin wie auch schon der Pump strahl durch ein Setup von eier $\lambda/2$ Platt 
-gefolgt von einem Glenn-Thompson Prisma, dies wird wieder wie bei dem Pump strahl als ein 
+gefolgt von einem Glan-Thompson Prisma, dies wird wieder wie bei dem Pump strahl als ein 
 einstellbarer Filter genutzt um die Intensität des Strahls genau Regulieren zu können. 
-
+Anschließend folgt ein Verzögerungsteil, damit der Pfad für den Pump und Probe gleich lang sind. 
+Darrauffolgend trifft der probe strahl auf eine PLankonvexe Linse mit einer Brennweite von 
+$100\,\unit{\milli\meter}$, wobei dieser Fokuspunkt beim Detektionskristall aus ZnTe ist. 
+Denn nach der Linse wird der Strahl durch ein Loch im 4. Parabolspiegel geleitet wo er 
+mit dem Pump strahl zusammen auf den Detektionskristall trifft.
 
 
 \section{Elektro-Optisches Sampling}
