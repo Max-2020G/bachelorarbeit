@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1784199372.31735 "content/bilder/aufbau.tex" "content/bilder/aufbau.pdf" "aufbau" 1784199374.66134 0
+["lualatex"] 1784551792.79785 "content/bilder/aufbau.tex" "content/bilder/aufbau.pdf" "aufbau" 1784551795.19802 0
   "/home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf" 1255129361 111948 cee9e390fd6d23cfb4d6871ba2a9ee5b ""
   "/home/max/.local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/home/max/.local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -177,8 +177,8 @@
   "/home/max/.local/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/lmroman8-regular.luc" 1758978859.01228 128152 0b2b3e09a6a5081fd89000bf12511e95 ""
   "/home/max/.local/texlive/2025/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1744564904.4919 327810 5cb75a307803a601fe7f6025a4d7823a ""
   "/home/max/.local/texlive/2025/texmf-var/web2c/luahbtex/lualatex.fmt" 1744564762 6369375 85e32d4866f046dbe30b9b07cd1d1e2e ""
-  "content/bilder/aufbau.aux" 1784199374.59904 32 3985256e7290058c681f74d7a3565a19 "lualatex"
-  "content/bilder/aufbau.tex" 1784198415.56687 4971 e665f5ce32994b2a187f69e8464ec38c ""
+  "content/bilder/aufbau.aux" 1784551795.05675 32 3985256e7290058c681f74d7a3565a19 "lualatex"
+  "content/bilder/aufbau.tex" 1784551787.74254 5792 fe669d548ba0f7e91bad6ea433d9e0f6 ""
   "content/bilder/optikz.sty" 1784115379.37853 34503 abe0114357bfa93ce994ab92f35cea7a ""
   (generated)
   "content/bilder/aufbau.aux"

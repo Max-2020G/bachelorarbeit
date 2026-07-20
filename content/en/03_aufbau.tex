@@ -1,15 +1,126 @@
-\chapter{Setup}
-
+\chapter{Experimental Method}
+\label{sec:auf}
+The laser underlying the setup is a pulsed Ti:sapphire laser, which is guided through an
+amplifier and generates pulses in the kHz range.
+To generate the THz radiation and subsequently measure it, a pump-probe technique is used in a
+time-domain spectroscopy setup. The concept is based on the fact that there is a pump beam and a
+probe beam from the laser, where the pump beam, which has a higher intensity, passes through the
+generator crystal, while the probe beam, which has a lower intensity, does not pass through it.
+The combined beams are then guided through an EOS setup and measured there.
+The exact setup is explained in the following.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{content/bilder/aufbau.pdf}
-    \caption{Schematic setup for generating intense THz radiation.}
+    \caption{Schematic diagram of a terahertz time-domain spectroscopy setup.}
     \label{fig:thz-aufbau}
 \end{figure}
 
-\section{Delay Stage}
+\section{Terahertz Time-Domain Spectroscopy}
+At the beginning, the beam enters the setup with a power of $Platzhalter\,\unit{mW}$.
+This can be seen in the top left of \autoref{fig:thz-aufbau}.
+Afterwards, this beam hits a beam splitter, which transmits $99\%$ of the intensity; this then
+becomes the pump beam, shown in green in the figure, which is described in more detail in
+\autoref{sec:pump}.
+The reflected part of the beam, which has $1\%$ of the power of the initial beam, is then the
+probe beam, shown in orange in \autoref{fig:thz-aufbau}, which is described in more detail in
+\autoref{sec:probe}.
 
-\section{Parabolic Mirror}
 
-\section{Wollaston Prism}
+
+\section{Pump Beam}
+\label{sec:pump}
+The pump beam first passes through a $\lambda/2$ waveplate, followed by a Glan-Thompson prism.
+There, the $\lambda/2$ waveplate sets the polarization of the beam, and the Glan-Thompson prism
+subsequently filters the beam to an arbitrary intensity.
+This setup thus allows the intensity of the beam to be adjusted arbitrarily.
+After this intensity adjustment, the pump beam is directed into the delay stage.
+The delay stage is a pair of movable mirrors that can move forwards and backwards; this delay
+stage has a travel range of $20\,\unit{\milli\meter}$.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/bilder/thz_puls.png}
+    \caption{THz pulse together with the sampling pulse, which scans across the THz pulse as
+    the delay stage is shifted\,\cite{KÃ¼hn2011Nonlinear}.}
+    \label{fig:thz-puls}
+\end{figure}
+
+The delay stage is followed by a plano-convex lens with a focal length of $100\,\unit{\milli\meter}$.
+This focal point is located $100\,\unit{\milli\meter}$ in front of the first subsequent parabolic
+mirror, since this mirror also has a focal length of $100\,\unit{\milli\meter}$ and therefore
+produces a collinear beam after the first parabolic mirror.
+Between the first parabolic mirror and the lens is the generator crystal, which in the first step
+is a ZnTe crystal used to determine a baseline value, and which is subsequently replaced by the
+two different organic crystal samples in order to test their ability to generate THz radiation.
+The optical crystals are placed on a mount that can be precisely adjusted in the x, y, and z
+coordinates, so that the organic crystals can be positioned in such a way that they are fully
+illuminated by the laser.
+After this, the beam passes through a chopper. This interrupts the signal at a set frequency of
+around $1500\,\unit{Hz}$, which is used for noise suppression, as described in more detail in
+\autoref{sec:EOS}.
+The laser then passes through 3 further parabolic mirrors.
+Between the first and second parabolic mirrors, a silicon wafer is placed, which filters out the
+remaining near-infrared light that hit the generator crystal and was not transmitted.
+The 4th and final parabolic mirror focuses the beam onto the detection crystal, where a spatial
+overlap with the probe beam must be created.
+This means that the two focal points of the probe and pump THz beams lie at the same location;
+this is achieved using a camera and by adjusting the last parabolic mirror of the pump THz beam
+as well as adjusting the last regular mirror of the probe beam.
+
+
+\section{Probe Beam}
+\label{sec:probe}
+At the beginning, the probe beam, like the pump beam before it, passes through a setup consisting
+of a $\lambda/2$ waveplate followed by a Glan-Thompson prism; as with the pump beam, this is used
+as an adjustable filter to precisely regulate the intensity of the beam.
+This is followed by a delay section, so that the path lengths for the pump and probe beams are
+equal.
+The probe beam then hits a plano-convex lens with a focal length of $100\,\unit{\milli\meter}$,
+whose focal point is at the ZnTe detection crystal.
+After the lens, the beam is guided through a hole in the 4th parabolic mirror, where it meets the
+pump beam together at the detection crystal.
+
+
+\section{Electro-Optic Sampling}
+\label{sec:EOS}
+Electro-optic sampling begins with the arrival of the probe and pump beams at the ZnTe detection
+crystal.
+In this crystal, the refractive index changes due to the so-called Pockels effect
+\cite{KÃ¼hn2011Nonlinear} %$\delta n \propto n^3 r E_\text{THz}(t)$%
+; it is important here that the probe pulse is extremely short, in the fs range, compared to the
+pump THz pulse in the ps range, and therefore always samples only a single moment of the THz
+pulse, as shown in \autoref{fig:thz-puls}.
+This shift is achieved, as already mentioned, via the delay stage.
+The change in the refractive index means that, due to a specific rotation of the crystal, it
+becomes birefringent, which means that the vertical and horizontal components of the beam are
+refracted differently.
+This birefringence produces a small phase delay, and the beam, which was previously linearly
+polarized, becomes elliptically polarized.
+This beam then hits the $\lambda/4$ plate, which further rotates this elliptically polarized beam
+and turns it into a nearly circularly polarized beam. This behavior arises because the $\lambda/4$
+plate delays one direction of polarization by a quarter of the wavelength, which results in a
+circularly polarized beam for a perfectly linearly polarized beam. Since an elliptical beam is
+present here, however, the beam after the $\lambda/4$ plate is not perfectly circular but only
+very slightly elliptical.
+This beam then hits a Wollaston prism, which spatially splits the beam into its vertical and
+horizontal polarization components; if the beam were a perfectly circularly polarized beam, the
+two resulting beams would be exactly identical, but due to the detector crystal there is now a
+slightly elliptical polarization present.
+As a result, a small intensity difference exists between the two beams.
+These two beams are then measured and amplified by two photodiodes.
+From these two signals, the difference, i.e. the actual THz signal, can then be calculated.
+The signal is then fed into the lock-in amplifier, where it is demodulated at the set frequency of
+the chopper.
+This means that the signals with the same frequency as the chopper are amplified, while the
+remaining signals are suppressed using a low-pass filter.
+In addition, these signals with the same frequency are averaged over many periods to further
+reduce the noise.
+% \section{Delay Stage}
+
+% \section{Parabolic Mirror}
+
+% \section{Wollaston Prism}
+
+% \section{Temporal and Spatial Overlap}
+
+% \section{Magelan}

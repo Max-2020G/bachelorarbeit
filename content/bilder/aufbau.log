@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.4.13)  17 JUL 2026 11:03
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.4.13)  20 JUL 2026 15:24
  restricted system commands enabled.
 **aufbau.tex
 (./aufbau.tex
@@ -535,7 +535,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 Non-PDF special ignored!{/home/max/.local/texlive/2025/texmf-var/fonts/map/pdfte
-x/updmap/pdftex.map}] (./aufbau.aux)
+x/updmap/pdftex.map}
+Missing character: There is no ; (U+003B) in font nullfont!
+] (./aufbau.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
@@ -543,20 +545,20 @@ L3 programming layer <2025-03-26>
 )
 
 Here is how much of LuaTeX's memory you used:
- 14609 strings out of 471941
+ 14642 strings out of 471941
  100000,794899 words of node,token memory allocated
  413 words of node memory still in use:
    3 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 5 attribute, 48 glue_spec,
  5 attribute_list, 2 write nodes
-   avail lists: 2:5596,3:5171,4:22,5:28,6:2,7:3167,8:3,9:1545,11:12
- 40771 multiletter control sequences out of 65536+600000
+   avail lists: 2:5922,3:5438,4:28,5:33,6:2,7:3461,8:3,9:1623,11:18
+ 40804 multiletter control sequences out of 65536+600000
  34 fonts using 1971607 bytes
- 117i,7n,114p,409b,751s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,7n,114p,409b,856s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman8-regu
 lar.otf></home/max/.local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmmi8.pfb></home/max/.local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmr8.pfb>
-Output written on aufbau.pdf (1 page, 25562 bytes).
+Output written on aufbau.pdf (1 page, 26869 bytes).
 
 PDF statistics: 42 PDF objects out of 1000 (max. 8388607)
  25 compressed objects within 1 object stream

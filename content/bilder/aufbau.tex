@@ -114,6 +114,9 @@
     \node[anchor=south] at (4,0.3){$\lambda/2$};
     \tinysplitter[angle=180, color=black] at (5,0);
     \node[anchor=south] at (4.93,0.3){GTP};
+    \splitter[angle=-135, color=black, width=1.3, thickness=0.7] at (16,-2);
+    \node[anchor=west] at (16.5,-2){SI-Wafer};
+
 
 % ----------------------------------EOS Linien
     \draw[very thick,color=red] (E0) -- (E2);
@@ -132,5 +135,25 @@
     \planconvexlens[angle=-21.80140949+180,width=0.7]     at      (E32);
     \diode[angle=21.80140949] at (E41);
     \diode[angle=-21.80140949] at (E42);
+
+
+% ----------------------------------Chopper
+    % Chopper-Symbol: segmentierte rotierende Scheibe
+    \newcommand{\chopper}[2]{% #1 = x-Position, #2 = y-Position 
+     \begin{scope}[shift={(#1,#2)}]
+        \draw[thick] (0,0) circle (0.35);
+     \fill (0,0) -- (90:0.35) arc (90:150:0.35) -- cycle;
+     \fill (0,0) -- (210:0.35) arc (210:270:0.35) -- cycle;
+     \fill (0,0) -- (330:0.35) arc (330:30:0.35) -- cycle;
+     \draw[->, orange, thick] (0.5,0.2) arc (20:160:0.5);
+  \end{scope}
+    }
+    % Aufruf an gewünschter Position im Strahlengang, z.B. nach dem Generatorkristall:
+    \chopper{13}{0};
+    \node at (13,-0.6){Chopper};
+
+
 \end{tikzpicture}
 \end{document}
+
+

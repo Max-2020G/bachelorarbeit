@@ -12,7 +12,7 @@ Der Genaue aufbau wird im folgenden erkläutert.
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{content/bilder/aufbau.pdf}
-    \caption{Schematischer Aufbau zur Erzeugung intensiver THz-Strahlung.}
+    \caption{Schematischer Aufbau von einem Terahertz-Zeitbereichsspektroskopie aufbau.}
     \label{fig:thz-aufbau}
 \end{figure}
 
@@ -35,6 +35,14 @@ Somit lässt sich über diesen Aufbau die Intenistät des Strahls Beliebig einst
 Nach dieser Intensitäts einstellung wird der Pump-Strahl in die Delay-station geleitet. 
 Die Delay-station ist ein Paar von beweglichen Spiegeln, welche nach vorne und zurckfahren können 
 diese Delay-Station hat eine Pfadlänge welche sie sich bewegen kann, welche $20\,\unit{\milli\meter}$ beträgt. 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/bilder/thz_puls.png}
+    \caption{THz-Puls mit dem Samplingpuls der Abtastend über den THz-Puls fährt durch 
+    die verschiebung der Delay-station\,\cite{KÃ¼hn2011Nonlinear}.}
+    \label{fig:thz-puls}
+\end{figure}
+
 Auf die Delay-Station folgt eine Plankonvexe Linse mit einer Brennweite von $100\,\unit{\milli\meter}$. 
 Dieser Fokuspunt liegt $100\,\unit{\milli\meter}$ vor dem Ersten darrauffolgend Parabolspiegek, 
 da dieser auch eine Brennweite von $100\,\unit{\milli\meter}$ besitzt und somit nach dem ersten 
@@ -46,11 +54,17 @@ zu erzeugen zu testen.
 Die Optischen Kristalle werden auf einem halter platziert, welcher in der x-, y- und z-Koordinate genau 
 verstellbar ist, damit die Organischen Kristalle genau so platziert werden können das sie vollständig von 
 dem Laser getroffen werden. 
-Anschließend durchläuft der Laser 3 Weitere Parabolspiegel. 
+Nach diesem durchdringt der Strahl einen Chopper. Dieser unterbricht das SIgnal um eine 
+eingestellte Frequenz um die $1500\,\unit{Hz}$, was für die Rauschunterdrüückung genutzt wird, 
+mehr dazu in \autoref{sec:EOS}.
+Anschließend durchläuft der Laser 3 Weitere Parabolspiegel.
+Zwischen dem Ersten und Zweiten Parabolspiegel ist ein Silizium Wafer platziert welcher das 
+Restliche Nahinfrarot Licht was auf den Genereatorkristll getroffen ist und nicht transmitiert 
+wurde herrausfiltert. 
 Der 4. und Letzte Parabolspiegel fokusiert den Strahl auf den Detektionskristall bei welchem ein 
 Räumlichen Überlapp mit dem Probe-Strahl erzeugt werden muss. 
-Das bedeutet, dass die beiden Fokuspunkte vom Probe- und Pump-Strahl am selben Ort liegen, dies 
-wird durch eine Kamere und das verstellen des letzten Parabolspiegels beim Pump-Strahls und 
+Das bedeutet, dass die beiden Fokuspunkte vom Probe- und Pump-THz-Strahl am selben Ort liegen, dies 
+wird durch eine Kamera und das verstellen des letzten Parabolspiegels beim Pump-THz-Strahls und 
 verstellen des letzten normalen spiegel des Probe-Strahls. 
 
 
@@ -67,9 +81,38 @@ mit dem Pump strahl zusammen auf den Detektionskristall trifft.
 
 
 \section{Elektro-Optisches Sampling}
-
-
-
+\label{sec:EOS}
+Das Elektro-Optische Sampling beginnt mit dem eintreffen des Probe- und Pump-Strahls in den 
+ZnTe Detektionskristall. 
+In diesem Kristall ändert sich durch den so gennanten Pockelseffekt \cite{KÃ¼hn2011Nonlinear} 
+der Brechungsindex %$\delta n \propto n^3 r E_\text{THz}(t)$% 
+dabei ist wichtig, dass der Probe puls extrem kurz im fs gegenüber dem Pump THz Puls im ps bereich ist 
+und somit immer nur einen Moment des THz Puls abtastet wie in \autoref{fig:thz-puls} zu sehen ist. 
+Die Verschiebung ist wie schon erwäht durch die Delay-station erreichbar. 
+Die Änderung des Brechungsindex hat zu folge, dass durch ein bestimmte drehung des Kristalls 
+diese Doppelbrechend wirkt, was bedeutet, dass der Senktrechte und horizontale teil des stahls 
+unterschiedlich gebrochen werden. 
+Durch diese Doppelbrechung entsteht eine kleine Phasenverzögerung und der vorher Linear 
+Polarisierte Stahl wird zu einem ellitpsch polarisertem strahl.
+Anschließend trifft dieser strahl die $\lambda/4$ Platte welchen diesen Elliptsch polarisierten strahl 
+weiter dreht und zu einem nahzu Circulär Polarisiertem Strahl macht. Dieses verhalten entsteht 
+dadurch, dass die $\lambda/4$ Platte eine richtung der Polarisation um ein Viertel der Wellenlänge 
+Verzögert und sich daraus bei einem Perfekt Linearpolarisiertem Stahl ein Circulärpolarisirter 
+Strahl ergibt. Da hier aber ein Elliptischer Strahl vorligt wird der Strahl nach der $\lambda/4 $ Platte 
+nicht perfekt Zirkular sondern ganz leicht elliptsch. 
+Dannach trifft dieser Strahl auf einen Wollaston Prisma welcher den Strahl Räumlich in 
+seine Senkrechte und Waagerechte Polarisation aufteilt, wenn der Strahl ein perfekt 
+Zirkulär Polarisierter Strahl wäre, wären die zwei Resultierenden Strahlen exakt identisch 
+doch durch den Detektorkristall ist hier nun eine leicht elliptsche Polarisation vorhanden. 
+Das hat zufolge, dass ein kleiner Intenistäts unterschied in den beiden Strahlen exisitiert. 
+Diese beiden Strahlen werden dannach durch zwei Photodioden gemessen und verstärkt. 
+Durch diese zwei signale lässt sich dann die differenz also das wirklichen THz-Signal berechnen. 
+Anschließend wird das signal in den Lock-In Verstärker geleitet in welchem das Signal 
+auf die eingestellte frequenz des Choppers demoduliert wird. 
+Das bedeutet die SIgnale die die selbe frequenz wie der Chopper haben werden verstärkt und 
+diese Restlichen mithilfe eines Tiefpassfilters unterdrückt. 
+Dazu werden diese Signale die die Selber frequenz haben über viele Perioden Gemittelt um 
+das Rauschen weiter zu vermindern.
 % \section{Delay Station}
 
 % \section{Parabol Spiegel}
