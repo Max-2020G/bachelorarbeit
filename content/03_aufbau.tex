@@ -1,12 +1,17 @@
 \chapter{Experimentale Methode}
 \label{sec:auf}
+In dieser Bachelorarbeit wir ein Terahertz-Zeitbereichsspektroskopie aufbau genutzt 
+um die THz-Emissioinen von verschiedenen Organischen Kristallen zu bestimmen. 
+Ein Schematischer aufbau von dem THz-TDs aufbau ist in \autoref{fig:thz-aufbau} zu sehen.
 Der Laser der dem Setup zu grunde liegt ist ein gepulster Ti:Sapphire Laser welcher durch einen 
-Verstärker geleteitet wird und Pulse im KHz bereicht erzeugt.
+Verstärker geleteitet wird und Nahinfrarot-Pulse im KHz bereicht erzeugt.
 Um die THz-Strahlung zu erzeugen und anschließend zu Messen wird ein Pump-Probe Verfahren in 
-einem Zeitbereichsspektroskopie aufbau genutzt. Das konzept beruht darauf, dass es einen Pump 
-und einen Probe Strahl des Lasers gibt wobei der Pump Strahl mit einer höheren Intensität 
-durch den Generatorkristall geht und der Probe strahl, der eine geringere Intensität hat nicht durch dieisen geht. 
-Anschließend werden die kombinerten Strahlen durch ein EOS Setup geleiitet und dort gemessen.
+einem Zeitbereichsspektroskopie aufbau genutzt. Das konzept beruht darauf, dass es einen Strahl gibt welcher 
+mithilfe eines Beam samplers in Pump 
+und Probe Strahl aufgeteilt wir, wobei der Pump Strahl mit einer höheren Intensität 
+durch den THz-Ereugenden Kristall geht und der Probe strahl, 
+der eine geringere Intensität hat wird als Abtast-Strahl genutzt. 
+Anschließend werden die kombinerten Strahlen, aus Thz-Strahlung und Probe Beam durch ein EOS Setup geleiitet und dort gemessen.
 Der Genaue aufbau wird im folgenden erkläutert.
 
 \begin{figure}
@@ -30,11 +35,11 @@ dann der Probe beam, welcher in Orange in \autoref{fig:thz-aufbau} dargestellt w
 \label{sec:pump}
 Der Pump strahl geht zu erst durch ein $\lambda/2$ Plättchen gefolgt von einem Glan-Thompson prisma. 
 Dort wird mit dem $\lambda/2$ Plättchen die Polarisation des Strahls eingestellt und anschließend 
-durch den Glan-Thompson Prisma eine Beliebige Intensiität des Strahls gefiltet. 
-Somit lässt sich über diesen Aufbau die Intenistät des Strahls Beliebig einstellen. 
-Nach dieser Intensitäts einstellung wird der Pump-Strahl in die Delay-station geleitet. 
-Die Delay-station ist ein Paar von beweglichen Spiegeln, welche nach vorne und zurckfahren können 
-diese Delay-Station hat eine Pfadlänge welche sie sich bewegen kann, welche $20\,\unit{\milli\meter}$ beträgt. 
+durch den Glan-Thompson Prisma eine gewollte Intensiität des Strahls gefiltet. 
+Somit lässt sich über diesen Aufbau die Intenistät des Strahls manuel einstellen. 
+Nach dieser Intensitäts einstellung wird der Pump-Strahl auf die Delay-station geleitet. 
+Die Delay-station ist ein Paar von Spiegeln, welche auf einer Platform sitzen, die nach vorne und zurckfahren kann. 
+Diese Delay-Station hat eine Pfadlänge welche sie sich bewegen kann, welche $20\,\unit{\milli\meter}$ beträgt. 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{content/bilder/thz_puls.png}
@@ -54,7 +59,7 @@ zu erzeugen zu testen.
 Die Optischen Kristalle werden auf einem halter platziert, welcher in der x-, y- und z-Koordinate genau 
 verstellbar ist, damit die Organischen Kristalle genau so platziert werden können das sie vollständig von 
 dem Laser getroffen werden. 
-Nach diesem durchdringt der Strahl einen Chopper. Dieser unterbricht das SIgnal um eine 
+Nach diesem durchdringt der Strahl einen Chopper. Dieser moduliert das SIgnal um eine 
 eingestellte Frequenz um die $1500\,\unit{Hz}$, was für die Rauschunterdrüückung genutzt wird, 
 mehr dazu in \autoref{sec:EOS}.
 Anschließend durchläuft der Laser 3 Weitere Parabolspiegel.
@@ -75,9 +80,9 @@ gefolgt von einem Glan-Thompson Prisma, dies wird wieder wie bei dem Pump strahl
 einstellbarer Filter genutzt um die Intensität des Strahls genau Regulieren zu können. 
 Anschließend folgt ein Verzögerungsteil, damit der Pfad für den Pump und Probe gleich lang sind. 
 Darrauffolgend trifft der probe strahl auf eine PLankonvexe Linse mit einer Brennweite von 
-$100\,\unit{\milli\meter}$, wobei dieser Fokuspunkt beim Detektionskristall aus ZnTe ist. 
+$500\,\unit{\milli\meter}$, wobei dieser Fokuspunkt beim Detektionskristall aus ZnTe ist. 
 Denn nach der Linse wird der Strahl durch ein Loch im 4. Parabolspiegel geleitet wo er 
-mit dem Pump strahl zusammen auf den Detektionskristall trifft.
+mit dem THz-strahl räumlich überlappt und auf den Detektionskristall trifft.
 
 
 \section{Elektro-Optisches Sampling}
@@ -93,17 +98,17 @@ Die Änderung des Brechungsindex hat zu folge, dass durch ein bestimmte drehung 
 diese Doppelbrechend wirkt, was bedeutet, dass der Senktrechte und horizontale teil des stahls 
 unterschiedlich gebrochen werden. 
 Durch diese Doppelbrechung entsteht eine kleine Phasenverzögerung und der vorher Linear 
-Polarisierte Stahl wird zu einem ellitpsch polarisertem strahl.
+Polarisierte Stahl wird zu einem elliptsch polarisertem strahl.
 Anschließend trifft dieser strahl die $\lambda/4$ Platte welchen diesen Elliptsch polarisierten strahl 
 weiter dreht und zu einem nahzu Circulär Polarisiertem Strahl macht. Dieses verhalten entsteht 
 dadurch, dass die $\lambda/4$ Platte eine richtung der Polarisation um ein Viertel der Wellenlänge 
 Verzögert und sich daraus bei einem Perfekt Linearpolarisiertem Stahl ein Circulärpolarisirter 
 Strahl ergibt. Da hier aber ein Elliptischer Strahl vorligt wird der Strahl nach der $\lambda/4 $ Platte 
-nicht perfekt Zirkular sondern ganz leicht elliptsch. 
+nicht perfekt Zirkular sondern elliptsch Polarisiert. 
 Dannach trifft dieser Strahl auf einen Wollaston Prisma welcher den Strahl Räumlich in 
 seine Senkrechte und Waagerechte Polarisation aufteilt, wenn der Strahl ein perfekt 
 Zirkulär Polarisierter Strahl wäre, wären die zwei Resultierenden Strahlen exakt identisch 
-doch durch den Detektorkristall ist hier nun eine leicht elliptsche Polarisation vorhanden. 
+doch durch den THz-Strahl ist hier nun eine leicht elliptsche Polarisation vorhanden. 
 Das hat zufolge, dass ein kleiner Intenistäts unterschied in den beiden Strahlen exisitiert. 
 Diese beiden Strahlen werden dannach durch zwei Photodioden gemessen und verstärkt. 
 Durch diese zwei signale lässt sich dann die differenz also das wirklichen THz-Signal berechnen. 
@@ -113,12 +118,3 @@ Das bedeutet die SIgnale die die selbe frequenz wie der Chopper haben werden ver
 diese Restlichen mithilfe eines Tiefpassfilters unterdrückt. 
 Dazu werden diese Signale die die Selber frequenz haben über viele Perioden Gemittelt um 
 das Rauschen weiter zu vermindern.
-% \section{Delay Station}
-
-% \section{Parabol Spiegel}
-
-% \section{Wollaston-Prisma}
-
-% \section{Zeitlichen und Räumlichen Overlap}
-
-% \section{Magelan}

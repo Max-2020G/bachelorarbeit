@@ -74,6 +74,7 @@
     \laser[name=Amplifier] at (A0);
 
     \splitter[angle=45] at      (A1);
+    \node[anchor=south] at      (2,0.6){beam sampler};
     \mirror[angle=-135] at      (PR1);
     \mirror[angle=-45]  at      (PR2);
     \mirror[angle=135]  at      (PR4);
@@ -84,6 +85,7 @@
 
 
     \planconvexlens[angle=90] at (PRL);
+    \node[anchor=south] at (4.8,-7.1){PC Lense};
     \tinysplitter[angle=90] at (PRL4);
     \node[anchor=east] at (1.5,-1.9){$\lambda/2$};
     \tinysplitter[angle=90, color=black] at (PRP);
@@ -134,8 +136,9 @@
     \planconvexlens[angle=21.80140949-180,width=0.7]     at      (E31);
     \planconvexlens[angle=-21.80140949+180,width=0.7]     at      (E32);
     \diode[angle=21.80140949] at (E41);
+    \node[anchor=south]   at (20.5,-8.5){PD2};
     \diode[angle=-21.80140949] at (E42);
-
+    \node[anchor=south]   at (20.5,-3.9){PD1};
 
 % ----------------------------------Chopper
     % Chopper-Symbol: segmentierte rotierende Scheibe
