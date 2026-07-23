@@ -13,8 +13,80 @@ werden in \autoref{sec:ME} genauer beleuchtet.
 Zum Abschluss wird in \autoref{sec:EOS} die Theorie hinter dem Messverfahren des Aufbaus erklärt.
 
 
-\section{Nichtlieare Optik}
+\section{Nichtlineare Optik}
 \label{sec:NLO}
+In der Optik sind die meisten Phänomene linearer Natur, das heißt, dass zum Beispiel 
+auf ein elektrisches Feld $E$, welches auf ein Objekt trifft, eine lineare, also gleich 
+starke Antwort, zum Beispiel der Polarisationsdichte $P$ folgt. 
+Diese lineare Eigenschaft geht jedoch verloren, wenn das elektrische Feld eine 
+stärke von $~3\cdot10^{10}\,\unit{V/m}$ erreicht. 
+So eine Stärke ist nur mit der Nutzung von Lasern erreichbar, welche aber 
+hier für diese Arbeit genutzt werden \cite{Butcher_Cotter_1990}. 
+Die Nichtlinearität wird sichtbar, wenn ein Medium semiklassisch genähert wird und zuerst 
+die lineare Lösung gezeigt wird. 
+Das Medium wird genähert als ein positiver Kern und ein daran befestigtes Elektron. 
+An dieses System wird dann ein elektrisches Feld angelegt. 
+Dabei kann der positiver Kern als räumlich fest angenommen werden, da die 
+Elektronen deutlich leichter sind. 
+Somit kann dieses System in erster Näherung als getriebener harmonischer Oszillator genähert werden. 
+Es ergibt sich die Bewegungsgleichung 
+\begin{equation}
+    \label{eqn:bew}
+    m\left(\frac{\text d^2x}{\text d t^2}+2\Gamma \frac{\text d x}{d t}+\Omega^2\cdot x-(\xi^{(2)}x^2+\xi^{(3)}x^3+\dots)\right)= -e E(t)\,.
+\end{equation}
+Hier ist $m$ die Masse des Elektrons, $x$ die Auslenkung aus der Ruhelage, $\Gamma$ die Dämpfungskonstante 
+$\Omega$ die Eigenfrequenz des Systems und $\xi$ die anharmonischen Kraftterme.
+Wobei im linearen Fall nur die harmonischen Lösungen verwendet werden und die Terme mit $\xi^{(2)}$ und weiteren nicht berücksichtigt werden. 
+Genaueres dazu kann in \cite{Butcher_Cotter_1990} gelesen werden.
+Genau da besteht in dem nichtlinearen Ansatz der Unterschied, da dort die anharmonischen Teile 
+nicht vernachlässigt werden können. 
+Bildlich gesprochen werden in diesem Fall die Feder, der positive Kern und das Elektron 
+miteinander verbindet, so weit auseinandergezogen, sodass die Reaktion der Feder nicht mehr 
+Linear ist und auch Randeffekte wichtig werden. 
+Besonders von Interesse ist die Polarisation $P$ welche die Antwort vom Medium von einem 
+eingehenden elektrischen Feld beschreibt. 
+Mathematisch beschrieben wird diese als $P(t)= -N\cdot e\cdot x(t)$, mit $N$ als Teiilchen dichte, 
+$e$ als Ladung und $x(t)$ als Auslenkung des elektrons. 
+Somit lässt sich mit der Lösung von \autoref{eqn:bew} und der Definition der Polarisation 
+diese zu 
+\begin{equation}
+    P =  \epsilon_0 \chi^{(1)}E  \ .
+\end{equation}
+Bestimmen.
+Im nicht harmonischen, also nicht linearen Fall ist dies aber nicht exakt zu bestimmen und 
+eine Taylor-Reihen-Entwicklung wird angewendet. 
+Wodurch sich 
+\begin{equation}
+    \label{eqn:NLP}
+    P = \epsilon_0 \left(\chi^{(1)}E+\chi^{(2)}E^2+\chi^{(3)}E^3+\dots\right)
+\end{equation}
+ergibt. 
+Dort beschreibt $\chi^{(1)}$ die lineare Suszeptibilität und die folgenden $\chi^{(2)}$und $\chi^{(3)}$
+die nichtlinearen Suszeptibilitäten des Mediums \cite{Butcher_Cotter_1990}.
+Das $\chi^{(2)}$ ist hierbei ein Tensor 3. Stufe und besitzt zusätzlich die abhängikeiten 
+$i$ welche die Polarisation beschreibt und $j,k$ welche Komponeneten des Feldes sind.
+Die Unabhängkeit dieser Komponenten lässt sich durch Kirstall- und Permutatios-symetire reduzieren.
+Für den Prozess der Optischen Gleichrichtung ist der $\chi^{(2)}$ Term entscheidend. 
+Dabei ist aber entscheidend, dass dieser Term in betstimmten Fällen wegfällt, 
+wie zum Beispiel bei einem Medium, das inversionssymmetrisch ist. 
+Diese Symmetrieeigenschaft wird auch als Zentrosymmetrie bezeichnet.
+Das kann mithilfe der Inverionsoperation las Symmetrietansformation gezeigt werden vlg.  \cite[Kap. 5.3.2]{Butcher_Cotter_1990}. 
+Das hat zur folge, dass nur 21 der 32 Kristallgruppen für die Generation von THz in frage kommen. 
+
+Des weiteren ist es von vorteil wenn die Polrisation im Frequnzbild betrachtetn würden. 
+Dafür wird Angenommen, dass sich das Elektrisch Feld $E$ aus mehreren Freqzenzkomponenten 
+zusammensetzt, also definiert ist durch
+\begin{equation}
+    \label{eqn:frq}
+    E(t)=E_1e^{i\omega_1 t}+E_2e^{i\omega_2 t} + \dots \ .
+\end{equation}
+Wenn Anschließend \autoref{eqn:frq} in \autoref{eqn:NLP} eingesetzt wird entstehen durch 
+das Quadrieren weitere Frequnenzen wie  die Summenfreqzenu $\omega_1+\omega2$, die Differnzfrequenz 
+$\omega_1-\omega_2$ und die Freqznzveropllungen $2\omega_1,2\omega_2$. 
+Dies wird Drei-Wellen-Mischung genannt, da die zwei Eingangsfelder und das eine ausgangsfeld betrtachtet werden \cite{Boyd2023}. 
+
+
+
 % -----------------------978-3-030-73893-8 in Downloads über TDS Kapitel 37 Lesen
 \section{Optische Gleichrichtung}
 \label{sec:OR}
