@@ -1,10 +1,113 @@
 \chapter{Theory}
 \label{sec:Theo}
+This bachelor's thesis investigates how THz radiation is generated using organic crystals.
+This chapter explains the physical foundations underlying this generation.
+To begin with, \autoref{sec:NLO}
+explains how nonlinear processes are used to generate THz radiation.
+In doing so, the susceptibility is not derived completely from quantum mechanics.
+After that, \autoref{sec:OR} explains how the THz radiation is generated in the crystal.
+In addition, \autoref{sec:PA} explains in more detail why the organic crystals might allow a
+greater crystal thickness for generating the THz radiation.
+The crystals that were used to generate THz radiation in this bachelor's thesis
+are examined in more detail in \autoref{sec:ME}.
+Finally, \autoref{sec:EOS} explains the theory behind the measurement method of the setup.
+
 
 \section{Nonlinear Optics}
+\label{sec:NLO}
+In optics, most phenomena are linear in nature, meaning that, for example, an electric field $E$
+incident on an object is followed by a linear, i.e. equally strong, response, for example of the
+polarization density $P$.
+However, this linear property is lost once the electric field reaches a strength of
+$~3\cdot10^{10}\,\unit{V/m}$.
+Such a field strength can only be reached using lasers, which are indeed used here for this
+thesis \cite{Butcher_Cotter_1990}.
+The nonlinearity becomes apparent when a medium is approximated semiclassically and the linear
+solution is shown first.
+The medium is approximated as a positive nucleus with an electron attached to it.
+An electric field is then applied to this system.
+Here, the positive nucleus can be assumed to be spatially fixed, since the electrons are
+considerably lighter.
+This system can thus be approximated, to first order, as a driven harmonic oscillator.
+This yields the equation of motion
+\begin{equation}
+    \label{eqn:bew}
+    m\left(\frac{\text d^2x}{\text d t^2}+2\Gamma \frac{\text d x}{d t}+\Omega^2\cdot x-(\xi^{(2)}x^2+\xi^{(3)}x^3+\dots)\right)= -e E(t)\,.
+\end{equation}
+Here, $m$ is the mass of the electron, $x$ the displacement from the equilibrium position,
+$\Gamma$ the damping constant, $\Omega$ the natural frequency of the system, and $\xi$ the
+anharmonic force terms.
+In the linear case, only the harmonic solutions are used, and the terms with $\xi^{(2)}$ and
+higher are not taken into account.
+More details on this can be found in \cite{Butcher_Cotter_1990}.
+This is precisely where the nonlinear approach differs, since there the anharmonic terms cannot
+be neglected.
+Figuratively speaking, in this case the spring connecting the positive nucleus and the electron is
+stretched so far apart that the spring's response is no longer linear and edge effects also
+become important.
+Of particular interest is the polarization $P$, which describes the response of the medium to an
+incoming electric field.
+Mathematically, this is described as $P(t)= -N\cdot e\cdot x(t)$, with $N$ as the particle
+density, $e$ as the charge, and $x(t)$ as the displacement of the electron.
+Using the solution of \autoref{eqn:bew} and the definition of the polarization, this can thus be
+\begin{equation}
+    P =  \epsilon_0 \chi^{(1)}E  \ .
+\end{equation}
+determined.
+In the non-harmonic, i.e. nonlinear, case, however, this cannot be determined exactly, and a
+Taylor series expansion is applied.
+As a result
+\begin{equation}
+    \label{eqn:NLP}
+    P = \epsilon_0 \left(\chi^{(1)}E+\chi^{(2)}E^2+\chi^{(3)}E^3+\dots\right)
+\end{equation}
+follows.
+Here, $\chi^{(1)}$ describes the linear susceptibility, and the subsequent $\chi^{(2)}$ and
+$\chi^{(3)}$ describe the nonlinear susceptibilities of the medium \cite{Butcher_Cotter_1990}.
+Here, $\chi^{(2)}$ is a 3rd-rank tensor and additionally has the dependencies $i$, which describes
+the polarization, and $j,k$, which are components of the field.
+The independence of these components can be reduced through crystal and permutation symmetry.
+For the process of optical rectification, the $\chi^{(2)}$ term is decisive.
+It is crucial here, however, that this term vanishes in certain cases, for example for a medium
+that is inversion-symmetric.
+This symmetry property is also referred to as centrosymmetry.
+This can be shown using the inversion operation as a symmetry transformation, cf.
+\cite[Ch. 5.3.2]{Butcher_Cotter_1990}.
+As a result, only 21 of the 32 crystal classes are viable candidates for the generation of THz
+radiation.
+
+Furthermore, it is advantageous to consider the polarization in the frequency domain.
+For this, it is assumed that the electric field $E$ is composed of several frequency components,
+i.e. is defined by
+\begin{equation}
+    \label{eqn:frq}
+    E(t)=E_1e^{i\omega_1 t}+E_2e^{i\omega_2 t} + \dots \ .
+\end{equation}
+If \autoref{eqn:frq} is then substituted into \autoref{eqn:NLP}, squaring produces further
+frequencies such as the sum frequency $\omega_1+\omega2$, the difference frequency
+$\omega_1-\omega_2$, and the frequency doublings $2\omega_1,2\omega_2$.
+This is called three-wave mixing, since the two input fields and the one output field are
+considered \cite{Boyd2023}.
+The problem that now arises, however, is that both beams are generated by the same laser and
+therefore do not have different frequency components from which to determine their difference.
+Here, however, it is crucial that the laser is an ultrashort pulse laser in the fs range, and
+therefore, due to the time-bandwidth uncertainty $\Delta t\cdot \Delta \nu \ge \text{const.}$, has
+a large frequency bandwidth.
+This ultrashort pulse thus has a large bandwidth of frequencies that can mix with one another in
+the three-wave mixing process.
+The following section shows how THz radiation can be generated via optical rectification, using
+difference-frequency generation from a broadband pulse.
+
 % -----------------------978-3-030-73893-8 in Downloads, read TDS chapter 37
 \section{Optical Rectification}
+\label{sec:OR}
 
+
+\section{Phase Matching and Coherence Length}
+\label{sec:PA}
+
+\section{Material Properties}
+\label{sec:ME}
 
 \section{Electro-Optic Sampling}
-
+\label{sec:EOS}

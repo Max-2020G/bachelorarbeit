@@ -81,20 +81,106 @@ zusammensetzt, also definiert ist durch
     E(t)=E_1e^{i\omega_1 t}+E_2e^{i\omega_2 t} + \dots \ .
 \end{equation}
 Wenn Anschließend \autoref{eqn:frq} in \autoref{eqn:NLP} eingesetzt wird entstehen durch 
-das Quadrieren weitere Frequnenzen wie  die Summenfreqzenu $\omega_1+\omega2$, die Differnzfrequenz 
-$\omega_1-\omega_2$ und die Freqznzveropllungen $2\omega_1,2\omega_2$. 
+das Quadrieren weitere Frequnenzen wie  die Summenfrequenz $\omega_1+\omega2$, die Differnzfrequenz 
+$\omega_1-\omega_2$ und die Freqznzverdopllungen $2\omega_1,2\omega_2$. 
 Dies wird Drei-Wellen-Mischung genannt, da die zwei Eingangsfelder und das eine ausgangsfeld betrtachtet werden \cite{Boyd2023}. 
-
-
+Das Problem was sich nun aber egribt ist, dass beide strahlen von dem selben Laser 
+erzeugt werden und so nicht verschiedene Freqzenzkomponenten haben um die differnz von diesen zu 
+bestimmen. 
+Hierbei ist aber entscheidend, dass der Laser ein ultakurzer Puls laser im fs bereich ist 
+und durch die Zeit-Bandbreiten-Unschärfe $\Delta t\cdot \Delta \nu \ge \text{const.}$ daduruch 
+eine große Frequenz Bandbreite besitzt. 
+Somit besitzt dieser Ultrakruze Puls eine große Bandbreite an Frequenzen welche sich in 
+der Drei-Wellen-Mischung mischen können. 
+Im Anschließenden Kapitel wird gezeigt, wie mithilfe von der Differnzfrequenzerzeugung 
+eines Breitbandigen Pulses THz-Strahlung, durch die Optische Gleichrichtung erzeugt werden kan.
 
 % -----------------------978-3-030-73893-8 in Downloads über TDS Kapitel 37 Lesen
+
 \section{Optische Gleichrichtung}
 \label{sec:OR}
+Die Optische Gleichrichtung erzeugt die THz-Strahlung über den NIchtlinearen prozess der 
+Differnzfrequenz wobei hier ein Grenzfall eintritt wenn es die Optische Gleichrichtung ist. 
+Denn dieser Grenzfall ist, wenn die beiden Elektromagnetischen Wellen, welche auf das das 
+Material treffen, also zwei Teile des selben Breitbandigen Nah-Infrarot-Pulses. 
+Dabei haben diese beiden Wellen eine sehr ähnliche Frequenz, somit ist die differnz 
+$\omega_1 - \omega_2$ sehr klein und liegt im bereich der THz. 
+Für die Polarisation, wo nun die beiden elektrischen Felder ein wirken bedeutet dass 
+\begin{equation}
+    P(\omega)=\epsilon_0\chi^{(2)}(\omega=\omega_1-\omega_2)E(\omega_1)E*(\omega_2) \, .
+\end{equation}
+Diese Polarisation bescheibt die bewegung der durch das Feld erzeugten Dipole, wobei diese 
+Dipole wieder ein Elektrisches Feld erzeugen. 
+
+\begin{wrapfigure}[15]{r}{0.45\textwidth}
+  \centering
+  \vspace{-\intextsep}
+  \includegraphics[width=\linewidth]{content/bilder/thz_erz.pdf}
+  \caption{Grafische darstellung der Erzeugung von THz-Strahlunf, wobei nur ein kleiner 
+         THz-Puls erzeugt wird und eine Großteil der Optischen Pulses durch das Medium hindurch dringt \cite{Yu2022}.}
+  \label{fig:erz}
+\end{wrapfigure}
+
+Diese Polarisation wird von einem Teil der NIR Welle erzeugt aber nicht Vollständig absorbiert, 
+was in \autoref{fig:erz} anschaulich dargestellt ist. 
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{content/bilder/thz_erz.pdf}
+%     \caption{Grafische darstellung der Erzeugung von THz-Strahlunf, wobei nur ein kleiner 
+%     THz-Puls erzeugt wird und eine Großteil der Optischen Pulses durch das Medium hindurch dringt \cite{Yu2022}.}
+%     \label{fig:erz}
+% \end{figure}
+\noindent
+Berechnet wird das Elektrische Feld indem die Polarisation zuerst durch eine Fourier rücktransformtion zurrück in den 
+Zeit Raum gebracht wird und anschließend kann durch die Maxwellgleichungen über die 
+Zweite Abhleituung das erzeugte Feld berechnet werden \cite{Yu2022}. 
+Somit ergibt sich für das Elektrische feld  
+\begin{equation}
+    E_\text{THz}\approx \frac{\partial^2P(t)}{\partial t^2}\, .
+\end{equation}
+Damit die beiden Felder die auf den Detektionskristall treffen keine Destruktive Inteferenz 
+erzeugen, muss vorher eine Phasenanpassung durchgeführt werden, was im folgenden erklärt wird.
 \section{Phasenanpassung und Kohärenzlänge}
 \label{sec:PA}
+Ein Problem welches nun autfritt ist, dass die zwei Wellen nicht perfekt in der gleichen 
+Phase in das Medium eintreffen. 
+Dadurch ist es möglich, dass destruktive intferenz entsteht und somit die Intensität der Strahlung 
+darunter leidet. 
+Zum einen müssen nämlich die zwei eintreffenden Wellen und Phase sein und dazu auch die 
+erzeugt THz-Strahlung. 
+Um die zu gewähtleisten werden als Erzeugendes Mediumm Doppeltbrechende Kristalle verwendet, 
+welche auf ihren verschiedenen Achsen verschiedene Brechungsindezies haben und so eine unterschoiedlich 
+Phasenverschiebung. 
+Um nun die Verschibeung anzupassen und geriingfügig zu verbessern, kann der Kristall gedreht werden worduch die Phasen 
+der beiden Felder angepasst werden.
+Dazu ist bei diesem Setup jedoch wichtiger, dass das Kristallmaterial und die 
+Wellenlänge des Pump strahls so gewählt werden, dass die Gruppengeschwindgeit des 
+Pump strahls möglcihst nah an der Phasengeschwindigkeit des THz-Pulses ist. 
+Dahinzu kommt, dass die THz Strahlung über den gesamten Kristall erzeugt wird, also 
+die Strahlung Strecke zurrück legt und dabei auseinanderfließen kann, wenn die Gruppengeschwindgeit des Pump strahls 
+nicht gleich der Phasengeschwindigkeit des Erzeugten THz-Strahls ist. 
+Damit das so sit muss 
+\begin{equation}
+    n_\text g^\text{NIR}(\lambda_\text{pump})= n^\text{THz}(\lambda_\text{THz})
+\end{equation}
+gelten. 
+Das problem dabei ist aber, dass in der Realtität diese Perfekte anpassung nicht möglich ist und 
+die Strahlen über längere Distanzen immer auseinadner laufen und destruktive iNTerferenz bilden 
+ein maß für dieses auseinanderlaufen ist die Kohärenzlänge welche beschreibt über welche 
+entfernung ein Strahl nicht signifikant auseinanderläuft.
+Diese Kohärenzlänge ist durch 
+\begin{equation}
+    l_\text{k}= \frac{c}{2\nu\cdot |n_\text{T}(\nu_\text{THz})-n_\text{g}(\lambda)| }
+\end{equation}
+gegeben \cite{brunner2014thz}.
+Hierbei ist $c$ die Lichgeschwindigkeit im Vakuum, $\nu$ die Frequenz der Erzeugten THz-Strahlung,
+$n_\text{THz}$ der Brechungsindex des Kristalls bei der THz Frequenz 
+und $n_\text{g}$ der Gruppenindex der Zentralwellenlängde des NIR Pulses, welcher definiert ist durch 
+$n_g=n-\lambda\frac{\partial n}{\partial \lambda}$.
+
 
 \section{Materialeigenschaften}
 \label{sec:ME}
 
 \section{Elektro Optisches Samplen}
-\label{sec:EOS}
+\label{sec:TEOS}
