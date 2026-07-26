@@ -136,6 +136,7 @@ Zeit Raum gebracht wird und anschließend kann durch die Maxwellgleichungen übe
 Zweite Abhleituung das erzeugte Feld berechnet werden \cite{Yu2022}. 
 Somit ergibt sich für das Elektrische feld  
 \begin{equation}
+    \label{eqn:ENL}
     E_\text{THz}\approx \frac{\partial^2P(t)}{\partial t^2}\, .
 \end{equation}
 Damit die beiden Felder die auf den Detektionskristall treffen keine Destruktive Inteferenz 
@@ -181,6 +182,51 @@ $n_g=n-\lambda\frac{\partial n}{\partial \lambda}$.
 
 \section{Materialeigenschaften}
 \label{sec:ME}
-
+\newpage
 \section{Elektro Optisches Samplen}
 \label{sec:TEOS}
+Das Eltektro Optische Sampling ist das Messverfahren mit welchem die Generierte THz-Strahlung 
+gemessen wird. 
+Der Entscheidenede Punkt ist, wenn im Detektionskristall, welcher ein nicht inversionssymmetrischer 
+Kristall sein muss, die THz-Strahlung gleichzeitig mit dem Probe-Strahl eintrifft und dort 
+der so genannte Pockels effekt eintritt. 
+Dieser ist ein 2. Ordnung nichtlinearer Porzess, also wird er auch durch \autoref{eqn:ENL} beschrieben. 
+Dieser Efffekt wird durch den von Fokusierten THz-Strahl, genauer gesagt das Elektrisch Feld von diesem, 
+im Kristall ausgelößt und hat zu folge, 
+dass der Kristall Doppeltbrechend wird. 
+Die Stärke der Doppelbrechung ist abhängig von der Intensiität der THz-Strahlung und ist so
+eine Messeinheit für die Intenistät der THz-Strahlung.
+Diese stärke an Doppelbrechung wird in diesem Moment von dem Probe-strahl, welcher eine Wellenlänge 
+von $lambda = 800\,\unit{nm}$ besitzt, Linear Polarisiert ist und eine sehr geringe Puls 
+dauer von einigen fs besitzt, ausgelesen.  
+Das passiert indem er in diesen Kristall eintrifft und die Polarisation durch die Doppelbrechung verschoben wird. 
+Somit wird aus dem Linear-Polarisiertem Licht vom Laser ein Leicht Elliptsch Polastierter 
+Strahl \cite{zheng2023probing}. 
+Dies ist in \autoref{fig:EOS} als änderung nach dem ZnTe zu sehen. 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/bilder/eos_p.png}
+    \caption{THz-Puls mit dem Samplingpuls welche auf den Detektionskristall 
+    treffen und in das EOS setup trifft. 
+    Darunter die Polarisation des Strahls mit und ohne THz-Strahl\,\cite{zheng2023probing}.}
+    \label{fig:EOS}
+\end{figure}
+Anschließend geht der nun veränderte Pummp-Strahl durch eine $\lambda/4$ Platte diese 
+verzögert die Polarisation einer Achse um $90°$ was zur folge hat, dass die Polarisation eines 
+Linear Polarisiertem Strahl ein Perfekter Kreis wäre. 
+In diesem Fall ist die eintreffende Fall jedoch kein Linear Polarisiertes Licht mehr, sondern 
+ein Leich elliptisch Polarisierter Strahl. 
+Das hat zur folge, dass der Resultierende Strahl auch Elliptisch ist und somit 
+nicht die selbe amplitude in der horizontalen und Vertikalen Achse der Polarisation besitzt. 
+Dies wird im folgenden entscheidend. 
+Denn anschließend trifft dieser Strahl auf einen Wollaston Prisma. 
+Ein Wollaston Prisma unterteilt die horizontale und Vertikale Polarisation Räumlich. 
+In \autoref{fig:EOS} ist beispielsweise zu sehen, dass die Vertikale Polarisationsebene 
+nach oben abgelenkt wird und die horizontale nach unten. 
+Wenn nun kein THz-Feld auf den Detektionskristall einweiken würde wäre vor dem 
+Wollaston-Prisma ein Perfekter kreis und beide dieser anteile wären Identisch. 
+Jedoch hat das THz-Feld eine Roation der Polarisation ausgelößt und die beiden anteile 
+sind nicht mehr Identisch. 
+Das hat zur folge, dass die Intensität auf den folgenden Photodioden nicht Identisch ist. 
+Der Unterschied den diese beiden Photodioden Messen ist Proportional zu der Feldstärke der 
+THz-Strahlung.
