@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(mkdir -p \"c:\\\\Users\\\\Maxma\\\\Documents\\\\GitHub\\\\bachelorarbeit\\\\.claude\\\\commands\")",
-      "Bash(git diff *)"
+      "Bash(git diff *)",
+      "Bash(wsl -e bash -lc 'cd '\\\\''/mnt/c/Users/Maxma/Documents/GitHub/bachelorarbeit/content/plots'\\\\'' && ls data | cat -A | head -1; /home/max/.local/conda/envs/toolbox/bin/python -c \" *)",
+      "Bash(wsl -e bash -lc \"cd '/mnt/c/Users/Maxma/Documents/GitHub/bachelorarbeit/content/plots' && pwd && ls -la data/ | cat\")"
     ],
     "additionalDirectories": [
       "c:\\Users\\Maxma\\Documents\\GitHub\\bachelorarbeit\\.claude"

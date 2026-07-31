@@ -1,6 +1,80 @@
 \chapter{Auswertung und Diskussion}
 \label{sec:aus}
 
+Im folgenden werden die expermientellen erkenntinsse aufgeführt und anschließend diskutiert. 
+Zu beginn wird in \autoref{sec:SN} das Rauschen des Aufbaus festgestellt und die abhängigkeit 
+von der Zeitkonstante des Lock-In-Verstärkers geprüft. 
+
+\section{Bestimmung des Rauschuntergrunds}
+\label{sec:SN}
+Um das Rauschen zu prüfen wird ausschließdlich der Probe-Strahl durch den Aufbau gelassen und 
+der Pump-Strahl geblockt. 
+Dadurch entsteht im Detektionskristall keine änderung der Polarisations und die beiden 
+anteile die vom Wollaston-Prisma erzeugt werden sind identisch. 
+Somit sollte das gemessene Signal Theoretisch 0 Ergeben. 
+Dazu wurde dies einmal ganz ohne beleuchtung durchh den Laser durchgefühhrt um den unterschied 
+zwischen Rauschen nur durch den aufbau zu sehen und das Rauschen welches durchh den laser selber 
+hinzugefüt wird weil dieser auch nicht pefekt funktioniert.
+In \autoref{fig:tc} ist zu sehhen, dass dies nicht so ist und eine Restspannung übrig ist. 
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{content/plots/pdf/time_constant_oi.pdf}
+        \caption{Ohne Beleuchtung.}
+        \label{fig:tco}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{content/plots/pdf/time_constant_wi.pdf}
+        \caption{Mit Beleuchtung.}
+        \label{fig:tcw}
+    \end{subfigure}
+    \caption{Messerte der Rauschspanung mit Fit.}
+    \label{fig:tc}
+\end{figure}
+Diese Spannung ist das Rauchhen welches gemessen wird. 
+Das Rauschen entsteht einerseits durchh thermisches Rauschhen in der Photodioden oder 
+durch diffuses Licht welchhes auf eine der Photodioden trifft. 
+Zum anderen entsteth rauschen durch die Eleketronik welche auch in sich nicht ideal ist und 
+Signale erzegt die nicht zum echten mess signal gehören. 
+Um das erste zu Reduzieren wird der Lock-In-Verstärker gepaart mit einem Chopper genutzt wie in 
+\autoref{sec:EOS} erklärt wurde. 
+Um das umgebungsrauschen zu vermindern wird die Zeitkonstante $\tau$, welche angiebt über welchhe 
+Zeit der Tiefpassfilter Integriert erhöt. 
+Anschließend wird für 20 s Gemessen und über diese Zeit gemittelt. 
+Die daraus Resultierenden werte sind in \autoref{fig:tc} zu sehhen, wobei in \autoref{fig:tco} 
+die Daten ohne beleuchtung durch den Laser zu sehen ist und in \autoref{fig:tcw} mit beleuchtung. 
+Dazu wurde bei beiden ein Fit der Form $A/ \sqrt{\tau}+b$ durchhgeführt wobei $A$ die Rauschamplitude 
+der Messung ist und $b$ der Offset des Untergunds. Für die Fit werte ergben sich 
+\begin{align}
+    A_\text{mi} =&\SI{6.36+-0.476e-8}{\volt} & b_\text{mi} =&\SI{5.45+-1.148e-8}{\volt} \\
+    A_\text{oi} =&\SI{3.85+-0.390e-8}{\volt} & b_\text{oi} =&\SI{6.32+-0.939e-8}{\volt}\, .
+\end{align}
+Es zeigt sichh, dass die Rauschamplitude mit Beleuchtung ungefähr um den Faktor 2 größer ist, als 
+der ohne Beleuchtung. 
+Erklären lässt sich das dadurch, dass der Laser statistische Prozesse 
+wie das Schrotrauschhen auslößt und somit eine weitere untsicherheit in die messung hereinbringt.
+Der Offsetwert $b$ ist nahzu identisch und liegt innerhalb des Fehlers. 
+Somit kann angenommen werden, dass das Grundrauschen nur von der Eleketronik abhängt unnd nicht 
+vom Laser Strahl abhängt.
+
+Dazu ist in \autoref{fig:tcc} ein vergleich von den beiden Messreihen zu sehen. 
+Dort ist zu sehen, dass zu begin der Unterschied noch gut zu sehen ist, aber mit höherer 
+Zeitkonstante immer weniger wird und ab ungeähr einer Zeitkonstante von $0,8\,\unit{s}$ nicht 
+mehr überhuapt sicher festgestellt werden kann. 
+Somit ergibt sich für die Restlichen Messungen, dass eine Zeitkonstante von mindestens 
+$0,8\,\unit{s}$ gewählt werden sollte.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/plots/pdf/time_constant_combined.pdf}
+    \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
+    \label{fig:tcc}
+\end{figure}
+Es lässt sich also zeigen, dass für die folgende Messung eine Zeitkonstante $\tau \ge 0,8\,\unit{s}$ sinvoll 
+ist, damit das Rauschhen durch zum beispiel schrotrauschen hehrausgemittelt wird und eine 
+möglichst Rauschfreie Messung durchgeführt werden kann.
 \section{ZnTe}
 
 \section{OH1}

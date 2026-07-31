@@ -10,21 +10,20 @@ In addition, \autoref{sec:PA} explains in more detail why the organic crystals m
 greater crystal thickness for generating the THz radiation.
 The crystals that were used to generate THz radiation in this bachelor's thesis
 are examined in more detail in \autoref{sec:ME}.
-Finally, \autoref{sec:EOS} explains the theory behind the measurement method of the setup.
+Finally, \autoref{sec:TEOS} explains the theory behind the measurement method of the setup.
 
 
 \section{Nonlinear Optics}
 \label{sec:NLO}
 In optics, most phenomena are linear in nature, meaning that, for example, an electric field $E$
-incident on an object is followed by a linear, i.e. equally strong, response, for example of the
-polarization density $P$.
+incident on an object is followed by a linear, i.e. equally strong, response.
 However, this linear property is lost once the electric field reaches a strength of
-$~3\cdot10^{10}\,\unit{V/m}$.
-Such a field strength can only be reached using lasers, which are indeed used here for this
+$~3\cdot10^{11}\,\unit{V/m}$.
+Such a field strength can only be reached using lasers, which are used here for this
 thesis \cite{Butcher_Cotter_1990}.
 The nonlinearity becomes apparent when a medium is approximated semiclassically and the linear
 solution is shown first.
-The medium is approximated as a positive nucleus with an electron attached to it.
+The medium is approximated as a positive nucleus with an electron attached to it via a spring.
 An electric field is then applied to this system.
 Here, the positive nucleus can be assumed to be spatially fixed, since the electrons are
 considerably lighter.
@@ -37,8 +36,8 @@ This yields the equation of motion
 Here, $m$ is the mass of the electron, $x$ the displacement from the equilibrium position,
 $\Gamma$ the damping constant, $\Omega$ the natural frequency of the system, and $\xi$ the
 anharmonic force terms.
-In the linear case, only the harmonic solutions are used, and the terms with $\xi^{(2)}$ and
-higher are not taken into account.
+In the linear case, only the harmonic solutions are used, and the terms with $\xi^{(2)}$,
+$\xi^{(3)}$, and higher are not taken into account.
 More details on this can be found in \cite{Butcher_Cotter_1990}.
 This is precisely where the nonlinear approach differs, since there the anharmonic terms cannot
 be neglected.
@@ -49,7 +48,8 @@ Of particular interest is the polarization $P$, which describes the response of 
 incoming electric field.
 Mathematically, this is described as $P(t)= -N\cdot e\cdot x(t)$, with $N$ as the particle
 density, $e$ as the charge, and $x(t)$ as the displacement of the electron.
-Using the solution of \autoref{eqn:bew} and the definition of the polarization, this can thus be
+Using the solution of \autoref{eqn:bew} in the linear, harmonic case, and the definition of the
+polarization, this can thus be
 \begin{equation}
     P =  \epsilon_0 \chi^{(1)}E  \ .
 \end{equation}
@@ -61,9 +61,8 @@ As a result
     \label{eqn:NLP}
     P = \epsilon_0 \left(\chi^{(1)}E+\chi^{(2)}E^2+\chi^{(3)}E^3+\dots\right)
 \end{equation}
-follows.
-Here, $\chi^{(1)}$ describes the linear susceptibility, and the subsequent $\chi^{(2)}$ and
-$\chi^{(3)}$ describe the nonlinear susceptibilities of the medium \cite{Butcher_Cotter_1990}.
+follows. Here, $\chi^{(1)}$ describes the linear susceptibility, and the subsequent $\chi^{(2)}$
+and $\chi^{(3)}$ describe the nonlinear susceptibilities of the medium \cite{Butcher_Cotter_1990}.
 Here, $\chi^{(2)}$ is a 3rd-rank tensor and additionally has the dependencies $i$, which describes
 the polarization, and $j,k$, which are components of the field.
 The independence of these components can be reduced through crystal and permutation symmetry.
@@ -84,7 +83,7 @@ i.e. is defined by
     E(t)=E_1e^{i\omega_1 t}+E_2e^{i\omega_2 t} + \dots \ .
 \end{equation}
 If \autoref{eqn:frq} is then substituted into \autoref{eqn:NLP}, squaring produces further
-frequencies such as the sum frequency $\omega_1+\omega2$, the difference frequency
+frequencies such as the sum frequency $\omega_1+\omega_2$, the difference frequency
 $\omega_1-\omega_2$, and the frequency doublings $2\omega_1,2\omega_2$.
 This is called three-wave mixing, since the two input fields and the one output field are
 considered \cite{Boyd2023}.
@@ -99,15 +98,134 @@ The following section shows how THz radiation can be generated via optical recti
 difference-frequency generation from a broadband pulse.
 
 % -----------------------978-3-030-73893-8 in Downloads, read TDS chapter 37
+
 \section{Optical Rectification}
 \label{sec:OR}
+Optical rectification generates the THz radiation via the nonlinear process of difference
+frequency generation.
+Optical rectification occurs when a limiting case arises.
+This limiting case is when the two electromagnetic waves that hit the material.
+Here, two parts of the same broadband near-infrared pulse.
+Have a very similar frequency, and thus the difference $\omega_1 - \omega_2$ is very small and
+lies in the THz range.
+For the polarization, on which the two electric fields now act, this means
+\begin{equation}
+     P(\omega)=\epsilon_0\chi^{(2)}(\omega=\omega_1-\omega_2)E(\omega_1)E*(\omega_2) \, .
+\end{equation}
+This polarization describes the motion of the dipoles generated by the field, whereby these
+dipoles in turn generate an electric field.
 
+\begin{wrapfigure}[15]{r}{0.45\textwidth}
+  \centering
+  \vspace{-\intextsep}
+  \includegraphics[width=\linewidth]{content/bilder/thz_erz.pdf}
+  \caption{Graphical representation of the generation of THz radiation, where only a small
+         THz pulse is generated and most of the optical pulse passes through the medium
+         \cite{Yu2022}.}
+  \label{fig:erz}
+\end{wrapfigure}
 
+This polarization is generated by part of the NIR wave but is not fully absorbed, which is
+illustrated in \autoref{fig:erz}.
+
+\noindent
+The electric field is calculated by first transforming the polarization back into the time domain
+via an inverse Fourier transform, after which the generated field can be calculated from
+Maxwell's equations via the second derivative \cite{Yu2022}.
+This results in the electric field
+\begin{equation}
+    \label{eqn:ENL}
+    E_\text{THz}\approx \frac{\partial^2P(t)}{\partial t^2}\, .
+\end{equation}
+In order for the two fields that hit the detection crystal not to produce destructive
+interference, phase matching must be carried out beforehand, which is explained in the following.
 \section{Phase Matching and Coherence Length}
 \label{sec:PA}
+A problem that now arises is that the two waves do not arrive at the medium perfectly in the same
+phase.
+As a result, destructive interference can occur, causing the intensity of the radiation to
+suffer.
+On the one hand, the two incoming waves must be in phase, and so must the generated THz
+radiation.
+To ensure this, birefringent crystals are used as the generating medium.
+These have different refractive indices along their different axes, and thus a different phase
+shift.
+To adjust this shift and improve it slightly, the crystal can be rotated, which adjusts the
+phases of the two fields.
+However, what is more important in this setup is that the crystal material and the wavelength of
+the pump beam are chosen such that the group velocity of the pump beam is as close as possible to
+the phase velocity of the THz pulse.
+In addition, the THz radiation is generated throughout the entire crystal, meaning the radiation
+travels a certain distance and can walk off if the group velocity of the pump beam is not equal
+to the phase velocity of the generated THz beam.
+For this to be the case,
+\begin{equation}
+    n_\text g^\text{NIR}(\lambda_\text{pump})= n^\text{THz}(\lambda_\text{THz})
+\end{equation}
+must hold. The problem here, however, is that in reality this perfect matching is not possible,
+and over longer distances the beams always walk off from each other and produce destructive
+interference; a measure of this walk-off is the coherence length, which describes over what
+distance a beam does not walk off significantly.
+This coherence length is given by
+\begin{equation}
+     l_\text{k}= \frac{c}{2\nu\cdot |n_\text{T}(\nu_\text{THz})-n_\text{g}(\lambda)| }
+\end{equation}
+\cite{brunner2014thz}.
+Here, $c$ is the speed of light in vacuum, $\nu$ is the frequency of the generated THz radiation,
+$n_\text{THz}$ is the refractive index of the crystal at the THz frequency, and $n_\text{g}$ is the
+group index at the central wavelength of the NIR pulse, which is defined by
+$n_g=n-\lambda\frac{\partial n}{\partial \lambda}$.
+
 
 \section{Material Properties}
 \label{sec:ME}
-
+\newpage
 \section{Electro-Optic Sampling}
-\label{sec:EOS}
+\label{sec:TEOS}
+Electro-optic sampling is the measurement method used to measure the generated THz radiation.
+The decisive point is when, in the detection crystal, which must be a non-centrosymmetric
+crystal, the THz radiation arrives simultaneously with the probe beam, triggering the so-called
+Pockels effect there.
+This is a second-order nonlinear process, and is therefore also described by \autoref{eqn:ENL}.
+This effect is triggered in the crystal by the focused THz beam, or more precisely by its
+electric field, and results in the crystal becoming birefringent.
+The strength of the birefringence depends on the intensity of the THz radiation and thus serves
+as a measure of the intensity of the THz radiation.
+This strength of birefringence is read out at this moment by the probe beam, which has a
+wavelength of $\lambda = 800\,\unit{nm}$, is linearly polarized, and has a very short pulse
+duration of a few fs.
+This happens as it enters this crystal and its polarization is shifted by the birefringence.
+The linearly polarized light from the laser thus becomes slightly elliptically polarized light.
+Beam \cite{zheng2023probing}.
+This can be seen in \autoref{fig:EOS} as the change after the ZnTe.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/bilder/eos_p.png}
+    \caption{THz pulse together with the sampling pulse, which hit the detection crystal and
+    enter the EOS setup.
+    Below, the polarization of the beam with and without the THz beam\,\cite{zheng2023probing}.}
+    \label{fig:EOS}
+\end{figure}
+Afterwards, the now-altered pump beam passes through a $\lambda/4$ plate. This delays the
+polarization of one axis by $90°$, which means that the polarization of a linearly polarized
+beam would become a perfect circle.
+In this case, however, the incoming beam is no longer linearly polarized light, but a slightly
+elliptically polarized beam.
+As a result, the resulting beam is also elliptical and therefore does not have the same amplitude
+along the horizontal and vertical polarization axes.
+This becomes important in what follows.
+This is because this beam then hits a Wollaston prism.
+A Wollaston prism spatially separates the horizontal and vertical polarization.
+In \autoref{fig:EOS}, for example, it can be seen that the vertical polarization plane is
+deflected upwards and the horizontal one downwards.
+If no THz field were acting on the detection crystal, there would be a perfect circle before the
+Wollaston prism, and both of these components would be identical.
+However, the THz field has caused a rotation of the polarization, and the two components are no
+longer identical.
+As a result, the intensity at the following photodiodes is not identical.
+The difference measured by these two photodiodes is proportional to the field strength of the
+THz radiation.
+This proportionality can be determined to be
+\begin{equation}
+    \Delta I  = I_0 k L n_0^3 r_{41}E_\text{THz}\propto E_\text{THz}\ .
+\end{equation}

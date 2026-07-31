@@ -83,21 +83,56 @@ mit dem THz-Strahl räumlich überlappt und auf den Detektionskristall trifft.
 
 \section{Elektro-Optisches Sampling und Signalverabeitung}
 \label{sec:EOS}
-\cite{10.1063/1.5047659}
-Als letzten Schritt trifft der THz-Strahl gemeinsam mit dem Probe strahl in den Detektionskristall ein 
-in diesem wird imm folgenden über den Pockelseffekt ein Messbares signal erzeugt, wie in \autoref{sec:TEOS} 
-genauer beschrieben wird.
-Um das Signal zu Rauschen Verhähltnis zu erhöhen wurden verschiedene vorkehrungen getroffen, diese werden im folgenden 
-erläutert.
-Als erste Rausch unterdrückungsmethodik wird ein Lock-In-Verstärker genutzt, welcher an den Choopper, 
-der in \autoref{fig:thz-aufbau} zusehen ist angeschlossen ist. 
-Das Kozept beruht darauf, dass das Mess Signal auf die Eingestellte Frequenz des 
-Choppers moduliert wird. 
-Es wird als immer nur das Signal Akzeptiert, wenn das Signal Synchron mit dem Chopper ankommt. 
-Es wird also das gemessene Signal mit einer Rechteckfunktion, welche die Frequenz des Choppers 
-besitzt Mutlipliziert. 
-Anschließend wir das Signal durch einen Tiefpassfilter geleitet 
 
+Als letzten Schritt trifft der THz-Strahl gemeinsam mit dem Probe-Strahl in den Detektionskristall ein 
+in diesem wird im Folgenden über den Pockelseffekt ein messbares Signal erzeugt, wie in \autoref{sec:TEOS} 
+genauer beschrieben wird.\\ \\
+Um das Signal-Rausch-Verhältnis zu erhöhen, wurden verschiedene Vorkehrungen getroffen. Diese werden im Folgenden 
+erläutert.
+Als erste Rauschunterdrückungsmethodik wird ein Lock-in-Verstärker genutzt, welcher an den Chopper 
+der in \autoref{fig:thz-aufbau} zusehen ist, angeschlossen ist. 
+Das Konzept beruht darauf, dass das Messsignal auf die eingestellte Frequenz des 
+Chopper moduliert wird. 
+Es wird also das gemessene Signal mit einem Referenzsignal, welches die Frequenz des Choppers 
+besitzt mutlipliziert.
+Dadurch landet der Signalanteil, welcher dieselbe Frequenz wie das Referenzsignal besitzt 
+bei ungefähr $0\,\unit{Hz}$. 
+Die restlichen Signale, welche nicht der Referenzfrequenz entsprechen, werden auf eine andere Frequenz 
+verschoben. 
+Anschließend wird das Signal durch einen Tiefpassfilter geleitet. 
+Dieser filtert lässt nur ein sehr schmales Frequenzband um $0\,\unit{Hz}$ passieren.
+Somit bleiben Signale mit einer niedrigen Frequenz erhalten und der Rest wird unterdrückt. 
+Dabei integriert der Tiefpassfilter über eine längere Zeit $\tau$. 
+$\tau$ wird auch Zeitkonstante gennant. 
+Durch diese Integration mittelt sich alles heraus, was nicht zur Referenzfrequenz gehört. 
+Als Proportionalität für das Rauschen ergibt sich 
+\begin{equation}
+    U_\text{Rauschen} \approx A/\sqrt{\tau}+b\,.
+\end{equation} Wobei U die vom Lock-in ausgegebene Rauschspannung ist. 
+$A$ ist hierbei eine Fit Konstane,  
+welche die Rauschamplitude beschreibt, $b$ ebenso eine Fit konstante welche den Offset, also das Grundrauschen 
+welches nicht durch die erhöhung der Zeitkonstante änderbar ist.
+$\tau$ ist die genutzte Zeitkonstante. 
+Dabei bleibt die Amplitude des Signals gleich.
+Dies wird in \autoref{sec:SN} für den Aufbau geprüft.
+Dazu kommt, dass das Rauschen mit einer Proportionalität von $1/f$ abfällt \cite{10.1063/1.5047659}. 
+Also wird eine möglichst hohe Chopperfrequenz angestrebt. 
+Hier in diesem Aufbau wurde eine Frequenz von $1500\,\unit{Hz}$ eingestellt.\\ \\
+Um systematisch Fehler zu vermindern, wird eine Purge-Box um den Teil des Aufbaus platziert 
+in welchem THz-Strahlung propagiert. 
+Die Purge-Box wird eingerichtet, da THz-Strahlung mit den Wassermolekülen in der Luft interagiert. 
+Diese Interaktion findet statt, da Wasserdampf scharfe Rotations-Absorptionslinien für THz-Strahlung besitzt. 
+Die Kanten sind sehr schmalbandig, also gelten sie nur für einen kleinen Frequenzbereich. 
+Dies hat eine Verzögerung des THz-Signals zur Folge. 
+Wegen der Schmaalen Bandbreite dieser Resonanz für die dadurch verbundende starke Resonanz 
+zu zeitlich verzögterten gedämpften Nachschwingungen, welche nach dem hauptpuls als 
+Echo in den Messdaten auftreten.
+Dieses Echo fungiert dann nur noch als Rauschen und verschlechtert das Messergebnis. 
+Als Lösung für dieses Problem wird eine Box um den in \autoref{fig:thz-aufbau} zu sehenden Teil platziert. 
+Anschließend wird diese Box mit Trockenluft gefüllt, welche explizit keinen Wasserdampf enthält und so 
+die Interaktion nicht stattdindet. 
+Als Alternative könnte diese Box auch mit Stickstoff gefüllt werden oder in dieser ein Vakuum 
+erzeugt werden, was aber deutlich aufwendiger und unpraktikabler ist.
 
 
 
