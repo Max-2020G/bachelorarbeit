@@ -4,7 +4,6 @@ In dieser Bachelorarbeit wird untersucht, wie mithilfe von organischen Kristalle
 Dabei wird in diesem Kapitel erläutert, was die physikalischen Grundlagen für diese Erzeugung sind.
 Zu Beginn wird in \autoref{sec:NLO} 
 erklärt, wie die nichtlinearen Prozesse genutzt werden, um THz-Strahlung zu erzeugen. 
-Wobei hierbei nicht die Suszeptibilität komplett aus der Quantenmechanik hergeleitet wird.
 Danach wird in \autoref{sec:OR} erklärt, wie die THz-Strahlung im Kristall erzeugt wird. 
 Dazu wird in \autoref{sec:PA} genauer erläutert, warum die organischen Kristalle eine größere
 Dicke des Kristalls zum Erzeugen der THz-Strahlung zulassen könnten.
@@ -15,11 +14,12 @@ Zum Abschluss wird in \autoref{sec:TEOS} die Theorie hinter dem Messverfahren de
 
 \section{Nichtlineare Optik}
 \label{sec:NLO}
-In der Optik sind die meisten Phänomene linearer Natur, das heißt, dass zum Beispiel 
-auf ein elektrisches Feld $E$, welches auf ein Objekt trifft, eine lineare, also gleich 
-starke Antwort folgt. 
-Diese lineare Eigenschaft geht jedoch verloren, wenn das elektrische Feld eine 
-stärke von $~3\cdot10^{11}\,\unit{V/m}$ erreicht. 
+In der Optik sind die meisten Phänomene linearer Natur, das heißt, 
+wenn an ein Medium ein externes Elektrisches Fled $E$ angelegt 
+wird die elektrische Polarisation 
+eine Lineare Antwort auf dieses angelegte Feld geben.
+Doch wenn das elektrische Feld eine 
+stärke von $~3\cdot10^{11}\,\unit{V/m}$ oder mehr erreicht, werden nicht Lineare beiträge wichtig. 
 So eine Stärke ist nur mit der Nutzung von Lasern erreichbar, welche 
 hier für diese Arbeit genutzt werden \cite{Butcher_Cotter_1990}. 
 Die Nichtlinearität wird sichtbar, wenn ein Medium semiklassisch genähert wird und zuerst 
@@ -34,9 +34,11 @@ Es ergibt sich die Bewegungsgleichung
     \label{eqn:bew}
     m\left(\frac{\text d^2x}{\text d t^2}+2\Gamma \frac{\text d x}{d t}+\Omega^2\cdot x-(\xi^{(2)}x^2+\xi^{(3)}x^3+\dots)\right)= -e E(t)\,.
 \end{equation}
-Hier ist $m$ die Masse des Elektrons, $x$ die Auslenkung aus der Ruhelage, $\Gamma$ die Dämpfungskonstante 
+Hier ist $m$ die Masse des Elektrons, $x$ die Auslenkung aus der Ruhelage, $\Gamma$ 
+die Dämpfungskonstante 
 $\Omega$ die Eigenfrequenz des Systems und $\xi$ die anharmonischen Kraftterme.
-Wobei im linearen Fall nur die harmonischen Lösungen verwendet werden und die Terme mit $\xi^{(2)}$, $\xi^{(3)}$ und die weiteren nicht berücksichtigt werden. 
+Wobei im linearen Fall nur die harmonischen Lösungen verwendet werden und die Terme mit 
+$\xi^{(2)}$, $\xi^{(3)}$ und die weiteren nicht berücksichtigt werden. 
 Genaueres dazu kann in \cite{Butcher_Cotter_1990} gelesen werden.
 Genau da besteht in dem nichtlinearen Ansatz der Unterschied, da dort die anharmonischen Teile 
 nicht vernachlässigt werden können. 
@@ -46,7 +48,7 @@ Linear ist und auch Randeffekte wichtig werden.
 Besonders von Interesse ist die Polarisation $P$ welche die Antwort vom Medium von einem 
 eingehenden elektrischen Feld beschreibt. 
 Mathematisch beschrieben wird diese als $P(t)= -N\cdot e\cdot x(t)$, mit $N$ als Teilchen dichte, 
-$e$ als Ladung und $x(t)$ als Auslenkung des elektrons definiert. 
+$e$ als Ladung des Elektrons und $x(t)$ als Auslenkung des elektrons aus der Ruhelage definiert. 
 Somit lässt sich mit der Lösung von \autoref{eqn:bew} im Linearen, Harmonischen Fall, und der Definition der Polarisation 
 zu 
 \begin{equation}
@@ -58,9 +60,9 @@ eine Taylor-Reihen-Entwicklung wird angewendet.
 Wodurch sich 
 \begin{equation}
     \label{eqn:NLP}
-    P = \epsilon_0 \left(\chi^{(1)}E+\chi^{(2)}E^2+\chi^{(3)}E^3+\dots\right)
+    P = \epsilon_0 \left(\chi^{(1)}_{i,j_1}E+\chi^{(2)}_{i,j_2}E^2+\chi^{(3)}_{i,j_3}E^3+\dots\right)
 \end{equation}
-ergibt. Dort beschreibt $\chi^{(1)}$ die lineare Suszeptibilität und die folgenden $\chi^{(2)}$und $\chi^{(3)}$
+ergibt. Dort beschreibt $\chi^{(1)}$ die lineare Suszeptibilität und die folgenden $\chi^{(2)}$, $\chi^{(3)}$,
 die nichtlinearen Suszeptibilitäten des Mediums \cite{Butcher_Cotter_1990}.
 Das $\chi^{(2)}$ ist hierbei ein Tensor 3. Stufe und besitzt zusätzlich die abhängikeiten 
 $i$ welche die Polarisation beschreibt, und $j,k$ welche Komponenten des Feldes sind.
@@ -166,6 +168,7 @@ ein Maß für dieses Auseinanderlaufen ist die Kohärenzlänge, welche beschreib
 entfernung ein Strahl nicht signifikant auseinanderläuft.
 Diese Kohärenzlänge ist durch 
 \begin{equation}
+    \label{eqn:koh}
      l_\text{k}= \frac{c}{2\nu\cdot |n_\text{T}(\nu_\text{THz})-n_\text{g}(\lambda)| }
 \end{equation}
 gegeben \cite{brunner2014thz}.
@@ -176,8 +179,41 @@ $n_g=n-\lambda\frac{\partial n}{\partial \lambda}$.
 
 
 \section{Materialeigenschaften}
-\label{sec:ME}
-\newpage
+\label{sec:ME}Für die THz-Erzeugung sind spezielle Eigenschaften wie das Nichtvorhandensein einer Zentrosymmetrie 
+entscheidend. 
+Deshalb wurden die Materialien sehr bedacht gewählt. Die wichtigen Eigenschaften von diesen 
+werden im Folgenden beschrieben.
+\subsection{ZnTe}
+Zinktellurid, oder kurz ZnTe, ist ein bewährter THz-Erzeuger, der sehr etabliert in der 
+THz-Strahlungserzeugung ist. 
+Die Kristallstruktur von ZnTe ist in \autoref{fig:ZnTe} zu sehen.
+\begin{wrapfigure}[18]{r}{0.45\textwidth}
+  \centering
+  \vspace{-\intextsep}
+  \includegraphics[width=\linewidth]{content/bilder/ZnTe.png}
+  \caption{Grafische Darstellung der Gitterstruktur von ZnTe \cite{enwiki:1327029761}.}
+  \label{fig:ZnTe}
+\end{wrapfigure}
+Die Gitterkonstante von ZnTe beträgt $a = b = c = \SI{6.101}{\angstrom}$ und gehört zu der Raumgruppe 
+F43m \cite{Brach}. 
+Der Kristall ist <110> Orientiert. 
+Dazu ist der nicht lineare Koeffizient bei $\SI{800}{nm}$-Strahlung $r_{41}= \SI{4.04}{pm/V}$ \cite{wu2014comparison}.
+Der Brechungsindex von ZnTe bei der Phasenanpassungsbedingung $\nu^*$ und $\lambda^*$ ist 
+$n^*_\text{g}=n^*_\text{THz}\approx \SI{3.285}{}$ bei dme generieretem 
+THz-Strahl von $ \nu^*\approx \SI{2.55}{THz}$ und einem Pump-Strahl mit einer Wellenlänge von $\lambda^*\approx \SI{788}{nm}$. 
+Diese hier angenommene Wellenlänge ist wiederum nicht exakt die des $\SI{800}{nm}$-Lasers, welcher in diesem Aufbau 
+genutzt wird. 
+Deshalb werden in der Realität die Werte minimal abweichen.
+Somit lässt sich mit der Leichten Abweichung und \autoref{eqn:koh} eine Kohärenzlänge von ungefähr 
+$l_\text{k}\approx \SI{3}{mm}$ ableiten.
+Die Transversale Phonenresonanzfrequenz ist bei $\Omega_\text{TO}/2\pi=\SI{5.32}{THz}$. 
+Nahe dieser Frequenz absorbieren die Phonen einen großen Teil der Leistung und die THz-Generation 
+ist deutlich geschwächt \cite{Tomasino}.
+Zusammenfassend ist ZnTe aber ein sehr guter THz-Erzeuger, da das Erzeugungsspektrum selbst bei nicht 
+Perfekter Phasenanpassungsfrequnz sehr gut für die Thz-Generation ist.
+\subsection{OH1}
+\subsection{BNA}
+
 \section{Elektro Optisches Samplen}
 \label{sec:TEOS}
 Das elektrooptische Sampling ist das Messverfahren, mit welchem die generierte THz-Strahlung 
