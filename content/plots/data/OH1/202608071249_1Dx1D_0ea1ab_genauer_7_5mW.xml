@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<devices>
+    <prmdev name="PI Stage Pump" unit="ps">
+        <parameters>
+            <from>5</from>
+            <to>-5</to>
+            <step>-0.05</step>
+        </parameters>
+        <metadata>
+            <meta_maxParam>10.0</meta_maxParam>
+            <meta_maxVelocity>250</meta_maxVelocity>
+            <meta_minParam>-10.0</meta_minParam>
+        </metadata>
+    </prmdev>
+    <msrdev name="Lock-In" unit="V">
+        <measurements>5</measurements>
+        <metadata>
+            <meta_chan>0</meta_chan>
+            <meta_samplingRate>1674.107177734375</meta_samplingRate>
+            <meta_timeConstant>0.10001575201749802</meta_timeConstant>
+        </metadata>
+    </msrdev>
+</devices>

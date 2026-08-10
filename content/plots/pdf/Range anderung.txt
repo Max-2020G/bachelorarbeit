@@ -1,0 +1,4 @@
+Range wurde ab 85mW geändet ab da war die Leistung auf einmal doppelt so hoch. 
+de Werte ab da wurden im Powermeter eigentlich als das doppelte angezigt. 
+Ab 82mW springen wir auf 230mW das it dann mit dem anderen Messkopf gemessen.
+Die Werte von dem messkopf stehen in leistung_umrechnen.txt in KLammern bei range 850mW.
