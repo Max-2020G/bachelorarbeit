@@ -1,7 +1,7 @@
 \chapter{Theorie}
 \label{sec:Theo}
 In dieser Bachelorarbeit wird untersucht, wie mithilfe von organischen Kristallen THz-Strahlung erzeugt wird. 
-Dabei wird in diesem Kapitel erläutert, was die physikalischen Grundlagen für diese Erzeugung sind.
+Dabei wird in diesem Kapitel erläutert, welches die physikalischen Grundlagen für diese Erzeugung sind.
 Zu Beginn wird in \autoref{sec:NLO} 
 erklärt, wie die nichtlinearen Prozesse genutzt werden, um THz-Strahlung zu erzeugen. 
 Danach wird in \autoref{sec:OR} erklärt, wie die THz-Strahlung im Kristall erzeugt wird. 
@@ -14,74 +14,73 @@ Zum Abschluss wird in \autoref{sec:TEOS} die Theorie hinter dem Messverfahren de
 
 \section{Nichtlineare Optik}
 \label{sec:NLO}
-In der Optik sind die meisten Phänomene linearer Natur, das heißt, 
-wenn an ein Medium ein externes Elektrisches Fled $E$ angelegt 
-wird die elektrische Polarisation 
-eine Lineare Antwort auf dieses angelegte Feld geben.
+In der Optik sind die meisten Phänomene linearer Natur, dies bedeutet, 
+dass wenn an ein Medium ein externes Elektrisches Fled $E$ angelegt 
+wird, gibt die elektrische Polarisation 
+eine lineare Antwort auf dieses angelegte Feld.
 Doch wenn das elektrische Feld eine 
-stärke von $~3\cdot10^{11}\,\unit{V/m}$ oder mehr erreicht, werden nicht Lineare beiträge wichtig. 
+Stärke von $~3\cdot10^{11}\,\unit{V/m}$ oder mehr erreicht, werden nicht-lineare Beiträge wichtig. 
 So eine Stärke ist nur mit der Nutzung von Lasern erreichbar, welche 
 hier für diese Arbeit genutzt werden \cite{Butcher_Cotter_1990}. 
 Die Nichtlinearität wird sichtbar, wenn ein Medium semiklassisch genähert wird und zuerst 
 die lineare Lösung gezeigt wird. 
 Das Medium wird genähert als ein positiver Kern und ein daran durch eine Feder befestigtes Elektron. 
-An dieses System wird dann ein elektrisches Feld angelegt. 
 Dabei kann der positiver Kern als räumlich fest angenommen werden, da die 
-Elektronen deutlich leichter sind. 
-Somit kann dieses System in erster Näherung als getriebener harmonischer Oszillator genähert werden. 
-Es ergibt sich die Bewegungsgleichung 
+Elektronen deutlich leichter sind.
+An dieses System wird ein elektrisches Feld angelegt. 
+Dieses System kann in erster Näherung als getriebener harmonischer Oszillator genähert werden. 
+Es ergibt sich aufgrund der Coulomb Wechselwirkung zwischen dem Elektron und dem $E$-Feld die Bewegungsgleichung 
 \begin{equation}
     \label{eqn:bew}
-    m\left(\frac{\text d^2x}{\text d t^2}+2\Gamma \frac{\text d x}{d t}+\Omega^2\cdot x-(\xi^{(2)}x^2+\xi^{(3)}x^3+\dots)\right)= -e E(t)\,.
+    m\left(\frac{\text d^2x}{\text d t^2}+2\Gamma \frac{\text d x}{\text d t}+\Omega^2\cdot x-\left(\xi^{(2)}x^2+\xi^{(3)}x^3+\dotsb\right)\right)= -e E(t)\,.
 \end{equation}
 Hier ist $m$ die Masse des Elektrons, $x$ die Auslenkung aus der Ruhelage, $\Gamma$ 
-die Dämpfungskonstante 
+die Dämpfungskonstante, 
 $\Omega$ die Eigenfrequenz des Systems und $\xi$ die anharmonischen Kraftterme.
-Wobei im linearen Fall nur die harmonischen Lösungen verwendet werden und die Terme mit 
-$\xi^{(2)}$, $\xi^{(3)}$ und die weiteren nicht berücksichtigt werden. 
-Genaueres dazu kann in \cite{Butcher_Cotter_1990} gelesen werden.
-Genau da besteht in dem nichtlinearen Ansatz der Unterschied, da dort die anharmonischen Teile 
+Wobei im linearen Fall nur die harmonischen Lösungen, also $xi^{(i)}= \forall i \ge 2$, verwendet werden. 
+%Genaueres dazu kann in \cite{Butcher_Cotter_1990} gelesen werden.
+Dies ist der Unterschied zum nichtlinearen Ansatz, da dort die anharmonischen Teile 
 nicht vernachlässigt werden können. 
-Bildlich gesprochen werden in diesem Fall die Feder, ddie den positive Kern und das Elektron 
-miteinander verbindet, so weit auseinandergezogen, sodass die Reaktion der Feder nicht mehr 
-Linear ist und auch Randeffekte wichtig werden. 
-Besonders von Interesse ist die Polarisation $P$ welche die Antwort vom Medium von einem 
+Bildlich gesprochen wird in diesem Fall die Feder, die den positive Kern und das Elektron 
+miteinander verbindet, so weit auseinandergezogen, dass die Reaktion der Feder nicht mehr 
+Linear ist.\\ 
+Die Polarisation $P$ ist wiederum nicht so einfach im Federbild darstellbar. 
+Die Polarisation beschreibt die Antwort vom Medium von einem 
 eingehenden elektrischen Feld beschreibt. 
-Mathematisch beschrieben wird diese als $P(t)= -N\cdot e\cdot x(t)$, mit $N$ als Teilchen dichte, 
-$e$ als Ladung des Elektrons und $x(t)$ als Auslenkung des elektrons aus der Ruhelage definiert. 
-Somit lässt sich mit der Lösung von \autoref{eqn:bew} im Linearen, Harmonischen Fall, und der Definition der Polarisation 
-zu 
+Mathematisch beschrieben wird diese als $P(t)= -N\cdot e\cdot x(t)$, mit $N$ als Teilchendichte, 
+$e$ als Ladung des Elektrons und $x(t)$ als Auslenkung des Elektrons aus der Ruhelage. 
+Somit lässt sich mit der Lösung von \eqref{eqn:bew} im Linearen, harmonischen Fall, die Polarisation 
 \begin{equation}
-    P =  \epsilon_0 \chi^{(1)}E  \ .
+    P =  \epsilon_0 \chi^{(1)}E  
 \end{equation}
-Bestimmen.
-Im nicht harmonischen, also nicht linearen Fall ist dies aber nicht exakt zu bestimmen und 
+bestimmen.
+Im nicht harmonischen, also nicht-linearen Fall ist dies aber nicht exakt zu bestimmen und 
 eine Taylor-Reihen-Entwicklung wird angewendet. 
 Wodurch sich 
 \begin{equation}
     \label{eqn:NLP}
-    P = \epsilon_0 \left(\chi^{(1)}_{i,j_1}E+\chi^{(2)}_{i,j_2}E^2+\chi^{(3)}_{i,j_3}E^3+\dots\right)
+    P = \epsilon_0 \left(\chi^{(1)}_{i,j_1}E+\chi^{(2)}_{i,j_2}E^2+\chi^{(3)}_{i,j_3}E^3+\dotsb\right)
 \end{equation}
 ergibt. Dort beschreibt $\chi^{(1)}$ die lineare Suszeptibilität und die folgenden $\chi^{(2)}$, $\chi^{(3)}$,
 die nichtlinearen Suszeptibilitäten des Mediums \cite{Butcher_Cotter_1990}.
-Das $\chi^{(2)}$ ist hierbei ein Tensor 3. Stufe und besitzt zusätzlich die abhängikeiten 
-$i$ welche die Polarisation beschreibt, und $j,k$ welche Komponenten des Feldes sind.
-Die Unabhängigkeit dieser Komponenten lässt sich durch Kristall- und Permutationssymmetrie reduzieren.
+Das $\chi^{(2)}$ ist hierbei ein Tensor dritter Stufe und besitzt zusätzlich die Abhängikeiten 
+$i$ welche die Polarisation beschreibt, und $j$ welche Komponenten des Feldes sind.
+Die Unabhängigkeit dieser Komponenten lässt sich durch Kristall- und Permutationssymmetrien reduzieren.
 Für den Prozess der optischen Gleichrichtung ist der $\chi^{(2)}$ Term entscheidend. 
-Dabei ist aber entscheidend, dass dieser Term in bestimmten Fällen wegfällt, 
-wie zum Beispiel bei einem Medium, das inversionssymmetrisch ist. 
-Diese Symmetrieeigenschaft wird auch als Zentrosymmetrie bezeichnet.
-Das kann mithilfe der Inversionsoperation als Symmetrietransformation gezeigt werden vlg. \cite[Kap. 5.3.2]{Butcher_Cotter_1990}. 
-Das hat zur Folge, dass nur 21 der 32 Kristallgruppen für die Generation von THz infrage kommen. 
+Dabei ist entscheidend, dass dieser Term in bestimmten Fällen wegfällt, 
+zum Beispiel bei einem Medium welches inversionssymmetrisch ist. \\
+Das kann mithilfe der Inversionsoperation als Symmetrietransformation gezeigt werden \cite[Kap. 5.3.2]{Butcher_Cotter_1990}. 
+Diese Symmetrieeigenschaft wird auch als Zentrosymmetrie bezeichnet, 
+welche in nur 21 der 32 Kristallgruppen vorliegt und somit für die Generation von THz infrage kommen. 
 
-Des Weiteren ist es von Vorteil, wenn die Polarisation im Frequenzbild betrachtet wird. 
+Des Weiteren ist es von Vorteil, wenn die Polarisation im Frequenzbild betrachtet wird um zum Beispiel die Differenzfrequenz zu nutzen. 
 Dafür wird angenommen, dass sich das elektrische Feld $E$ aus mehreren Frequenzkomponenten 
 zusammensetzt, also definiert ist durch
 \begin{equation}
     \label{eqn:frq}
     E(t)=E_1e^{i\omega_1 t}+E_2e^{i\omega_2 t} + \dots \ .
 \end{equation}
-Wenn anschließend \autoref{eqn:frq} in \autoref{eqn:NLP} eingesetzt wird, entstehen durch 
+Wenn anschließend \eqref{eqn:frq} in \eqref{eqn:NLP} eingesetzt wird, entstehen durch 
 das Quadrieren erzeugt weitere Frequenzen wie die Summenfrequenz $\omega_1+\omega_2$, die Differenzfrequenz 
 $\omega_1-\omega_2$ und die Frequenzverdopplungen $2\omega_1,2\omega_2$. 
 Dies wird Drei-Wellen-Mischung genannt, da die zwei Eingangsfelder und das eine Ausgangsfeld betrachtet werden \cite{Boyd2023}. 
@@ -93,24 +92,24 @@ und durch die Zeit-Bandbreiten-Unschärfe $\Delta t\cdot \Delta \nu \ge \text{co
 eine große Frequenzbandbreite besitzt. 
 Somit besitzt dieser ultrakurze Puls eine große Bandbreite an Frequenzen, welche sich in 
 der Drei-Wellen-Mischung mischen können. 
-Im anschließenden Kapitel wird gezeigt, wie mithilfe der Differenzfrequenzerzeugung 
-eines breitbandigen Pulses THz-Strahlung, durch die optische Gleichrichtung erzeugt werden kann.
+% Im anschließenden Kapitel wird gezeigt, wie mithilfe der Differenzfrequenzerzeugung 
+% eines breitbandigen Pulses THz-Strahlung, durch die optische Gleichrichtung erzeugt werden kann.
 
 % -----------------------978-3-030-73893-8 in Downloads über TDS Kapitel 37 Lesen
 
 \section{Optische Gleichrichtung}
 \label{sec:OR}
 Die optische Gleichrichtung erzeugt die THz-Strahlung über den nicht linearen Prozess der 
-Differnzfrequenz. 
+Differenzfrequenz. 
 Wobei die optische Gleichrichtung auftritt, wenn ein Grenzfall auftritt. 
-Dieser Grenzfall ist, wenn die beiden elektromagnetischen Wellen, welche auf das 
-Material treffen. 
-Hier zwei Teile des selben breitbandigen Nah-Infrarot-Pulses. 
-Eine sehr ähnliche Frequenz besitzen und, somit die differnz 
+Dieser liegt vor, wenn die beiden elektromagnetischen Wellen, welche auf das 
+Material treffen, 
+hier zwei Teile des selben breitbandigen Nah-Infrarot-Pulses, 
+eine sehr ähnliche Frequenz besitzen und, somit die Differenz 
 $\omega_1 - \omega_2$ sehr klein ist und im Bereich der THz liegt. 
-Für die Polarisation, wo nun die beiden elektrischen Felder einwirken, bedeutet das 
+Für die Polarisation, bei der die beiden elektrischen Felder betrachtet werden, bedeutet das 
 \begin{equation}
-     P(\omega)=\epsilon_0\chi^{(2)}(\omega=\omega_1-\omega_2)E(\omega_1)E*(\omega_2) \, .
+     P(\omega)=\epsilon_0\chi^{(2)}(\omega\approx\omega_1-\omega_2)E(\omega_1)E^*(\omega_2) \, .
 \end{equation}
 Diese Polarisation beschreibt die Bewegung der durch das Feld erzeugten Dipole, wobei diese 
 Dipole wieder ein elektrisches Feld erzeugen. 
@@ -120,7 +119,7 @@ Dipole wieder ein elektrisches Feld erzeugen.
   \vspace{-\intextsep}
   \includegraphics[width=\linewidth]{content/bilder/thz_erz.pdf}
   \caption{Grafische Darstellung der Erzeugung von THz-Strahlung, wobei nur ein kleiner 
-         THz-Puls erzeugt wird und ein Großteil der optischen Pulse durch das Medium 
+         THz-Puls erzeugt wird und ein Großteil des optischen Pulses durch das Medium 
          hindurch dringt \cite{Yu2022}.}
   \label{fig:erz}
 \end{wrapfigure}
@@ -129,16 +128,16 @@ Diese Polarisation wird von einem Teil der NIR-Welle erzeugt, aber nicht vollst�
 was in \autoref{fig:erz} anschaulich dargestellt ist. 
 
 \noindent
-Berechnet wird das elektrische Feld, indem die Polarisation zuerst durch eine Fourier-Rücktransformation zurück in den 
-Zeit Raum gebracht wird und anschließend kann durch die Maxwellgleichungen über die 
-Zweite Ableitung, das erzeugte Feld berechnet werden \cite{Yu2022}. 
+Berechnet wird das elektrische Feld, indem die Polarisation zuerst durch eine Fourier-Rücktransformation in die 
+Zeitdomäne gebracht wird und anschließend durch die Maxwellgleichungen über die 
+zweite Ableitung das erzeugte Feld berechnet werden \cite{Yu2022}. 
 Somit ergibt sich für das elektrische Feld
 \begin{equation}
     \label{eqn:ENL}
     E_\text{THz}\approx \frac{\partial^2P(t)}{\partial t^2}\, .
 \end{equation}
 Damit die beiden Felder, die auf den Detektionskristall treffen, keine destruktive Interferenz 
-erzeugen, muss vorher eine Phasenanpassung durchgeführt werden, was im Folgenden erklärt wird.
+erzeugen, muss vorher eine Phasenanpassung durchgeführt werden, dies wird im Folgenden erklärt.
 \section{Phasenanpassung und Kohärenzlänge}
 \label{sec:PA}
 Ein Problem, welches nun auftritt, ist, dass die zwei Wellen nicht perfekt in der gleichen 

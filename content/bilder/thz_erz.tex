@@ -1,0 +1,39 @@
+\documentclass[tikz, border=10pt, class=scrbook, 11pt]{standalone}
+
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage[
+  math-style=ISO,
+  bold-style=ISO,
+  sans-style=italic,
+  nabla=upright,
+  partial=upright,
+]{unicode-math}
+\setmathfont{Latin Modern Math}
+\usepackage{optikz}
+\usetikzlibrary{shapes.arrows}
+
+\begin{document}
+\begin{tikzpicture}
+\definecolor{tugrun}{HTML}{639A00}
+\definecolor{tuora}{HTML}{FF9100}
+
+    \node[draw, very thick, minimum width=2cm, minimum height=4cm, align = center]
+        (medium) at (0,0) {$\chi^{(2)}$\\ \\ Nichtlineares \\Medium};
+    \node[single arrow, draw= tugrun,ultra thick, minimum width=1cm, minimum height=1.5cm]
+        at (-2,0) {};  
+    \node[anchor=north] at (-2,-0.5){Optischer \\ Puls};
+    \node[single arrow, anchor = west, draw= tuora,ultra thick, minimum width=1cm, minimum height=1.5cm, scale=0.6]
+        at (1.5,0.5) {};
+    \node[anchor=west] at (1.2,1.1){THz Puls};
+    \node[single arrow, anchor = west, draw= tugrun,ultra thick, minimum width=1cm, minimum height=1.5cm, scale = 0.8]
+        at (1.5,-0.5) {};  
+    \node[anchor=west] at (1.2,-1.3){Optischer  Puls};
+
+
+\end{tikzpicture}
+\end{document}

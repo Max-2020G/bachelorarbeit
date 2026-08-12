@@ -133,7 +133,7 @@ for i, f in tqdm(enumerate(filenames)):
     fig.savefig(f"build/{savedir}/transients/{f}.pdf")
     plt.close()
 
-with open(f"data/amplitude/amplitudes.txt", "w") as amp_file:
+with open(f"data/amplitude/amplitudes_{savedir}.txt", "w") as amp_file:
     amp_file.write("# file\tamplitude / V\n")
     for name, amplitude in amplitudes:
         amp_file.write(f"{name}\t{amplitude:.6e}\n")

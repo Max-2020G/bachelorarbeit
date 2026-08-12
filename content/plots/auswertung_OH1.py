@@ -39,6 +39,30 @@ for i, path in enumerate(filenames):
     fig.savefig(f"pdf/{savedir}/{dateiname}.pdf")
     plt.close(fig)
 
+#--------------------------------------Plot einzelner fft
+for i, path in enumerate(filenames):
+    if i not in selected_indices:
+        continue
+    t, u= np.genfromtxt(path, unpack=True)
+    dateiname = "_".join(
+        os.path.basename(path).removesuffix(".txt").removesuffix("_pulse").split("_")[3:])
+    dateiname = dateiname.replace("_",",")
+
+
+    fig, ax = plt.subplots(layout="constrained")
+
+    spektrum = np.abs(rfft(u))
+    freq = rfftfreq(len(t), np.mean(np.abs(np.diff(t))))
+    #freq[:36] *= -1
+    spektrum_norm = spektrum / np.max(spektrum)
+    ax.plot(freq, spektrum_norm, "-", color="#639A00")
+    ax.set_xlabel("f / THZ")
+    ax.set_ylabel("|FFT|")
+    ax.set_xlim(np.min(freq),np.max(freq))
+    ax.grid()
+    fig.savefig(f"pdf/{savedir}/{dateiname}_fft.pdf")
+    plt.close(fig)
+
 #---------------------------------------Plot Zusammen
 fig, ax = plt.subplots(layout="constrained")
 offset = 0.00001
