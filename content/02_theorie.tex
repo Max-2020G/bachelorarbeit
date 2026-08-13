@@ -106,10 +106,10 @@ Dieser liegt vor, wenn die beiden elektromagnetischen Wellen, welche auf das
 Material treffen, 
 hier zwei Teile des selben breitbandigen Nah-Infrarot-Pulses, 
 eine sehr ähnliche Frequenz besitzen und, somit die Differenz 
-$\omega_1 - \omega_2$ sehr klein ist und im Bereich der THz liegt. 
+$\omega = \omega_1 - \omega_2$ sehr klein ist und im Bereich der THz liegt. 
 Für die Polarisation, bei der die beiden elektrischen Felder betrachtet werden, bedeutet das 
 \begin{equation}
-     P(\omega)=\epsilon_0\chi^{(2)}(\omega\approx\omega_1-\omega_2)E(\omega_1)E^*(\omega_2) \, .
+     P(\omega)=\epsilon_0\chi^{(2)}(\omega=\omega_1-\omega_2)E(\omega_1)E^*(\omega_2) \, .
 \end{equation}
 Diese Polarisation beschreibt die Bewegung der durch das Feld erzeugten Dipole, wobei diese 
 Dipole wieder ein elektrisches Feld erzeugen. 
@@ -140,108 +140,110 @@ Damit die beiden Felder, die auf den Detektionskristall treffen, keine destrukti
 erzeugen, muss vorher eine Phasenanpassung durchgeführt werden, dies wird im Folgenden erklärt.
 \section{Phasenanpassung und Kohärenzlänge}
 \label{sec:PA}
-Ein Problem, welches nun auftritt, ist, dass die zwei Wellen nicht perfekt in der gleichen 
-Phase in das Medium eintreffen. 
-Dadurch ist es möglich, dass destruktive Interferenz entsteht und somit die Intensität der Strahlung 
-darunter leidet. 
+Die Laser im Aufbau erzeugen aber kein so ideales Elektrisches Feld wie vorher angenommen. 
+Dadurch entsteht eine Phasenverschiebung zwischen dem Pump strahl und dem generierten THz. 
+Dadurch ist es möglich, dass destruktive Interferenz entsteht und die Intensität der Strahlung 
+geringer ausfällt. 
 Zum einen müssen nämlich die zwei eintreffenden Wellen in Phase sein, und dazu auch die 
 erzeugt THz-Strahlung. 
 Um die zu gewährleisten, werden als erzeugendes Medium doppeltbrechende Kristalle verwendet. 
-Dieses hat auf ihren verschiedenen Achsen verschiedene Brechungsindizes und so eine unterschiedlich 
+Dieses hat auf ihren verschiedenen Achsen verschiedene Brechungsindizes und erzeugt so eine unterschiedliche 
 Phasenverschiebung. 
-Um nun die Verschiebung anzupassen und geringfügig zu verbessern, kann der Kristall gedreht werden, wodurch die Phasen 
-der beiden Felder angepasst werden.
-Dazu ist bei diesem Setup jedoch wichtiger, dass das Kristallmaterial und die 
+Um die Verschiebung anzupassen, kann der Kristall gedreht werden, wodurch die Phasen 
+der beiden Felder angepasst werden. \\ \\
+Entscheidend ist, dass das Kristallmaterial und die 
 Wellenlänge des Pumpstrahls so gewählt werden, dass die Gruppengeschwindigkeit des 
-Pumpstrahl ist möglichst nah an der Phasengeschwindigkeit des THz-Pulses. 
-Dazu kommt, dass die THz-Strahlung über den gesamten Kristall erzeugt wird, also 
+Pumpstrahls möglichst nah an der Phasengeschwindigkeit des THz-Pulses ist. 
+Innerhalb des Kristalls wird nicht nur an einem Punkt THz-Strahlung erzeugt, also 
 die Strahlung Strecke zurücklegt und dabei auseinanderfließen kann, wenn die Gruppengeschwindigkeit des Pumpstrahls 
 nicht gleich der Phasengeschwindigkeit des erzeugten THz-Strahls ist. 
-Damit das so ist muss 
+ausschlaggebend sind die Brechungsindizes bei der Wellenlänge des Pump-Strahls $n_g^\text{NIR}$ 
+und $n^\text{THz}$ bei der Wellenlänge von THz-Strahlung, zwischen denen  
 \begin{equation}
-    n_\text g^\text{NIR}(\lambda_\text{pump})= n^\text{THz}(\lambda_\text{THz})
+    \label{eqn:brech}
+    n_\text g^\text{NIR}(\lambda_\text{Pump})= n^\text{THz}(\lambda_\text{THz})
 \end{equation}
-gelten. Das Problem dabei ist aber, dass in der Realität diese perfekte Anpassung nicht möglich ist und 
-die Strahlen über längere Distanzen immer auseinanderlaufen und destruktive Interferenz bilden 
-ein Maß für dieses Auseinanderlaufen ist die Kohärenzlänge, welche beschreibt, über welche 
-entfernung ein Strahl nicht signifikant auseinanderläuft.
-Diese Kohärenzlänge ist durch 
+gelten muss. In der Realität ist diese perfekte Anpassung aber nicht möglich und 
+die Pulse laufen über längere Distanzen immer auseinander, wodurch der erzeugte Puls auch 
+auseinanderläft und so die Maxima und Minima verschwimmen. 
+Wie weit ein Puls stabil bleibt ist durch die Kohärenzlänge gegeben.
+Diese Kohärenzlänge $l_\text{k}$ ist durch 
 \begin{equation}
     \label{eqn:koh}
-     l_\text{k}= \frac{c}{2\nu\cdot |n_\text{T}(\nu_\text{THz})-n_\text{g}(\lambda)| }
+     l_\text{k}= \frac{c}{2\nu\cdot |n^\text{THz}(\nu_\text{THz})-n^\text{NIR}_\text{g}(\lambda_\text{Pump})| }
 \end{equation}
 gegeben \cite{brunner2014thz}.
-Hierbei ist $c$ die Lichtgeschwindigkeit im Vakuum, $\nu$ die Frequenz der erzeugten THz-Strahlung,
-$n_\text{THz}$ der Brechungsindex des Kristalls bei der THz Frequenz 
-und $n_\text{g}$ der Gruppenindex der Zentralwellenlänge des NIR-Pulses, welcher definiert ist durch 
-$n_g=n-\lambda\frac{\partial n}{\partial \lambda}$.
+Hierbei ist $c$ die Lichtgeschwindigkeit im Vakuum und $\nu$ die Frequenz der erzeugten THz-Strahlung.
 
 
 \section{Materialeigenschaften}
-\label{sec:ME}Für die THz-Erzeugung sind spezielle Eigenschaften wie das Nichtvorhandensein einer Zentrosymmetrie 
-entscheidend. 
-Deshalb wurden die Materialien sehr bedacht gewählt. Die wichtigen Eigenschaften von diesen 
-werden im Folgenden beschrieben.
-\subsection{ZnTe}
-Zinktellurid, oder kurz ZnTe, ist ein bewährter THz-Erzeuger, der sehr etabliert in der 
-THz-Strahlungserzeugung ist. 
-Die Kristallstruktur von ZnTe ist in \autoref{fig:ZnTe} zu sehen.
+\label{sec:ME}
+Wie in dem vorangegangenen Kapitel beschrieben, müssen die Materialien verschiedene Eigenschaften besitzen um 
+THz Effektiv zu erzeugen. 
+In dieser Bachelorarbeit werden ZnTe, OH1 und BNA genutzt und im folgenden kurz vorgestellt.
+
+% Für die THz-Erzeugung sind spezielle Eigenschaften wie das Nichtvorhandensein einer Zentrosymmetrie 
+% entscheidend. 
+% Deshalb wurden die Materialien sehr bedacht gewählt. Die wichtigen Eigenschaften von diesen 
+% werden im Folgenden beschrieben.
+\subsection{Zinktellurid}
+Zinktellurid, ist ein anorganischen Kristall, welcher in dieser Arbeit zur THz Generation und Detektion genutzt wird. 
+Die Kristallstruktur von ZnTe ist in \autoref{fig:ZnTe} zu sehen, wobei Zink Orange und Tellur Blau gekennzeichnet ist. 
 \begin{wrapfigure}[18]{r}{0.45\textwidth}
   \centering
   \vspace{-\intextsep}
   \includegraphics[width=\linewidth]{content/bilder/ZnTe.png}
-  \caption{Grafische Darstellung der Gitterstruktur von ZnTe \cite{enwiki:1327029761}.}
+  \caption{Grafische Darstellung der Gitterstruktur von ZnTe. 
+  Wobei Zink Orange und Tellur Blau gekennzeichnet ist \cite{enwiki:1327029761}.}
   \label{fig:ZnTe}
 \end{wrapfigure}
-Die Gitterkonstante von ZnTe beträgt $a = b = c = \SI{6.101}{\angstrom}$ und gehört zu der Raumgruppe 
-F43m \cite{Brach}. 
-Der Kristall ist <110> Orientiert. 
+Die Gitterkonstanten von ZnTe betragen $a = b = c = \SI{6.101}{\angstrom}$. Der Kristall gehört zu der Raumgruppe 
+F43m. 
+und ist <110> orientiert \cite{Brach}. 
 Dazu ist der nicht lineare Koeffizient bei $\SI{800}{nm}$-Strahlung $r_{41}= \SI{4.04}{pm/V}$ \cite{wu2014comparison}.
-Der Brechungsindex von ZnTe bei der Phasenanpassungsbedingung $\nu^*$ und $\lambda^*$ ist 
-$n^*_\text{g}=n^*_\text{THz}\approx \SI{3.285}{}$ bei dme generieretem 
-THz-Strahl von $ \nu^*\approx \SI{2.55}{THz}$ und einem Pump-Strahl mit einer Wellenlänge von $\lambda^*\approx \SI{788}{nm}$. 
-Diese hier angenommene Wellenlänge ist wiederum nicht exakt die des $\SI{800}{nm}$-Lasers, welcher in diesem Aufbau 
+Die Brechungsindizes gemäß \eqref{eqn:brech} betragen $n^*_\text{g}=n^*_\text{THz}\approx \SI{3.285}{}$ bei 
+$ \nu^*\approx \SI{2.55}{THz}$ und $\lambda^*\approx \SI{788}{nm}$ \cite{Hier fehlt Quelle}. 
+Diese hier angenommene Wellenlänge ist wiederum nicht exakt die des $\SI{808}{nm}$-Lasers, welcher in diesem Aufbau 
 genutzt wird. 
 Deshalb werden in der Realität die Werte minimal abweichen.
-Somit lässt sich mit der Leichten Abweichung und \autoref{eqn:koh} eine Kohärenzlänge von ungefähr 
-$l_\text{k}\approx \SI{3}{mm}$ ableiten.
-Die Transversale Phonenresonanzfrequenz ist bei $\Omega_\text{TO}/2\pi=\SI{5.32}{THz}$. 
+Die Kohärenzlänge beträgt 
+$l_\text{k}\approx \SI{3}{mm}$.
+Die transversale Phonenresonanzfrequenz ist $\Omega_\text{TO}/2\pi=\SI{5.32}{THz}$. 
 Nahe dieser Frequenz absorbieren die Phonen einen großen Teil der Leistung und die THz-Generation 
 ist deutlich geschwächt \cite{Tomasino}.
-Zusammenfassend ist ZnTe aber ein sehr guter THz-Erzeuger, da das Erzeugungsspektrum selbst bei nicht 
-Perfekter Phasenanpassungsfrequnz sehr gut für die Thz-Generation ist.
+% Zusammenfassend ist ZnTe aber ein sehr guter THz-Erzeuger, da das Erzeugungsspektrum selbst bei nicht 
+% Perfekter Phasenanpassungsfrequnz sehr gut für die Thz-Generation ist.
 \subsection{OH1}
 \subsection{BNA}
 
-\section{Elektro Optisches Samplen}
+\section{Elektrooptische Detektion}
 \label{sec:TEOS}
-Das elektrooptische Sampling ist das Messverfahren, mit welchem die generierte THz-Strahlung 
-gemessen wird. 
-Der entscheidende Punkt ist, wenn im Detektionskristall, welcher ein nicht inversionssymmetrischer 
-Kristall sein muss, die THz-Strahlung gleichzeitig mit dem Probe-Strahl eintrifft und dort 
-der sogenannte Pockelseffekt eintritt. 
-Dieser ist ein nichtlinearer Prozess 2. Ordnung , also wird er auch durch \autoref{eqn:ENL} beschrieben. 
-Dieser Effekt wird durch den von fokussierten THz-Strahl, genauer gesagt das elektrische Feld von diesem, 
-im Kristall ausgelöst und hat zur Folge, 
-dass der Kristall doppeltbrechend wird. 
-Die Stärke der Doppelbrechung ist abhängig von der Intensität der THz-Strahlung und ist so
-eine Messeinheit für die Intensität der THz-Strahlung.
-Diese Stärke an Doppelbrechung wird in diesem Moment von dem Probe-strahl, welcher eine Wellenlänge 
-von $\lambda = 800\,\unit{nm}$ besitzt, linear polarisiert ist und eine sehr geringe Puls 
-dauer von einigen fs besitzt, ausgelesen. 
-Das passiert, indem er in diesen Kristall eintrifft und die Polarisation durch die Doppelbrechung verschoben wird. 
-Somit wird aus dem linear polarisierten Licht vom Laser ein leicht elliptisch polarisiertes Licht. 
-Strahl \cite{zheng2023probing}. 
-Dies ist in \autoref{fig:EOS} als Änderung nach dem ZnTe zu sehen. 
+Die elektrooptische Detektion ist ein Messverfahren, mit welchem die generierte THz-Strahlung 
+Zeit aufgelößt gemessen werden kann. 
+Die Detektion startet im Detektionskristall, welcher ein nicht inversionssymmetrischer 
+Kristall sein muss. In diesem wird der THz-Strahl und der Detektions-Strahl Räumlich und Zeitlich überlappt. 
+Wobei der Detektionsstrahl eine deutlich geringere Intensität als der THz-Puls besizt.
+Durch das Elektrische Feld im Kristall tritt der Pockels Effekt auf.
+Dieser ist ein nichtlinearer Prozess Zweiter Ordnung, und wird durch durch \autoref{eqn:NLP} beschrieben. 
+Durch diesen wird der Kristall doppeltbrechend,  
+die Stärke der Doppelbrechung ist abhängig von der Intensität der THz-Strahlung. 
+Durch die Doppelbrechung wird die Polarisation von dem Detektionsstrahl gedreht. 
+Somit wird aus der linearen polarisation des Lichts vom Laser eine elliptische polarisiertion \cite{zheng2023probing}. 
+Der THz-Puls ist hierbei mehrere ps lang und der Detektionspuls nur $\approx\SI{30}{fs}$ dadurch kann der deutlich kürzere Detektionspuls 
+den längeren THz-Puls abtasten.
+\autoref{fig:EOS} zeigt schematisch den Aufbau einer Elektrooptischen Detektion, wobei sich die Strahlen von Links nach Rechts bewegen. 
+Die Pfeile zeigen die Polarisation des Pulses an verschiedenen Stellen.
+als Änderung nach dem ZnTe zu sehen. 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{content/bilder/eos_p.png}
-    \caption{THz-Puls mit dem Samplingpuls, welche auf den Detektionskristall 
-    treffen und in das EOS-setup trifft. 
-    Darunter die Polarisation des Strahls mit und ohne THz-Strahl\,\cite{zheng2023probing}.}
+    \caption{Schematischer Aufbau der Elektrooptischen Detektion \cite{zheng2023probing}.
+    Oben ist der Pulas gang von Links nach Rechts zu sehen, wobei der Detetkionspuls und Thzpuls gleichzeitig durch den Aufbau gehen. 
+    Der Aufbau besteht in dieser Reihenfolge aus einem ZnTe Kristall, einer $\lambda/4$-Platte, eine Wollaston strahlteiler und Zwei Photodioden. 
+    Unter dem Aufbau ist schematisch die Polarisation des Pulses einmal mit und ohne den THzpuls zu sehen und wie diese sich über den Aufbau verhählt.}
     \label{fig:EOS}
 \end{figure}
-Anschließend geht der nun veränderte Pumpstrahl durch eine $\lambda/4$-Platte. Diese 
+Anschließend geht der nun veränderte Detektionsstrahl durch eine $\lambda/4$-Platte. Diese 
 verzögert die Polarisation einer Achse um $90°$ was zur Folge hat, dass die Polarisation eines 
 Linear polarisiertem Strahl ein perfekter Kreis wäre. 
 In diesem Fall ist der eintreffende Fall jedoch kein linear polarisiertes Licht mehr, sondern 
@@ -249,19 +251,22 @@ ein leicht elliptisch polariserter Strahl.
 Das hat zur Folge, dass der resultierende Strahl auch elliptisch ist und somit 
 nicht dieselbe Amplitude in der horizontalen und vertikalen Achse der Polarisation besitzt. 
 Dies wird im Folgenden entscheidend. 
-Denn anschließend trifft dieser Strahl auf ein Wollaston-Prisma. 
-Ein Wollaston-Prisma unterteilt die horizontale und vertikale Polarisation räumlich. 
-In \autoref{fig:EOS} ist beispielsweise zu sehen, dass die vertikale Polarisationsebene 
-nach oben abgelenkt wird und die horizontale nach unten. 
-Wenn nun kein THz-Feld auf den Detektionskristall einwirken würde, wäre vor dem 
-Wollaston-Prisma ein perfekter Kreis und beide dieser Anteile wären identisch. 
-Jedoch hat das THz-Feld eine Rotation der Polarisation ausgelöst und die beiden Anteile 
-sind nicht mehr Identisch. 
-Das hat zur Folge, dass die Intensität auf den folgenden Photodioden nicht identisch ist. 
-Der Unterschied, den diese beiden Photodioden messen, ist proportional zu der Feldstärke der 
+Anschließend trifft dieser Strahl auf ein Wollaston-Prisma, 
+dieser unterteilt die horizontale und vertikale Polarisation räumlich. 
+Diese abgelenkten Strahlen werden auf die Photodioden gelenkt.
+Wenn kein THz-Feld auf den Detektionskristall trifft, ist die Polarisation vor dem 
+Wollaston-Prisma ein perfekter Kreis und beide dieser Polarisationsanteile sind identisch. 
+Jedoch hat das THz-Feld eine Rotation der Polarisation ausgelöst und die Anteile 
+sind nicht mehr identisch. 
+Somit ist die Intensität auf den Photodioden nicht gleich. 
+Der Intensitätsunterschied, den die Photodioden messen, ist proportional zur Feldstärke der 
 THz-Strahlung. 
-Diese Proportionalität kann bestimmt werden zu 
+Diese Proportionalität ist gegeben durch
 \begin{equation}
-    \Delta I  = I_0 k L n_0^3 r_{41}E_\text{THz}\propto E_\text{THz}\ .
+    \symup{\Delta} I  =  \frac{2\cdot \pi}{\lambda_0}I_0 L n_0^3 r_{41}E_\text{THz}\propto E_\text{THz}\ .
 \end{equation}
-
+Hierbei ist $\symup{\Delta}I$ die gemessene Intensitätsdifferenz an den Photodioden, $I_0$ ist die Intensität des Detektionsstrahls 
+vor dem Detetkionskristall, $\lambda_0$ ist die Wellenlänge des Detektionsstrahls, $L$ die Dicke des Detektionskristalls, 
+$n_0$ der Brechungsindex des Detektionskristalls bei der Wellenlänge $\lambda_0$, $r_{41}$ ist nichtlineare Koeffizient des 
+ZnTe für die Richtung durch welche der Strahl auf den ZnTe Kristall trifft und $E_\text{THz}$ ist die Elektrischefeldstärke des 
+THz-Strahls an der Stelle wo es mit dem Detektions-Strahl überlappt. 

@@ -1,17 +1,16 @@
-\chapter{Experimentale Methode}
+\chapter{Experimentale Aufbau}
 \label{sec:auf}
-In dieser Bachelorarbeit wird ein Terahertz-Zeitbereichsspektroskopie-Aufbau genutzt 
-um die THz-Emissionen von verschiedenen organischen Kristallen zu bestimmen. 
+In dieser Bachelorarbeit wird ein Terahertz-Zeitbereichsspektrometer genutzt 
+um die THz-Emissionen verschiedener Kristalle zu bestimmen. 
 Ein schematischer Aufbau des THz-TDs ist in \autoref{fig:thz-aufbau} zu sehen.
-Der Laser, der dem Setup zugrunde liegt, ist ein gepulster Ti:Sapphire-Laser, welcher durch einen 
-Verstärker geleitet wird und Nahinfrarot-Pulse mit Wiederholraten im kHz-Bereich erzeugt.
-Um die THz-Strahlung zu erzeugen und anschließend zu messen, wird ein Pump-Probe-Verfahren in 
-einem Zeitbereichsspektroskopie-Aufbau genutzt. Das Konzept beruht darauf, dass es einen Strahl gibt, welcher 
-mithilfe eines Beam samplers in Pump 
-und Probestrahl aufgeteilt wird, wobei der Pump-strahl mit einer höheren Intensität 
-durch den THz-erzeugenden Kristall geht und der Probe-Strahl, der eine geringere Intensität hat, wird als Abtast-Strahl genutzt. 
-Anschließend werden die kombinierten Strahlen, aus THz-Strahlung, erzeugt vom Pump-Strahl, und Probe Beam, durch ein EOS-Setup geleitet und dort gemessen.
-Der genaue Aufbau wird im folgenden erkläutert.
+Der Laser, der dem Setup zugrunde liegt, ist ein gepulster Titan-Sapphire-Laser, welcher Nahinfrarot-Pulse  
+mit Wiederholraten im kHz-Bereich erzeugt. 
+Diese haben eine Zentralwellenlänge von $\SI{808}{nm}$. 
+Für den Optischen aufbaue steht eine Leistung von $\SI{500}{mW}$ zur verfügung.
+Der Laser-Strahl wird zu begin mithilfe eines Strahlteilers in Pumpstrahl mit $99\%$ der Leistung 
+und Probestrahl mit $1\%$ der Leistung aufgeteilt. Das ist Oben Links in \autoref{fig:thz-aufbau} gezeigt. 
+Der Pumpstrahl ist im Aufbau Grün dargestellt und wird von dem Strahlteiler transmitiert, wobei dieser Pfad in \autoref{sec:pump} näher erläutert wird. 
+Der Probestrahl wird im Aufbau Orange dargestellt und wird von dem Strahlteiler reflektiert, dieser Pfad wird in \autoref{sec:probe} näher erklärt. 
 
 \begin{figure}
     \centering
@@ -20,58 +19,44 @@ Der genaue Aufbau wird im folgenden erkläutert.
     \label{fig:thz-aufbau}
 \end{figure}
 
-\section{Terahertz-Zeitbereichsspektroskopie}
-Zu Beginn kommt der Strahl mit einer Leistung von $Platzhalter\,\unit{mW}$ in das Setup. 
-Dies ist in \autoref{fig:thz-aufbau} oben links zu sehen. 
-Im Anschluss trifft dieser Strahl einen Beam splitter, welcher $99\%$ der Intensiität hindurch lässt, 
-was anschließend der Pump-strahl, welcher in der Abbildung grün dargestellt ist, wird in \autoref{sec:pump} weiter beschrieben. 
-Der reflektierte Teil des Strahls, welcher $1\%$ der Leistung des Ausgangsstrahls besitzt, ist 
-dann der Probe-Strahl, welcher in \autoref{fig:thz-aufbau}, Orange dargestellt wird und in \autoref{sec:probe} weiter erläutert wird.
+% \section{Terahertz-Zeitbereichsspektroskopie}
+% Zu Beginn kommt der Strahl mit einer Leistung von $Platzhalter\,\unit{mW}$ in das Setup. 
+% Dies ist in \autoref{fig:thz-aufbau} oben links zu sehen. 
+% Im Anschluss trifft dieser Strahl einen Beam splitter, welcher $99\%$ der Intensiität hindurch lässt, 
+% was anschließend der Pump-strahl, welcher in der Abbildung grün dargestellt ist, wird in \autoref{sec:pump} weiter beschrieben. 
+% Der reflektierte Teil des Strahls, welcher $1\%$ der Leistung des Ausgangsstrahls besitzt, ist 
+% dann der Probe-Strahl, welcher in \autoref{fig:thz-aufbau}, Orange dargestellt wird und in \autoref{sec:probe} weiter erläutert wird.
 
 
 
 \section{Pump-Strahl}
 \label{sec:pump}
-Der Pump-strahl geht zuerst durch ein $\lambda/2$-Plättchen, gefolgt von einem Glan-Thompson-Prisma. 
-Dort wird mit dem $\lambda/2$-Plättchen die Polarisation des Strahls eingestellt und anschließend 
-durch das Glan-Thompson-Prisma wird eine gewollte Intensität des Strahls gefiltert. 
-Somit lässt sich über diesen Aufbau die Intensität des Strahls manuell einstellen. 
-Nach dieser Intensitätseinstellung wird der Pump-strahl auf die Delay-Station geleitet. 
-Die Delay-Station ist ein Paar von Spiegeln, welche auf einer Plattform sitzen, die nach vorne und zurückfahren kann. 
-Diese Delay-Station hat eine Pfadlänge, welche sie sich bewegen kann, welche $20\,\unit{\milli\meter}$ beträgt. \begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{content/bilder/thz_puls.png}
-    \caption{THz-Puls mit dem Samplingpuls der Abtastend über den THz-Puls fährt durch 
-    die verschiebung der Delay-station\,\cite{KÃ¼hn2011Nonlinear}.}
-    \label{fig:thz-puls}
-\end{figure}
-
-Auf die Delay-Station folgt eine plankonvexe Linse mit einer Brennweite von $100\,\unit{\milli\meter}$. 
-Dieser Fokuspunkt liegt $100\,\unit{\milli\meter}$ vor dem ersten darauffolgenden Parabolspiegel. 
-Da dieser auch eine Brennweite von $100\,\unit{\milli\meter}$ besitzt und somit nach dem ersten 
-Parabolspiegel einen kollinearen Strahl erzeugt. 
-Zwischen dem ersten Parabolspiegel und der Linse befindet sich der Generatorkristall, welcher im ersten Schritt wird  ein ZnTe-Kristall ist, um einen Grundwert zu bestimmen. 
-Anschließend wird dieser durch die 
-zwei verschiedenen organischen Kristallsamples ersetzt, um diese auf ihre Fähigkeit, THz-Strahlung 
-zu erzeugen, zu testen. 
-Die organischen Kristalle werden auf einem Halter platziert, welcher in der x-, y- und z-Koordinate genau 
-verstellbar ist, damit die organischen Kristalle genau so platziert werden können, dass sie vollständig von 
-dem Laser getroffen werden. 
-Nach diesem durchdringt der Strahl einen Chopper. Dieser moduliert das Signal um eine 
-eingestellte Frequenz um die $1500\,\unit{Hz}$, was für die Rauschunterdrückung genutzt wird, 
+Der Pumpstrahl wird zu beginn durch durch ein $\lambda/2$-Plättchen, gefolgt von einem Glan-Taylor-Prisma geführt. 
+Das $\lambda/2$-Plättchen dreht die Polarisation des Strahls und der Glan-Taylor-Prisma trennt die p- und s-Polarisation 
+voneinander. 
+Somit lässt sich über diesen Aufbau die Intensität des Strahls einstellen. 
+Nach dieser Intensitätseinstellung wird der Pumpstrahl auf die Verzögerungsstrecke geleitet. 
+Der aktive Teil dieser besteht aus einem linearen positioniertrisch, auf welchem ein Retroreflektor sitzt.
+Diese kann auf einer länge von $20\,\unit{\milli\meter}$ verfahren werden. Was eine Zeitlich verzögerung von $\SI{133}{ps}$ beträgt.
+Auf die Verzögerungsstrecke folgt eine plankonvexe Linse mit einer Brennweite von $100\,\unit{\milli\meter}$. 
+Dieser Fokuspunkt liegt $100\,\unit{\milli\meter}$ vor dem ersten darauffolgenden Parabolspiegel, 
+der ebenfalls eine Brennweite von $100\,\unit{\milli\meter}$ besitzt und somit ist der Strahl nach dem ersten 
+Parabolspiegel kollimiert, was in \autoref{fig:thz-aufbau} durch den Breiten Strahl gekennzeichnet ist. 
+Zwischen dem ersten Parabolspiegel und der Linse befindet sich die Position der Generationskristalle.  
+Hinter dem Generationskristall ist ein Optischer Strahlzerhacker platziert. Dieser moduliert das Signal mit  
+$1500\,\unit{Hz}$, was für die Rauschunterdrückung und Detektion genutzt wird, 
 mehr dazu in \autoref{sec:EOS}.
-Anschließend durchläuft der Laser 3 weitere Parabolspiegel.
-Zwischen dem ersten und dem zweiten Parabolspiegel ist ein Siliziumwafer platziert, welcher das 
-Restliches Nahinfrarotlicht, das auf den Generatorkristall getroffen ist und transmitiert wurde, herausfiltert. 
-Der 4. und letzte Parabolspiegel fokussiert den Strahl auf den Detektionskristall, bei welchem ein 
-Räumlichen Überlapp mit dem Probe-Strahl erzeugt werden muss. 
-Das bedeutet, dass die beiden Fokuspunkte vom Probe- und Pump-THz-Strahl am selben Ort liegen, dies 
-wird durch eine Kamera und das Verstellen des letzten Parabolspiegels beim THz-Strahl und 
-verstellen des letzten normalen Spiegels des Probe-Strahls gewährleistet. 
+Anschließend wird der THz-Puls über 3 weitere Parabolspiegel geführt.
+Zwischen dem ersten und dem zweiten Parabolspiegel ist eine Siliziumscheibe, welche das 
+restliche Nahinfrarotlicht, welches nicht in THz-Strahlung umgewandelt wurde herausfiltert. 
+Der Vierte und letzte Parabolspiegel fokussiert den Strahl auf den Detektionskristall. 
+
 
 
 \section{Probe-Strahl}
 \label{sec:probe}
+
+
 Der Probe-strahl geht zu Beginn wie auch schon der Pump-Strahl durch ein Setup von einer $\lambda/2$-Platt 
 gefolgt von einem Glan-Thompson-Prisma. Dies wird wieder wie bei dem Pump-Strahl als ein 
 einstellbarer Filter genutzt, um die Intensität des Strahls genau regulieren zu können. 
@@ -80,6 +65,13 @@ Darauffolgend trifft der Probe-Strahl auf eine plankonvexe Linse mit einer Brenn
 $500\,\unit{\milli\meter}$, wobei dieser Fokuspunkt beim Detektionskristall aus ZnTe ist. 
 Denn nach der Linse wird der Strahl durch ein Loch im 4. Parabolspiegel geleitet, wo er 
 mit dem THz-Strahl räumlich überlappt und auf den Detektionskristall trifft.
+
+bei welchem ein 
+Räumlichen Überlapp mit dem Probe-Strahl erzeugt werden muss. 
+Das bedeutet, dass die beiden Fokuspunkte vom Probe- und Pump-THz-Strahl am selben Ort liegen, dies 
+wird durch eine Kamera und das Verstellen des letzten Parabolspiegels beim THz-Strahl und 
+verstellen des letzten normalen Spiegels des Probe-Strahls gewährleistet. 
+
 
 \section{Elektro-Optisches Sampling und Signalverabeitung}
 \label{sec:EOS}
@@ -167,3 +159,12 @@ erzeugt werden, was aber deutlich aufwendiger und unpraktikabler ist.
 % diese Restlichen mithilfe eines Tiefpassfilters unterdrückt. 
 % Dazu werden diese Signale die die Selber frequenz haben über viele Perioden Gemittelt um 
 % das Rauschen weiter zu vermindern.
+
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{content/bilder/thz_puls.png}
+%     \caption{THz-Puls mit dem Samplingpuls der Abtastend über den THz-Puls fährt durch 
+%     die verschiebung der Delay-station\,\cite{KÃ¼hn2011Nonlinear}.}
+%     \label{fig:thz-puls}
+% \end{figure}
