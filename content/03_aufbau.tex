@@ -53,78 +53,77 @@ Der Vierte und letzte Parabolspiegel fokussiert den Strahl auf den Detektionskri
 
 
 
-\section{Probe-Strahl}
+\section{Detektionsstrahl}
 \label{sec:probe}
 
 
-Der Probe-strahl geht zu Beginn wie auch schon der Pump-Strahl durch ein Setup von einer $\lambda/2$-Platt 
-gefolgt von einem Glan-Thompson-Prisma. Dies wird wieder wie bei dem Pump-Strahl als ein 
-einstellbarer Filter genutzt, um die Intensität des Strahls genau regulieren zu können. 
-Anschließend folgt ein Verzögerungsteil, damit der Pfad für den Pump- und den Probe-Strahl gleich lang sind. 
-Darauffolgend trifft der Probe-Strahl auf eine plankonvexe Linse mit einer Brennweite von 
-$500\,\unit{\milli\meter}$, wobei dieser Fokuspunkt beim Detektionskristall aus ZnTe ist. 
-Denn nach der Linse wird der Strahl durch ein Loch im 4. Parabolspiegel geleitet, wo er 
-mit dem THz-Strahl räumlich überlappt und auf den Detektionskristall trifft.
-
-bei welchem ein 
-Räumlichen Überlapp mit dem Probe-Strahl erzeugt werden muss. 
-Das bedeutet, dass die beiden Fokuspunkte vom Probe- und Pump-THz-Strahl am selben Ort liegen, dies 
-wird durch eine Kamera und das Verstellen des letzten Parabolspiegels beim THz-Strahl und 
-verstellen des letzten normalen Spiegels des Probe-Strahls gewährleistet. 
+Zu beginn durchläuft der Detektionsstrahl ein $\lambda/2$-Plättchen gefolgt von einem Glan-Taylor-Prismal, zur Regulierung 
+der Leistung, analog zum Pump-Strahl. \\
+Der weitere Pfad besteht aus meheren Spiegeln um die Optische Weglänge zwischem dem Pumpstrahl und Detektionsstrahl gleich lang zu machen. 
+Mit einer plankonvexen Linse(\SI{500}{mm}) wird der Strahl durch ein Loch im Vierten Parabolspiegel auf den ZnTe Kristall fokussiert.
+Dort überlappt er räumlich mit dem THz-Puls, die zeitliche überlappunh kann durch die Verzögerungsstrecke variiert werden. 
+Räumlicher überlapp bedeutet, dass der Fokuspunkt an der Stelle des ZnTe von Pump- und Detektionsstrahl identisch ist. 
+Der Punkt des überlapps wird bestimmt indem an die stelle des ZnTe eine Kamera platziert wird und über diese geptrüft wird ob die 
+Fokuspunkte übereinander liegen. Wenn dem nicht so sei kann mithilfe der ausrichtung des letzten Parabolspiegels und dem lezten Spiegel 
+des Detektionspfades diese Korregiert werden.
 
 
-\section{Elektro-Optisches Sampling und Signalverabeitung}
+% bei welchem ein 
+% Räumlichen Überlapp mit dem Probe-Strahl erzeugt werden muss. 
+% Das bedeutet, dass die beiden Fokuspunkte vom Probe- und Pump-THz-Strahl am selben Ort liegen, dies 
+% wird durch eine Kamera und das Verstellen des letzten Parabolspiegels beim THz-Strahl und 
+% verstellen des letzten normalen Spiegels des Probe-Strahls gewährleistet. 
+
+
+\section{Elektro-Optische-Detektion und Signalverabeitung}
 \label{sec:EOS}
 
-Als letzten Schritt trifft der THz-Strahl gemeinsam mit dem Probe-Strahl in den Detektionskristall ein 
-in diesem wird im Folgenden über den Pockelseffekt ein messbares Signal erzeugt, wie in \autoref{sec:TEOS} 
-genauer beschrieben wird.\\ \\
-Um das Signal-Rausch-Verhältnis zu erhöhen, wurden verschiedene Vorkehrungen getroffen. Diese werden im Folgenden 
-erläutert.
-Als erste Rauschunterdrückungsmethodik wird ein Lock-in-Verstärker genutzt, welcher an den Chopper 
-der in \autoref{fig:thz-aufbau} zusehen ist, angeschlossen ist. 
-Das Konzept beruht darauf, dass das Messsignal auf die eingestellte Frequenz des 
-Chopper moduliert wird. 
-Es wird also das gemessene Signal mit einem Referenzsignal, welches die Frequenz des Choppers 
-besitzt mutlipliziert.
+Durch den Pockelseffekt wird wie in \autoref{sec:TEOS} beschrieben die Polarisation gedreht und die änderung 
+wird über die Elektro Optische Detektion gemessen.
+Im gesamten aufbau gibt es verschiedene Rauschquellen wie die das Intensitätsrauschen des Lasers, 
+Streulicht oder Elektroinisches Rauschen der elektrischen komponenten der detektionsbauteile.
+Zur Abschirmung gegenüber Raumlicht und Streulicht, wurde der Detektionsteil des Aufbaus eingehaust. 
+Das Auslesen der Intensität erfolgt durch den Lock-In-Verstärker, durch die demodulation des 
+Thz-Strahls auf die halbe Repetationsrate des Lasers. 
+Somit wird immer ein Puls mit und ohne THz-Strahlung detektiert. 
+Im Lock-In wird die demodulationsfrequenz mit dem Signal der Photodioden mutlipliziert. 
 Dadurch landet der Signalanteil, welcher dieselbe Frequenz wie das Referenzsignal besitzt 
-bei ungefähr $0\,\unit{Hz}$. 
-Die restlichen Signale, welche nicht der Referenzfrequenz entsprechen, werden auf eine andere Frequenz 
+bei ungefähr $\SI{0}{Hz}$. 
+Die restlichen Signale, welche nicht auf der Modulationsfrequenz liegen, werden auf eine andere Frequenzen 
 verschoben. 
-Anschließend wird das Signal durch einen Tiefpassfilter geleitet. 
-Dieser filtert lässt nur ein sehr schmales Frequenzband um $0\,\unit{Hz}$ passieren.
-Somit bleiben Signale mit einer niedrigen Frequenz erhalten und der Rest wird unterdrückt. 
-Dabei integriert der Tiefpassfilter über eine längere Zeit $\tau$. 
-$\tau$ wird auch Zeitkonstante gennant. 
-Durch diese Integration mittelt sich alles heraus, was nicht zur Referenzfrequenz gehört. 
-Als Proportionalität für das Rauschen ergibt sich 
+Anschließend wird das Produkt der Signale durch einen Tiefpassfilter geleitet, 
+dieser lässt nur ein sehr schmales Frequenzband um $\SI{0}{Hz}$ passieren. 
+Der Tiefpassfilter Integriert über eine Zeit $\tau$, welche auch Zeitkonstante genannt wird. In dieser Bachelorarbeit 
+werden verschiedene Zeitkonstanten, welche meherere Größenordnungen über der Periodendauer des Lasers liegen genutzt. 
+Die Proportionalität zwischen Rauschen und Zeitkonstante werden beschrieben durch 
 \begin{equation}
-    U_\text{Rauschen} \approx A/\sqrt{\tau}+b\,.
-\end{equation} Wobei U die vom Lock-in ausgegebene Rauschspannung ist. 
-$A$ ist hierbei eine Fit Konstane,  
-welche die Rauschamplitude beschreibt, $b$ ebenso eine Fit konstante welche den Offset, also das Grundrauschen 
-welches nicht durch die erhöhung der Zeitkonstante änderbar ist.
-$\tau$ ist die genutzte Zeitkonstante. 
-Dabei bleibt die Amplitude des Signals gleich.
-Dies wird in \autoref{sec:SN} für den Aufbau geprüft.
-Dazu kommt, dass das Rauschen mit einer Proportionalität von $1/f$ abfällt \cite{10.1063/1.5047659}. 
-Also wird eine möglichst hohe Chopperfrequenz angestrebt. 
-Hier in diesem Aufbau wurde eine Frequenz von $1500\,\unit{Hz}$ eingestellt.\\ \\
-Um systematisch Fehler zu vermindern, wird eine Purge-Box um den Teil des Aufbaus platziert 
-in welchem THz-Strahlung propagiert. 
-Die Purge-Box wird eingerichtet, da THz-Strahlung mit den Wassermolekülen in der Luft interagiert. 
-Diese Interaktion findet statt, da Wasserdampf scharfe Rotations-Absorptionslinien für THz-Strahlung besitzt. 
-Die Kanten sind sehr schmalbandig, also gelten sie nur für einen kleinen Frequenzbereich. 
-Dies hat eine Verzögerung des THz-Signals zur Folge. 
-Wegen der Schmaalen Bandbreite dieser Resonanz für die dadurch verbundende starke Resonanz 
-zu zeitlich verzögterten gedämpften Nachschwingungen, welche nach dem hauptpuls als 
-Echo in den Messdaten auftreten.
-Dieses Echo fungiert dann nur noch als Rauschen und verschlechtert das Messergebnis. 
-Als Lösung für dieses Problem wird eine Box um den in \autoref{fig:thz-aufbau} zu sehenden Teil platziert. 
-Anschließend wird diese Box mit Trockenluft gefüllt, welche explizit keinen Wasserdampf enthält und so 
-die Interaktion nicht stattdindet. 
-Als Alternative könnte diese Box auch mit Stickstoff gefüllt werden oder in dieser ein Vakuum 
-erzeugt werden, was aber deutlich aufwendiger und unpraktikabler ist.
+    U_\text{Rauschen} \approx \frac{A}{\sqrt{\tau}}+b\,.
+\end{equation} 
+Wobei $U$ die vom Lock-in-Verstärker ausgegebene Rauschspannung ist. 
+$A$ ist hierbei eine Konstane,  
+welche die Rauschamplitude beschreibt, $b$ ist das Grundrauschen 
+welches nicht abhängig von der Zeitkonstante ist \cite{zhinst_lockin_whitepaper}.
+Zusätzlich ist das Rauschen Invers-Proportional mit $\propto \frac 1 f$ zur Modulationsfrequenz \cite{10.1063/1.5047659}. 
+In dieser Bachelorarbeit wird eine Modulationsfrequenz von \SI{1500}{HZ} genutzt, welche die größtmögliche fundamentale der 
+Wiederholrate der Laser-Pulse entspricht.
+\\ \\
+
+%------------Purge Box stuff
+% Um systematisch Fehler zu vermindern, wird eine Purge-Box um den Teil des Aufbaus platziert 
+% in welchem THz-Strahlung propagiert. 
+% Die Purge-Box wird eingerichtet, da THz-Strahlung mit den Wassermolekülen in der Luft interagiert. 
+% Diese Interaktion findet statt, da Wasserdampf scharfe Rotations-Absorptionslinien für THz-Strahlung besitzt. 
+% Die Kanten sind sehr schmalbandig, also gelten sie nur für einen kleinen Frequenzbereich. 
+% Dies hat eine Verzögerung des THz-Signals zur Folge. 
+% Wegen der Schmaalen Bandbreite dieser Resonanz für die dadurch verbundende starke Resonanz 
+% zu zeitlich verzögterten gedämpften Nachschwingungen, welche nach dem hauptpuls als 
+% Echo in den Messdaten auftreten.
+% Dieses Echo fungiert dann nur noch als Rauschen und verschlechtert das Messergebnis. 
+% Als Lösung für dieses Problem wird eine Box um den in \autoref{fig:thz-aufbau} zu sehenden Teil platziert. 
+% Anschließend wird diese Box mit Trockenluft gefüllt, welche explizit keinen Wasserdampf enthält und so 
+% die Interaktion nicht stattdindet. 
+% Als Alternative könnte diese Box auch mit Stickstoff gefüllt werden oder in dieser ein Vakuum 
+% erzeugt werden, was aber deutlich aufwendiger und unpraktikabler ist.
 
 
 
