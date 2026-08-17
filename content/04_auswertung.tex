@@ -4,9 +4,23 @@
 Im folgenden werden die expermientellen erkenntinsse aufgeführt und anschließend diskutiert. 
 Zu beginn wird in \autoref{sec:SN} das Rauschen des Aufbaus festgestellt und die abhängigkeit 
 von der Zeitkonstante des Lock-In-Verstärkers geprüft. 
+Als Weitere Vorbereitung wird die größe des Strahls bestimmt mithilfe des Cuttingknife verfahrens und anschließend mit den 
+erschlossenen werten die Leistung pro Flächeneinheit bestimt.
+Anschließend werden in \autoref{sec:AZnTe} die Grundwerte für die Wertigkeit der THz-Strahlung geprüft und festgelegt, 
+indem die Transienten und Fouriertransformierter dieses ausgewertet werden. 
+Dazu wird das Verhalten der Amplitude bei verschiedenen Stärken des Lasers Analysiert. 
+Diese Schritte werden Darauffolgend für die zwei Organischen Kristalle OH1 und BNP in \autoref{sec:AOH1} und \autoref{sec:ABNP} wiederholt 
+und mit den bekannten werden aus \autoref{sec:AZnTe} verglichen.
+
 
 \section{Bestimmung des Rauschuntergrunds}
 \label{sec:SN}
+Es wird as Rauschen in verschiedenen Situationen gemessen es wird zweischen Netzspannung und 
+Batterie versorgung unterschieden. 
+Bei der Netzspannung wird dazu das Rasuchen einmal bei eingeschaltetem Laser und bei ausgeschaltetem Laser überprüft. \\
+
+
+
 Um das Rauschen zu prüfen wird ausschließdlich der Probe-Strahl durch den Aufbau gelassen und 
 der Pump-Strahl geblockt. 
 Dadurch entsteht im Detektionskristall keine änderung der Polarisations und die beiden 
@@ -15,7 +29,14 @@ Somit sollte das gemessene Signal Theoretisch 0 Ergeben.
 Dazu wurde dies einmal ganz ohne beleuchtung durchh den Laser durchgefühhrt um den unterschied 
 zwischen Rauschen nur durch den aufbau zu sehen und das Rauschen welches durchh den laser selber 
 hinzugefüt wird weil dieser auch nicht pefekt funktioniert.
-In \autoref{fig:tc} ist zu sehhen, dass dies nicht so ist und eine Restspannung übrig ist. 
+
+
+In \autoref{fig:tc1} sind die Werte für die Messungen mit Netzspannung, mit jeweils eingeschaltetem und ausgeschaltetem Laser zu sehen. 
+Bei dem Fall mit eingeschaltetem Laser wird jedoch nur der Detektionsstrahl eingeschaltet und der Pump-Strahl wird Geblockt wodurch auch da nur 
+das Rauschen gemessen wird. 
+Anschließend wird die Zeitkonstante $\tau$ von $SI{}{}$ bis $von bis$ am Lock-In-Verstärker eingestellt. 
+Bei jeder Zeitkonstante wurde $\SI{20}{s}$ lang gemessen und anschließend der Mittelwert bestimmt. 
+
 \begin{figure}
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
@@ -32,28 +53,26 @@ In \autoref{fig:tc} ist zu sehhen, dass dies nicht so ist und eine Restspannung 
         \label{fig:tcw}
     \end{subfigure}
     \caption{Messerte der Rauschspanung mit Fit.}
-    \label{fig:tc}
+    \label{fig:tc1}
 \end{figure}
-Diese Spannung ist das Rauchhen welches gemessen wird. 
-Das Rauschen entsteht einerseits durchh thermisches Rauschhen in der Photodioden oder 
-durch diffuses Licht welchhes auf eine der Photodioden trifft. 
-Zum anderen entsteth rauschen durch die Eleketronik welche auch in sich nicht ideal ist und 
-Signale erzegt die nicht zum echten mess signal gehören. 
-Um das erste zu Reduzieren wird der Lock-In-Verstärker gepaart mit einem Chopper genutzt wie in 
-\autoref{sec:EOS} erklärt wurde. 
-Um das umgebungsrauschen zu vermindern wird die Zeitkonstante $\tau$, welche angiebt über welchhe 
-Zeit der Tiefpassfilter Integriert erhöt. 
-Anschließend wird für 20 s Gemessen und über diese Zeit gemittelt. 
-Die daraus Resultierenden werte sind in \autoref{fig:tc} zu sehhen, wobei in \autoref{fig:tco} 
+ 
+Die daraus Resultierenden werte sind in \autoref{fig:tc} zu sehen, wobei in \autoref{fig:tco} 
 die Daten ohne beleuchtung durch den Laser zu sehen ist und in \autoref{fig:tcw} mit beleuchtung. 
-Dazu wurde bei beiden ein Fit der Form $A/ \sqrt{\tau}+b$ durchhgeführt wobei $A$ die Rauschamplitude 
-der Messung ist und $b$ der Offset des Untergunds. Für die Fit werte ergben sich 
+Dazu wurde bei beiden ein Fit der Form $\autoref{eqn:tc}$ durchhgeführt wobei $A$ die Rauschamplitude 
+der Messung ist und $b$ das Weißrauschen des Untergunds. Für die Fit werte ergben sich 
 \begin{align}
     A_\text{mi} =&\SI{6.36+-0.476e-8}{\volt} & b_\text{mi} =&\SI{5.45+-1.148e-8}{\volt} \\
     A_\text{oi} =&\SI{3.85+-0.390e-8}{\volt} & b_\text{oi} =&\SI{6.32+-0.939e-8}{\volt}\, .
 \end{align}
 Es zeigt sichh, dass die Rauschamplitude mit Beleuchtung ungefähr um den Faktor 2 größer ist, als 
 der ohne Beleuchtung. 
+Des weiteren wurde diese Messung wiederholt, wobei dort die Stromversorgung der Photdioden nicht von 
+Stromgeneratoren, welche mit Netzstromlaufne betrieben, sondern mit Baterien. 
+Um hier ein weiteren Faktor abzudecken wurde einmal über $/SI{20}{s}$ gemittelt und einmal über $\SI{60}{s}$. 
+Die sich daraus ergebenen Werte sind in \autoref{fig:tc2} zu sehen. 
+
+
+
 Erklären lässt sich das dadurch, dass der Laser statistische Prozesse 
 wie das Schrotrauschhen auslößt und somit eine weitere untsicherheit in die messung hereinbringt.
 Der Offsetwert $b$ ist nahzu identisch und liegt innerhalb des Fehlers. 
@@ -75,6 +94,14 @@ $0,8\,\unit{s}$ gewählt werden sollte.
 Es lässt sich also zeigen, dass für die folgende Messung eine Zeitkonstante $\tau \ge 0,8\,\unit{s}$ sinvoll 
 ist, damit das Rauschhen durch zum beispiel schrotrauschen hehrausgemittelt wird und eine 
 möglichst Rauschfreie Messung durchgeführt werden kann.
+
+
+Das Rauschen entsteht einerseits durchh thermisches Rauschhen in der Photodioden oder 
+durch diffuses Licht welchhes auf eine der Photodioden trifft. 
+Zum anderen entsteth rauschen durch die Eleketronik welche auch in sich nicht ideal ist und 
+Signale erzegt die nicht zum echten mess signal gehören. 
+Um das erste zu Reduzieren wird der Lock-In-Verstärker gepaart mit einem Chopper genutzt wie in 
+\autoref{sec:EOS} erklärt wurde. 
 \section{ZnTe}
 
 \section{OH1}
