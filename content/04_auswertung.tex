@@ -1,23 +1,30 @@
 \chapter{Auswertung und Diskussion}
 \label{sec:aus}
 
-Im folgenden werden die expermientellen erkenntinsse aufgeführt und anschließend diskutiert. 
-Zu beginn wird in \autoref{sec:SN} das Rauschen des Aufbaus festgestellt und die abhängigkeit 
+Im Folgenden werden die experimentellen Erkenntinsse aufgeführt und anschließend diskutiert. 
+Zu beginn wird in \autoref{sec:SN} das Rauschen des Aufbaus festgestellt und die Abhängigkeit 
 von der Zeitkonstante des Lock-In-Verstärkers geprüft. 
-Als Weitere Vorbereitung wird die größe des Strahls bestimmt mithilfe des Cuttingknife verfahrens und anschließend mit den 
-erschlossenen werten die Leistung pro Flächeneinheit bestimt.
+Als weitere Vorbereitung wird die Größe des Strahls mithilfe des 
+Cutting-knife-Verfahrens bestimmt und anschließend mit den 
+daraus bestimmten Werten die Leistung pro Flächeneinheit berechnet.
 Anschließend werden in \autoref{sec:AZnTe} die Grundwerte für die Wertigkeit der THz-Strahlung geprüft und festgelegt, 
-indem die Transienten und Fouriertransformierter dieses ausgewertet werden. 
-Dazu wird das Verhalten der Amplitude bei verschiedenen Stärken des Lasers Analysiert. 
-Diese Schritte werden Darauffolgend für die zwei Organischen Kristalle OH1 und BNP in \autoref{sec:AOH1} und \autoref{sec:ABNP} wiederholt 
+indem die Transienten sowie deren Fourier-transformierte 
+ausgewertet werden. 
+Dazu wird das Verhalten der Amplitude 
+bei verschiedenen Laserleistungen analysiert. 
+Diese Schritte werden anschließend für die zwei organischen Kristalle OH1 und BNA in \autoref{sec:AOH1} und \autoref{sec:ABNP} wiederholt 
 und mit den bekannten werden aus \autoref{sec:AZnTe} verglichen.
 
 
 \section{Bestimmung des Rauschuntergrunds}
 \label{sec:SN}
-Es wird as Rauschen in verschiedenen Situationen gemessen es wird zweischen Netzspannung und 
-Batterie versorgung unterschieden. 
-Bei der Netzspannung wird dazu das Rasuchen einmal bei eingeschaltetem Laser und bei ausgeschaltetem Laser überprüft. \\
+Das Rauschen wird in verschiedenen Situationen gemessen, 
+wobei zwischen Netzspannungs- und 
+Batterieversorgung unterschieden wird.
+Diese unterscheidung wird getroffen um störquellen wie Erdschleifen und Netzbrummen 
+von dem intrinsitschem Elektronikrauschen zu trennen. 
+Bei der Netzspannung wird dazu das Rauschen sowohl bei 
+eingeschaltetem als auch bei ausgeschaltetem Laser gemessen. \\
 
 
 
@@ -32,10 +39,14 @@ Bei der Netzspannung wird dazu das Rasuchen einmal bei eingeschaltetem Laser und
 
 
 In \autoref{fig:tc1} sind die Werte für die Messungen mit Netzspannung, mit jeweils eingeschaltetem und ausgeschaltetem Laser zu sehen. 
-Bei dem Fall mit eingeschaltetem Laser wird jedoch nur der Detektionsstrahl eingeschaltet und der Pump-Strahl wird Geblockt wodurch auch da nur 
-das Rauschen gemessen wird. 
-Anschließend wird die Zeitkonstante $\tau$ von $\SIrange{30}{3000}{\milli\second}$ am Lock-In-Verstärker eingestellt. 
-Bei jeder Zeitkonstante wurde $\SI{20}{s}$ lang gemessen und anschließend der Mittelwert bestimmt. 
+Bei dem Fall mit eingeschaltetem Laser wird jedoch nur der 
+Detektionsstrahl 
+freigegeben, während der Pump-Strahl geblockt wird, 
+sodass auch hier ausschließlich das Rauschen gemessen wird.
+Anschließend wird die Zeitkonstante $\tau$ von 
+$\SIrange{30}{3000}{\milli\second}$ am Lock-In-Verstärker variiert. 
+Bei jeder Zeitkonstante wurde $\SI{20}{s}$ lang gemessen und 
+anschließend der Mittelwert bestimmt. 
 
 \begin{figure}
     \centering
@@ -57,25 +68,46 @@ Bei jeder Zeitkonstante wurde $\SI{20}{s}$ lang gemessen und anschließend der M
     \label{fig:tc1}
 \end{figure}
  
-Die daraus Resultierenden werte sind in \autoref{fig:tc} zu sehen, wobei in \autoref{fig:tco} 
-die Daten ohne beleuchtung durch den Laser zu sehen ist und in \autoref{fig:tcw} mit beleuchtung. 
+Die daraus resultierenden Werte sind in \autoref{fig:tc1} zu sehen, 
+wobei in \autoref{fig:tco} 
+die Daten ohne Beleuchtung durch den Laser zu sehen ist und in 
+\autoref{fig:tcw} mit Beleuchtung. 
 Dazu wurde bei beiden ein Fit der Form $\autoref{eqn:tc}$ durchhgeführt wobei $A$ die Rauschamplitude 
-der Messung ist und $b$ das Weißrauschen des Untergunds. Für die Fit werte ergben sich 
+der Messung ist und $b$ der Offset des Rauschuntergunds. 
+Für die Fit werte ergben sich 
 \begin{align}
     A_\text{mi} =&\SI{6.4+-0.5e-8}{\volt} & b_\text{mi} =&\SI{5.5+-1.1e-8}{\volt} \\
     A_\text{oi} =&\SI{3.9+-0.4e-8}{\volt} & b_\text{oi} =&\SI{6.3+-1e-8}{\volt}\, .
 \end{align}
-Es zeigt sichh, dass die Rauschamplitude mit Beleuchtung ungefähr um den Faktor 2 größer ist, als 
-der ohne Beleuchtung. \\
-Des weiteren wurde diese Messung wiederholt, wobei dort die Stromversorgung der Photdioden nicht von 
-Stromgeneratoren, welche mit Netzstromlaufne betrieben, sondern mit Baterien. 
-Um hier ein weiteren Faktor abzudecken wurde einmal über $\SI{20}{s}$ gemittelt und einmal über $\SI{60}{s}$. 
-Die sich daraus ergebenen Werte sind in \autoref{fig:tc2} zu sehen. 
-Dabei ist \autoref{fig:tc20} der Plot mit einem Messbereich von \SI{20}{\second} und 
-\autoref{fig:tc60} der Plot für eine Messdauer von \SI{60}{\second}. 
+Es zeigt sich, dass die Rauschamplitude mit Beleuchtung ungefähr 
+um den Faktor 2 größer ist, als 
+ohne Beleuchtung. 
+Dieser Faktor lässt sich darüber erklären, dass bei Licht einstahlung 
+an den Photdioden das Schrotrauschen hinzukommt. 
+Das entsteht durch den statistischen Prozess des Photoelektrischen 
+effektes der den Strom an der Photodiode erzeugt. 
+Dieser entsteht nur wenn ein einzelnes Photon genügen energie hat 
+ein Elektronauf eine höhere Schaale zu bringen und da diese Energie des 
+Photons statistisch verteilte ist, sommit eine unsicherheit in die 
+Messung dazu kommt. 
+Diese Unsicherheit mittelt sich aber über lange Zeitkonsanten raus. 
+Das ist sehr gut sichbar, da bei höheren Zeitkonstanten die beiden 
+auf einen ähnlichen offset $b$ treffen.\\
+Des Weiteren wurde diese Messung wiederholt, wobei dort die 
+Stromversorgung der Photodioden nicht von 
+Stromgeneratoren, welche mit Netzstromlaufne betrieben, 
+sondern mit Baterien versorgt werden. 
+Um hier ein weiteren Aspekt abzudecken wurde einmal über 
+$\SI{20}{s}$ gemittelt und einmal über $\SI{60}{s}$. 
+Die sich daraus ergebenden Werte sind in \autoref{fig:tc2} zu sehen. 
+Dabei ist \autoref{fig:tc20} der Plot mit einer Messdauer von 
+\SI{20}{\second}, 
+\autoref{fig:tc60} den Plot für \SI{60}{\second}. 
 Es wird anschließend ein Fit mithilfe von \autoref{eqn:tc} erstellt. 
-Hierbei wird bei beiden Messreeihen der Wert mit der Niedrigsten Zeitkonstante nicht berücksichtigt, da 
-aufgrund des Sehr großen Fehlers keine aussage über die Relative Position zu den anderen werten getroffen werden. 
+Hierbei wird bei beiden Messreihen der Wert mit der 
+niedrigsten Zeitkonstante($\tau= \SI{30}{ms}$) nicht berücksichtigt, da 
+aufgrund des sehr großen Fehlers keine Aussage über die 
+relative Position zu den anderen Werten getroffen werden kann. 
 
 
 
@@ -94,12 +126,12 @@ aufgrund des Sehr großen Fehlers keine aussage über die Relative Position zu d
         \caption{Messung mit einem Messintervall von $\SI{60}{\second}$.}
         \label{fig:tc60}
     \end{subfigure}
-    \caption{Messwerte der Rauschspanung bei Stromversorgung per Baterie bei keiner Beleuchtung durch Laser.
+    \caption{Messwerte der Rauschspannung bei Stromversorgung per Batterie bei keiner Beleuchtung durch Laser.
         Dazu Fit durch die Messwerte, der Form $\frac{A}{\sqrt{\tau}}+b$.}
     \label{fig:tc2}
 \end{figure}
  
-Die Werte die der Fit ergibt sind in \autoref{tab:tc2} zu sehen.
+Die aus dem Fit resultierenden Werte sind in \autoref{tab:tc2} zu sehen.
 
 \begin{align}
     \label{tab:tc2}
@@ -107,39 +139,53 @@ Die Werte die der Fit ergibt sind in \autoref{tab:tc2} zu sehen.
     A_\text{60\,s} =&\SI{3.7+-0.47e-08}{\volt} & b_\text{60\,s} =&\SI{4.8+-0.9e-08}{\volt}\, .
 \end{align}
 
-Durch die Werte lässt sich zeigen, dass die Rauschamplitude bei den Baterien Schlechter bis Gleichgut ist, aber das Weißrauschen 
-Geringer als das der Netzspannung ist. 
-Hinzukommt, dass die Rauschamplitude $A$ bei längerer Messzeit etwa Halb so groß ist wie bei der kurzen Messzeit 
-Dagegen ist aber das Weißrauschen um eine Größenordnungen größer als das der Messung mit $\SI{20}{\second}$.
+Durch die Werte lässt sich zeigen, dass die 
+Rauschamplitude bei den Batterien schlechter oder Vergleichbar ist, 
+was in \autoref{tab:vgltc} zu sehen ist.
+Der Offset $b$ ist hingegen 
+so geringer, mit einem so großen Fehler ist, sodass keine 
+Aussage über ihn getroffen werden kann.. 
+Hinzu kommt, dass die Rauschamplitude $A$ bei 
+längerer Messzeit etwa Halb so groß ist wie bei der kurzen Messzeit. 
+Dagegen ist aber der Offs um eine Größenordnungen größer 
+als das der Messung mit $\SI{20}{\second}$, wobei der Wert 
+$b_\{text{60\,s}}$ keine wirklich aussagekraft hat.
 
 Zusammengefasst sind die gesamten Messdaten in \autoref{fig:tcc}. 
-Diese zeigen, dass das Rauschen bei höherer Zeitkonstante immer niedriger ist und ab 
-$\tau=\SI{0.3}{s}$ ein Plateu erreicht wird bei welchen sich das Rauschen sich nur noch minimal ändert. 
-Es ist aber deutlich zu beginn zu sehen, dass das Rauschen bei eingeschaltetem Laser bei niedrigen 
-Zeitkonstante höher ist als bei ausgeschaltetem Laser. 
-Erklären lässt sich durch das Schrotrauschen welchen die Photodioden auslösen, denn die Aktivierung 
-der Photodioden ist ein Statistischer Prozess, da ob sie auslösen entscheidend von der Energie der Photonen ist und ob diese 
-die Potentialbariere der Photodioden durchlaufen können. Da dies aber ein tunnelprozess ist und somit auch 
-ein Quantenmechanischer Porzess, beruht dieser auf statistischen Prozessen und somit kommt ein höherer Zufall in die Messung 
-wenn der Laser auf die Photodioden trifft. 
+Diese zeigen, dass das Rauschen bei steigender Zeitkonstante $\tau$ abnimmt 
+und ab 
+$\tau=\SI{0.3}{s}$ ein Plateau erreich bei welchen sich das Rauschen nur minimal ändert. 
+Es ist aber bereits zu Beginn zu sehen, dass das Rauschen bei 
+eingeschaltetem Lasers und niedrigen 
+Zeitkonstante deutlich höher ist als bei ausgeschaltetem Laser. 
+Erklären lässt sich durch das Schrotrauschen. 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{content/plots/pdf/time_constant/time_constant_combined_vs_tau.pdf}
     \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
     \label{fig:tcc}
 \end{figure}
-Es lässt sich also 
-Dieser Statistische Prozess lässt sich aber durch eine längere Zeitkonstante hehrausgmitteln, wodurch dieses Rauschen bei höheren 
-Zeitkonstanten niedriger wird.
-Das Weißrauschen, also das Untergrundrauschen lässt sich durch das Elektronische Rauschen in den Detektionskomponenten erklären und, da 
-bei allen Messungen die selben Detektionskomponenten genutzt werden ist dieses Rauschen auch immer gleich. 
-Wie zuvor beschrieben lässt sich erkennen, dass ab einer zeitkonstante von $\tau=\SI{0.3}{s}$ keine große verbesserung zu sehen ist. 
-Deswegen wird in dieser Bachelorarbeit mit einer zeitkonstante von $\tau=\SI{0.1}{s}$ gearbeitet, 
-wobei aber 5 Messungen am selben Ort genommen 
-werden, was Effketiv zur folge hat, dass die Zeitkonstante effektiv auf $\SI{0.5}{s}$ anwächst. 
+Dieser statistische Prozess lässt sich jedoch durch eine längere 
+Zeitkonstante hehrrausmitteln, wodurch das Rauschen bei höheren 
+Zeitkonstanten abnimmt.
+Der Offset $b$, also das Untergrundrauschen lässt sich durch das 
+elektronische Rauschen in den Detektionskomponenten erklären.  
+Da bei allen Messungen die selben Detektionskomponenten genutzt 
+werden ist dieses Rauschen auch immer ähnlich. 
+Wie zuvor beschrieben lässt sich erkennen, dass ab einer 
+Zeitkonstante von $\tau=\SI{0.3}{s}$ keine große Verbesserung zu sehen ist. 
+Deswegen wird in dieser Bachelorarbeit mit einer Zeitkonstante von 
+$\tau=\SI{0.1}{s}$ gearbeitet. 
+Wobei aber 5 Messungen am selben Ort genommen 
+werden, was zur Folge hat, dass die Zeitkonstante effektiv auf 
+$\SI{0.5}{s}$ anwächst. 
 Dieser Weg wurde gewählt um den Messvorgang zu beschleunigen, 
-da das Messprogramm vor jeder messung einige zeitkonstanten abwartet bevor es misst und so diese Zeit verringert wird aber die 
-Qualitäten der Messdaten Identisch bleibt. 
+da das Messprogramm vor jeder Einzelmessung einige Zeitkonstanten abwartet, 
+bevor es misst. 
+Durch die kürzere Einzelzeitkonstante wird diese Wartezeit verringert, 
+während die 
+Qualitäten der Messdaten durch die anschließende Mittelung über 5 
+Messungen erhalten bleibt. 
 
 
 % Erklären lässt sich das dadurch, dass der Laser statistische Prozesse 
