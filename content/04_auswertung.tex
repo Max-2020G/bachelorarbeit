@@ -204,6 +204,48 @@ Messungen erhalten bleibt.
 % ist, damit das Rauschhen durch zum beispiel schrotrauschen hehrausgemittelt wird und eine 
 % möglichst Rauschfreie Messung durchgeführt werden kann.
 
+%--------------------------------------------Abschnitt Spot größe
+
+\section{Spot Größe}
+\label{sec:spot}
+Da die Organischen Kristalle äußerst klein sind und der Laser Strahl hingegen deutlich größer ist, 
+wird im folgenden die größe des Lasers bestimmt, mit welchem anschließend die Leistung pro Flächeneinheit bestimmt werden kann. 
+Mit diesen Werten kann in den folgenden Kapiteln jeweils bestimmt werden wie groß die Leistung ist welche auf den Kristallen 
+einwirkt. \\
+Um die Strahlgröße zu bestimen wird das Cutting-Edge-Verfahren verwendet. 
+Das beruht darauf, dass eine Rasierklinge an eine Verstellbare Platform angebracht wird und in den Strahl gehalten wird. 
+Dieser Aufbau wird an der stelle Platziert wo auch die Generationskristalle Platziert werden. 
+Hinter dieser Stelle wird die Leistung gemessen. 
+Um die Strahlgröße zu bestimmen wird dann die rasierkline in $Schrittweite einsetzen$ verschoben, sodass 
+immer mehr von dem Strahl von der klingt Blockiert wird un die Leistung hinter der Klinge wird immer geringer. 
+Für jede verstellung wird die Leistung hinter der Klinge gemessen. 
+Anschließend wird immer die Differenz zwischen zwei Messwerten bestimmt. 
+Diese Differnz ist genähert die Leistung, der Abgeschnittenen Fläche in diesem Schritt. 
+Diese Differenz wurde einmal in x- und y-Richtung bestimmt. 
+Die Messdaten dazu sind in \autoref{fig:spot_c} zu sehen. 
+ 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/plots/pdf/spot_size_x.pdf}
+    \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
+    \label{fig:spot_x}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/plots/pdf/spot_size_y.pdf}
+    \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
+    \label{fig:spot_y}
+\end{figure}
+
+In \autoref{fig:spot_x} ist auf der Linken seite ein Deutlich steilerer Abfall als auf der Rechten zu sehen. 
+Das lässt darauf schließend, dass der Strahl im vorherigen verlauf von einer Optik geschnitten wird und dies somit nicht die 
+Ideale Form des Strahls ist und es lässt sich somit mit dieser seite nicht auf die tatsächlich größe des Strahls schließen. 
+Deswegen wird bei der x-Richtung nur der Rechte seite genutzt um einen Gauss-Fit durchzuführen. 
+Bei der y-Richtung hingegen konnte der Fit über beide seiten bestimmt werden…
+Mithilfe des Fits ergeben sich die Koefizienten
+\begin{align}
+.
+\end{align}
 
 
 \section{ZnTe}
@@ -216,18 +258,7 @@ Messungen erhalten bleibt.
     \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
     \label{fig:tcc}
 \end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{content/plots/pdf/spot_size_x.pdf}
-    \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
-    \label{fig:tcc}
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{content/plots/pdf/spot_size_y.pdf}
-    \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
-    \label{fig:tcc}
-\end{figure}
+
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{content/plots/build/OH1/transients/transient_waterfall.pdf}
