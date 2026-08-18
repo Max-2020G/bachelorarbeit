@@ -149,7 +149,7 @@ Hinzu kommt, dass die Rauschamplitude $A$ bei
 längerer Messzeit etwa Halb so groß ist wie bei der kurzen Messzeit. 
 Dagegen ist aber der Offs um eine Größenordnungen größer 
 als das der Messung mit $\SI{20}{\second}$, wobei der Wert 
-$b_\{text{60\,s}}$ keine wirklich aussagekraft hat.
+$b_{\text{60\,s}}$ keine wirklich aussagekraft hat.
 
 Zusammengefasst sind die gesamten Messdaten in \autoref{fig:tcc}. 
 Diese zeigen, dass das Rauschen bei steigender Zeitkonstante $\tau$ abnimmt 
@@ -226,26 +226,45 @@ Die Messdaten dazu sind in \autoref{fig:spot_c} zu sehen.
  
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{content/plots/pdf/spot_size_x.pdf}
-    \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
-    \label{fig:spot_x}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{content/plots/pdf/spot_size_x.pdf}
+        \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
+        \label{fig:spot_x}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{content/plots/pdf/spot_size_y.pdf}
+        \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
+        \label{fig:spot_y}
+    \end{subfigure}
+    \caption{Messwerte der Rauschspannung bei Stromversorgung per Batterie bei keiner Beleuchtung durch Laser.
+        Dazu Fit durch die Messwerte, der Form $\frac{A}{\sqrt{\tau}}+b$.}
+    \label{fig:tc2}
 \end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{content/plots/pdf/spot_size_y.pdf}
-    \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
-    \label{fig:spot_y}
-\end{figure}
+
 
 In \autoref{fig:spot_x} ist auf der Linken seite ein Deutlich steilerer Abfall als auf der Rechten zu sehen. 
 Das lässt darauf schließend, dass der Strahl im vorherigen verlauf von einer Optik geschnitten wird und dies somit nicht die 
 Ideale Form des Strahls ist und es lässt sich somit mit dieser seite nicht auf die tatsächlich größe des Strahls schließen. 
-Deswegen wird bei der x-Richtung nur der Rechte seite genutzt um einen Gauss-Fit durchzuführen. 
+Deswegen wird bei der x-Richtung nur der Rechte seite genutzt um einen Gauss-Fit der Form 
+\begin{equation}
+    f(x) = A\cdot \exp\left(-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2\right) + b
+\end{equation}
+
+durchzuführen. 
 Bei der y-Richtung hingegen konnte der Fit über beide seiten bestimmt werden…
 Mithilfe des Fits ergeben sich die Koefizienten
 \begin{align}
-.
+    A_x &= \SI{1.246+-0.150}{mW} & \mu_x &= \SI{13.865+-0.214}{mm} \\
+    \sigma_x &= \SI{2.452+-0.429}{mm} & b_x &= \SI{-0.141+-0.152}{mW} \\
+    A_y &= \SI{1.021+-0.118}{mW} & \mu_y &= \SI{13.388+-0.126}{mm} \\
+    \sigma_y &= \SI{2.178+-0.331}{mm} & b_y &= \SI{-0.093+-0.128}{mW}
 \end{align}
+
+
+
 
 
 \section{ZnTe}

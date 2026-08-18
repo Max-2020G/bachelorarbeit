@@ -29,7 +29,7 @@ S_MIN, V_MIN = 140, 140          # HSV-Schwelle: Kristall = gesättigt UND hell
 CIRCLE = None
 # Bekannter physikalischer Lochdurchmesser in mm (falls bekannt -> absolute
 # Fläche statt nur relativer Anteil). Sonst None.
-HOLE_DIAMETER_MM = 2
+HOLE_DIAMETER_MM = 2.5
 
 # ---- 1. Bild laden ----
 img = cv2.imread(IMAGE_PATH)
