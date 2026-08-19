@@ -208,19 +208,17 @@ Messungen erhalten bleibt.
 
 \section{Spot Größe}
 \label{sec:spot}
-Da die Organischen Kristalle äußerst klein sind und der Laser Strahl hingegen deutlich größer ist, 
-wird im folgenden die größe des Lasers bestimmt, mit welchem anschließend die Leistung pro Flächeneinheit bestimmt werden kann. 
-Mit diesen Werten kann in den folgenden Kapiteln jeweils bestimmt werden wie groß die Leistung ist welche auf den Kristallen 
-einwirkt. \\
-Um die Strahlgröße zu bestimen wird das Cutting-Edge-Verfahren verwendet. 
-Das beruht darauf, dass eine Rasierklinge an eine Verstellbare Platform angebracht wird und in den Strahl gehalten wird. 
-Dieser Aufbau wird an der stelle Platziert wo auch die Generationskristalle Platziert werden. 
+Da die organischen Kristalle äußerst klein sind und der Laser Strahl hingegen deutlich größer ist, 
+wird im folgenden die größe des Lasers bestimmt, mit welchem anschließend die Leistungsdichte bestimmt werden kann. 
+Diese Werte gelten in den folgenden Kapiteln als Referenz für die einwirkende Leistung auf die Kristalle. \\
+Um die Strahlgröße zu bestimmen wird das Cutting-Edge-Verfahren verwendet. 
+Das beruht darauf, dass eine Rasierklinge an eine verstellbare Platform angebracht wird und in den Strahl gehalten wird. 
+Dieser Aufbau wird an der Stelle platziert wo auch die Generationskristalle platziert werden. 
 Hinter dieser Stelle wird die Leistung gemessen. 
-Um die Strahlgröße zu bestimmen wird dann die rasierkline in $Schrittweite einsetzen$ verschoben, sodass 
-immer mehr von dem Strahl von der klingt Blockiert wird un die Leistung hinter der Klinge wird immer geringer. 
-Für jede verstellung wird die Leistung hinter der Klinge gemessen. 
-Anschließend wird immer die Differenz zwischen zwei Messwerten bestimmt. 
-Diese Differnz ist genähert die Leistung, der Abgeschnittenen Fläche in diesem Schritt. 
+Um die Strahlgröße zu bestimmen wird dann die Rasierklinge in $\SI{0.05}{mm}$ schritten verschoben, sodass 
+mehr Strahlanteile von der klinge blockiert werden und die gemessene Leistung entsprechend sinkt. 
+Für jede Verstellung wird die Differnez der Leistung zwei auf einander folgenden Messwerte bestimmt. 
+Diese Differenz entspricht näherungsweise der Leistung, die auf die in diesem Schritt zusätzlich abgeschnittene Fläche entfällt.
 Diese Differenz wurde einmal in x- und y-Richtung bestimmt. 
 Die Messdaten dazu sind in \autoref{fig:spot_c} zu sehen. 
  
@@ -275,7 +273,7 @@ Daruas errechnet sich der Flächeninhalt mit $\SI{67.1+-15.7}{mm^2}$, wobei der 
 Die Leistung des Strahls an dieser stelle beträgt $\SI{34.5}{mW}$ daraus lässt sich mit $I_\text{sp}= \frac{2\cdot P}{A}$ die Spitzenintensität 
 bestimmen. 
 Es ergibt sich $\SI{0.103+-0.24}{W/cm^2}$.
-Hierbei ist der Fehler von fasst $\Si{24}{\%}$ zu erwähnen, wobei sich diese große abweichung durch 
+Hierbei ist der Fehler von fasst $24\,\%$ zu erwähnen, wobei sich diese große abweichung durch 
 den nur einseitigen Fit bei der x-Richtung erklären lässt. 
 Dazu sei zu erwähnen, dass dies die durchschnittliche spitzenleistung ist. 
 Der Laser ist aber ein Puls Laser und somti ist die Leistung eines Einzelnen Pulses um ein vielfaches höher als diese gemittelte. 
@@ -288,22 +286,47 @@ Im folgend wird diese Grundlagenmessung mit ZnTe Beschrieben.
 \section{ZnTe}
 \label{sec:AZnTe}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/plots/pdf/ZnTe/110mW.pdf}
+    \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
+    \label{fig:tcc}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/plots/pdf/ZnTe/110mW_fft.pdf}
+    \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
+    \label{fig:tcc}
+\end{figure}
 
 \section{OH1}
 \label{AOH1}
+
+% Referenzkreis: Mitte=(76,72) Radius=61px
+% Loch-Fläche: 11681 px
+% Kristall-Fläche: 5336 px
+% Flächenanteil Kristall/Loch: 45.7 %
+% Skalierung: 0.0205 mm/px
+% Kristallfläche absolut: 2.241 mm^2
+% Kontrollbild gespeichert: mask_vis.jpg
+
+
+
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{content/plots/pdf/amplitude_OH1.pdf}
+    \includegraphics[width=0.8\textwidth]{content/plots/pdf/amplitude_comb.pdf}
     \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
     \label{fig:tcc}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{content/plots/build/OH1/transients/transient_waterfall.pdf}
+    \includegraphics[width=0.8\textwidth]{content/loch_kristall/mask_vis.jpg}
     \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
     \label{fig:tcc}
 \end{figure}
+
+
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{content/plots/build/OH1/transients/fft_waterfall.pdf}
