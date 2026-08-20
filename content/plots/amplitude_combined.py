@@ -6,6 +6,10 @@ A_ZnTe, U_ZnTe =np.genfromtxt("data/amplitude/amplitudes_ZnTe_right_power.txt",u
 A_OH1, U_OH1 =np.genfromtxt("data/amplitude/amplitudes_right_power.txt",unpack=True)
 U_ZnTe = U_ZnTe*10**6
 U_OH1 = U_OH1*10**6
+Fl = 2.241*10**-2 #in cm^2
+Faktor = A_OH1/34.5
+A_OH1 = 0.103*Faktor *Fl
+
 def lin(x,m,b):
     return m*x+b
 
