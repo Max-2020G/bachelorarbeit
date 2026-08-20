@@ -18,7 +18,7 @@ os.makedirs(f"pdf/{savedir}", exist_ok=True)
 for i, name in enumerate(filenames):
     print(i, name)
 
-selected_indices = [1, 3 , 15, 20, 29, 38]
+selected_indices = [1, 3 , 15, 20, 29, 38, 53]
 
 #--------------------------------------Plot einzelner Transienten
 for i, path in enumerate(filenames):
@@ -28,13 +28,18 @@ for i, path in enumerate(filenames):
     dateiname = "_".join(
         os.path.basename(path).removesuffix(".txt").removesuffix("_pulse").split("_")[3:])
     dateiname = dateiname.replace("_",",")
-
+    mean=np.mean(np.abs(u[-4:-2]))
+    print(f"{dateiname}_mean={mean}")
+    ptp = np.ptp(u)
+    print(f"{dateiname}_ptp={ptp}")
+    SN = ptp/mean
+    print(f"{dateiname}_SN={SN}")
 
     fig, ax = plt.subplots(layout="constrained")
     ax.plot(t, u, "-", color="#639A00")
     ax.set_xlabel("t / ps")
     ax.set_ylabel("U / V")
-    ax.set_xlim(-2,12)
+    ax.set_xlim(-4,12)
     ax.grid()
     fig.savefig(f"pdf/{savedir}/{dateiname}.pdf")
     plt.close(fig)

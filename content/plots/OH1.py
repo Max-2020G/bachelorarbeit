@@ -75,8 +75,14 @@ for i, f in tqdm(enumerate(filenames)):
         data_dict[labels[i]] = lock_x_dict[labels[i]]
     else:
         data_dict[labels[i]] = lock_y_dict[labels[i]]
-    # absolute maximum of this transient's amplitude
-    amplitudes.append((f, np.max(np.abs(data_dict[labels[i]]))))
+    # absolute maximum of this transient's amplitude, plus peak-to-peak
+    # (Abstand von hoechstem zu tiefstem Punkt des Transienten) -- bei einem
+    # bipolaren Signal oft aussagekraeftiger als nur die einseitige Amplitude.
+    amplitudes.append((
+        f,
+        np.max(np.abs(data_dict[labels[i]])),
+        np.ptp(data_dict[labels[i]]),
+    ))
     # Check for directory max and min
     if np.max(data_dict[labels[i]]) > max_value_t:
         max_value_t = np.max(data_dict[labels[i]])
@@ -134,9 +140,9 @@ for i, f in tqdm(enumerate(filenames)):
     plt.close()
 
 with open(f"data/amplitude/amplitudes_{savedir}.txt", "w") as amp_file:
-    amp_file.write("# file\tamplitude / V\n")
-    for name, amplitude in amplitudes:
-        amp_file.write(f"{name}\t{amplitude:.6e}\n")
+    amp_file.write("# file\tamplitude / V\tpeak_to_peak / V\n")
+    for name, amplitude, peak_to_peak in amplitudes:
+        amp_file.write(f"{name}\t{amplitude:.6e}\t{peak_to_peak:.6e}\n")
 
 fig_t, ax_t = plt.subplots()  # layout="constrained")
 fig_f, ax_f = plt.subplots()  # layout="constrained")
