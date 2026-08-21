@@ -14,11 +14,16 @@ filenames = sorted(glob.glob(f"{datadir}/*.txt"))
 
 
 os.makedirs(f"pdf/{savedir}", exist_ok=True)
+os.makedirs("data/amplitude", exist_ok=True)
 
 for i, name in enumerate(filenames):
     print(i, name)
 
 selected_indices = [1, 3 , 15, 20, 29, 38, 53]
+
+# sammelt (dateiname, mean, ptp, SN) fuer jede ausgewaehlte Datei, wird nach
+# der Schleife in eine txt-Datei geschrieben (siehe unten)
+sn_results = []
 
 #--------------------------------------Plot einzelner Transienten
 for i, path in enumerate(filenames):
@@ -34,6 +39,7 @@ for i, path in enumerate(filenames):
     print(f"{dateiname}_ptp={ptp}")
     SN = ptp/mean
     print(f"{dateiname}_SN={SN}")
+    sn_results.append((dateiname, mean, ptp, SN))
 
     fig, ax = plt.subplots(layout="constrained")
     ax.plot(t, u, "-", color="#639A00")
@@ -43,6 +49,11 @@ for i, path in enumerate(filenames):
     ax.grid()
     fig.savefig(f"pdf/{savedir}/{dateiname}.pdf")
     plt.close(fig)
+
+with open(f"data/amplitude/sn_ratio_{savedir}.txt", "w") as sn_file:
+    sn_file.write("# file\tnoise (mean) / V\tpeak_to_peak / V\tSN_ratio\n")
+    for dateiname, mean, ptp, SN in sn_results:
+        sn_file.write(f"{dateiname}\t{mean:.6e}\t{ptp:.6e}\t{SN:.6e}\n")
 
 #--------------------------------------Plot einzelner fft
 for i, path in enumerate(filenames):
@@ -63,7 +74,7 @@ for i, path in enumerate(filenames):
     ax.plot(freq, spektrum_norm, "-", color="#639A00")
     ax.set_xlabel("f / THZ")
     ax.set_ylabel("|FFT|")
-    ax.set_xlim(np.min(freq),np.max(freq))
+    ax.set_xlim(np.min(freq),5)
     ax.grid()
     fig.savefig(f"pdf/{savedir}/{dateiname}_fft.pdf")
     plt.close(fig)

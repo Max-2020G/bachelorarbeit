@@ -285,54 +285,91 @@ Im folgend wird diese Grundlagenmessung mit ZnTe Beschrieben.
 
 \section{ZnTe}
 \label{sec:AZnTe}
-Um einen Verleich für die organischen Emiter zu haben wurde zu beginn eine Messung der Thz-Strahlung, welche von 
+Um einen Vergleich für die organischen Emitter zu haben wurde zu Beginn eine Messung der THz-Strahlung, welche von 
 ZnTe erzeugt wird durchgeführt. 
-Im gegensatz zu den anderen Kristallen konnte die gesamte Leistung des Pump-Strahls zur erzeugung genutzt werden, da der 
+Im Gegensatz zu den anderen Kristallen konnte die gesamte Leistung des Pump-Strahls zur Erzeugung genutzt werden, da der 
 ZnTe Groß genug ist um den gesamten Strahl auszufüllen. 
-Zu begin wurde die Position der Zeit Null also der Ort wo der Erste und größte Peak des THz-Pulses ist bestimmt. 
-Anschließend wurde um diesen Wert ein Intervall von $\SI{-3}{ps}$ bis $\SI{12}{ps} gemessen. 
-Dieser transient für eine Pump-Leistung von $\SI{110}{mW} ist in \autoref{fig:ZnTeT} zu sehen. 
-In diesem ist die Zeit-Null bei 0 eingetragen und anschließend sin die nachschwingungen zu sehen. 
+Zu Begin wurde die Position der Zeit Null also der Ort wo der erste und größte Peak des THz-Pulses ist bestimmt. 
+Anschließend wurde um diesen Wert ein Intervall von $\SI{-3}{ps}$ bis $\SI{11}{ps}$ gemessen. 
+Dieser transient für eine Pump-Leistung von $\SI{55}{mW}$ ist in $\autoref{fig:ZnTeT}$ zu sehen. 
+In diesem ist die Zeit-Null bei 0 eingetragen und anschließend sind die nachschwingungen zu sehen. 
 Nachschwingungen entsthen da der Puls beim Durchlaufen des Generationskristalls nicht gerdlinig aus dem Kristall austritt und 
 Teile des pulses über mehrfachreflektion zu späterer Zeit aus dem Kristall austreten. 
 Somit trit ein geringer Teil erst später auf den Detektionskristall und wird so auch erst später gemessen was einen zweiten Puls wie ungefähr bei 
 $\SI{7}{ps}$ zu sehen ist. 
 
-Dieser Transient wurde für verschiedene Pump-Leistungen gemessen und die Peak-Zu-Peak werte bestimmt. 
-In \autoref{fig:amp} sind diese Werte aufgelistet und mit einem Linearen Fit versen um die Lineare Abhängigkeit von der 
-Laser-Leistung zu zeigen. 
-Es ist anzumerken, dass die Leistung von $\SI{55}{mW}$ nicht die höchst mögliche Leistung des Lasers ist aber, ab dieser Leistung 
-der Kristall anfängt Luminizent zu werden, was ein Zeichen für die nähe der Zerstörschwelle ist. 
-Um den Kristall nicht zu beschädigen wurde deshalb die Leistung nicht weiter erhöht. 
-Aus dem Transienten und den Peak zu Peak werten lässt sich auch das Sinal zu Rauschen VErhältnis bestimmen. 
-Dazu wird der Peak zu Peak Wert der einzelnen Leistungen durch den Rausch wert also der Mitelwert des Betrags des SIgnals des Lock-In-verstärkers 
-Bevor die Zeit-Null eingetroffen ist.
-Die sich daraus ergebenen Werte für das Signal zu Rauschen Verhältnis für die verschiedenen Leistungen sind in \autref{tab:SN} aufgeführt. 
-
-
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{content/plots/pdf/ZnTe/110mW.pdf}
-    \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
+    \caption{Transient des THz-Pulses bei einer Pump Leistung von $\SI{110}{\milli\watt}$.}
     \label{fig:ZnTeT}
 \end{figure}
 
-Des weiteren wird eine fourier trasformation mit den Transienten durchgeführt, diese für $\SI{110}{mW}$ ist in \autoref{fig:ZnTeF} zu sehen
-Die Fouriertransformierte zeigt welche Freqzuenzen in dem Transienten des THz-Pulses Vorhanden sind. 
+Dieser Transient wurde für verschiedene Pump-Leistungen gemessen und die Peak-Zu-Peak-Werte bestimmt. 
+In \autoref{fig:amp} sind diese Werte aufgelistet und mit einem linearen Fit versehen um die lineare Abhängigkeit von der 
+Laserleistung zu zeigen. 
+Es ist anzumerken, dass die Leistung von $\SI{55}{mW}$ nicht die höchstmögliche Leistung des Lasers ist aber, ab dieser Leistung 
+der Kristall anfängt lumineszent zu werden, was ein Zeichen für die Nähe der Zerstörschwelle ist. 
+Um den Kristall nicht zu beschädigen wurde deshalb die Leistung nicht weiter erhöht. 
+Aus dem Transienten und den Peak-zu-Peak-Werten lässt sich auch das Sinal-zu-Rauschen-Verhältnis bestimmen. 
+Dazu wird der Peak-zu-Peak-Wert der einzelnen Leistungen durch den Rauschwert geteilt welche in \autoref{sec:SN} bestimmt wurde.
+Es wird der Rauschwert für eine Zeitkonstante von $\tau = \SI{450}{ms}$ und Beleuchtung, 
+welcher $U_\text{Rauschen}=\SI{0.158}{\micro\volt}$ beträgt, als einheitliche Rauschreferenz für alle Leistungen verwendet. 
+Es wird dieser Wert genutzt, da er der nächste gemessene Wert an der Theoretisch genutzten Zeitkonstante von $\tau=\SI{500}{ms}$ ist.  
+Die sich daraus ergebenden Werte für das Signal zu Rauschen Verhältnis für die verschiedenen Leistungen sind in \autoref{tab:snZnTe} aufgeführt.
+Auffällig dabei sind die Werte zwischen $\SI{30}{\milli\watt}$ und $\SI{48}{\milli\watt}$. Hier ist ein starker anstieg zu den 
+anderen Werten bei dem peak to peak Wert zu sehen. Zwischen diesen und den anderen Messungen wurden verschhiedene Spannungsquellen für die 
+Photodioden geprüft, wobe diese sich nicht als Ideal herausgestellt haben und zur Netzspannung zurrückgewechselt wurde. 
+Es schheint als wäre im zuge dessen die einstellung an der Spannungsquellen verstellt worden, was die plötzlich höheren Werte der 
+Messung erklären könnte.
+
+\begin{table}
+    \centering
+    \caption{Peak-to-Peak-Amplitude und daraus bestimmtes Signal-Rausch-Verhältnis der ZnTe-Transienten bei verschiedenen Pumpleistungen, bezogen auf die einheitliche Rauschreferenz $U_\text{Rausch}=\SI{0.158}{\micro\volt}$ bei $\tau=\SI{450}{ms}$.}
+    \label{tab:snZnTe}
+    \begin{tabular}{S[table-format=3.0] S[table-format=3.1] S[table-format=4.1]}
+        \toprule
+        {$P \mathrel{/} \si{\milli\watt}$} & {$U_\text{ptp} \mathrel{/} \si{\micro\volt}$} & {SNR} \\
+        \midrule
+        2   & 15.4  & 97.3   \\
+        3,3  & 18.7  & 118.5  \\
+        7,4  & 46.9  & 296.6  \\
+        8  & 77.5  & 490.7  \\
+        13  & 88.8  & 561.9  \\
+        18  & 116.2 & 735.3  \\
+        24  & 143.7 & 909.2  \\
+        30  & 261.3 & 1653.7 \\
+        34  & 306.2 & 1938.0 \\
+        40  & 353.8 & 2239.4 \\
+        48  & 386.7 & 2447.7 \\
+        55 & 261.4 & 1654.3 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+
+
+
+Des Weiteren wird eine Fourier-Trasformation mit den Transienten durchgeführt, diese für $\SI{110}{mW}$ ist in \autoref{fig:ZnTeF} zu sehen
+Die Fouriertransformierte zeigt welche Frequenzen in dem Transienten des THz-Pulses Vorhanden sind. 
 Aus diesem lässt sich die Bandbreite von dem THz-Puls bestimmen. 
 Diese betägt $2.4 Thz$.
 Wobei Freqenzen zwischen $0.1$ und $2.4$THz erzeugt werden. 
-Besondrs Hervorzuheben sind die zwei zwei absorptionslinien bei 1.2THz und 1.8THz. 
-Diese einfälle lassen sich durch die Absorptionslinien von dem Wassers, welches in der Luft als Wasserdampf 
+Besonders hervorzuheben sind die zwei zwei Absorptionslinien bei $\SI{1.2}{THz}$ und $\SI{1.8}{THz}$. 
+Diese Einbrüche lassen sich durch die Absorptionslinien des Wassers, welches in der Luft als Wasserdampf 
 vorhanden ist erklären.
 
 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{content/plots/pdf/ZnTe/110mW_fft.pdf}
-    \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
+    \caption{Fouriertransformierte des THz-Pulses bei einer Pump Leistung von $\SI{110}{\milli\watt}$.}
     \label{fig:ZnTeF}
 \end{figure}
+
+
+
 
 \section{OH1}
 \label{AOH1}
@@ -389,17 +426,4 @@ vorhanden ist erklären.
 %     \label{fig:bsp}
 % \end{figure}
 
-% \begin{table}
-%     \centering
-%     \caption{Beispieltabelle mit willkürlichen Werten, für die Zahlenwerte wurde die S-Option aus \texttt{siunitx} verwendet.}
-%     \label{tab:bsp}
-%     \begin{tabular}{S[table-format=4.2] S[table-format=3.2]}
-%         \toprule
-%         {$p \mathrel{/} \si{\pascal}$}  & {$T \mathrel{/} \si{\kelvin}$} \\
-%         \midrule
-%         1024,23 & 273,15 \\
-%         1025,31 & 274,5 \\
-%         1026,27 & 276,2 \\
-%         \bottomrule
-%     \end{tabular}
-% \end{table}
+

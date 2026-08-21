@@ -192,6 +192,38 @@ if PLOT_60S:
     print(f"b_b60 = {popt_b60[1]:.3e} +- {np.sqrt(pcov_b60[1, 1]):.3e}")
 
 # -----------------------------------------------------------------------
+# Einzelne Messwerte abfragen: findet zu einer gewuenschten Zeitkonstante
+# den NAECHSTGELEGENEN tatsaechlich gemessenen Punkt einer Messreihe und
+# gibt ihn aus. Ein exakter Treffer wird nicht verlangt, weil eure
+# Zeitkonstanten in den Dateinamen nicht rund sind (z.B. "449.8ms" statt
+# "450ms") -- lookup() findet trotzdem automatisch den passendsten Punkt.
+# -----------------------------------------------------------------------
+def lookup(x, U, std, tau_target):
+    """
+    Sucht in den Arrays x/U/std den Index, dessen Zeitkonstante x[idx] am
+    naechsten an tau_target (in Sekunden) liegt (np.argmin auf den
+    Abstaenden |x - tau_target|), und gibt (tau, U, std) an dieser Stelle
+    zurueck.
+    """
+    idx = np.argmin(np.abs(x - tau_target))
+    return x[idx], U[idx], std[idx]
+
+
+def print_lookup(label, x, U, std, tau_target):
+    """Ruft lookup() auf und gibt das Ergebnis lesbar in Mikrovolt aus."""
+    tau, u, s = lookup(x, U, std, tau_target)
+    print(f"{label}: naechster Messpunkt bei tau={tau * 1000:.1f} ms "
+          f"-> U = {u * 1e6:.3f} +- {2 * s * 1e6:.3f} uV")
+
+
+# Beispiel-/Standardabfragen. Weitere Werte auf demselben Weg abfragen:
+# Zeile im selben Muster ergaenzen, dabei die Messreihe waehlen ueber die
+# drei Arrays (x_wi/U_wi/std_wi = mit Beleuchtung, x_oi/U_oi/std_oi = ohne
+# Beleuchtung, x_b20/U_b20/std_b20 bzw. x_b60/... = Batterie 20s/60s) und
+# die gewuenschte Zeitkonstante in Sekunden als letztes Argument.
+print_lookup("Rauschen bei tau=450ms, mit Beleuchtung", x_wi, U_wi, std_wi, 0.450)
+
+# -----------------------------------------------------------------------
 # Fuer die Fit-Kurven im Plot brauchen wir viele, dicht liegende x-Werte.
 # Wir nehmen bewusst den Bereich ALLER Punkte (auch der ausgeschlossenen),
 # damit man im Plot sieht, wie gut/schlecht die Fitkurve auch die grauen
