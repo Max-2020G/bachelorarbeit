@@ -307,19 +307,31 @@ Um den Kristall nicht zu beschädigen wurde deshalb die Leistung nicht weiter er
 Aus dem Transienten und den Peak zu Peak werten lässt sich auch das Sinal zu Rauschen VErhältnis bestimmen. 
 Dazu wird der Peak zu Peak Wert der einzelnen Leistungen durch den Rausch wert also der Mitelwert des Betrags des SIgnals des Lock-In-verstärkers 
 Bevor die Zeit-Null eingetroffen ist.
+Die sich daraus ergebenen Werte für das Signal zu Rauschen Verhältnis für die verschiedenen Leistungen sind in \autref{tab:SN} aufgeführt. 
 
 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{content/plots/pdf/ZnTe/110mW.pdf}
     \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
-    \label{fig:tcc}
+    \label{fig:ZnTeT}
 \end{figure}
+
+Des weiteren wird eine fourier trasformation mit den Transienten durchgeführt, diese für $\SI{110}{mW}$ ist in \autoref{fig:ZnTeF} zu sehen
+Die Fouriertransformierte zeigt welche Freqzuenzen in dem Transienten des THz-Pulses Vorhanden sind. 
+Aus diesem lässt sich die Bandbreite von dem THz-Puls bestimmen. 
+Diese betägt $2.4 Thz$.
+Wobei Freqenzen zwischen $0.1$ und $2.4$THz erzeugt werden. 
+Besondrs Hervorzuheben sind die zwei zwei absorptionslinien bei 1.2THz und 1.8THz. 
+Diese einfälle lassen sich durch die Absorptionslinien von dem Wassers, welches in der Luft als Wasserdampf 
+vorhanden ist erklären.
+
+
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{content/plots/pdf/ZnTe/110mW_fft.pdf}
     \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
-    \label{fig:tcc}
+    \label{fig:ZnTeF}
 \end{figure}
 
 \section{OH1}
