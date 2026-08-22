@@ -19,7 +19,7 @@ os.makedirs("data/amplitude", exist_ok=True)
 for i, name in enumerate(filenames):
     print(i, name)
 
-selected_indices = [1, 3 , 15, 20, 29, 38, 53]
+selected_indices = [0,1, 3 ,8, 15, 20, 29, 38, 53,55]
 
 # sammelt (dateiname, mean, ptp, SN) fuer jede ausgewaehlte Datei, wird nach
 # der Schleife in eine txt-Datei geschrieben (siehe unten)
@@ -45,7 +45,10 @@ for i, path in enumerate(filenames):
     ax.plot(t, u, "-", color="#639A00")
     ax.set_xlabel("t / ps")
     ax.set_ylabel("U / V")
-    ax.set_xlim(-4,12)
+    if dateiname == "470mW,naha,am,fokuspunkt,lange,Messung":
+        ax.set_xlim(-6,11)
+    else:
+        ax.set_xlim(-2,5)
     ax.grid()
     fig.savefig(f"pdf/{savedir}/{dateiname}.pdf")
     plt.close(fig)
@@ -74,7 +77,7 @@ for i, path in enumerate(filenames):
     ax.plot(freq, spektrum_norm, "-", color="#639A00")
     ax.set_xlabel("f / THZ")
     ax.set_ylabel("|FFT|")
-    ax.set_xlim(np.min(freq),5)
+    ax.set_xlim(np.min(freq),3)
     ax.grid()
     fig.savefig(f"pdf/{savedir}/{dateiname}_fft.pdf")
     plt.close(fig)

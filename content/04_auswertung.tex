@@ -373,6 +373,42 @@ vorhanden ist erklären.
 
 \section{OH1}
 \label{AOH1}
+Als erstes wird der OH1 Kristall auf die Generation von THz-Strahlng geprüft. 
+Es sei angemerkt, dass der Kristall, mit einer größe von $\SI{2.24}{\milli\meter\squared}$, 
+nur einen geringen Teil des Pump-Strahls ausfüllt. 
+Bei der Strahlgröße von $\SI{67.1+-15.7}{\milli\meter\squared}$, wie in \autoref{sec:spot} bestimmt wurd. 
+Somit füllt der Kristall lediglich $3,33\,\%$ des Strahls aus und die eingehende Strahlung ist auch um den Faktor geringer.
+Im folgenden wird zuerst weiter mit der gesamt Pumpleistung gearbeitet, wobei später zum Amplitudenvergleich mit dem ZnTe auf die 
+Leistung pro Flächenanteil gewechselt wird.
+Zu beginn wird analog wie zuvor in \autoref{sec:AZnTe} der gesamte bereich der Verzögerungsstrecke gemessen umd die Zeit Null zu finden. 
+Es wird bei der geringsten Pump-Leistung gestartet und diese wird erhöht, bis ein THZ-Puls zu sehen ist. 
+Dies ist ab einer Pump-Leistung von $\SI{7.5}{\milli\watt}$ der Fall. 
+Anschließend wird die Pump-Leistung kontinuierlich gesteigert und zu jeder eingstellten Leistung eine Messung von 
+$\SIrange{-2}{6}{\pico\second}$ durchgeführt. 
+Da der Kristall selbst bei der höchsten Pump-Leistung von $\SI{470}{\milli\watt}$ nicht zerstört wurde, 
+wird die Probe näher an den Fokuspunkt gebracht um die Leistung pro fläche zu erhöhe. 
+Dabei war der Kristall zu begin bei einer entfernung von $\SI{4.5}{\centi\meter}$ zu der Linse vor dem Kristall, 
+welchhe eine Brennweite von $\SI{10}{\centi\meter}$ besitzt. 
+Nun wird der Kristall auf eine Distanz von $\SI{7}{\centi\meter}$ gebracht. 
+Unter der Annahme, dass der Strahl am Fokuspunkt Punktförmig ist ergibt sich an der neuen Position eine Strahlgröße von $\SI{36.6}{\milli\meter\squared}$.
+Hierbei ist das Strahl zu Kristallverhältnis von $3,33\,\%$ auf $6.12\,\%$, was fast eine verdopplung der Intensität ist.
+Um einen genauen Transienten bei dieser Hohen Leistung zu haben, 
+wurde bei dieser Leistung ein Intervall von $\SIrange{-6}{11}{\pico\second}$ gemessen. 
+Der erzeugte transient ist in \autoref{fig:OH1T} zu sehen.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/plots/pdf/OH1/470mW,naha,am,fokuspunkt,lange,Messung.pdf}
+    \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
+    \label{fig:OH1T}
+\end{figure}
+
+In diesem ist die Zeit Null sehr gut zu sehen, mit kleinen vorschwingungen, die daruas entstehen, dass der Puls 
+mit niedriger intensität anfängt und erst bei der Zeit Null der wirkliche Peak des THz-Pulses erreicht ist. 
+Es entstehen nach der Zeit Null auch Nachschwingungen die einerseit aus der natürlichen breite des THz Pulses enstehtn und andererseit auch 
+aus rückreflektionen im Kristall und durch das auseinanderlaufen des Pulses durchh unterscheidliche Brechungsindizies der Luft und somit auch 
+unterschiednliche Flugdauern des Strahls. 
+
 
 % Referenzkreis: Mitte=(76,72) Radius=61px
 % Loch-Fläche: 11681 px
@@ -382,13 +418,34 @@ vorhanden ist erklären.
 % Kristallfläche absolut: 2.241 mm^2
 % Kontrollbild gespeichert: mask_vis.jpg
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/plots/pdf/OH1/470mW,naha,am,fokuspunkt,lange,Messung_fft.pdf}
+    \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
+    \label{fig:OH1f}
+\end{figure}
+
+Des Weiteren ist in \autoref:{fig:OH1f} die Fouriertransformierte des Transienten zu sehen. 
+In dieser lässt sich erkennen, dass in dem THz-Puls Frequenzen von $SIrange{0.2}{2.2}{THz}$ vorhanden sind, 
+was eine Bandbreite von $\SI{2}{THz}$ ergibt. 
+Dazu sind die Absorptionslinien von Wasser bei $\SI{1.2}{THz}$ und $\SI{1.7}{THz}$ auch hier zu sehen.
+
+Anschließend wird der peak zu Peak Wert und das Signal zu Rausch Verhältnis für die verschiedenen Pump-Leistungen bestimm, diese sind 
+in \autoref{tab:SNOH1} aufgelistet. 
+
+Die Peak zu Peak werte werden zudem in \autoref{fig:ampc} mit denen des ZnTe Kristalls verglichen. 
+Hierbei wird aber nun für den OH1 Kristall nicht die Pump Leistung genutzt sondern die Leistung Pro fläche multipiziert mit der Fläche des 
+Kristalls. 
+Die Leistungs dichte wurde in \autoref{sec:spot} zu $\SI{0.103+-0.240}{\watt\per\centi\meter\squared}$ bestimmt und die fläche des 
+Krsitalls wurde mithhilfe von fotos einem Pythonskript zu $\SI{2.241}{\milli\meter\squared}$ bestimmt. 
+Mithilfe dieser Werte ergibt sich die \autoref{fig:ampc}.
 
 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{content/plots/pdf/amplitude_comb.pdf}
     \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
-    \label{fig:tcc}
+    \label{fig:ampc}
 \end{figure}
 
 \begin{figure}
