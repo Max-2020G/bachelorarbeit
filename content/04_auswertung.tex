@@ -1,8 +1,8 @@
 \chapter{Auswertung und Diskussion}
 \label{sec:aus}
 
-Im Folgenden werden die experimentellen Erkenntinsse aufgeführt und anschließend diskutiert. 
-Zu beginn wird in \autoref{sec:SN} das Rauschen des Aufbaus festgestellt und die Abhängigkeit 
+Im Folgenden werden die experimentellen Erkenntninsse aufgeführt und anschließend diskutiert. 
+Zu Beginn wird in \autoref{sec:SN} das Rauschen des Aufbaus festgestellt und die Abhängigkeit 
 von der Zeitkonstante des Lock-In-Verstärkers geprüft. 
 Als weitere Vorbereitung wird die Größe des Strahls mithilfe des 
 Cutting-knife-Verfahrens bestimmt und anschließend mit den 
@@ -12,8 +12,8 @@ indem die Transienten sowie deren Fourier-transformierte
 ausgewertet werden. 
 Dazu wird das Verhalten der Amplitude 
 bei verschiedenen Laserleistungen analysiert. 
-Diese Schritte werden anschließend für die zwei organischen Kristalle OH1 und BNA in \autoref{sec:AOH1} und \autoref{sec:ABNP} wiederholt 
-und mit den bekannten werden aus \autoref{sec:AZnTe} verglichen.
+Diese Schritte werden anschließend für die zwei organischen Kristalle OH1 und BNA in \autoref{sec:AOH1} und \autoref{sec:ABNA} wiederholt 
+und mit den bekannten Werten aus \autoref{sec:AZnTe} verglichen.
 
 
 \section{Bestimmung des Rauschuntergrunds}
@@ -21,8 +21,8 @@ und mit den bekannten werden aus \autoref{sec:AZnTe} verglichen.
 Das Rauschen wird in verschiedenen Situationen gemessen, 
 wobei zwischen Netzspannungs- und 
 Batterieversorgung unterschieden wird.
-Diese unterscheidung wird getroffen um störquellen wie Erdschleifen und Netzbrummen 
-von dem intrinsitschem Elektronikrauschen zu trennen. 
+Diese unterscheidung wird getroffen, um Störquellen wie Erdschleifen und Netzbrummen 
+von dem intrinsischem Elektronikrauschen zu trennen. 
 Bei der Netzspannung wird dazu das Rauschen sowohl bei 
 eingeschaltetem als auch bei ausgeschaltetem Laser gemessen. \\
 
@@ -63,49 +63,49 @@ anschließend der Mittelwert bestimmt.
         \caption{Mit Beleuchtung.}
         \label{fig:tcw}
     \end{subfigure}
-    \caption{Messerte der Rauschspanung gegen $\frac{1}{\sqrt{\tau}}$ aufgetragen. Dazu ist ein 
+    \caption{Messwerte der Rauschspannung gegen $\frac{1}{\sqrt{\tau}}$ aufgetragen. Dazu ist ein 
     Fit der Form $\frac{A}{\sqrt{\tau}}+b$ zu sehen.}
     \label{fig:tc1}
 \end{figure}
  
 Die daraus resultierenden Werte sind in \autoref{fig:tc1} zu sehen, 
 wobei in \autoref{fig:tco} 
-die Daten ohne Beleuchtung durch den Laser zu sehen ist und in 
+die Daten ohne Beleuchtung durch den Laser zu sehen sind und in 
 \autoref{fig:tcw} mit Beleuchtung. 
-Dazu wurde bei beiden ein Fit der Form $\autoref{eqn:tc}$ durchhgeführt wobei $A$ die Rauschamplitude 
-der Messung ist und $b$ der Offset des Rauschuntergunds. 
-Für die Fit werte ergben sich 
+Dazu wurde bei beiden ein Fit der Form \autoref{eqn:tc} durchgeführt wobei $A$ die Rauschamplitude 
+der Messung ist und $b$ der Offset des Rauschuntergrunds. 
+Für die Fit-Werte ergben sich 
 \begin{align}
     A_\text{mi} =&\SI{6.4+-0.5e-8}{\volt} & b_\text{mi} =&\SI{5.5+-1.1e-8}{\volt} \\
     A_\text{oi} =&\SI{3.9+-0.4e-8}{\volt} & b_\text{oi} =&\SI{6.3+-1e-8}{\volt}\, .
 \end{align}
 Es zeigt sich, dass die Rauschamplitude mit Beleuchtung ungefähr 
-um den Faktor 2 größer ist, als 
+um den Faktor 2 größer ist als 
 ohne Beleuchtung. 
-Dieser Faktor lässt sich darüber erklären, dass bei Licht einstahlung 
-an den Photdioden das Schrotrauschen hinzukommt. 
-Das entsteht durch den statistischen Prozess des Photoelektrischen 
-effektes der den Strom an der Photodiode erzeugt. 
-Dieser entsteht nur wenn ein einzelnes Photon genügen energie hat 
-ein Elektronauf eine höhere Schaale zu bringen und da diese Energie des 
-Photons statistisch verteilte ist, sommit eine unsicherheit in die 
-Messung dazu kommt. 
-Diese Unsicherheit mittelt sich aber über lange Zeitkonsanten raus. 
-Das ist sehr gut sichbar, da bei höheren Zeitkonstanten die beiden 
-auf einen ähnlichen offset $b$ treffen.\\
+Dieser Faktor lässt sich darüber erklären, dass bei Lichteinstahlung 
+an den Photodioden das Schrotrauschen hinzukommt. 
+Das entsteht durch den statistischen Prozess des photoelektrischen 
+Effekts, der den Strom an der Photodiode erzeugt. 
+Dieser entsteht nur, wenn ein einzelnes Photon genügend energie hat,
+ein Elektron auf eine höhere Schale zu bringen, da diese Energie des 
+Photons statistisch verteilte ist, kommt somit eine Unsicherheit in die 
+Messung. 
+Diese Unsicherheit mittelt sich aber über lange Zeitkonstanten heraus. 
+Das ist sehr gut sichtbar, da bei höheren Zeitkonstanten die beiden 
+auf einen ähnlichen Offset $b$ treffen.\\
 Des Weiteren wurde diese Messung wiederholt, wobei dort die 
 Stromversorgung der Photodioden nicht von 
-Stromgeneratoren, welche mit Netzstromlaufne betrieben, 
-sondern mit Baterien versorgt werden. 
-Um hier ein weiteren Aspekt abzudecken wurde einmal über 
-$\SI{20}{s}$ gemittelt und einmal über $\SI{60}{s}$. 
+Stromgeneratoren, welche mit Netzstrom betrieben werden, 
+sondern mit Batterien versorgt werden. 
+Um hier einen weiteren Aspekt abzudecken, wurde einmal über 
+$\SI{20}{\second}$ gemittelt und einmal über $\SI{60}{\second}$. 
 Die sich daraus ergebenden Werte sind in \autoref{fig:tc2} zu sehen. 
 Dabei ist \autoref{fig:tc20} der Plot mit einer Messdauer von 
 \SI{20}{\second}, 
 \autoref{fig:tc60} den Plot für \SI{60}{\second}. 
 Es wird anschließend ein Fit mithilfe von \autoref{eqn:tc} erstellt. 
 Hierbei wird bei beiden Messreihen der Wert mit der 
-niedrigsten Zeitkonstante($\tau= \SI{30}{ms}$) nicht berücksichtigt, da 
+niedrigsten Zeitkonstante($\tau= \SI{30}{\milli\second}$) nicht berücksichtigt, da 
 aufgrund des sehr großen Fehlers keine Aussage über die 
 relative Position zu den anderen Werten getroffen werden kann. 
 
@@ -141,44 +141,45 @@ Die aus dem Fit resultierenden Werte sind in \autoref{tab:tc2} zu sehen.
 
 Durch die Werte lässt sich zeigen, dass die 
 Rauschamplitude bei den Batterien schlechter oder Vergleichbar ist, 
-was in \autoref{tab:vgltc} zu sehen ist.
+was in \autoref{tab:tcc} zu sehen ist.
 Der Offset $b$ ist hingegen 
-so geringer, mit einem so großen Fehler ist, sodass keine 
-Aussage über ihn getroffen werden kann.. 
+geringer, allerdings mit einem so großen Fehler behaftet, sodass keine 
+Aussage über ihn getroffen werden kann.
 Hinzu kommt, dass die Rauschamplitude $A$ bei 
-längerer Messzeit etwa Halb so groß ist wie bei der kurzen Messzeit. 
-Dagegen ist aber der Offs um eine Größenordnungen größer 
+längerer Messzeit etwa halb so groß ist wie bei der kurzen Messzeit. 
+Dagegen ist aber der Offset um eine Größenordnung größer 
 als das der Messung mit $\SI{20}{\second}$, wobei der Wert 
-$b_{\text{60\,s}}$ keine wirklich aussagekraft hat.
+$b_{\text{60\,s}}$ keine wirkliche Aussagekraft hat.
 
 Zusammengefasst sind die gesamten Messdaten in \autoref{fig:tcc}. 
 Diese zeigen, dass das Rauschen bei steigender Zeitkonstante $\tau$ abnimmt 
 und ab 
-$\tau=\SI{0.3}{s}$ ein Plateau erreich bei welchen sich das Rauschen nur minimal ändert. 
+$\tau=\SI{0.3}{\second}$ ein Plateau erreicht bei welchem sich das Rauschen nur minimal ändert. 
 Es ist aber bereits zu Beginn zu sehen, dass das Rauschen bei 
-eingeschaltetem Lasers und niedrigen 
+eingeschaltetem Laser und niedrigen 
 Zeitkonstante deutlich höher ist als bei ausgeschaltetem Laser. 
 Erklären lässt sich durch das Schrotrauschen. 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{content/plots/pdf/time_constant/time_constant_combined_vs_tau.pdf}
-    \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
+    \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.
+    Dazu die Werte mit der Batterie als Stromversorgung bei verschiedenen Mittelungszeiten.}
     \label{fig:tcc}
 \end{figure}
 Dieser statistische Prozess lässt sich jedoch durch eine längere 
-Zeitkonstante hehrrausmitteln, wodurch das Rauschen bei höheren 
+Zeitkonstante hehrausmitteln, wodurch das Rauschen bei höheren 
 Zeitkonstanten abnimmt.
-Der Offset $b$, also das Untergrundrauschen lässt sich durch das 
+Der Offset $b$, also das Untergrundrauschen, lässt sich durch das 
 elektronische Rauschen in den Detektionskomponenten erklären.  
-Da bei allen Messungen die selben Detektionskomponenten genutzt 
-werden ist dieses Rauschen auch immer ähnlich. 
+Da bei allen Messungen dieselben Detektionskomponenten genutzt 
+werden, ist dieses Rauschen auch immer ähnlich. 
 Wie zuvor beschrieben lässt sich erkennen, dass ab einer 
-Zeitkonstante von $\tau=\SI{0.3}{s}$ keine große Verbesserung zu sehen ist. 
+Zeitkonstante von $\tau=\SI{0.3}{\second}$ keine große Verbesserung zu sehen ist. 
 Deswegen wird in dieser Bachelorarbeit mit einer Zeitkonstante von 
-$\tau=\SI{0.1}{s}$ gearbeitet. 
-Wobei aber 5 Messungen am selben Ort genommen 
+$\tau=\SI{0.1}{\second}$ gearbeitet, 
+wobei aber 5 Messungen am selben Ort genommen 
 werden, was zur Folge hat, dass die Zeitkonstante effektiv auf 
-$\SI{0.5}{s}$ anwächst. 
+$\SI{0.5}{\second}$ anwächst. 
 Dieser Weg wurde gewählt um den Messvorgang zu beschleunigen, 
 da das Messprogramm vor jeder Einzelmessung einige Zeitkonstanten abwartet, 
 bevor es misst. 
@@ -205,19 +206,18 @@ Messungen erhalten bleibt.
 % möglichst Rauschfreie Messung durchgeführt werden kann.
 
 %--------------------------------------------Abschnitt Spot größe
-
 \section{Spot Größe}
 \label{sec:spot}
-Da die organischen Kristalle äußerst klein sind und der Laser Strahl hingegen deutlich größer ist, 
-wird im folgenden die größe des Lasers bestimmt, mit welchem anschließend die Leistungsdichte bestimmt werden kann. 
+Da die organischen Kristalle äußerst klein sind und der Laserstrahl hingegen deutlich größer ist, 
+wird im Folgenden die Größe des Lasers bestimmt, mit welchem anschließend die Leistungsdichte bestimmt werden kann. 
 Diese Werte gelten in den folgenden Kapiteln als Referenz für die einwirkende Leistung auf die Kristalle. \\
-Um die Strahlgröße zu bestimmen wird das Cutting-Edge-Verfahren verwendet. 
-Das beruht darauf, dass eine Rasierklinge an eine verstellbare Platform angebracht wird und in den Strahl gehalten wird. 
+Um die Strahlgröße zu bestimmen, wird das Knife-Edge-Verfahren verwendet. 
+Das beruht darauf, dass eine Rasierklinge an eine verstellbare Plattform angebracht wird und in den Strahl gehalten wird. 
 Dieser Aufbau wird an der Stelle platziert wo auch die Generationskristalle platziert werden. 
 Hinter dieser Stelle wird die Leistung gemessen. 
-Um die Strahlgröße zu bestimmen wird dann die Rasierklinge in $\SI{0.05}{mm}$ schritten verschoben, sodass 
+Um die Strahlgröße zu bestimmen wird dann die Rasierklinge in $\SI{0.05}{\milli\meter}$ Schritten verschoben, sodass 
 mehr Strahlanteile von der klinge blockiert werden und die gemessene Leistung entsprechend sinkt. 
-Für jede Verstellung wird die Differnez der Leistung zwei auf einander folgenden Messwerte bestimmt. 
+Für jede Verstellung wird die Differenz der Leistung zweier einanderfolgender Messwerte bestimmt. 
 Diese Differenz entspricht näherungsweise der Leistung, die auf die in diesem Schritt zusätzlich abgeschnittene Fläche entfällt.
 Diese Differenz wurde einmal in x- und y-Richtung bestimmt. 
 Die Messdaten dazu sind in \autoref{fig:spot_c} zu sehen. 
@@ -227,100 +227,100 @@ Die Messdaten dazu sind in \autoref{fig:spot_c} zu sehen.
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=0.8\textwidth]{content/plots/pdf/spot_size_x.pdf}
-        \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
+        \caption{Diifferenz der Messwerte von Zwei aufeinander folgenden Werten der Leistung in x-Richtung.
+        }
         \label{fig:spot_x}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=0.8\textwidth]{content/plots/pdf/spot_size_y.pdf}
-        \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
+        \caption{Diifferenz der Messwerte von Zwei aufeinander folgenden Werten der Leistung in y-Richtung.}
         \label{fig:spot_y}
     \end{subfigure}
-    \caption{Messwerte der Rauschspannung bei Stromversorgung per Batterie bei keiner Beleuchtung durch Laser.
-        Dazu Fit durch die Messwerte, der Form $\frac{A}{\sqrt{\tau}}+b$.}
-    \label{fig:tc2}
+    \caption{Differnzen der Leistung bei verschiebung der Rasierklinge entlang verschiedener Achsen.}
+    \label{fig:spot_c}
 \end{figure}
 
 
-In \autoref{fig:spot_x} ist auf der Linken seite ein Deutlich steilerer Abfall als auf der Rechten zu sehen. 
-Das lässt darauf schließend, dass der Strahl im vorherigen verlauf von einer Optik geschnitten wird und dies somit nicht die 
-Ideale Form des Strahls ist und es lässt sich somit mit dieser seite nicht auf die tatsächlich größe des Strahls schließen. 
-Deswegen wird bei der x-Richtung nur der Rechte seite genutzt um einen Gauss-Fit der Form 
+In \autoref{fig:spot_x} ist auf der linken seite ein deutlich steilerer Abfall als auf der rchten zu sehen. 
+Das lässt darauf schließen, dass der Strahl im vorherigen verlauf von einer Optik geschnitten wird und dies somit nicht die 
+ideale Form des Strahls ist und es lässt sich somit mit dieser Seite nicht auf die tatsächlich Größe des Strahls schließen. 
+Deswegen wird bei der x-Richtung nur der rechte Seite genutzt, um einen Gauss-Fit der Form 
 \begin{equation}
     f(x) = A\cdot \exp\left(-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2\right) + b
 \end{equation}
 
 durchzuführen. 
-Bei der y-Richtung hingegen konnte der Fit über beide seiten bestimmt werden…
+Bei der y-Richtung hingegen konnte der Fit über beide Seiten bestimmt werden.
 Mithilfe des Fits ergeben sich die Koefizienten
 \begin{align}
     A_x &= \SI{1.246+-0.150}{mW} & \mu_x &= \SI{13.865+-0.214}{mm} \\
     \sigma_x &= \SI{2.452+-0.429}{mm} & b_x &= \SI{-0.141+-0.152}{mW} \\
     A_y &= \SI{1.021+-0.118}{mW} & \mu_y &= \SI{13.388+-0.126}{mm} \\
-    \sigma_y &= \SI{2.178+-0.331}{mm} & b_y &= \SI{-0.093+-0.128}{mW}
+    \sigma_y &= \SI{2.178+-0.331}{mm} & b_y &= \SI{-0.093+-0.128}{mW} \,.
 \end{align}
-
-Mit diesen Werten und $w=2\cdot\sigma $ lässt sich der Durchmesser für die jeweiligen Achsen bestimmen. 
+Mit diesen Werten und $w=2\cdot\sigma $ lässt sich der Radius für die jeweiligen Achsen bestimmen. 
 Es ergeben sich 
 \begin{align}
-	w_x &= \SI{4.905+-0.858}{mm} \ \text{und}\\
-	w_y &= \SI{4.356+-0.662}{mm} \ .
+	w_x &= \SI{4.905+-0.858}{\milli\meter} \ \text{und}\\
+	w_y &= \SI{4.356+-0.662}{\milli\meter} \, .
 \end{align} 
-Es zeigt sich, dass die x größe breiter ist, was auf den Fit auf nur einer seite durch den abgeschnittenen Strahl, zurrück zu führen ist.
-Somit ist der Strahl Elpisen förmig und für den Flächeninhalt wird $A = \pi w_x w_y$ genutzt. 
-Daruas errechnet sich der Flächeninhalt mit $\SI{67.1+-15.7}{mm^2}$, wobei der große fehler aus dem Fit in die x-Richtung entsteht.
-Die Leistung des Strahls an dieser stelle beträgt $\SI{34.5}{mW}$ daraus lässt sich mit $I_\text{sp}= \frac{2\cdot P}{A}$ die Spitzenintensität 
+Es zeigt sich, dass die x-Größe breiter ist, was auf den Fit auf nur einer Seite durch den abgeschnittenen Strahl zurückzuführen ist.
+Somit ist der Strahl ellipisenförmig und für den Flächeninhalt wird $A = \pi w_x w_y$ genutzt. 
+Daraus errechnet sich der Flächeninhalt mit $\SI{67.1+-15.7}{\milli\meter\squared}$, wobei der große Fehler aus dem Fit in die x-Richtung entsteht.
+Die Leistung des Strahls an dieser stelle beträgt $\SI{34.5}{\milli\watt}$ daraus lässt sich mit $I_\text{sp}= \frac{2\cdot P}{A}$ die Spitzenintensität 
 bestimmen. 
-Es ergibt sich $\SI{0.103+-0.024}{W/cm^2}$.
+Es ergibt sich $\SI{0.103+-0.024}{\watt\per\centi\meter\squared}$.
 Hierbei ist der Fehler von fasst $24\,\%$ zu erwähnen, wobei sich diese große abweichung durch 
 den nur einseitigen Fit bei der x-Richtung erklären lässt. 
-Dazu sei zu erwähnen, dass dies die durchschnittliche spitzenleistung ist. 
-Der Laser ist aber ein Puls Laser und somti ist die Leistung eines Einzelnen Pulses um ein vielfaches höher als diese gemittelte. 
-Als Vergeleichswert nützt dieser Wert aber trotzdem, da alle Messwerte mit dem selben Laser aufgenommen wurden und somit über diesen 
+Dazu sei zu erwähnen, dass dies die durchschnittliche Spitzenintensität ist. 
+Der Laser ist aber ein Pulslaser und somit ist die Leistung eines einzelnen Pulses um ein Vielfaches höher als diese gemittelte. 
+Als Vergleichswert nützt dieser Wert aber trotzdem, da alle Messwerte mit demselben Laser aufgenommen wurden und somit über diesen 
 Wert vergleichbar sind.
-Dieser Wert Pro Flächeninhalt ist nötig, da die Proben des OH1 und BNA nicht den gesamten Strahl ausfüllen und so nicht mit dem ZnTe, welcher 
-den gesamten Strahl ausfüllt verlgleichbar wären. 
-Im folgend wird diese Grundlagenmessung mit ZnTe Beschrieben.
+Dieser Wert Pro Flächeninhalt ist nötig, da die Proben des OH1 und BNA nicht den gesamten Strahl ausfüllen und so die Messswerte 
+nicht mit denen von ZnTe, welcher 
+den gesamten Strahl ausfüllt, verlgleichbar wären. 
+Im Folgend wird diese Grundlagenmessung mit ZnTe beschrieben.
 
 \section{ZnTe}
 \label{sec:AZnTe}
-Um einen Vergleich für die organischen Emitter zu haben wurde zu Beginn eine Messung der THz-Strahlung, welche von 
+Um einen Vergleich für die organischen Emitter zu haben wird zu Beginn eine Messung der THz-Strahlung, welche von 
 ZnTe erzeugt wird durchgeführt. 
 Im Gegensatz zu den anderen Kristallen konnte die gesamte Leistung des Pump-Strahls zur Erzeugung genutzt werden, da der 
-ZnTe Groß genug ist um den gesamten Strahl auszufüllen. 
-Zu Begin wurde die Position der Zeit Null also der Ort wo der erste und größte Peak des THz-Pulses ist bestimmt. 
+ZnTe-Kristall Groß genug ist um den gesamten Strahl auszufüllen. 
+Zu Beginn wird die Position der "Zeit Null" also der Ort, an dem der erste und größte Peak des THz-Pulses ist bestimmt. 
 Anschließend wurde um diesen Wert ein Intervall von $\SI{-3}{ps}$ bis $\SI{11}{ps}$ gemessen. 
-Dieser transient für eine Pump-Leistung von $\SI{55}{mW}$ ist in $\autoref{fig:ZnTeT}$ zu sehen. 
+Dieser Transient für eine Pump-Leistung von $\SI{55}{mW}$ ist in \autoref{fig:ZnTeT} zu sehen. 
 In diesem ist die Zeit-Null bei 0 eingetragen und anschließend sind die nachschwingungen zu sehen. 
-Nachschwingungen entsthen da der Puls beim Durchlaufen des Generationskristalls nicht gerdlinig aus dem Kristall austritt und 
-Teile des pulses über mehrfachreflektion zu späterer Zeit aus dem Kristall austreten. 
-Somit trit ein geringer Teil erst später auf den Detektionskristall und wird so auch erst später gemessen was einen zweiten Puls wie ungefähr bei 
+Nachschwingungen entstehen da der Puls beim Durchlaufen des Generationskristalls nicht geradlinig aus dem Kristall austritt und 
+Teile des Pulses über Mehrfachreflexion zu späterer Zeit aus dem Kristall austreten. 
+Somit tritt ein geringer Teil erst später auf den Detektionskristall und wird so auch erst später gemessen was einen zweiten Puls wie ungefähr bei 
 $\SI{7}{ps}$ zu sehen ist. 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{content/plots/pdf/ZnTe/110mW.pdf}
-    \caption{Transient des THz-Pulses bei einer Pump Leistung von $\SI{110}{\milli\watt}$.}
+    \caption{Transient des THz-Pulses, erzeugt von ZnTe, bei einer Pump-Leistung von $\SI{55}{\milli\watt}$.}
     \label{fig:ZnTeT}
 \end{figure}
 
 Dieser Transient wurde für verschiedene Pump-Leistungen gemessen und die Peak-Zu-Peak-Werte bestimmt. 
 In \autoref{fig:amp} sind diese Werte aufgelistet und mit einem linearen Fit versehen um die lineare Abhängigkeit von der 
 Laserleistung zu zeigen. 
-Es ist anzumerken, dass die Leistung von $\SI{55}{mW}$ nicht die höchstmögliche Leistung des Lasers ist aber, ab dieser Leistung 
+Es ist anzumerken, dass die Leistung von $\SI{55}{mW}$ nicht die höchstmögliche Leistung des Lasers ist, aber ab dieser Leistung 
 der Kristall anfängt lumineszent zu werden, was ein Zeichen für die Nähe der Zerstörschwelle ist. 
 Um den Kristall nicht zu beschädigen wurde deshalb die Leistung nicht weiter erhöht. 
 Aus dem Transienten und den Peak-zu-Peak-Werten lässt sich auch das Sinal-zu-Rauschen-Verhältnis bestimmen. 
-Dazu wird der Peak-zu-Peak-Wert der einzelnen Leistungen durch den Rauschwert geteilt welche in \autoref{sec:SN} bestimmt wurde.
-Es wird der Rauschwert für eine Zeitkonstante von $\tau = \SI{450}{ms}$ und Beleuchtung, 
+Dazu wird der Peak-zu-Peak-Wert der einzelnen Leistungen durch den Rauschwert geteilt, welcher in \autoref{sec:SN} bestimmt wurde.
+Es wird der Rauschwert für eine Zeitkonstante von $\tau = \SI{450}{\milli\second}$ und Beleuchtung, 
 welcher $U_\text{Rauschen}=\SI{0.158}{\micro\volt}$ beträgt, als einheitliche Rauschreferenz für alle Leistungen verwendet. 
 Es wird dieser Wert genutzt, da er der nächste gemessene Wert an der Theoretisch genutzten Zeitkonstante von $\tau=\SI{500}{ms}$ ist.  
 Die sich daraus ergebenden Werte für das Signal zu Rauschen Verhältnis für die verschiedenen Leistungen sind in \autoref{tab:snZnTe} aufgeführt.
-Auffällig dabei sind die Werte zwischen $\SI{30}{\milli\watt}$ und $\SI{48}{\milli\watt}$. Hier ist ein starker anstieg zu den 
-anderen Werten bei dem peak to peak Wert zu sehen. Zwischen diesen und den anderen Messungen wurden verschhiedene Spannungsquellen für die 
-Photodioden geprüft, wobe diese sich nicht als Ideal herausgestellt haben und zur Netzspannung zurrückgewechselt wurde. 
-Es schheint als wäre im zuge dessen die einstellung an der Spannungsquellen verstellt worden, was die plötzlich höheren Werte der 
+Auffällig dabei sind die Werte zwischen $\SI{30}{\milli\watt}$ und $\SI{48}{\milli\watt}$. Hier ist ein starker Anstieg zu den 
+anderen Werten bei dem Peak-zu-Peak Wert zu sehen. Zwischen diesen und den anderen Messungen wurden verschiedene Spannungsquellen für die 
+Photodioden geprüft, wobei diese sich nicht als ideal herausgestellt haben und zur Netzspannung zurückgewechselt wurde. 
+Es schheint als wäre im Zuge dessen die Einstellung an den Spannungsquellen verstellt worden, was die plötzlich höheren Werte der 
 Messung erklären könnte.
 
 \begin{table}
@@ -351,11 +351,11 @@ Messung erklären könnte.
 
 
 
-Des Weiteren wird eine Fourier-Trasformation mit den Transienten durchgeführt, diese für $\SI{110}{mW}$ ist in \autoref{fig:ZnTeF} zu sehen
-Die Fouriertransformierte zeigt welche Frequenzen in dem Transienten des THz-Pulses Vorhanden sind. 
+Des Weiteren wird eine Fourier-Transformation mit den Transienten durchgeführt, diese für $\SI{110}{mW}$ ist in \autoref{fig:ZnTeF} zu sehen.
+Die Fouriertransformierte zeigt, welche Frequenzen in dem Transienten des THz-Pulses vorhanden sind. 
 Aus diesem lässt sich die Bandbreite von dem THz-Puls bestimmen. 
-Diese betägt $2.4 Thz$.
-Wobei Freqenzen zwischen $0.1$ und $2.4$THz erzeugt werden. 
+Diese betägt $\SI{2.4}{\tera\hertz}$.
+Wobei Freqenzen zwischen $\SI{0.2}{\tera\hertz}$ und $\SI{2.6}{\tera\hertz}$THz erzeugt werden. 
 Besonders hervorzuheben sind die zwei zwei Absorptionslinien bei $\SI{1.2}{THz}$ und $\SI{1.7}{THz}$. 
 Diese Einbrüche lassen sich durch die Absorptionslinien des Wassers, welches in der Luft als Wasserdampf 
 vorhanden ist erklären.
@@ -364,7 +364,7 @@ vorhanden ist erklären.
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{content/plots/pdf/ZnTe/110mW_fft.pdf}
-    \caption{Fouriertransformierte des THz-Pulses bei einer Pump Leistung von $\SI{110}{\milli\watt}$.}
+    \caption{Fouriertransformierte des THz-Pulses, erzeugt von ZnTe, bei einer Pump-Leistung von $\SI{5}{\milli\watt}$.}
     \label{fig:ZnTeF}
 \end{figure}
 
