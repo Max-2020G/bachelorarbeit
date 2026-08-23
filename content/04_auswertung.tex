@@ -456,13 +456,11 @@ Bei den Geplotteten Werten des ZnTe Kristalls ist auch die in \autoref{sec:AZnTe
 \section{BNA}
 \label{sec:ABNA}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{content/loch_kristall/mask_vis.jpg}
-    \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
-    \label{fig:tcc}
-\end{figure}
-
+Für BNA wurde wie bei den anderen Materialien zuvor ein großer bereich abgesucht und anschließend immer die Pump-Leistung von \SIrange{2.2}{480}{\milli\watt} erhöht. 
+Der Transient für die höchste Pump-Leistung ist in \autoref{fig:BNAt} zu sehen. 
+Dort ist zu sehen, dass kein Peak zu sehen ist und nur Ruaschen gemessen wurde. 
+Dies lässt darauf schließen, dass die genutzte probe keine, oder nur sehr schwache fähigkeiten besitzt THz-Strahlung zu erzeuegn.
+Gründe dafür werden im folgenden erläutert.
 
 \begin{figure}
     \centering
@@ -470,18 +468,51 @@ Bei den Geplotteten Werten des ZnTe Kristalls ist auch die in \autoref{sec:AZnTe
     \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
     \label{fig:BNAt}
 \end{figure}
+
+Die Proben sind nur sehr kleine pulverartige Kristalle gewesen, wobei einzelne Kristalle, 
+welche dann auch nicht sicher ein einzelner Kristall sind, 
+keinen Durchmesser größeren als $\SI{2}{\milli\meter}$ haben. 
+Die genutzte Probe wurde in einem mikroskop auf unebenheiten und andere anomalien untersucht. 
+In \autoref{fig:my8} ist eine Achtfache vergrößerunug der Probe zu sehen. 
+In dieser sind unebenheiten und verschiedene Schichten zu sehen. 
+Eingezeichnet ist eine dieser unebenheiten, wobei diese eine Länge von $\SI{0.228}{\milli\meter}$ besitzt \cite{ids_ui1580lehq}. 
+Das hat zur folge, dass wenn viele verschieden Kristalle in der Probe vorhanden sind, diese auch immer unterschiedliche ausrichhtungen haben. 
+Durch diese ausrichhtung erzeugen die einzelnen Kristalle für sich THz-Strahlung, 
+aber diese hat jeweils eine unterschiedliche Poalrisationsrichtung und Phase relaitv zu einander. 
+Dadurchh mittelt sich im extremfall über ganz viele kleine Kristalle das erzeugt THz-Feld zu 0.
+Dazu ist auch diese Probe sehr klein mit einer fläche von $\SI{6.28}{\milli\meter\squared}$.
+Somit ist die Effektive Leistung, 
+welche auf den Kristall trifft um einen Faktor 3 größer als die bei OH1 aber immernoch ein Zentel kleiner als bei ZnTe.
+Somit ist durch die Qualität der Probe keine aussage über die nutzbarkeit des Materials zu erzeugung von THz-Strahlung machen. 
+
+
+
+%5,632/2560=0,0022mm/pixel
+%8x vergrößerung also 0,000275 mm/pixel
+%574*599=829,62Pixel
+%Länge = 0,228mm
+
+
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{content/plots/build/OH1/transients/202608071724_1Dx1D_756ed8_470mW_naha_am_fokuspunkt_lange_Messung.pdf}
+    \includegraphics[width=0.8\textwidth]{content/bilder/mikroskop/yellow_drauflicht_8x.png}
     \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
-    \label{fig:tcc}
+    \label{fig:my8}
 \end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{content/plots/build/OH1/transients/202608071709_1Dx1D_40e4a3_470mW_naeher_am_Fokus2.pdf}
-    \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
-    \label{fig:tcc}
-\end{figure}
+
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{content/plots/build/OH1/transients/202608071724_1Dx1D_756ed8_470mW_naha_am_fokuspunkt_lange_Messung.pdf}
+%     \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
+%     \label{fig:tcc}
+% \end{figure}
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{content/plots/build/OH1/transients/202608071709_1Dx1D_40e4a3_470mW_naeher_am_Fokus2.pdf}
+%     \caption{Vergleich der Rauschspannung mit und ohne eingeschaltetem Laser.}
+%     \label{fig:tcc}
+% \end{figure}
 
 % \begin{figure}
 %     \centering
