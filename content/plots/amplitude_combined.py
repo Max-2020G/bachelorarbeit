@@ -26,9 +26,9 @@ popt_oh1, pcov_oh1 = curve_fit(lin, A_OH1, U_OH1)
 x_oh1 = np.linspace(A_OH1.min(), A_OH1.max(), 1000)
 
 fig, ax = plt.subplots(layout="constrained")
-ax.plot(A_ZnTe, U_ZnTe, "x", color="#639A00")
-ax.plot(x_znte, lin(x_znte, *popt_znte), "-", color="#FF9100")
-ax.plot(A_OH1, U_OH1, "x", color="#639A00")
+ax.plot(A_ZnTe, U_ZnTe, "x", color="#639A00", label="Messwerte-ZnTe")
+ax.plot(x_znte, lin(x_znte, *popt_znte), "-", color="#FF9100", label="Linearer-Fit")
+ax.plot(A_OH1, U_OH1, "^", color="#639A00", label="Messwerte-OH1")
 ax.plot(x_oh1, lin(x_oh1, *popt_oh1), "-", color="#FF9100")
 
 # ------------------------- Zoom-Inset -------------------------
@@ -39,16 +39,16 @@ ax.plot(x_oh1, lin(x_oh1, *popt_oh1), "-", color="#FF9100")
 # liegen, ausserdem wurde der Rueckgabewert nie in einer Variable
 # gespeichert, wodurch nie Daten ins Inset gezeichnet wurden.
 #axins = ax.inset_axes([0, 0, 0, 0], xlim=(0, 0), ylim=(0, 0))
-ax.plot(A_ZnTe, U_ZnTe, "x", color="#639A00")
-ax.plot(x_znte, lin(x_znte, *popt_znte), "-", color="#FF9100")
-ax.plot(A_OH1, U_OH1, "x", color="#639A00")
-ax.plot(x_oh1, lin(x_oh1, *popt_oh1), "-", color="#FF9100")
+# ax.plot(A_ZnTe, U_ZnTe, "x", color="#639A00")
+# ax.plot(x_znte, lin(x_znte, *popt_znte), "-", color="#FF9100")
+# ax.plot(A_OH1, U_OH1, "x", color="#639A00")
+# ax.plot(x_oh1, lin(x_oh1, *popt_oh1), "-", color="#FF9100")
 ax.grid()
 
 # Zeichnet automatisch ein Rechteck um den gezoomten Bereich im Hauptplot
 # sowie Verbindungslinien zum Inset.
 #ax.indicate_inset_zoom(axins, edgecolor="black")
-
+ax.legend()
 ax.set_xlabel("Power / mW")
 ax.set_ylabel("Voltage / mikroV")
 

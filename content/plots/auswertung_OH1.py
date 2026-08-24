@@ -19,7 +19,7 @@ os.makedirs("data/amplitude", exist_ok=True)
 for i, name in enumerate(filenames):
     print(i, name)
 
-selected_indices = [0,1, 3 ,8, 15, 20, 29, 38, 53,55]
+selected_indices = [0,1, 3,6,12,23,43,47,25 ,8, 15,  29, 38, 53,55]
 
 # sammelt (dateiname, mean, ptp, SN) fuer jede ausgewaehlte Datei, wird nach
 # der Schleife in eine txt-Datei geschrieben (siehe unten)
@@ -33,10 +33,11 @@ for i, path in enumerate(filenames):
     dateiname = "_".join(
         os.path.basename(path).removesuffix(".txt").removesuffix("_pulse").split("_")[3:])
     dateiname = dateiname.replace("_",",")
-    mean=np.mean(np.abs(u[-4:-2]))
+    mean=np.mean(np.abs(u[-7:-5]))
     print(f"{dateiname}_mean={mean}")
     ptp = np.ptp(u)
     print(f"{dateiname}_ptp={ptp}")
+    mean= 0.158*10**-6
     SN = ptp/mean
     print(f"{dateiname}_SN={SN}")
     sn_results.append((dateiname, mean, ptp, SN))
