@@ -1,55 +1,65 @@
 \chapter{Introduction}
-That light is, among other things, a wave and therefore occurs at different wavelengths has been
-known in physics for a very long time. This spectrum of light is also called the electromagnetic
-spectrum, or EM spectrum for short, which is shown in \autoref{fig:Spek}.
-While a large part of this spectrum is easy to generate, significant problems arise at certain
-frequency ranges.
-This problematic region is the so-called THz gap, as shown in \autoref{fig:THz-lucke}.
-It lies in the frequency range \SIrange{0.1}{10}{\tera\hertz} or the wavelength range
-\SIrange{30}{3000}{\micro\meter}\cite{Williams_2006}.
-\begin{figure}
+According to wave-particle duality, light has both a particle and a wave character \cite{meschede2006gerthsen}.
+In the wave picture, the wavelength, and thus also the frequency, determines whether the light is visible and what color it has.
+For example, light with a wavelength between \SIrange{640}{430}{\nano\meter} is in the visible range.
+Due to the electromagnetic properties of light, the entire spectrum is also referred to as the electromagnetic spectrum,
+or EM spectrum for short.
+This is shown in \autoref{fig:Spek}. \\
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{content/bilder/Em-Spek.png}
-    \caption{Parts of the electromagnetic spectrum \cite{Williams_2006}.}
+    \caption{Electromagnetic spectrum with frequency scale and typical fields of application.
+    Marked in red is the THz range, which lies between the microwave and visible spectrum.
+    Characteristic parameters of THz radiation are given below \cite{Williams_2006}.}
     \label{fig:Spek}
 \end{figure}
-\begin{figure}
+While a large part of this spectrum can be generated without much effort, there are considerable challenges at certain frequency ranges.
+This challenging range is the so-called terahertz gap; it describes
+a frequency range in which it is technically particularly difficult to generate and detect electromagnetic waves.
+This can be seen in \autoref{fig:THz-lucke}.
+There, it can be seen that on the side of frequencies lower than THz, i.e. on the left side, the power of electronic generators
+is plotted at different frequencies. On the right side, the powers of quantum cascade lasers at different frequencies
+are plotted. The figure thus shows that just above \SI{1000}{GHz}, i.e. \SI{1}{THz}, the power on both sides
+approaches 0. \\
+This THz gap lies in the frequency range from \SIrange{0.1}{10}{\tera\hertz}, or, in the wavelength spectrum, from \SIrange{3000}{30}{\micro\meter} \cite{Williams_2006}.
+Frequencies below the THz gap can be generated well using electronic oscillators.
+However, as the frequency increases, more and more challenges arise, for example due to
+parasitic capacitances, which result in less and less power being emitted as radiation.
+In addition, simple black-body sources or diode lasers can generate high power
+in the range above the THz gap.
+However, this drops off sharply as the frequency decreases.
+This results in a gap in the spectrum in which it is very difficult to generate an electromagnetic wave with THz frequencies
+and high power.
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{content/bilder/THz-gap.png}
-    \caption{Graphical representation of the THz gap \cite{Williams_2006}.}
+    \caption{Graph of the THz gap, where on the left of the gap the power of electrical radiation generators at lower frequencies is shown.
+    On the right side, the power of quantum cascade lasers is plotted.
+    Both powers decrease toward the marked THz gap in the middle \cite{thz_gap}.}
     \label{fig:THz-lucke}
 \end{figure}
-Frequencies below the THz range can be generated well using electronic oscillators.
-However, as the frequency increases, more and more problems arise, for example due to
-parasitic capacitances, which result in less and less power being emitted as radiation.
-On the other hand, simple black-body sources or diode lasers can generate high power
-in the range above the THz gap.
-However, this power drops off sharply as the frequency decreases.
-This results in a gap in the spectrum in which it is very difficult to generate an electromagnetic
-wave with THz frequencies.
-THz radiation is interesting for several reasons: on the one hand, THz radiation, like X-rays, can
-be used to detect tumors and other tissue abnormalities, without causing the genetic damage
-associated with X-rays. On the other hand, it can also be used for material characterization in
-physics without being destructive\,\cite{PAWAR2013157}.
-Nowadays, this gap is more accessible through the use of various THz generation techniques such as
-photoconductive antennas \cite{10.1117/1.OE.56.1.010901}, optical rectification, and THz quantum
-cascade lasers \cite{Dean_2014}.
-This bachelor's thesis focuses in particular on optical rectification, since this is the main
-mechanism by which the organic emitters generate THz radiation.
-There have long been other crystals, such as ZnTe, that can generate THz radiation via
-optical rectification; however, these have the problem that they can only be
-manufactured by a few producers, who can therefore set the price as they see fit, and, on the
-other hand, the material also fixes the maximum thickness of the crystals within which the
-crystals can effectively generate THz radiation.
-Therefore, this bachelor's thesis attempts to generate THz radiation using organic crystals and to
-subsequently evaluate this THz radiation in various ways to determine its merit.
+THz radiation is interesting for several reasons. Like X-rays, THz radiation can
+be used to find and detect tumors and other tissue abnormalities, without causing the genetic damage
+associated with X-rays \cite{pickwell2006biomedical}.
+In the natural sciences, it is used for non-destructive material characterization and investigation,
+as well as for low-energy excitation. \cite{PAWAR2013157}.
+Nowadays, the generation of radiation within the THz gap is possible at higher intensities through the use of various THz generation techniques, such as photoconductive antennas
+\cite{10.1117/1.OE.56.1.010901}, optical rectification, and THz quantum cascade lasers \cite{Dean_2014}.
+This bachelor's thesis focuses in particular on optical rectification, since
+this is the main mechanism by which the organic emitters generate THz radiation. \\ \\
+They are compared with inorganic crystals. ZnTe is an inorganic crystal that can likewise generate THz radiation via optical rectification.
+The crystal can be destroyed by excessively high optical power;
+due to the small number of producers and the economic developments of recent years, the price has doubled over the last
+five years. \\ \\
+In this bachelor's thesis, two organic crystal systems are investigated with regard to their properties concerning THz generation and compared with
+generation in ZnTe. \\
+The organic crystals are grown/produced in the research group $look up which group this was$at TU Dortmund,
+which enables rapid iteration regarding the design of the crystals. \\
+This allows application-specific crystals to be grown with regard to size and thickness,
+in contrast to commercially available inorganic crystals. \\
 It is then discussed whether these crystals can replace the ZnTe crystals.
-These organic crystals can namely be grown as desired at the Faculty of Chemistry at TU Dortmund,
-meaning that the thickness of the crystals can also be adjusted arbitrarily in the future, which
-likely makes it possible to generate THz radiation with higher power.
-In the following thesis, \autoref{sec:Theo} first explains the theoretical foundation for
-generating THz radiation using optical rectification and the subsequent detection of THz using
-electro-optic sampling.
-Following this, \autoref{sec:auf} explains the terahertz time-domain spectroscopy, which will be
-abbreviated as THz-TDS from here on.
-Finally, \autoref{sec:aus} evaluates and discusses the measurement results.
+This thesis begins in chapter two with a theoretical description of the generation and detection of
+THz radiation, building on which chapter three then explains terahertz time-domain spectroscopy.
+This is abbreviated in what follows as THz-TDS, from the English term terahertz time-domain spectroscopy.
+The results for the various crystals measured using this measurement method are presented and discussed in chapter four.
+Chapter five concludes with an overview of the results and an outlook on further measurements.

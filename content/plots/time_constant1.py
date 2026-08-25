@@ -106,7 +106,7 @@ def model(x, A, b):
     return A / np.sqrt(x) + b
 
 
-def plot_single(x_plot, U, std, mask, x_fit_plot, y_fit, xlabel, filename):
+def plot_single(x_plot, U, std, mask, x_fit_plot, y_fit, popt, perr, xlabel, filename):
     """
     Zeichnet EINEN Einzelplot (Messpunkte mit Fehlerbalken + Fitkurve) und
     speichert ihn ab. Wird unten zweimal pro Messreihe aufgerufen: einmal mit
@@ -118,6 +118,10 @@ def plot_single(x_plot, U, std, mask, x_fit_plot, y_fit, xlabel, filename):
     (fuer den Fit verwendet) werden in der normalen Farbe gezeichnet, Punkte
     mit mask=False (ausgeschlossen) grau und durchsichtig.
 
+    "popt"/"perr" sind die Fitparameter [A, b] und ihre Unsicherheiten
+    (sqrt der Diagonale von pcov) -- werden nur fuer die Legendenbeschriftung
+    der Fitkurve gebraucht.
+
     Wichtig: diese Funktion transformiert selbst nichts. "x_plot"/"x_fit_plot"
     sind bereits die fertigen Werte fuer die x-Achse (z.B. schon 1/sqrt(tau)
     gerechnet), "y_fit" sind die fertig mit model() berechneten y-Werte der
@@ -125,15 +129,24 @@ def plot_single(x_plot, U, std, mask, x_fit_plot, y_fit, xlabel, filename):
     gegen tau) benutzt werden, ohne dass sie wissen muss, welche Transformation
     gerade verwendet wird.
     """
+    A_uv, b_uv = popt[0] * 10**9, popt[1] * 10**9
+    dA_uv, db_uv = perr[0] * 10**9, perr[1] * 10**9
+    fit_label = (
+        rf"$({A_uv:.1f}\pm{dA_uv:.1f})\,\text{{nV}}/\sqrt{{\tau}}"
+        rf"+({b_uv:.1f}\pm{db_uv:.1f})\,\text{{nV}}$"
+    )
+
     # Ausgeschlossene Punkte zuerst (im Hintergrund), grau/durchsichtig.
     plt.errorbar(x_plot[~mask], U[~mask] * 10**6, yerr=2 * std[~mask] * 10**6,
                  fmt="o", capsize=3, color="gray", ecolor="gray", alpha=0.4)
     # Fuer den Fit verwendete Punkte, normale Farbe.
     plt.errorbar(x_plot[mask], U[mask] * 10**6, yerr=2 * std[mask] * 10**6,
-                 fmt="o", capsize=3, color="#639A00", ecolor="#82C80097")
-    plt.plot(x_fit_plot, y_fit * 10**6, color="#FF9100")
+                 fmt="o", capsize=3, color="#639A00", ecolor="#82C80097",
+                 label=r"$\langle U \rangle$")
+    plt.plot(x_fit_plot, y_fit * 10**6, color="#FF9100", label=fit_label)
     plt.xlabel(xlabel)
     plt.ylabel(r"U [$\mu V$]")
+    plt.legend()
     plt.grid()
     plt.savefig(filename)
     plt.close()
@@ -176,20 +189,24 @@ if PLOT_60S:
 # -----------------------------------------------------------------------
 popt_wi, pcov_wi = curve_fit(model, x_wi[mask_wi], U_wi[mask_wi])
 popt_oi, pcov_oi = curve_fit(model, x_oi[mask_oi], U_oi[mask_oi])
-print(f"A_wi = {popt_wi[0]:.3e} +- {np.sqrt(pcov_wi[0, 0]):.3e}")
-print(f"A_oi = {popt_oi[0]:.3e} +- {np.sqrt(pcov_oi[0, 0]):.3e}")
-print(f"b_wi = {popt_wi[1]:.3e} +- {np.sqrt(pcov_wi[1, 1]):.3e}")
-print(f"b_oi = {popt_oi[1]:.3e} +- {np.sqrt(pcov_oi[1, 1]):.3e}")
+perr_wi = np.sqrt(np.diag(pcov_wi))
+perr_oi = np.sqrt(np.diag(pcov_oi))
+print(f"A_wi = {popt_wi[0]:.3e} +- {perr_wi[0]:.3e}")
+print(f"A_oi = {popt_oi[0]:.3e} +- {perr_oi[0]:.3e}")
+print(f"b_wi = {popt_wi[1]:.3e} +- {perr_wi[1]:.3e}")
+print(f"b_oi = {popt_oi[1]:.3e} +- {perr_oi[1]:.3e}")
 
 if PLOT_20S:
     popt_b20, pcov_b20 = curve_fit(model, x_b20[mask_b20], U_b20[mask_b20])
-    print(f"A_b20 = {popt_b20[0]:.3e} +- {np.sqrt(pcov_b20[0, 0]):.3e}")
-    print(f"b_b20 = {popt_b20[1]:.3e} +- {np.sqrt(pcov_b20[1, 1]):.3e}")
+    perr_b20 = np.sqrt(np.diag(pcov_b20))
+    print(f"A_b20 = {popt_b20[0]:.3e} +- {perr_b20[0]:.3e}")
+    print(f"b_b20 = {popt_b20[1]:.3e} +- {perr_b20[1]:.3e}")
 
 if PLOT_60S:
     popt_b60, pcov_b60 = curve_fit(model, x_b60[mask_b60], U_b60[mask_b60])
-    print(f"A_b60 = {popt_b60[0]:.3e} +- {np.sqrt(pcov_b60[0, 0]):.3e}")
-    print(f"b_b60 = {popt_b60[1]:.3e} +- {np.sqrt(pcov_b60[1, 1]):.3e}")
+    perr_b60 = np.sqrt(np.diag(pcov_b60))
+    print(f"A_b60 = {popt_b60[0]:.3e} +- {perr_b60[0]:.3e}")
+    print(f"b_b60 = {popt_b60[1]:.3e} +- {perr_b60[1]:.3e}")
 
 # -----------------------------------------------------------------------
 # Einzelne Messwerte abfragen: findet zu einer gewuenschten Zeitkonstante
@@ -255,33 +272,33 @@ if PLOT_60S:
 # Volt im Bereich weniger 1e-7 V liegen und so schlecht lesbar waeren.
 # -----------------------------------------------------------------------
 plot_single(1 / np.sqrt(x_wi), U_wi, std_wi, mask_wi,
-            1 / np.sqrt(x_fit_wi), model(x_fit_wi, *popt_wi),
+            1 / np.sqrt(x_fit_wi), model(x_fit_wi, *popt_wi), popt_wi, perr_wi,
             r"$1/\sqrt{\tau}$ [1/s]", f"{OUTDIR}/time_constant_wi.pdf")
 plot_single(x_wi, U_wi, std_wi, mask_wi,
-            x_fit_wi, model(x_fit_wi, *popt_wi),
+            x_fit_wi, model(x_fit_wi, *popt_wi), popt_wi, perr_wi,
             r"$\tau$ [s]", f"{OUTDIR}/time_constant_wi_vs_tau.pdf")
 
 plot_single(1 / np.sqrt(x_oi), U_oi, std_oi, mask_oi,
-            1 / np.sqrt(x_fit_oi), model(x_fit_oi, *popt_oi),
+            1 / np.sqrt(x_fit_oi), model(x_fit_oi, *popt_oi), popt_oi, perr_oi,
             r"$1/\sqrt{\tau}$ [1/s]", f"{OUTDIR}/time_constant_oi.pdf")
 plot_single(x_oi, U_oi, std_oi, mask_oi,
-            x_fit_oi, model(x_fit_oi, *popt_oi),
+            x_fit_oi, model(x_fit_oi, *popt_oi), popt_oi, perr_oi,
             r"$\tau$ [s]", f"{OUTDIR}/time_constant_oi_vs_tau.pdf")
 
 if PLOT_20S:
     plot_single(1 / np.sqrt(x_b20), U_b20, std_b20, mask_b20,
-                1 / np.sqrt(x_fit_b20), model(x_fit_b20, *popt_b20),
+                1 / np.sqrt(x_fit_b20), model(x_fit_b20, *popt_b20), popt_b20, perr_b20,
                 r"$1/\sqrt{\tau}$ [1/s]", f"{OUTDIR}/time_constant_b20.pdf")
     plot_single(x_b20, U_b20, std_b20, mask_b20,
-                x_fit_b20, model(x_fit_b20, *popt_b20),
+                x_fit_b20, model(x_fit_b20, *popt_b20), popt_b20, perr_b20,
                 r"$\tau$ [s]", f"{OUTDIR}/time_constant_b20_vs_tau.pdf")
 
 if PLOT_60S:
     plot_single(1 / np.sqrt(x_b60), U_b60, std_b60, mask_b60,
-                1 / np.sqrt(x_fit_b60), model(x_fit_b60, *popt_b60),
+                1 / np.sqrt(x_fit_b60), model(x_fit_b60, *popt_b60), popt_b60, perr_b60,
                 r"$1/\sqrt{\tau}$ [1/s]", f"{OUTDIR}/time_constant_b60.pdf")
     plot_single(x_b60, U_b60, std_b60, mask_b60,
-                x_fit_b60, model(x_fit_b60, *popt_b60),
+                x_fit_b60, model(x_fit_b60, *popt_b60), popt_b60, perr_b60,
                 r"$\tau$ [s]", f"{OUTDIR}/time_constant_b60_vs_tau.pdf")
 
 # -----------------------------------------------------------------------

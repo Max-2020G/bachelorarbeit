@@ -74,6 +74,8 @@ for i, path in enumerate(filenames):
     ax.plot(freq, spektrum_norm, "-", color="#639A00")
     ax.set_xlabel("f / THZ")
     ax.set_ylabel("|FFT|")
+    plt.axvline(x=1.2,linestyle="--",color="#FF9100")
+    plt.axvline(x=1.7,linestyle="--",color="#FF9100")
     ax.set_xlim(np.min(freq),3)
     ax.grid()
     fig.savefig(f"pdf/{savedir}/{dateiname}_fft.pdf")

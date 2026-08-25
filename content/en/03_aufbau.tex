@@ -1,107 +1,155 @@
 \chapter{Experimental Method}
 \label{sec:auf}
-This bachelor's thesis uses a terahertz time-domain spectroscopy setup to determine the THz
-emission from various organic crystals. A schematic diagram of the THz-TDS setup is shown in
+This bachelor's thesis uses a terahertz time-domain spectrometer to determine the THz emissions
+of various crystals.
+A schematic diagram of the THz-TDS setup is shown in \autoref{fig:thz-aufbau}.
+The laser underlying the setup is a pulsed Titanium-sapphire laser, which generates near-infrared
+pulses with repetition rates in the kHz range.
+These have a central wavelength of $\SI{808}{nm}$.
+A power of $\SI{500}{mW}$ is available for the optical setup.
+At the beginning, the laser beam is split by a beam splitter into a pump beam with $99\%$ of the
+power and a probe beam with $1\%$ of the power. This is shown in the top left of
 \autoref{fig:thz-aufbau}.
-The laser underlying the setup is a pulsed Ti:sapphire laser, which is guided through an
-amplifier and generates near-infrared pulses with repetition rates in the kHz range.
-To generate the THz radiation and subsequently measure it, a pump-probe technique is used in a
-time-domain spectroscopy setup. The concept is based on the fact that there is a single beam,
-which is split into a pump beam and a probe beam using a beam sampler, where the pump beam, which
-has a higher intensity, passes through the THz-generating crystal, while the probe beam, which has
-a lower intensity, is used as a sampling beam. The combined beams, consisting of the THz radiation
-and the probe beam, are then guided through an EOS setup and measured there.
-The exact setup is explained in the following.
+The pump beam is shown in green in the setup and is transmitted by the beam splitter; this path
+is explained in more detail in \autoref{sec:pump}.
+The probe beam is shown in orange in the setup and is reflected by the beam splitter; this path
+is explained in more detail in \autoref{sec:probe}.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{content/bilder/aufbau.pdf}
-    \caption{Schematic diagram of a terahertz time-domain spectroscopy setup.}
+    \caption{Schematic diagram of a terahertz time-domain spectroscopy setup.
+    The green beam is the pump beam, which is transmitted by the beam splitter and passes
+    through a delay stage.
+    It then hits the sample position.
+    Behind this, the beam is guided into the EOS by parabolic mirrors.
+    The detection beam, the orange beam, is reflected by the beam splitter and is guided into
+    the EOS via several mirrors.
+    }
     \label{fig:thz-aufbau}
 \end{figure}
 
-\section{Terahertz Time-Domain Spectroscopy}
-At the beginning, the beam enters the setup with a power of $Platzhalter\,\unit{mW}$.
-This can be seen in the top left of \autoref{fig:thz-aufbau}.
-Afterwards, this beam hits a beam splitter, which transmits $99\%$ of the intensity; this then
-becomes the pump beam, shown in green in the figure, which is described in more detail in
-\autoref{sec:pump}.
-The reflected part of the beam, which has $1\%$ of the power of the initial beam, is then the
-probe beam, shown in orange in \autoref{fig:thz-aufbau}, which is described in more detail in
-\autoref{sec:probe}.
+% \section{Terahertz Time-Domain Spectroscopy}
+% At the beginning, the beam enters the setup with a power of $Platzhalter\,\unit{mW}$.
+% This can be seen in the top left of \autoref{fig:thz-aufbau}.
+% Afterwards, this beam hits a beam splitter, which transmits $99\%$ of the intensity,
+% which then becomes the pump beam, shown in green in the figure, which is described in more
+% detail in \autoref{sec:pump}.
+% The reflected part of the beam, which has $1\%$ of the power of the initial beam, is
+% then the probe beam, which is shown in orange in \autoref{fig:thz-aufbau} and is described in
+% more detail in \autoref{sec:probe}.
 
 
 
 \section{Pump Beam}
 \label{sec:pump}
-The pump beam first passes through a $\lambda/2$ waveplate, followed by a Glan-Thompson prism.
-There, the $\lambda/2$ waveplate sets the polarization of the beam, and the Glan-Thompson prism
-subsequently filters the beam to a desired intensity.
-This setup thus allows the intensity of the beam to be adjusted manually.
+The pump beam first passes through a $\lambda/2$ waveplate, followed by a Glan-Taylor prism.
+The $\lambda/2$ waveplate rotates the polarization of the beam, and the Glan-Taylor prism
+separates the p- and s-polarization from each other.
+This setup thus allows the intensity of the beam to be adjusted.
 After this intensity adjustment, the pump beam is directed onto the delay stage.
-The delay stage is a pair of mirrors mounted on a platform that can move forwards and backwards.
-This delay stage has a travel range of $20\,\unit{\milli\meter}$.
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{content/bilder/thz_puls.png}
-    \caption{THz pulse together with the sampling pulse, which scans across the THz pulse as
-    the delay stage is shifted\,\cite{KÃ¼hn2011Nonlinear}.}
-    \label{fig:thz-puls}
-\end{figure}
-
-The delay stage is followed by a plano-convex lens with a focal length of $100\,\unit{\milli\meter}$.
+The active part of this consists of a linear positioning stage, on which a retroreflector sits.
+This can be moved over a length of $20\,\unit{\milli\meter}$, which corresponds to a temporal
+delay of $\SI{133}{ps}$.
+The delay stage is followed by a plano-convex lens with a focal length of
+$100\,\unit{\milli\meter}$.
 This focal point is located $100\,\unit{\milli\meter}$ in front of the first subsequent parabolic
-mirror, since this mirror also has a focal length of $100\,\unit{\milli\meter}$ and therefore
-produces a collinear beam after the first parabolic mirror.
-Between the first parabolic mirror and the lens is the generator crystal, which in the first step
-is a ZnTe crystal, used to determine a baseline value.
-It is subsequently replaced by the two different organic crystal samples in order to test their
-ability to generate THz radiation.
-The organic crystals are placed on a mount that can be precisely adjusted in the x, y, and z
-coordinates, so that the organic crystals can be positioned in such a way that they are fully
-illuminated by the laser.
-After this, the beam passes through a chopper. This modulates the signal at a set frequency of
-around $1500\,\unit{Hz}$, which is used for noise suppression, as described in more detail in
+mirror, which likewise has a focal length of $100\,\unit{\milli\meter}$, and therefore the beam
+is collimated after the first parabolic mirror, which is indicated by the wide beam in
+\autoref{fig:thz-aufbau}.
+Between the first parabolic mirror and the lens is the position of the generation crystals.
+Behind the generation crystal, an optical chopper is placed. This modulates the signal at
+$1500\,\unit{Hz}$, which is used for noise suppression and detection, more on this in
 \autoref{sec:EOS}.
-The laser then passes through 3 further parabolic mirrors.
-Between the first and second parabolic mirrors, a silicon wafer is placed, which filters out the
-remaining near-infrared light that hit the generator crystal and was transmitted.
-The 4th and final parabolic mirror focuses the beam onto the detection crystal, where a spatial
-overlap with the probe beam must be created.
-This means that the two focal points of the probe and THz beams lie at the same location; this
-is ensured using a camera, by adjusting the last parabolic mirror for the THz beam, and by
-adjusting the last regular mirror of the probe beam.
+The THz pulse is then guided over 3 further parabolic mirrors.
+Between the first and second parabolic mirrors is a silicon wafer, which filters out the
+remaining near-infrared light that was not converted into THz radiation.
+The fourth and final parabolic mirror focuses the beam onto the detection crystal.
+
 
 
 \section{Probe Beam}
 \label{sec:probe}
-At the beginning, the probe beam, like the pump beam before it, passes through a setup consisting
-of a $\lambda/2$ waveplate followed by a Glan-Thompson prism; as with the pump beam, this is used
-as an adjustable filter to precisely regulate the intensity of the beam.
-This is followed by a delay section, so that the path lengths for the pump and probe beams are
-equal.
-The probe beam then hits a plano-convex lens with a focal length of $500\,\unit{\milli\meter}$,
-whose focal point is at the ZnTe detection crystal.
-After the lens, the beam is guided through a hole in the 4th parabolic mirror, where it spatially
-overlaps with the THz beam and hits the detection crystal.
 
-\section{Electro-Optic Sampling and Signal Processing}
+
+At the beginning, the detection beam passes through a $\lambda/2$ waveplate followed by a
+Glan-Taylor prism, to regulate the power, analogous to the pump beam. \\
+The further path consists of several mirrors, in order to make the optical path length between
+the pump beam and the detection beam equal.
+Using a plano-convex lens ($\SI{500}{mm}$), the beam is focused onto the ZnTe crystal through a
+hole in the fourth parabolic mirror.
+There, it spatially overlaps with the THz pulse; the temporal overlap can be varied via the delay
+stage.
+Spatial overlap means that the focal point at the location of the ZnTe is identical for the pump
+and detection beams.
+The point of overlap is determined by placing a camera at the position of the ZnTe and using it
+to check whether the focal points coincide. If this is not the case, it can be corrected using
+the alignment of the last parabolic mirror and the last mirror of the detection path.
+
+
+% at which a
+% spatial overlap with the probe beam must be created.
+% This means that the two focal points of the probe and pump THz beams lie at the same location,
+% this
+% is ensured using a camera and adjusting the last parabolic mirror for the THz beam, and
+% adjusting the last regular mirror of the probe beam.
+
+
+\section{Electro-Optic Detection and Signal Processing}
 \label{sec:EOS}
-\cite{10.1063/1.5047659}
-As a final step, the THz beam arrives together with the probe beam at the detection crystal,
-where, via the Pockels effect, a measurable signal is generated in what follows, as described in
-more detail in \autoref{sec:TEOS}.
-To increase the signal-to-noise ratio, various precautions were taken, which are explained in the
-following.
-As the first noise-suppression method, a lock-in amplifier is used, which is connected to the
-chopper shown in \autoref{fig:thz-aufbau}.
-The concept is based on the fact that the measurement signal is modulated at the set frequency of
-the chopper.
-The signal is only ever accepted when it arrives synchronously with the chopper.
-The measured signal is thus multiplied by a rectangular function that has the frequency of the
-chopper.
-The signal is then passed through a low-pass filter
 
+Through the Pockels effect, as described in \autoref{sec:TEOS}, the polarization is rotated, and
+the change is measured via the electro-optic detection.
+There are various sources of noise throughout the entire setup, such as the intensity noise of
+the laser, stray light, or electronic noise from the electrical components of the detection
+elements.
+To shield against ambient light and stray light, the detection part of the setup was enclosed in
+a housing.
+The intensity is read out by the lock-in amplifier, via demodulation of the THz beam at half the
+repetition rate of the laser.
+This means that a pulse with and without THz radiation is always detected.
+In the lock-in amplifier, the demodulation frequency is multiplied with the signal from the
+photodiodes.
+As a result, the signal component that has the same frequency as the reference signal ends up at
+approximately $\SI{0}{Hz}$.
+The remaining signals, which do not lie at the modulation frequency, are shifted to other
+frequencies.
+The product of the signals is then passed through a low-pass filter, which only allows a very
+narrow frequency band around $\SI{0}{Hz}$ to pass.
+The low-pass filter integrates over a time $\tau$, which is also called the time constant. In
+this bachelor's thesis, various time constants are used, which lie several orders of magnitude
+above the period of the laser.
+The proportionality between noise and time constant is described by
+\begin{equation}
+    \label{eqn:tc}
+    U_\text{noise} \approx \frac{A}{\sqrt{\tau}}+b\,.
+\end{equation}
+Here, $U$ is the noise voltage output by the lock-in amplifier.
+$A$ is a constant that describes the noise amplitude, and $b$ is the noise floor, which is
+not dependent on the time constant \cite{zhinst_lockin_whitepaper}.
+In addition, the noise is inversely proportional, $\propto \frac 1 f$, to the modulation
+frequency \cite{10.1063/1.5047659}.
+In this bachelor's thesis, a modulation frequency of \SI{1500}{HZ} is used, which corresponds to
+the highest possible fundamental of the repetition rate of the laser pulses.
+\\ \\
+
+%------------Purge Box stuff
+% In order to systematically reduce errors, a purge box is placed around the part of the setup
+% through which THz radiation propagates.
+% The purge box is set up because THz radiation interacts with the water molecules in the air.
+% This interaction occurs because water vapor has sharp rotational absorption lines for THz
+% radiation.
+% These edges are very narrowband, i.e. they only apply to a small frequency range.
+% This results in a delay of the THz signal.
+% Because of the narrow bandwidth of this resonance, the associated strong resonance leads to
+% temporally delayed, damped ringing, which appears after the main pulse as
+% an echo in the measurement data.
+% This echo then only acts as noise and worsens the measurement result.
+% As a solution to this problem, a box is placed around the part shown in \autoref{fig:thz-aufbau}.
+% This box is then filled with dry air, which explicitly contains no water vapor, so that
+% the interaction does not take place.
+% Alternatively, this box could also be filled with nitrogen, or a vacuum could be
+% created inside it, but this is significantly more elaborate and impractical.
 
 
 
@@ -137,3 +185,12 @@ The signal is then passed through a low-pass filter
 % remaining signals are suppressed using a low-pass filter.
 % In addition, these signals with the same frequency are averaged over many periods to further
 % reduce the noise.
+
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{content/bilder/thz_puls.png}
+%     \caption{THz pulse with the sampling pulse, which scans across the THz pulse through
+%     the shift of the delay stage\,\cite{KÃ¼hn2011Nonlinear}.}
+%     \label{fig:thz-puls}
+% \end{figure}
