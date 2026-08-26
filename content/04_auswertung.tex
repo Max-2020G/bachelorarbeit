@@ -354,7 +354,7 @@ Messung erklären könnte.
 
 
 
-Des Weiteren wird eine Fourier-Transformation mit den Transienten durchgeführt, diese ist für eine Andregungsleistung von $\SI{55}{mW}$ in \autoref{fig:ZnTeF} zu sehen.
+Des Weiteren wird eine Fourier-Transformation mit den Transienten durchgeführt, diese ist für eine Anregungsleistung von $\SI{55}{mW}$ in \autoref{fig:ZnTeF} zu sehen.
 Die Fouriertransformierte zeigt, welche Frequenzen in dem Transienten des THz-Pulses vorhanden sind. 
 Aus diesem lässt sich die Bandbreite von dem THz-Puls bestimmen. 
 Diese beträgt $\SI{2.4}{\tera\hertz}$.
@@ -379,39 +379,41 @@ vorhanden ist.
 \label{sec:AOH1}
 Als Erstes wird der OH1-Kristall auf die Generation von THz-Strahlung geprüft. 
 Es sei angemerkt, dass der Kristall, mit einer Größe von $\SI{2.24}{\milli\meter\squared}$, 
-nur einen geringen Teil des Pump-Strahls ausfüllt. 
-Welcher eine Strahlgröße von $\SI{67.1+-15.7}{\milli\meter\squared}$, wie in \autoref{sec:spot} bestimmt wurde, besitzt. 
-Somit füllt der Kristall lediglich $3,33\,\%$ des Strahls aus was die eingehende Strahlung auf den Kristall um diesen Faktor verringert.
-Im Folgenden wird zuerst weiter mit der gesamten Pumpleistung gearbeitet, wobei später zum Amplitudenvergleich mit dem ZnTe auf die 
+nur einen geringen Teil des Pump-Strahls ausfüllt, 
+welcher eine Strahlgröße von $\SI{67.1+-15.7}{\milli\meter\squared}$, wie in \autoref{sec:spot} bestimmt wurde, besitzt. 
+Somit füllt der Kristall lediglich $3,33\,\%$ des Strahls aus, was die eingehende Strahlung auf den Kristall um diesen Faktor verringert.
+Im Folgenden wird zuerst als beschreibung die gesamten Pumpleistung genutzt, wobei später zum Amplitudenvergleich mit dem ZnTe auf die 
 Leistung pro Fläche gewechselt wird.
-Zu Beginn wird analog wie zuvor in \autoref{sec:AZnTe} der gesamte Bereich der Verzögerungsstrecke gemessen um die Zeit Null zu finden. 
-Es wird bei der geringsten Pump-Leistung gestartet und diese wird erhöht, bis ein THz-Puls zu sehen ist. 
+Zu Beginn wird, analog zu \autoref{sec:AZnTe}, der gesamte Bereich der Verzögerungsstrecke gemessen um die zeitliche Position 
+des Thz-Transienten zu finden. 
+Anschließend wird bei der geringsten Pump-Leistung gestartet und eine Messung von $\SIrange{-2}{6}{\pico\second}$ durchgeführt. 
+Mit jeder weiteren Messung wird die Pumpleistung erhöht bis ein THz-Puls zu sehen ist. 
 Dies ist ab einer Pump-Leistung von $\SI{7.5}{\milli\watt}$ der Fall. 
-Anschließend wird die Pump-Leistung kontinuierlich gesteigert und zu jeder eingestellten Leistung eine Messung von 
-$\SIrange{-2}{6}{\pico\second}$ durchgeführt. 
-Da der Kristall selbst bei der höchsten Pump-Leistung von $\SI{470}{\milli\watt}$ nicht zerstört wurde, 
-wird die Probe näher an den Fokuspunkt gebracht, um die Leistung pro Fläche zu erhöhen. 
-Dabei war der Kristall zu Begin bei einer Entfernung von $\SI{4.5}{\centi\meter}$ zu der Linse vor dem Kristall, 
-welche eine Brennweite von $\SI{10}{\centi\meter}$ besitzt. 
-Nun wird der Kristall auf eine Distanz von $\SI{7}{\centi\meter}$ gebracht. 
-Unter der Annahme, dass der Strahl am Fokuspunkt punktförmig ist, ergibt sich an der neuen Position eine Strahlgröße von $\SI{20+-4.7}{\milli\meter\squared}$.
-Hierbei ist das Verhältnis von Strahl zu Kristall von $3,33\,\%$ auf $11,2\,\%$ angewachsen.
-Um einen genauen Transienten bei dieser hohen Leistung zu haben, 
-wurde bei dieser Leistung ein Intervall von $\SIrange{-6}{11}{\pico\second}$ gemessen. 
-Der erzeugte Transient ist in \autoref{fig:OH1T} zu sehen.
+
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{content/plots/pdf/OH1/470mW,naha,am,fokuspunkt,lange,Messung.pdf}
     \caption{Transient des THz-Pulses bei einer Pump-Leistung von $\SI{470}{\milli\watt}$. 
-    Mit der errechneten effektive Leistung, welche den Kristall trifft, von $\SI{52.64}{\milli\watt}$.}
+    Die errechneten effektive Leistung, welche den Kristall trifft, beträgt $\SI{52.64}{\milli\watt}$.}
     \label{fig:OH1T}
 \end{figure}
 
-In diesem ist die Zeit Null sehr gut zu sehen, mit kleinen Vorschwingungen, die daraus entstehen, dass der Puls 
-mit niedriger Intensität anfängt und erst bei der Zeit Null der wirkliche Peak des THz-Pulses erreicht ist. 
-Es entstehen nach der Zeit Null auch Nachschwingungen, die einerseits aus der natürlichen Breite des THz-Pulses entstehen und andererseits auch 
-aus Rückreflexionen im Kristall und durch das Auseinanderlaufen des Pulses durch unterschiedliche Brechungsindizes der Luft und somit auch 
-unterschiedliche Flugdauern des Strahls. 
+Da der Kristall selbst bei der höchsten Pump-Leistung von $\SI{470}{\milli\watt}$ nicht zerstört wurde, 
+wird der Kristall näher an den Fokuspunkt gebracht, um die Leistung pro Fläche zu erhöhen. 
+Dabei befand sich der Kristall zu Beginn in einer Entfernung von $\SI{4.5}{\centi\meter}$ zur Linse vor dem Kristall, 
+welche eine Brennweite von $\SI{10}{\centi\meter}$ besitzt. 
+Nun wird der Kristall auf eine Distanz von $\SI{7}{\centi\meter}$ gebracht. 
+Unter der Annahme, dass der Strahl am Fokuspunkt punktförmig ist, ergibt sich an der neuen Position eine Strahlgröße von $\SI{20+-4.7}{\milli\meter\squared}$.
+Hierbei ist das Verhältnis von Strahl zu Kristall von $3,33\,\%$ auf $11,2\,\%$ angewachsen.
+Mit dieser Leistung wird ein Transient Intervall von $\SIrange{-6}{11}{\pico\second}$ gemessen, 
+dieser ist in \autoref{fig:OH1T} zu sehen.
+
+
+In \autoref{fig:OH1T} ist die Zeit Null sehr gut zu sehen, mit kleinen Vorschwingungen, die daraus entstehen, dass der Puls 
+mit niedriger Intensität anfängt und erst bei der Zeit Null die maximale Amplitude des THz-Pulses erreicht ist. 
+Es entstehen nach der Zeit Null auch Nachschwingungen, die einerseits aus der natürlichen Breite des THz-Pulses entstehen und andererseits  
+aus Rückreflexionen im Kristall und durch das Auseinanderlaufen des Pulses aufgrund unterschiedlicher Brechungsindizes der Luft und somit auch 
+unterschiedlichen Laufzeiten im Puls. 
 
 
 % Referenzkreis: Mitte=(76,72) Radius=61px
@@ -422,7 +424,7 @@ unterschiedliche Flugdauern des Strahls.
 % Kristallfläche absolut: 2.241 mm^2
 % Kontrollbild gespeichert: mask_vis.jpg
 
-\begin{figure}
+\begin{figure}[p]
     \centering
     \includegraphics[width=0.8\textwidth]{content/plots/pdf/OH1/470mW,naha,am,fokuspunkt,lange,Messung_fft.pdf}
     \caption{Fouriertransformierte des THz-Pulses bei einer Pump-Leistung von $\SI{470}{\milli\watt}$. 
@@ -434,6 +436,8 @@ Des Weiteren ist in \autoref{fig:OH1f} die Fouriertransformierte des Transienten
 In dieser lässt sich erkennen, dass in dem THz-Puls Frequenzen von $\SIrange{0.2}{2.2}{THz}$ vorhanden sind, 
 was eine Bandbreite von $\SI{2}{THz}$ ergibt. 
 Dazu sind die Absorptionslinien von Wasser bei $\SI{1.2}{THz}$ und $\SI{1.7}{THz}$ auch hier zu sehen.
+Wichtig hierfür ist, dass die Detektion über einen ZnTe Kristall erfolgt und somit dieser die Bandbreite 
+der Detektion auch nur die Bandbreite der Erzeugung des ZnTe besitzt.
 Anschließend wird der Peak-zu-Peak-Wert und das Signal-zu-Rausch-Verhältnis für die verschiedenen Pump-Leistungen bestimmt, diese sind 
 in \autoref{tab:SNOH1} aufgelistet. 
 
@@ -441,7 +445,7 @@ in \autoref{tab:SNOH1} aufgelistet.
     \centering
     \caption{Peak-to-Peak-Amplitude und daraus bestimmtes Signal-Rausch-Verhältnis der OH1-Transienten bei verschiedenen Pumpleistungen(Auswahl), bezogen auf die einheitliche Rauschreferenz $U_\text{Rausch}=\SI{0.158}{\micro\volt}$ bei $\tau=\SI{450}{ms}$.}
     \label{tab:SNOH1}
-    \begin{tabular}{l S[table-format=3.1] S[table-format=4.1]}
+    \begin{tabular}{S[table-format=3.1] S[table-format=3.1] S[table-format=4.1]}
         \toprule
         {$P \mathrel{/} \si{\milli\watt}$} & {$U_\text{ptp} \mathrel{/} \si{\micro\volt}$} & {SNR} \\
         \midrule
@@ -460,24 +464,24 @@ in \autoref{tab:SNOH1} aufgelistet.
 
 
 Die Peak-zu-Peak-Werte werden zudem in \autoref{fig:ampc} mit denen des ZnTe-Kristalls verglichen. 
-Hierbei wird aber nun für den OH1-Kristall nicht die Pumpleistung genutzt, sondern die Leistung pro Fläche multipliziert mit der Fläche des 
+Hierbei wird für den OH1-Kristall nicht die Pumpleistung genutzt, sondern die Leistung pro Fläche multipliziert mit der Fläche des 
 Kristalls. 
 Die Leistungsdichte wurde in \autoref{sec:spot} zu $\SI{0.103+-0.024}{\watt\per\centi\meter\squared}$ bestimmt und die Fläche des 
-Kristalls wurde mithilfe von fotos und einem Pythonskript zu $\SI{2.241}{\milli\meter\squared}$ bestimmt. 
-Mithilfe dieser Werte ergibt sich die \autoref{fig:ampc}.
+Kristalls mittels Mikroskop aufnahemen zu $\SI{2.241}{\milli\meter\squared}$ bestimmt. 
 
 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{content/plots/pdf/amplitude_comb.pdf}
-    \caption{Vergleich der Amplitude von THz-Pulsen von ZnTe und OH1.
-    Als Vergleich wurde ein Linearer Fit durch beide Messreihen gelegt.}
+    \caption{Vergleich der maximalen Amplitude des THz-Transienten von ZnTe und OH1.
+    Als Vergleich wird jeweils eine Ausgleichsgerade durch beide Messreihen gelegt.}
     \label{fig:ampc}
 \end{figure}
 
 Da der Kristall eine deutlich geringere Fläche als der ZnTe-Kristall besitzt und somit auch weniger Leistung aufnimmt, zeigt sich 
-dies in \autoref{fig:ampc}, indem die OH1-Werte im Gegensatz zu ZnTe alle bei geringen Leistungen liegen. 
-Des Weiteren zeigt sich, dass die Amplitude der von OH1 erzeugten THz-Strahlung etwas weniger steil als die des ZnTe ansteigt. 
+dies in \autoref{fig:ampc}.
+Es zeigt sich dadurch, dass die maximalen Amplituden des OH1-Kristalls im Gegensatz zu ZnTe alle bei geringen Leistungen liegen. 
+Des Weiteren zeigt sich, dass die Amplitude der von OH1 erzeugten THz-Strahlung weniger steil als die des ZnTe ansteigt. 
 In den geplotteten Werten des ZnTe-Kristalls sind auch die in \autoref{sec:AZnTe} erwähnten abweichenden Messwerte zwischen $\SIrange{30}{48}{\milli\watt}$ erkennbar.
 
 \section{BNA}
@@ -498,7 +502,7 @@ Die Gründe hierfür werden im Folgenden erläutert.
     \label{fig:BNAt}
 \end{figure}
 
-Die Proben waren sehr kleine, pulverartige Kristalle, wobei bei einzelnen Kristalliten nicht sicher feststellbar war, 
+Die Proben sind sehr kleine, pulverartige Kristalle, wobei bei einzelnen Kristalliten nicht sicher feststellbar war, 
 ob es sich tatsächlich um Einzelkristalle handelt; ihr Durchmesser betrug maximal $\SI{2}{\milli\meter}$.
 Die genutzte Probe wurde in einem Mikroskop auf Unebenheiten und andere Anomalien untersucht. 
 In \autoref{fig:my8} ist eine achtfache Vergrößerung der Probe zu sehen. 
@@ -507,11 +511,12 @@ Eingezeichnet ist eine dieser Unebenheiten, wobei diese eine Länge von $\SI{0.2
 Das hat zur Folge, dass wenn viele verschiedene Kristalle in der Probe vorhanden sind, diese auch immer unterschiedliche Ausrichtungen haben. 
 Durch diese Ausrichtung erzeugen die einzelnen Kristalle für sich THz-Strahlung, 
 aber diese hat jeweils eine unterschiedliche Polarisationsrichtung und Phase relativ zueinander. 
-Dadurch mittelt sich im Extremfall über ganz viele kleine Kristalle das erzeugte THz-Feld gegen Null.
-Dazu ist auch diese Probe sehr klein mit einer Fläche von $\SI{6.28}{\milli\meter\squared}$.
+Dadurch mittelt sich das im einzelnen Kristall erzeugte THz-Feld gegen Null.
+Die Optisch-aktive Fläche des Kristalls beträgt $\SI{6.28}{\milli\meter\squared}$.
 Somit ist die effektive Leistung, 
 welche auf den Kristall trifft, um einen Faktor 3 größer als die bei OH1, aber immer noch ein Zehntel kleiner als bei ZnTe.
-Somit ist durch die Qualität der Probe keine aussage über die nutzbarkeit des Materials zu erzeugung von THz-Strahlung machen. 
+Somit kann durch die Qualität der Probe keine Aussage über die Nutzbarkeit des Materials zur Erzeugung von THz-Strahlung in 
+dem verwendeten Aufbau getätigt werden. 
 
 
 
