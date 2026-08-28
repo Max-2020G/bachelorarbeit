@@ -8,7 +8,10 @@ U_ZnTe = U_ZnTe * 10**6
 U_OH1 = U_OH1 * 10**6
 Fl = 2.241 * 10**-2  # in cm^2
 Faktor = A_OH1 / 34.5
-A_OH1 = 0.103 * Faktor * Fl *1000
+# geaendert: vorher 0.103 W/cm^2 (alte Strahlflaeche 67.1mm^2 aus sec:spot).
+# Neuer Wert 0.0838 W/cm^2 = 0.838 mW/mm^2 (neue Strahlflaeche 41.159mm^2),
+# 0.838 mW/mm^2 * 0.1 = 0.0838 W/cm^2 (1 mW/mm^2 = 0.1 W/cm^2).
+A_OH1 = 0.0838 * Faktor * Fl * 1000
 
 
 def lin(x, m, b):
@@ -24,6 +27,13 @@ x_znte = np.linspace(A_ZnTe.min(), A_ZnTe.max(), 1000)
 
 popt_oh1, pcov_oh1 = curve_fit(lin, A_OH1, U_OH1)
 x_oh1 = np.linspace(A_OH1.min(), A_OH1.max(), 1000)
+
+perr_znte = np.sqrt(np.diag(pcov_znte))
+perr_oh1 = np.sqrt(np.diag(pcov_oh1))
+print(f"ZnTe: m = {popt_znte[0]:.3e} +- {perr_znte[0]:.3e}, "
+      f"b = {popt_znte[1]:.3e} +- {perr_znte[1]:.3e}")
+print(f"OH1:  m = {popt_oh1[0]:.3e} +- {perr_oh1[0]:.3e}, "
+      f"b = {popt_oh1[1]:.3e} +- {perr_oh1[1]:.3e}")
 
 fig, ax = plt.subplots(layout="constrained")
 ax.plot(A_ZnTe, U_ZnTe, "x", color="#639A00", label="Messwerte-ZnTe")

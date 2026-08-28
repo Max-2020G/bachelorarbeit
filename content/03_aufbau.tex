@@ -82,39 +82,7 @@ des Detektionspfades diese Korregiert werden.
 % verstellen des letzten normalen Spiegels des Probe-Strahls gewährleistet. 
 
 
-\section{Elektro-Optische-Detektion und Signalverabeitung}
-\label{sec:EOS}
 
-Durch den Pockelseffekt wird wie in \autoref{sec:TEOS} beschrieben die Polarisation gedreht und die änderung 
-wird über die Elektro Optische Detektion gemessen.
-Im gesamten aufbau gibt es verschiedene Rauschquellen wie die das Intensitätsrauschen des Lasers, 
-Streulicht oder Elektroinisches Rauschen der elektrischen komponenten der detektionsbauteile.
-Zur Abschirmung gegenüber Raumlicht und Streulicht, wurde der Detektionsteil des Aufbaus eingehaust. 
-Das Auslesen der Intensität erfolgt durch den Lock-In-Verstärker, durch die demodulation des 
-Thz-Strahls auf die halbe Repetationsrate des Lasers. 
-Somit wird immer ein Puls mit und ohne THz-Strahlung detektiert. 
-Im Lock-In wird die demodulationsfrequenz mit dem Signal der Photodioden mutlipliziert. 
-Dadurch landet der Signalanteil, welcher dieselbe Frequenz wie das Referenzsignal besitzt 
-bei ungefähr $\SI{0}{Hz}$. 
-Die restlichen Signale, welche nicht auf der Modulationsfrequenz liegen, werden auf eine andere Frequenzen 
-verschoben. 
-Anschließend wird das Produkt der Signale durch einen Tiefpassfilter geleitet, 
-dieser lässt nur ein sehr schmales Frequenzband um $\SI{0}{Hz}$ passieren. 
-Der Tiefpassfilter Integriert über eine Zeit $\tau$, welche auch Zeitkonstante genannt wird. In dieser Bachelorarbeit 
-werden verschiedene Zeitkonstanten, welche meherere Größenordnungen über der Periodendauer des Lasers liegen genutzt. 
-Die Proportionalität zwischen Rauschen und Zeitkonstante werden beschrieben durch 
-\begin{equation}
-    \label{eqn:tc}
-    U_\text{Rauschen} \approx \frac{A}{\sqrt{\tau}}+b\,.
-\end{equation} 
-Wobei $U$ die vom Lock-in-Verstärker ausgegebene Rauschspannung ist. 
-$A$ ist hierbei eine Konstane,  
-welche die Rauschamplitude beschreibt, $b$ ist das Grundrauschen 
-welches nicht abhängig von der Zeitkonstante ist \cite{zhinst_lockin_whitepaper}.
-Zusätzlich ist das Rauschen Invers-Proportional mit $\propto \frac 1 f$ zur Modulationsfrequenz \cite{10.1063/1.5047659}. 
-In dieser Bachelorarbeit wird eine Modulationsfrequenz von \SI{1500}{HZ} genutzt, welche die größtmögliche fundamentale der 
-Wiederholrate der Laser-Pulse entspricht.
-\\ \\
 
 %------------Purge Box stuff
 % Um systematisch Fehler zu vermindern, wird eine Purge-Box um den Teil des Aufbaus platziert 

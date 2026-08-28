@@ -59,7 +59,7 @@ eine Taylor-Reihen-Entwicklung wird angewendet.
 Wodurch sich 
 \begin{equation}
     \label{eqn:NLP}
-    P = \epsilon_0 \left(\chi^{(1)}_{i,j_1}E+\chi^{(2)}_{i,j_2}E^2+\chi^{(3)}_{i,j_3}E^3+\dotsb\right)
+    P_{i,j} = \epsilon_0 \left(\chi^{(1)}_{i_1,j_1}E+\chi^{(2)}_{i_2,j_2}E^2+\chi^{(3)}_{i_3,j_3}E^3+\dotsb\right)
 \end{equation}
 ergibt. Dort beschreibt $\chi^{(1)}$ die lineare Suszeptibilität und die folgenden $\chi^{(2)}$, $\chi^{(3)}$,
 die nichtlinearen Suszeptibilitäten des Mediums \cite{Butcher_Cotter_1990}.
@@ -71,7 +71,7 @@ Dabei ist entscheidend, dass dieser Term in bestimmten Fällen wegfällt,
 zum Beispiel bei einem Medium welches inversionssymmetrisch ist. \\
 Das kann mithilfe der Inversionsoperation als Symmetrietransformation gezeigt werden \cite[Kap. 5.3.2]{Butcher_Cotter_1990}. 
 Diese Symmetrieeigenschaft wird auch als Zentrosymmetrie bezeichnet, 
-welche in nur 21 der 32 Kristallgruppen vorliegt und somit für die Generation von THz infrage kommen. 
+welche in nur 21 der 32 Kristallgruppen vorliegt und somit nicht für die Generation von THz infrage kommen. 
 
 Des Weiteren ist es von Vorteil, wenn die Polarisation im Frequenzbild betrachtet wird um zum Beispiel die Differenzfrequenz zu nutzen. 
 Dafür wird angenommen, dass sich das elektrische Feld $E$ aus mehreren Frequenzkomponenten 
@@ -136,7 +136,7 @@ Somit ergibt sich für das elektrische Feld
     \label{eqn:ENL}
     E_\text{THz}\approx \frac{\partial^2P(t)}{\partial t^2}\, .
 \end{equation}
-Damit die beiden Felder, die auf den Detektionskristall treffen, keine destruktive Interferenz 
+Damit die beiden Felder, die auf den Generationskristall treffen, keine destruktive Interferenz 
 erzeugen, muss vorher eine Phasenanpassung durchgeführt werden, dies wird im Folgenden erklärt.
 \section{Phasenanpassung und Kohärenzlänge}
 \label{sec:PA}
@@ -176,78 +176,7 @@ gegeben \cite{brunner2014thz}.
 Hierbei ist $c$ die Lichtgeschwindigkeit im Vakuum und $\nu$ die Frequenz der erzeugten THz-Strahlung.
 
 
-\section{Materialeigenschaften}
-\label{sec:ME}
-Wie in dem vorangegangenen Kapitel beschrieben, müssen die Materialien verschiedene Eigenschaften besitzen um 
-THz Effektiv zu erzeugen. 
-In dieser Bachelorarbeit werden ZnTe, OH1 und BNA genutzt und im folgenden kurz vorgestellt.
-
-% Für die THz-Erzeugung sind spezielle Eigenschaften wie das Nichtvorhandensein einer Zentrosymmetrie 
-% entscheidend. 
-% Deshalb wurden die Materialien sehr bedacht gewählt. Die wichtigen Eigenschaften von diesen 
-% werden im Folgenden beschrieben.
-\subsection{Zinktellurid}
-Zinktellurid, ist ein anorganischen Kristall, welcher in dieser Arbeit zur THz Generation und Detektion genutzt wird. 
-Die Kristallstruktur von ZnTe ist in \autoref{fig:ZnTe} zu sehen, wobei Zink Orange und Tellur Blau gekennzeichnet ist. 
-\begin{wrapfigure}[18]{r}{0.45\textwidth}
-  \centering
-  \vspace{-\intextsep}
-  \includegraphics[width=\linewidth]{content/bilder/ZnTe.png}
-  \caption{Grafische Darstellung der Gitterstruktur von ZnTe. 
-  Wobei Zink Orange und Tellur Blau gekennzeichnet ist \cite{enwiki:1327029761}.}
-  \label{fig:ZnTe}
-\end{wrapfigure}
-Die Gitterkonstanten von ZnTe betragen $a = b = c = \SI{6.101}{\angstrom}$. Der Kristall gehört zu der Raumgruppe 
-F43m. 
-und ist <110> orientiert \cite{Brach}. 
-Dazu ist der nicht lineare Koeffizient bei $\SI{800}{nm}$-Strahlung $r_{41}= \SI{4.04}{pm/V}$ \cite{wu2014comparison}.
-Die Brechungsindizes gemäß \eqref{eqn:brech} betragen $n^*_\text{g}=n^*_\text{THz}\approx \SI{3.285}{}$ bei 
-$ \nu^*\approx \SI{2.55}{THz}$ und $\lambda^*\approx \SI{788}{nm}$ \cite{Hier fehlt Quelle}. 
-Diese hier angenommene Wellenlänge ist wiederum nicht exakt die des $\SI{808}{nm}$-Lasers, welcher in diesem Aufbau 
-genutzt wird. 
-Deshalb werden in der Realität die Werte minimal abweichen.
-Die Kohärenzlänge beträgt 
-$l_\text{k}\approx \SI{3}{mm}$.
-Die transversale Phonenresonanzfrequenz ist $\Omega_\text{TO}/2\pi=\SI{5.32}{THz}$. 
-Nahe dieser Frequenz absorbieren die Phonen einen großen Teil der Leistung und die THz-Generation 
-ist deutlich geschwächt \cite{Tomasino}.
-% Zusammenfassend ist ZnTe aber ein sehr guter THz-Erzeuger, da das Erzeugungsspektrum selbst bei nicht 
-% Perfekter Phasenanpassungsfrequnz sehr gut für die Thz-Generation ist.
-\subsection{OH1}
-
-Als erster Organischer Kristall zur THz Generation dient,  2-(3-(4-
-hydroxystyryl)-5,5-dimethylcyclohex-2-enylidene)malononitrile, kurz OH1. 
-\begin{wrapfigure}[11]{r}{0.45\textwidth}
-  \centering
-  \vspace{-\intextsep}
-  \includegraphics[width=\linewidth]{content/bilder/OH1_ch.png}
-  \caption{Grafische Darstellung der Chemischen Struktur von OH1 \cite{brunner2008hydrogen}.}
-  \label{fig:OH1_ch}
-\end{wrapfigure}
-Der Kristall gehhört der Raumgruppe Pna$2_1$ und der Punktgruppe mm2 an. 
-Dazu hat der Kristall den Winkel $\theta_kz = 28°$ zwischen Ladungstransferachse und Polarer Achse c.
-Die Chemische Struktur ist in \autoref{fig:OH1_ch} zu sehen.
-Für den Nichtlinearen Koeffizient sind nur werte mit deutlich höheren Wellenlängen des Pumplasers vorhanden. 
-Das liegt daran, da OH1 explizit mit einer höheren effizienz in dem Bereich um $\SI{1300}{\nano\meter}$ optimiert ist. 
-Für einenen Pumplaser mit der Zentralwellenlänge von $\SI{1300}{\nano\meter}$ liegt der Nichtlineare Koeffizient bei $d_\text{THz}\approx\SI{280}{\pico\meter\per\volt}$.
-Dieser Wert ist aber kritisch zu betrachten, da der genutzte Pumplaser bei einer Zentralwellenlänge von $\SI{808}{\nano\meter}$ liegt un somit 
-sehr weit von dem referenzwert entfernt ist. 
-In \cite{Jazbinsek2019} lässt sich wiederum der nichhtlinearel Graphisch zu $d_\text{THz}\approx \SI{490}{\pico\meter\per\volt}$
-Die Brechungsindizes betragen gemäß \eqref{eqn:brech} $n^*_\text{g}=n^*_\text{THz}\approx \SI{2.3}{}$ bei 
-$ \nu^*\approx \SI{1}{THz}$ und $\lambda^*\approx \SI{1300}{nm}$ \cite{Jazbinsek2019}.
-Die Kohährenzlänge liegt bei $l_\text{k}\approx \SI{0.4}{\milli\meter}$ bei einer Pumpwellenlänge von $\SI{808}{\nano\meter}$ 
-Dazu wird aber in \cite{Mansourzadeh2023} explizit beschrieben, dass bei Pumpwellenlänge unter $\SI{1100}{\nano\meter}$ keine Phasenanpassung möglich ist 
-und somit die Kohährenzlänge niedriger als bei ZnTe ausfällt.
-und einer erzeugten THz frequenz von $f_\text{THz}\approx\SI{2}{\tera\hertz}$ \cite{Mansourzadeh2023}.
-Die stärkste Phonenresonanzfrequenz liegt oberhalb der $\SI{10}{\tera\hertz}$ und bei $\SI{3}{\tera\hertz}$ und $\SI{4.5}{\tera\hertz}$ liegen 
-zwei weitere \cite{Jazbinsek2019}.
-Dort ist durch die Aborption eine geschwächte generation zu erwarten.
-
-\subsection{BNA}
-
-
-
-\section{Elektrooptische Detektion}
+\section{Elektrooptische Detektion und Signalverabeitung}
 \label{sec:TEOS}
 Die elektrooptische Detektion ist ein Messverfahren, mit welchem die generierte THz-Strahlung 
 Zeit aufgelößt gemessen werden kann. 
@@ -294,10 +223,128 @@ Der Intensitätsunterschied, den die Photodioden messen, ist proportional zur Fe
 THz-Strahlung. 
 Diese Proportionalität ist gegeben durch
 \begin{equation}
-    \symup{\Delta} I  =  \frac{2\cdot \pi}{\lambda_0}I_0 L n_0^3 r_{41}E_\text{THz}\propto E_\text{THz}\ .
+    \symup{\Delta} I  =  \frac{ \pi}{2\cdot\lambda_0\cdot n_0}I_0 Ld_\text{THz}E_\text{THz}\propto E_\text{THz}\ .
 \end{equation}
 Hierbei ist $\symup{\Delta}I$ die gemessene Intensitätsdifferenz an den Photodioden, $I_0$ ist die Intensität des Detektionsstrahls 
 vor dem Detetkionskristall, $\lambda_0$ ist die Wellenlänge des Detektionsstrahls, $L$ die Dicke des Detektionskristalls, 
-$n_0$ der Brechungsindex des Detektionskristalls bei der Wellenlänge $\lambda_0$, $r_{41}$ ist nichtlineare Koeffizient des 
+$n_0$ der Brechungsindex des Detektionskristalls bei der Wellenlänge $\lambda_0$, $d_\text{THz}$ ist nichtlineare Koeffizient des 
 ZnTe für die Richtung durch welche der Strahl auf den ZnTe Kristall trifft und $E_\text{THz}$ ist die Elektrischefeldstärke des 
 THz-Strahls an der Stelle wo es mit dem Detektions-Strahl überlappt. 
+
+% \section{Elektro-Optische-Detektion und Signalverabeitung}
+% \label{sec:EOS}
+
+% Durch den Pockelseffekt wird wie in \autoref{sec:TEOS} beschrieben die Polarisation gedreht und die änderung 
+% wird über die Elektro Optische Detektion gemessen.
+Des weiteren gibt es im gesamten aufbau verschiedene Rauschquellen wie das Intensitätsrauschen des Lasers, 
+Streulicht oder Elektroinisches Rauschen der elektrischen komponenten der detektionsbauteile.
+Zur Abschirmung gegenüber Raumlicht und Streulicht, wurde der Detektionsteil des Aufbaus eingehaust. 
+Das Auslesen der Intensität erfolgt durch den Lock-In-Verstärker, durch die demodulation des 
+Thz-Strahls auf die halbe Repetationsrate des Lasers. 
+Somit wird immer ein Puls mit und ohne THz-Strahlung detektiert. 
+Im Lock-In wird die demodulationsfrequenz mit dem Signal der Photodioden mutlipliziert. 
+Dadurch landet der Signalanteil, welcher dieselbe Frequenz wie das Referenzsignal besitzt 
+bei ungefähr $\SI{0}{Hz}$. 
+Die restlichen Signale, welche nicht auf der Modulationsfrequenz liegen, werden auf eine andere Frequenzen 
+verschoben. 
+Anschließend wird das Produkt der Signale durch einen Tiefpassfilter geleitet, 
+dieser lässt nur ein sehr schmales Frequenzband um $\SI{0}{Hz}$ passieren. 
+Der Tiefpassfilter Integriert über eine Zeit $\tau$, welche auch Zeitkonstante genannt wird. In dieser Bachelorarbeit 
+werden verschiedene Zeitkonstanten, welche meherere Größenordnungen über der Periodendauer des Lasers liegen genutzt. 
+Die Proportionalität zwischen Rauschen und Zeitkonstante werden beschrieben durch 
+\begin{equation}
+    \label{eqn:tc}
+    U_\text{Rauschen} \approx \frac{A}{\sqrt{\tau}}\,.
+\end{equation} 
+Wobei $U$ die vom Lock-in-Verstärker ausgegebene Rauschspannung ist. 
+$A$ ist hierbei eine Konstane,  
+welche die Rauschamplitude beschreibt, $b$ ist das Grundrauschen 
+welches nicht abhängig von der Zeitkonstante ist \cite{zhinst_lockin_whitepaper}.
+Zusätzlich ist das Rauschen Invers-Proportional mit $\propto \frac 1 f$ zur Modulationsfrequenz \cite{10.1063/1.5047659}. 
+In dieser Bachelorarbeit wird eine Modulationsfrequenz von \SI{1500}{HZ} genutzt, welche die größtmögliche fundamentale der 
+Wiederholrate der Laser-Pulse entspricht.
+
+
+
+
+
+\chapter{Materialeigenschaften}
+\label{sec:ME}
+Wie in dem vorangegangenen Kapitel beschrieben, müssen die Materialien verschiedene Eigenschaften besitzen um 
+THz Effektiv zu erzeugen. 
+In dieser Bachelorarbeit werden ZnTe, OH1 und BNA genutzt und im folgenden kurz vorgestellt.
+
+% Für die THz-Erzeugung sind spezielle Eigenschaften wie das Nichtvorhandensein einer Zentrosymmetrie 
+% entscheidend. 
+% Deshalb wurden die Materialien sehr bedacht gewählt. Die wichtigen Eigenschaften von diesen 
+% werden im Folgenden beschrieben.
+\section{Zinktellurid}
+Zinktellurid, ist ein anorganischen Kristall, welcher in dieser Arbeit zur THz Generation und Detektion genutzt wird. 
+Die Kristallstruktur von ZnTe ist in \autoref{fig:ZnTe} zu sehen, wobei Zink Orange und Tellur Blau gekennzeichnet ist. 
+\begin{wrapfigure}[18]{r}{0.45\textwidth}
+  \centering
+  \vspace{-\intextsep}
+  \includegraphics[width=\linewidth]{content/bilder/ZnTe.png}
+  \caption{Grafische Darstellung der Gitterstruktur von ZnTe. 
+  Wobei Zink Orange und Tellur Blau gekennzeichnet ist \cite{enwiki:1327029761}.}
+  \label{fig:ZnTe}
+\end{wrapfigure}
+Die Gitterkonstanten von ZnTe betragen $a = b = c = \SI{6.101}{\angstrom}$. Der Kristall gehört zu der Raumgruppe 
+F43m. 
+und ist <110> orientiert \cite{Brach}. 
+Dazu ist der nicht lineare Koeffizient bei $\SI{800}{nm}$-Strahlung $d_{THz}= \SI{66.6}{pm/V}$ \cite{wu2014comparison}.
+Die Brechungsindizes gemäß \eqref{eqn:brech} betragen $n^*_\text{g}=n^*_\text{THz}\approx \SI{3.285}{}$ bei 
+$ \nu^*\approx \SI{2.55}{THz}$ und $\lambda^*\approx \SI{788}{nm}$ \cite{Hier fehlt Quelle}. 
+Diese hier angenommene Wellenlänge ist wiederum nicht exakt die des $\SI{808}{nm}$-Lasers, welcher in diesem Aufbau 
+genutzt wird. 
+Deshalb werden in der Realität die Werte minimal abweichen.
+Die Kohärenzlänge beträgt 
+$l_\text{k}\approx \SI{3}{mm}$.
+Die transversale Phonenresonanzfrequenz ist $\Omega_\text{TO}/2\pi=\SI{5.32}{THz}$. 
+Nahe dieser Frequenz absorbieren die Phonen einen großen Teil der Leistung und die THz-Generation 
+ist deutlich geschwächt \cite{Tomasino}.
+% Zusammenfassend ist ZnTe aber ein sehr guter THz-Erzeuger, da das Erzeugungsspektrum selbst bei nicht 
+% Perfekter Phasenanpassungsfrequnz sehr gut für die Thz-Generation ist.
+\section{OH1}
+\label{sec:MOH1}
+Als erster Organischer Kristall zur THz Generation dient,  2-(3-(4-
+hydroxystyryl)-5,5-dimethylcyclohex-2-enylidene)malononitrile, kurz OH1. 
+\begin{wrapfigure}[11]{r}{0.45\textwidth}
+  \centering
+  \vspace{-\intextsep}
+  \includegraphics[width=\linewidth]{content/bilder/OH1_ch.png}
+  \caption{Grafische Darstellung der Chemischen Struktur von OH1 \cite{brunner2008hydrogen}.}
+  \label{fig:OH1_ch}
+\end{wrapfigure}
+Der Kristall gehhört der Raumgruppe Pna$2_1$ und der Punktgruppe mm2 an. 
+Dazu hat der Kristall den Winkel $\theta_kz = 28°$ zwischen Ladungstransferachse und Polarer Achse c.
+Die Chemische Struktur ist in \autoref{fig:OH1_ch} zu sehen.
+Für den Nichtlinearen Koeffizient sind nur werte mit deutlich höheren Wellenlängen des Pumplasers vorhanden. 
+Das liegt daran, da OH1 explizit mit einer höheren effizienz in dem Bereich um $\SI{1300}{\nano\meter}$ optimiert ist. 
+Für einenen Pumplaser mit der Zentralwellenlänge von $\SI{1300}{\nano\meter}$ liegt der Nichtlineare Koeffizient bei $d_\text{THz}\approx\SI{280}{\pico\meter\per\volt}$.
+Dieser Wert ist aber kritisch zu betrachten, da der genutzte Pumplaser bei einer Zentralwellenlänge von $\SI{808}{\nano\meter}$ liegt un somit 
+sehr weit von dem referenzwert entfernt ist. 
+In \cite{Jazbinsek2019} lässt sich wiederum der nichhtlinearel Graphisch zu $d_\text{THz}\approx \SI{490}{\pico\meter\per\volt}$
+Die Brechungsindizes betragen gemäß \eqref{eqn:brech} $n^*_\text{g}=n^*_\text{THz}\approx \SI{2.3}{}$ bei 
+$ \nu^*\approx \SI{1}{THz}$ und $\lambda^*\approx \SI{1300}{nm}$ \cite{Jazbinsek2019}.
+Die Kohährenzlänge liegt bei $l_\text{k}\approx \SI{0.4}{\milli\meter}$ bei einer Pumpwellenlänge von $\SI{808}{\nano\meter}$ 
+Dazu wird aber in \cite{Mansourzadeh2023} explizit beschrieben, dass bei Pumpwellenlänge unter $\SI{1100}{\nano\meter}$ keine Phasenanpassung möglich ist 
+und somit die Kohährenzlänge niedriger als bei ZnTe ausfällt.
+%und einer erzeugten THz frequenz von $f_\text{THz}\approx\SI{2}{\tera\hertz}$ \cite{Mansourzadeh2023}.
+Die stärkste Phonenresonanzfrequenz liegt oberhalb der $\SI{10}{\tera\hertz}$ und bei $\SI{3}{\tera\hertz}$ und $\SI{4.5}{\tera\hertz}$ liegen 
+zwei weitere \cite{Jazbinsek2019}.
+Dort ist durch die Aborption eine geschwächte generation zu erwarten.
+
+\section{BNA}
+
+Als zweiten organischen Kristall für die THz-erzeugung wurde N-Benzyl-2-methyl-4-nitroaniline oder kurz BNA gewählt. 
+Dieser wird der Raumgruppe Pna2 und der Punktgruppe mm2 zugeordnet. 
+Der Winkel zsichen der Ladungstransferachse und der Polaren Achse beträgt $\theta k z = 33°$ \cite{Jazbinsek2019}. 
+Der nichtlineare Koeffizient liegt bei $d_\text{Thz}=\SI{234}{\pico\meter\per\volt}$, wobei dieser bei einer Pump 
+Wellenlänge von $\SI{1064}{\nano\meter}$ gemessen wurde und somit nicht vollständig auf den hier genutzten aufbau mit einer 
+Pumpwellenlänge von $\SI{808}{\nano\meter}$ anwendbar ist. 
+Der gruppen Brechungsindix bei der Pumpwellenänge beträgt $n_\text g^\text{NIR}\approx \SI{1.9}{}$ und der Phasen Brechungsindex bei der 
+erzeugten THz-Strahlung, hier bei einem Peak von $\SI{1}{\tera\hertz}$, beträgt $n_\text{THz}\approx\SI{2.05}{}$ \cite{Mansourzadeh2023}. 
+Die Kohährenzlänge sich Grafische in \cite{miyamoto2009optimized} zu $\l_\text{k}\approx \SI{0.4}{\milli\meter}$ bestimmen. 
+
+

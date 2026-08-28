@@ -30,6 +30,7 @@ for i, path in enumerate(filenames):
     if i not in selected_indices:
         continue
     t, u= np.genfromtxt(path, unpack=True)
+    
     dateiname = "_".join(
         os.path.basename(path).removesuffix(".txt").removesuffix("_pulse").split("_")[3:])
     dateiname = dateiname.replace("_",",")
@@ -42,9 +43,9 @@ for i, path in enumerate(filenames):
     print(f"{dateiname}_SN={SN}")
     sn_results.append((dateiname, mean, ptp, SN))
     fig, ax = plt.subplots(layout="constrained")
-    ax.plot(t, u, "-", color="#639A00")
-    ax.set_xlabel("t / ps")
-    ax.set_ylabel("U / V")
+    ax.plot(t, u*10**3, "-", color="#639A00")
+    ax.set_xlabel(r"$\Delta$t / ps")
+    ax.set_ylabel(r"U / $\mu$V")
     ax.set_xlim(-4,11)
     ax.grid()
     fig.savefig(f"pdf/{savedir}/{dateiname}.pdf")

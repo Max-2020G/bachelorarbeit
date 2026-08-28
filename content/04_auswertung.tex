@@ -64,7 +64,7 @@ anschließend der Mittelwert bestimmt.
         \label{fig:tcw}
     \end{subfigure}
     \caption{Durchschnitt der Messwerte der Rauschspannung über $\SI{20}{\second}$ gegen $\frac{1}{\sqrt{\tau}}$ aufgetragen. An beiden Reihen 
-    ist eine Ausgleichsgerade der Form $\frac{A}{\sqrt{\tau}}+b$ angelegt.}
+    ist eine Ausgleichsgerade der Form $\frac{A}{\sqrt{\tau}}$ angelegt.}
     \label{fig:tc1}
 \end{figure}
  
@@ -77,8 +77,8 @@ der Messung ist und $b$ der Offset des Rauschuntergrunds.
 Für die Fit-Werte ergben sich 
 \begin{align}
     \label{tab:tc1}
-    A_\text{Ohne} =&\SI{38.5+-3.9}{\nano\volt} & b_\text{Ohne} =&\SI{63.3+-9.4}{\nano\volt} \\
-    A_\text{Mit} =&\SI{63.7+-4.8}{\nano\volt} & b_\text{Mit} =&\SI{54.5+-11.5}{\nano\volt}\, .
+    A_\text{Ohne} =&\SI{59.2+-5.2}{\nano\volt} \\
+    A_\text{Mit} =&\SI{81.5+-4.9}{\nano\volt} \, .
 \end{align}
 Es zeigt sich, dass die Rauschamplitude Ohne Beleuchtung um $60\%$ kleiner ist als 
 mit Beleuchtung. 
@@ -90,10 +90,16 @@ Der Strom entsteht nur, wenn ein einzelnes Photon genügend Energie hat,
 ein Elektron auf eine höhere Schale zu bringen; da diese Energie des 
 Photons statistisch verteilt ist, folgt eine Unsicherheit in die 
 Messung. 
-Diese Unsicherheit mittelt sich über lange Zeitkonstanten heraus. 
-Das ist sehr gut sichtbar, da bei höheren Zeitkonstanten die beiden 
+Diese Unsicherheit mittelt sich über lange Zeitkonstanten heraus.
+Das ist sehr gut sichtbar, da bei höheren Zeitkonstanten die beiden
 auf einen ähnlichen Offset $b$ treffen.\\
-Diese Messung wurde wiederholt, wobei die 
+Aus dem Rauschen bei eingeschaltetem Laser lässt sich zusätzlich das
+Signal-Rausch-Verhältnis bezogen auf ein Referenzsignal von $\SI{45}{\milli\volt}$
+für die verschiedenen Zeitkonstanten bestimmen, die Werte sind in \autoref{tab:snr_wi}
+aufgelistet.
+
+
+Diese Messung wurde wiederholt, wobei die
 Stromversorgung der Photodioden nicht von 
 Labornetzgeräten, welche mit Netzstrom betrieben werden, 
 sondern mit Batterien versorgt werden. 
@@ -127,7 +133,7 @@ relative Position zu den anderen Werten getroffen werden kann.
         \label{fig:tc60}
     \end{subfigure}
     \caption{Messwerte der Rauschspannung bei Stromversorgung per Batterie bei keiner Beleuchtung durch den Laser.
-        mit je einer Ausgleichsgerade, der Form $\frac{A}{\sqrt{\tau}}+b$.}
+        mit je einer Ausgleichsgerade, der Form $\frac{A}{\sqrt{\tau}}$.}
     \label{fig:tc2}
 \end{figure}
  
@@ -135,8 +141,8 @@ Die aus der Ausgleichsgerade resultierenden Werte sind
 
 \begin{align}
     \label{tab:tc2}
-    A_\text{20\,s} =&\SI{77.2+-15.1}{\nano\volt} & b_\text{20\,s} =&\SI{2.8+-28.7}{\nano\volt} \\
-    A_\text{60\,s} =&\SI{37.1+-4.7}{\nano\volt} & b_\text{60\,s} =&\SI{48.3+-8.9}{\nano\volt}\, .
+    A_\text{20\,s} =&\SI{108.5+-11.4}{\nano\volt}  \\
+    A_\text{60\,s} =&\SI{136.3+-25.8}{\nano\volt} \, .
 \end{align}
 
 Durch die Werte lässt sich zeigen, dass die 
@@ -176,6 +182,35 @@ elektronische Rauschen in den Detektionskomponenten erklären.
 Da bei allen Messungen dieselben Detektionskomponenten genutzt 
 werden, ist dieses Rauschen, bis auf die $\SI{20}{\second}$ Messung ähnlich. 
 Durch den großen Fehler, welche der Wert $b_\text{20\,s}$ trägt lässt sich über diesen keine aussage treffen.
+
+
+\begin{table}
+    \centering
+    \caption{Aus dem Rauschen $U$ bei eingeschaltetem Laser (Netzspannung) berechnetes
+    Signal-Rausch-Verhältnis, bezogen auf ein Referenzsignal von $\SI{45}{\milli\volt}$,
+    für verschiedene Zeitkonstanten $\tau$ des Lock-In-Verstärkers.}
+    \label{tab:snr_wi}
+    \begin{tabular}{S[table-format=4.1] S[table-format=3.1] S[table-format=6.0]}
+        \toprule
+        {$\tau \mathrel{/} \si{\milli\second}$} & {$U \mathrel{/} \si{\nano\volt}$} & {SNR}  \\
+        \midrule
+        30.6   & 425.6 & 105738 \\
+        61.2   & 312.8 & 143863 \\
+        100.0  & 243.1 & 185122 \\
+        200.0  & 184.9 & 243329 \\
+        300.0  & 176.4 & 255169 \\
+        449.8  & 157.8 & 285094 \\
+        599.4  & 102.1 & 440898 \\
+        800.4  & 138.6 & 324750 \\
+        998.2  & 153.5 & 293120 \\
+        1500.0 & 135.3 & 332607 \\
+        2000.0 & 50.2  & 896338 \\
+        2500.0 & 119.9 & 375395 \\
+        3000.0 & 76.0  & 592457 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
 Wie zuvor beschrieben lässt sich erkennen, dass ab einer 
 Zeitkonstante von $\tau=\SI{0.3}{\second}$ keine große änderung des Rauschens zu sehen ist. 
 Deswegen wird in dieser Bachelorarbeit mit einer Zeitkonstante von 
@@ -246,39 +281,33 @@ Die Messdaten dazu sind in \autoref{fig:spot_c} zu sehen.
 \end{figure}
 
 
-In \autoref{fig:spot_x} ist auf der linken Seite ein deutlich steilerer Abfall als auf der rechten zu sehen. 
-Das lässt darauf schließen, dass der Strahl im vorherigen verlauf von einer Optik geschnitten wird und dies nicht die 
-ideale Form des Strahls ist und es lässt sich somit mit dieser Seite nicht auf die tatsächliche Größe des Strahls schließen. 
-Deswegen wird bei der $x$-Richtung nur die rechte Seite genutzt, um einen Gauss-Fit der Form 
+In \autoref{fig:spot_x} bzw. \autoref{fig:spot_y} sind die Differenzen der Leistung für die $x$- und $y$-Richtung zu sehen,
+an welche jeweils ein Gauss-Fit der Form
 \begin{equation}
     f(x) = A\cdot \exp\left(-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2\right) + b
 \end{equation}
-
-durchzuführen. 
-Bei der $y$-Richtung hingegen konnte der Fit über beide Seiten bestimmt werden.
+angelegt wird.
 Mithilfe des Fits ergeben sich die Koeffizienten
 \begin{align}
-    A_x &= \SI{1.2+-0.2}{mW} & \mu_x &= \SI{13.9+-0.2}{mm} \\
-    \sigma_x &= \SI{2.5+-0.4}{mm} & b_x &= \SI{-0.1+-0.2}{mW} \\
-    A_y &= \SI{1+-0.1}{mW} & \mu_y &= \SI{13.4+-0.1}{mm} \\
-    \sigma_y &= \SI{2.2+-0.3}{mm} & b_y &= \SI{-0.1+-0.1}{mW} \,.
+    A_x &= \SI{9.206+-0.339}{mW} & \mu_x &= \SI{14.628+-0.058}{mm} \\
+    \sigma_x &= \SI{1.579+-0.080}{mm} & b_x &= \SI{-0.149+-0.232}{mW} \\
+    A_y &= \SI{7.803+-0.222}{mW} & \mu_y &= \SI{13.427+-0.058}{mm} \\
+    \sigma_y &= \SI{2.074+-0.084}{mm} & b_y &= \SI{-0.236+-0.166}{mW} \,.
 \end{align}
-Mit diesen Werten und $w=2\cdot\sigma $ lässt sich der Radius für die jeweiligen Achsen bestimmen. 
-Es ergeben sich 
+Mit diesen Werten und $w=2\cdot\sigma $ lässt sich der Radius für die jeweiligen Achsen bestimmen.
+Es ergeben sich
 \begin{align}
-	w_x &= \SI{4.9+-0.9}{\milli\meter} \ \\
-	w_y &= \SI{4.4+-0.7}{\milli\meter} \, .
-\end{align} 
-Es zeigt sich, dass die Größe des Strahls in $x$ breiter ist, was auf den Fit auf nur einer Seite durch den abgeschnittenen Strahl zurückzuführen ist.
-Somit ist der Strahl ellipisenförmig und für den Flächeninhalt wird $A = \pi w_x w_y$ genutzt. 
-Daraus errechnet sich der Flächeninhalt mit $\SI{67.1+-15.7}{\milli\meter\squared}$, wobei der große Fehler aus dem Fit in die $x$-Richtung entsteht.
-Die Leistung des Strahls an dieser Stelle beträgt $\SI{34.5}{\milli\watt}$. 
-Daraus lässt sich mit $I_\text{sp}= \frac{2\cdot P}{A}$ die Spitzenintensität 
-$\SI{0.103+-0.024}{\watt\per\centi\meter\squared}$ bestimmen.
-Hierbei ist der Fehler von fast $24\,\%$ zu erwähnen, wobei sich diese große Abweichung durch 
-den nur einseitigen Fit bei der $x$-Richtung erklären lässt. 
-Dazu sei zu erwähnen, dass dies die durchschnittliche Spitzenintensität ist. 
-Der Laser ist aber ein Pulslaser und somit ist die Leistung eines einzelnen Pulses um ein Vielfaches höher als diese gemittelte. 
+	w_x &= \SI{3.159+-0.159}{\milli\meter} \ \\
+	w_y &= \SI{4.147+-0.167}{\milli\meter} \, .
+\end{align}
+Es zeigt sich, dass der Strahl in $y$-Richtung eine etwas größere Ausdehnung besitzt als in $x$-Richtung, der Strahl ist also leicht elliptisch.
+Somit ist der Strahl ellipsenförmig und für den Flächeninhalt wird $A = \pi w_x w_y$ genutzt.
+Daraus errechnet sich der Flächeninhalt mit $\SI{41.159+-2.654}{\milli\meter\squared}$.
+Die Leistung des Strahls an dieser Stelle beträgt $\SI{34.5}{\milli\watt}$.
+Daraus lässt sich mit $I= \frac{P}{A}$ die mittlere Intensität
+$\SI{0.838+-0.054}{\milli\watt\per\milli\meter\squared}$ bestimmen.
+Dazu sei zu erwähnen, dass dies die durchschnittliche Intensität ist.
+Der Laser ist aber ein Pulslaser und somit ist die Leistung eines einzelnen Pulses um ein Vielfaches höher als diese gemittelte.
 Als Vergleichswert nützt dieser Wert aber trotzdem, da alle Messwerte mit demselben Laser aufgenommen wurden und somit über diesen 
 Wert vergleichbar sind.
 Dieser Wert pro Flächeninhalt wird verwendet, da die Proben des OH1 und BNA nicht den gesamten Strahl ausfüllen und so die Messwerte 
@@ -286,7 +315,7 @@ nicht mit denen von ZnTe, welcher
 den gesamten Strahl ausfüllt, vergleichbar wären. 
 Im Folgenden wird diese Grundlagenmessung mit ZnTe beschrieben.
 
-\section{ZnTe}
+\section{THz Generation mit ZnTe}
 \label{sec:AZnTe}
 Um einen Vergleich für die organischen Emitter zu haben wird zu Beginn eine Messung der THz-Strahlung, welche von 
 ZnTe erzeugt wird durchgeführt. 
@@ -375,13 +404,13 @@ vorhanden ist.
 
 
 
-\section{OH1}
+\section{THz Generation mit OH1}
 \label{sec:AOH1}
 Als Erstes wird der OH1-Kristall auf die Generation von THz-Strahlung geprüft. 
 Es sei angemerkt, dass der Kristall, mit einer Größe von $\SI{2.24}{\milli\meter\squared}$, 
 nur einen geringen Teil des Pump-Strahls ausfüllt, 
-welcher eine Strahlgröße von $\SI{67.1+-15.7}{\milli\meter\squared}$, wie in \autoref{sec:spot} bestimmt wurde, besitzt. 
-Somit füllt der Kristall lediglich $3,33\,\%$ des Strahls aus, was die eingehende Strahlung auf den Kristall um diesen Faktor verringert.
+welcher eine Strahlgröße von $\SI{41.159+-2.654}{\milli\meter\squared}$, wie in \autoref{sec:spot} bestimmt wurde, besitzt.
+Somit füllt der Kristall lediglich $5,44\,\%$ des Strahls aus, was die eingehende Strahlung auf den Kristall um diesen Faktor verringert.
 Im Folgenden wird zuerst als beschreibung die gesamten Pumpleistung genutzt, wobei später zum Amplitudenvergleich mit dem ZnTe auf die 
 Leistung pro Fläche gewechselt wird.
 Zu Beginn wird, analog zu \autoref{sec:AZnTe}, der gesamte Bereich der Verzögerungsstrecke gemessen um die zeitliche Position 
@@ -393,8 +422,8 @@ Dies ist ab einer Pump-Leistung von $\SI{7.5}{\milli\watt}$ der Fall.
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{content/plots/pdf/OH1/470mW,naha,am,fokuspunkt,lange,Messung.pdf}
-    \caption{Transient des THz-Pulses bei einer Pump-Leistung von $\SI{470}{\milli\watt}$. 
-    Die errechneten effektive Leistung, welche den Kristall trifft, beträgt $\SI{52.64}{\milli\watt}$.}
+    \caption{Transient des THz-Pulses bei einer Pump-Leistung von $\SI{470}{\milli\watt}$.
+    Die errechneten effektive Leistung, welche den Kristall trifft, beträgt $\SI{86.01}{\milli\watt}$.} % geändert: vorher $\SI{52.64}{\milli\watt}$, neu berechnet mit dem aktualisierten Flächenverhältnis (18,3% statt 11,2%, siehe Kommentar bei "Verhältnis von Strahl zu Kristall" weiter unten) bei $\SI{470}{\milli\watt}$ Pumpleistung: 470*0.183=86.01mW
     \label{fig:OH1T}
 \end{figure}
 
@@ -403,8 +432,8 @@ wird der Kristall näher an den Fokuspunkt gebracht, um die Leistung pro Fläche
 Dabei befand sich der Kristall zu Beginn in einer Entfernung von $\SI{4.5}{\centi\meter}$ zur Linse vor dem Kristall, 
 welche eine Brennweite von $\SI{10}{\centi\meter}$ besitzt. 
 Nun wird der Kristall auf eine Distanz von $\SI{7}{\centi\meter}$ gebracht. 
-Unter der Annahme, dass der Strahl am Fokuspunkt punktförmig ist, ergibt sich an der neuen Position eine Strahlgröße von $\SI{20+-4.7}{\milli\meter\squared}$.
-Hierbei ist das Verhältnis von Strahl zu Kristall von $3,33\,\%$ auf $11,2\,\%$ angewachsen.
+Unter der Annahme, dass der Strahl am Fokuspunkt punktförmig ist, ergibt sich an der neuen Position eine Strahlgröße von $\SI{12.246+-0.790}{\milli\meter\squared}$. % geändert: vorher $\SI{20+-4.7}{\milli\meter\squared}$, neu berechnet aus der aktualisierten Strahlfläche in \autoref{sec:spot} (41.159mm^2) über dieselbe Skalierung wie zuvor: alte_Fläche * ((10-7)/(10-4.5))^2 = 41.159*0.2975 = 12.246mm^2, Fehler mit demselben relativen Fehler wie die Fläche in \autoref{sec:spot}
+Hierbei ist das Verhältnis von Strahl zu Kristall von $5,44\,\%$ auf $18,3\,\%$ angewachsen. % geändert: vorher 3,33% auf 11,2%; 5,44%=2.241/41.159, 18,3%=2.241/12.246
 Mit dieser Leistung wird ein Transient Intervall von $\SIrange{-6}{11}{\pico\second}$ gemessen, 
 dieser ist in \autoref{fig:OH1T} zu sehen.
 
@@ -428,7 +457,7 @@ unterschiedlichen Laufzeiten im Puls.
     \centering
     \includegraphics[width=0.8\textwidth]{content/plots/pdf/OH1/470mW,naha,am,fokuspunkt,lange,Messung_fft.pdf}
     \caption{Fouriertransformierte des THz-Pulses bei einer Pump-Leistung von $\SI{470}{\milli\watt}$. 
-    Mit der errechnete Effektive Leistung, welche den Kristall trifft, von $\SI{52.64}{\milli\watt}$.}
+    Mit der errechnete Effektive Leistung, welche den Kristall trifft, von $\SI{86.01}{\milli\watt}$.} % geändert: vorher $\SI{52.64}{\milli\watt}$, siehe Kommentar bei \autoref{fig:OH1T}
     \label{fig:OH1f}
 \end{figure}
 
@@ -466,7 +495,7 @@ in \autoref{tab:SNOH1} aufgelistet.
 Die Peak-zu-Peak-Werte werden zudem in \autoref{fig:ampc} mit denen des ZnTe-Kristalls verglichen. 
 Hierbei wird für den OH1-Kristall nicht die Pumpleistung genutzt, sondern die Leistung pro Fläche multipliziert mit der Fläche des 
 Kristalls. 
-Die Leistungsdichte wurde in \autoref{sec:spot} zu $\SI{0.103+-0.024}{\watt\per\centi\meter\squared}$ bestimmt und die Fläche des 
+Die Leistungsdichte wurde in \autoref{sec:spot} zu $\SI{0.838+-0.054}{\milli\watt\per\milli\meter\squared}$ bestimmt und die Fläche des
 Kristalls mittels Mikroskop aufnahemen zu $\SI{2.241}{\milli\meter\squared}$ bestimmt. 
 
 
@@ -482,9 +511,18 @@ Da der Kristall eine deutlich geringere Fläche als der ZnTe-Kristall besitzt un
 dies in \autoref{fig:ampc}.
 Es zeigt sich dadurch, dass die maximalen Amplituden des OH1-Kristalls im Gegensatz zu ZnTe alle bei geringen Leistungen liegen. 
 Des Weiteren zeigt sich, dass die Amplitude der von OH1 erzeugten THz-Strahlung weniger steil als die des ZnTe ansteigt. 
-In den geplotteten Werten des ZnTe-Kristalls sind auch die in \autoref{sec:AZnTe} erwähnten abweichenden Messwerte zwischen $\SIrange{30}{48}{\milli\watt}$ erkennbar.
+Hierbei können die in \autoref{sec:ME} bestimmmten Nichtlinearen Koeffizient hinzugezogen werden. 
+Denn dies bestimmten Maximalen Amplituden sind Linear Abhängig von diesen Koeffizient. 
+Als verhältnis zeigt sich $\frac{d_\text{THz}^\text{OH1}}{d_\text{THz}^\text{ZnTe}} \approx \SI{4.2}{}$, somit sollte nach 
+den Theoretischen Werten die Steigung der gerade bei den OH1 Messwerten um den Faktor $4,2$ größer sein als die der geraden des ZnTe. 
+Aus \autoref{fig:ammpc} ergeben sich $m_\text{ZnTe}= \SI{4.6}{\mu\volt\per\milli\watt}$ und $m_\text{OH1}= \SI{3.8}{\mu\volt\per\milli\watt}$. % geändert: vorher m_OH1=3.1. m_ZnTe bleibt gleich (ZnTe-Fit haengt nicht von der Intensitaet ab). m_OH1 analytisch abgeleitet, NICHT durch Neu-Ausführen von amplitude_combined.py bestimmt: die x-Werte des OH1-Fits skalieren linear mit der Intensitaetskonstante (siehe Kommentar dort), Skalierungsfaktor k=0.0838/0.103=0.8139, neue Steigung = alte Steigung/k = 3.1/0.8139=3.809≈3.8. Bitte mit echtem Skriptlauf (make) verifizieren.
+Hierbei ist der Faktor $0,83$, somit deutlich kleiner als erwartet. % geändert: vorher 0,67 (=3.1/4.6); neu 0,83 (=3.8/4.6) -- Kernaussage (deutlich kleiner als der erwartete Faktor 4,2) bleibt unverändert gültig
+Eine erklärung dafür ist, dass OH1 explizit für die THz generation mit einer Pump-Wellenlänge von $\lambda \approx \SI{1300}{\nano\meter}$ optimiert wurde 
+und somti auch die gemessenen werte für den Nichtlinearen Koeffizienten für diesen bereicht gelten. 
+Durch nicht nicht vorhandene Phasenanpassung bei der genutzten Pump-Wellenlänge kann sich die Intensität der erzeugten THz-Strahlung deutlich verringern.
+Dazu sind in den geplotteten Werten des ZnTe-Kristalls die in \autoref{sec:AZnTe} erwähnten abweichenden Messwerte zwischen $\SIrange{30}{48}{\milli\watt}$ erkennbar.
 
-\section{BNA}
+\section{THz Generation mit BNA}
 \label{sec:ABNA}
 
 Für BNA wurde wie bei den anderen Materialien zuvor ein großer Bereich abgesucht und anschließend immer die Pump-Leistung von $\SIrange{2.2}{480}{\milli\watt}$ erhöht. 

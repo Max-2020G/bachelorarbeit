@@ -43,9 +43,11 @@ for i, path in enumerate(filenames):
     sn_results.append((dateiname, mean, ptp, SN))
 
     fig, ax = plt.subplots(layout="constrained")
-    ax.plot(t, u, "-", color="#639A00")
-    ax.set_xlabel("t / ps")
-    ax.set_ylabel("U / V")
+    t_Z, u_Z= np.genfromtxt("data_mag_txt/ZnTe/202608061722_1Dx1D_0fb685_110mW_pulse.txt", unpack=True)
+    ax.plot(t_Z, u_Z*10**3, "--", color="#FF9100")
+    ax.plot(t, u*10**3, "-", color="#639A00")
+    ax.set_xlabel(r"$\Delta$t / ps")
+    ax.set_ylabel(r"U / $\mu$V")
     if dateiname == "470mW,naha,am,fokuspunkt,lange,Messung":
         ax.set_xlim(-6,11)
     else:

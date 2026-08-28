@@ -17,8 +17,11 @@ LASER_POWER = 34.5  # mW
 # angegeben werden (z.B. um einen Ausreisser mitten im Peak auszusparen) --
 # einfach ein weiteres (min, max)-Tupel in die Liste einfuegen.
 # -----------------------------------------------------------------------
-X_FIT_RANGES = [(13, 19),(8,9.5)]
-Y_FIT_RANGES = [(8, 18.5)]
+# X_FIT_RANGES = [(13, 19),(8,9.5)]
+# Y_FIT_RANGES = [(8, 18.5)]
+
+X_FIT_RANGES = [(7,20)]
+Y_FIT_RANGES = [(8, 22)]
 
 x, Ax = np.genfromtxt("data/spot_size/spot_size_x.txt", unpack=True)
 y, Ay = np.genfromtxt("data/spot_size/spot_size_y.txt", unpack=True)
@@ -29,14 +32,19 @@ y = y * 10**-3
 # das eigentliche Strahlprofil (Gauss-foermig), siehe fruehere Erklaerung.
 # Bei der y-Messung faellt die Leistung mit steigender Position -- deshalb
 # das Minus, damit hier auch ein positiver Peak entsteht statt eines Tals.
-dif_x = np.diff(Ax)
-dif_y = -np.diff(Ay)
+# dif_x = np.diff(Ax)
+# dif_y = -np.diff(Ay)
+
+dif_x = np.gradient(Ax,x)
+dif_y = -np.gradient(Ay,y)
 
 # Jeder Differenzwert liegt "zwischen" zwei benachbarten Messpunkten; wir
 # nehmen als zugehoerige Position einfach den jeweils ersten der beiden
 # Punkte (x[:-1] hat deshalb genau die gleiche Laenge wie dif_x).
-x_diff = x[:-1]
-y_diff = y[:-1]
+# x_diff = x[:-1]
+# y_diff = y[:-1]
+x_diff = x
+y_diff = y
 
 
 def gauss(pos, A, pos0, sigma, offset):
@@ -99,10 +107,10 @@ def plot_masked_fit(pos, values, mask, popt, xlabel, filename):
     """
     fig, ax = plt.subplots(layout="constrained")
 
-    ax.plot(pos[~mask], values[~mask], "x", color="gray", alpha=0.5,
-             label="nicht im Fit verwendet")
+    # ax.plot(pos[~mask], values[~mask], "x", color="gray", alpha=0.5,
+            #  label="nicht im Fit verwendet")
     ax.plot(pos[mask], values[mask], "o", color="#639A00",
-             label="im Fit verwendet")
+             label="Messdaten")
 
     pos_fit = np.linspace(pos[mask].min(), pos[mask].max(), 500)
     if filename == "pdf/spot_size_x.pdf":
@@ -113,7 +121,11 @@ def plot_masked_fit(pos, values, mask, popt, xlabel, filename):
     ax.plot(pos_fit, gauss(pos_fit, *popt), "-", color="#FF9100", label="Gauss-Fit")
 
     ax.set_xlabel(xlabel)
-    ax.set_ylabel(r"$\Delta$Leistung / mW")
+    if xlabel == "Entfernung x / mm":
+        ax.set_ylabel(r"$\frac{\text{d} P}{\text{d} x}$ / $\frac{\text{mW}}{\text{mm}}$")
+    else:
+        ax.set_ylabel(r"$\frac{\text{d} P}{\text{d} y}$ / $\frac{\text{mW}}{\text{mm}}$")
+    
     ax.legend()
     ax.grid()
     fig.savefig(filename)

@@ -28,8 +28,8 @@ PLOT_60S = True
 # -----------------------------------------------------------------------
 EXCLUDE_WI = []
 EXCLUDE_OI = []
-EXCLUDE_B20 = [0]  # kleinste Zeitkonstante hat einen sehr grossen Fehler
-EXCLUDE_B60 = [0]  # -> sagt nichts ueber die relative Lage zu den anderen aus
+EXCLUDE_B20 = []  # kleinste Zeitkonstante hat einen sehr grossen Fehler
+EXCLUDE_B60 = []  # -> sagt nichts ueber die relative Lage zu den anderen aus
 
 # Alle PDFs dieses Skripts landen gesammelt in diesem Unterordner.
 OUTDIR = "pdf/time_constant"
@@ -101,9 +101,9 @@ def fit_mask(n, exclude):
     return mask
 
 
-def model(x, A, b):
-    """Fitmodell: Rauschamplitude A/sqrt(x) plus konstanter Untergrund b."""
-    return A / np.sqrt(x) + b
+def model(x, A):
+    """Fitmodell: Rauschamplitude A/sqrt(x)."""
+    return A / np.sqrt(x)
 
 
 def plot_single(x_plot, U, std, mask, x_fit_plot, y_fit, popt, perr, xlabel, filename):
@@ -118,7 +118,7 @@ def plot_single(x_plot, U, std, mask, x_fit_plot, y_fit, popt, perr, xlabel, fil
     (fuer den Fit verwendet) werden in der normalen Farbe gezeichnet, Punkte
     mit mask=False (ausgeschlossen) grau und durchsichtig.
 
-    "popt"/"perr" sind die Fitparameter [A, b] und ihre Unsicherheiten
+    "popt"/"perr" sind der Fitparameter [A] und seine Unsicherheit
     (sqrt der Diagonale von pcov) -- werden nur fuer die Legendenbeschriftung
     der Fitkurve gebraucht.
 
@@ -129,12 +129,9 @@ def plot_single(x_plot, U, std, mask, x_fit_plot, y_fit, popt, perr, xlabel, fil
     gegen tau) benutzt werden, ohne dass sie wissen muss, welche Transformation
     gerade verwendet wird.
     """
-    A_uv, b_uv = popt[0] * 10**9, popt[1] * 10**9
-    dA_uv, db_uv = perr[0] * 10**9, perr[1] * 10**9
-    fit_label = (
-        rf"$({A_uv:.1f}\pm{dA_uv:.1f})\,\text{{nV}}/\sqrt{{\tau}}"
-        rf"+({b_uv:.1f}\pm{db_uv:.1f})\,\text{{nV}}$"
-    )
+    A_uv = popt[0] * 10**9
+    dA_uv = perr[0] * 10**9
+    fit_label = rf"$({A_uv:.1f}\pm{dA_uv:.1f})\,\text{{nV}}/\sqrt{{\tau}}$"
 
     # Ausgeschlossene Punkte zuerst (im Hintergrund), grau/durchsichtig.
     plt.errorbar(x_plot[~mask], U[~mask] * 10**6, yerr=2 * std[~mask] * 10**6,
@@ -169,6 +166,27 @@ if PLOT_20S:
 if PLOT_60S:
     x_b60, U_b60, std_b60 = load("data/Batterie/60s_Messungen")
 
+# -----------------------------------------------------------------------
+# SNR-Tabelle fuer die Messung MIT Beleuchtung: aus dem gemessenen
+# Rauschen U_wi wird bei jeder Zeitkonstante das Signal-Rausch-Verhaeltnis
+# bezogen auf ein Referenzsignal von 45 mV berechnet, SNR = 45 mV / U_wi.
+# Als Fehler des Rauschens wird, wie auch sonst im Skript (siehe
+# plot_single()/print_lookup()), 2*std verwendet. Der SNR-Fehler ergibt
+# sich daraus per Fehlerfortpflanzung: da SNR = U_REF/U nur von U abhaengt,
+# ist der relative Fehler von SNR gleich dem relativen Fehler von U.
+# Die Tabelle bekommt die Zeitkonstante in Spalte 1, das Rauschen mit
+# Fehler in Spalte 2/3 und das SNR mit Fehler in Spalte 4/5 -- jeweils
+# fuer denselben Messpunkt (gleicher Index).
+# -----------------------------------------------------------------------
+U_REF = 45e-3  # Referenzsignal in Volt (45 mV)
+noise_err_wi = 2 * std_wi
+SNR_wi = U_REF / U_wi
+SNR_err_wi = SNR_wi * (noise_err_wi / U_wi)
+with open(f"{OUTDIR}/snr_with_illumination.txt", "w") as snr_file:
+    snr_file.write("# tau / s\tnoise (mean) / V\tnoise_error / V\tSNR\tSNR_error\n")
+    for tau, noise, noise_err, snr, snr_err in zip(x_wi, U_wi, noise_err_wi, SNR_wi, SNR_err_wi):
+        snr_file.write(f"{tau:.6e}\t{noise:.6e}\t{noise_err:.6e}\t{snr:.6e}\t{snr_err:.6e}\n")
+
 # Masken bauen: legen fest, welche Punkte pro Messreihe in den Fit eingehen.
 mask_wi = fit_mask(len(x_wi), EXCLUDE_WI)
 mask_oi = fit_mask(len(x_oi), EXCLUDE_OI)
@@ -178,14 +196,13 @@ if PLOT_60S:
     mask_b60 = fit_mask(len(x_b60), EXCLUDE_B60)
 
 # -----------------------------------------------------------------------
-# Fits: jede Messreihe bekommt ihren eigenen Fit von model(x, A, b), aber
+# Fits: jede Messreihe bekommt ihren eigenen Fit von model(x, A), aber
 # NUR auf Basis der Punkte, die durch die jeweilige Maske erlaubt sind
 # (x_wi[mask_wi] statt x_wi, usw.).
 # curve_fit(model, x, U) gibt ein Tupel (popt, pcov) zurueck:
-#   popt = die gefundenen besten Parameter, hier [A, b]
-#   pcov = die Kovarianzmatrix des Fits -- die Wurzel der Diagonalelemente
-#          ist die Unsicherheit des jeweiligen Parameters:
-#          sqrt(pcov[0, 0]) -> Unsicherheit von A, sqrt(pcov[1, 1]) -> von b
+#   popt = die gefundenen besten Parameter, hier [A]
+#   pcov = die Kovarianzmatrix des Fits -- die Wurzel des Diagonalelements
+#          ist die Unsicherheit von A: sqrt(pcov[0, 0])
 # -----------------------------------------------------------------------
 popt_wi, pcov_wi = curve_fit(model, x_wi[mask_wi], U_wi[mask_wi])
 popt_oi, pcov_oi = curve_fit(model, x_oi[mask_oi], U_oi[mask_oi])
@@ -193,20 +210,16 @@ perr_wi = np.sqrt(np.diag(pcov_wi))
 perr_oi = np.sqrt(np.diag(pcov_oi))
 print(f"A_wi = {popt_wi[0]:.3e} +- {perr_wi[0]:.3e}")
 print(f"A_oi = {popt_oi[0]:.3e} +- {perr_oi[0]:.3e}")
-print(f"b_wi = {popt_wi[1]:.3e} +- {perr_wi[1]:.3e}")
-print(f"b_oi = {popt_oi[1]:.3e} +- {perr_oi[1]:.3e}")
 
 if PLOT_20S:
     popt_b20, pcov_b20 = curve_fit(model, x_b20[mask_b20], U_b20[mask_b20])
     perr_b20 = np.sqrt(np.diag(pcov_b20))
     print(f"A_b20 = {popt_b20[0]:.3e} +- {perr_b20[0]:.3e}")
-    print(f"b_b20 = {popt_b20[1]:.3e} +- {perr_b20[1]:.3e}")
 
 if PLOT_60S:
     popt_b60, pcov_b60 = curve_fit(model, x_b60[mask_b60], U_b60[mask_b60])
     perr_b60 = np.sqrt(np.diag(pcov_b60))
     print(f"A_b60 = {popt_b60[0]:.3e} +- {perr_b60[0]:.3e}")
-    print(f"b_b60 = {popt_b60[1]:.3e} +- {perr_b60[1]:.3e}")
 
 # -----------------------------------------------------------------------
 # Einzelne Messwerte abfragen: findet zu einer gewuenschten Zeitkonstante
@@ -257,12 +270,11 @@ if PLOT_60S:
 # -----------------------------------------------------------------------
 # Einzelplots: fuer jede Messreihe ZWEI Varianten:
 #
-# a) "linear" gegen 1/sqrt(tau): Modell U = A/sqrt(tau) + b wird mit
-#    x = 1/sqrt(tau) zu U = A*x + b, also einer echten Geraden. Zeigt, ob
-#    die Messpunkte wirklich der 1/sqrt(tau)-Rauschgesetzmaessigkeit folgen,
-#    und der Wert bei x=0 (tau -> unendlich) ist direkt der Rauschuntergrund
-#    b. Achtung: dadurch ist die x-Achse "umgedreht" -- kleine tau liegen
-#    rechts, tau -> unendlich liegt links bei x=0.
+# a) "linear" gegen 1/sqrt(tau): Modell U = A/sqrt(tau) wird mit
+#    x = 1/sqrt(tau) zu U = A*x, also einer Geraden durch den Ursprung.
+#    Zeigt, ob die Messpunkte wirklich der 1/sqrt(tau)-Rauschgesetzmaessigkeit
+#    folgen. Achtung: dadurch ist die x-Achse "umgedreht" -- kleine tau
+#    liegen rechts, tau -> unendlich liegt links bei x=0.
 #
 # b) gegen tau selbst (keine Transformation): dieselbe Kurve, aber in der
 #    "natuerlichen" Richtung -- man liest direkt ab, dass das Rauschen mit
