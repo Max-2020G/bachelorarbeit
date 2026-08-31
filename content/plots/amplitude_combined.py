@@ -40,6 +40,8 @@ ax.plot(A_ZnTe, U_ZnTe, "x", color="#639A00", label="Messwerte-ZnTe")
 ax.plot(x_znte, lin(x_znte, *popt_znte), "-", color="#FF9100", label="Linearer-Fit")
 ax.plot(A_OH1, U_OH1, "^", color="#639A00", label="Messwerte-OH1")
 ax.plot(x_oh1, lin(x_oh1, *popt_oh1), "-", color="#FF9100")
+#ax.plot(86.01, 4.959608*10**2, "^", color="#639A00", label="Messwerte-OH1")
+
 
 # ------------------------- Zoom-Inset -------------------------
 # axins ist eine zweite, kleinere Achse INNERHALB der Hauptachse.
@@ -59,8 +61,8 @@ ax.grid()
 # sowie Verbindungslinien zum Inset.
 #ax.indicate_inset_zoom(axins, edgecolor="black")
 ax.legend()
-ax.set_xlabel("Power / mW")
-ax.set_ylabel("Voltage / mikroV")
+ax.set_xlabel("Leistung / mW")
+ax.set_ylabel(r"$U_{\text{max}}$ / $\mu$V")
 
 
 fig.savefig("pdf/amplitude_comb.pdf")

@@ -285,14 +285,14 @@ if PLOT_60S:
 # -----------------------------------------------------------------------
 plot_single(1 / np.sqrt(x_wi), U_wi, std_wi, mask_wi,
             1 / np.sqrt(x_fit_wi), model(x_fit_wi, *popt_wi), popt_wi, perr_wi,
-            r"$1/\sqrt{\tau}$ [1/s]", f"{OUTDIR}/time_constant_wi.pdf")
+            r"$1/\sqrt{\tau}$ / $1/\sqrt{\text{s}}$", f"{OUTDIR}/time_constant_wi.pdf")
 plot_single(x_wi, U_wi, std_wi, mask_wi,
             x_fit_wi, model(x_fit_wi, *popt_wi), popt_wi, perr_wi,
             r"$\tau$ [s]", f"{OUTDIR}/time_constant_wi_vs_tau.pdf")
 
 plot_single(1 / np.sqrt(x_oi), U_oi, std_oi, mask_oi,
             1 / np.sqrt(x_fit_oi), model(x_fit_oi, *popt_oi), popt_oi, perr_oi,
-            r"$1/\sqrt{\tau}$ [1/s]", f"{OUTDIR}/time_constant_oi.pdf")
+            r"$1/\sqrt{\tau}$ / $1/\sqrt{\text{s}}$", f"{OUTDIR}/time_constant_oi.pdf")
 plot_single(x_oi, U_oi, std_oi, mask_oi,
             x_fit_oi, model(x_fit_oi, *popt_oi), popt_oi, perr_oi,
             r"$\tau$ [s]", f"{OUTDIR}/time_constant_oi_vs_tau.pdf")
@@ -300,7 +300,7 @@ plot_single(x_oi, U_oi, std_oi, mask_oi,
 if PLOT_20S:
     plot_single(1 / np.sqrt(x_b20), U_b20, std_b20, mask_b20,
                 1 / np.sqrt(x_fit_b20), model(x_fit_b20, *popt_b20), popt_b20, perr_b20,
-                r"$1/\sqrt{\tau}$ [1/s]", f"{OUTDIR}/time_constant_b20.pdf")
+                r"$1/\sqrt{\tau}$ / $1/\sqrt{\text{s}}$", f"{OUTDIR}/time_constant_b20.pdf")
     plot_single(x_b20, U_b20, std_b20, mask_b20,
                 x_fit_b20, model(x_fit_b20, *popt_b20), popt_b20, perr_b20,
                 r"$\tau$ [s]", f"{OUTDIR}/time_constant_b20_vs_tau.pdf")
@@ -308,7 +308,7 @@ if PLOT_20S:
 if PLOT_60S:
     plot_single(1 / np.sqrt(x_b60), U_b60, std_b60, mask_b60,
                 1 / np.sqrt(x_fit_b60), model(x_fit_b60, *popt_b60), popt_b60, perr_b60,
-                r"$1/\sqrt{\tau}$ [1/s]", f"{OUTDIR}/time_constant_b60.pdf")
+                r"$1/\sqrt{\tau}$ / $1/\sqrt{\text{s}}$", f"{OUTDIR}/time_constant_b60.pdf")
     plot_single(x_b60, U_b60, std_b60, mask_b60,
                 x_fit_b60, model(x_fit_b60, *popt_b60), popt_b60, perr_b60,
                 r"$\tau$ [s]", f"{OUTDIR}/time_constant_b60_vs_tau.pdf")
@@ -353,15 +353,15 @@ def plot_combined(x_wi_plot, x_oi_plot, x_b20_plot, x_b60_plot, xlabel, filename
                        capsize=3, label=label, color=color, ecolor=ecolor)
 
     # --------------------------- Hauptplot ---------------------------
-    draw_series(ax, x_wi_plot, U_wi, std_wi, "#639A00", "#82C80097", "with Illumination")
-    draw_series(ax, x_oi_plot, U_oi, std_oi, "#FF9100", "#FF91009D", "without Illumination")
+    draw_series(ax, x_wi_plot, U_wi, std_wi, "#639A00", "#82C80097", "Netzspannung, 20s, Mit Beleuchtung")
+    draw_series(ax, x_oi_plot, U_oi, std_oi, "#FF9100", "#FF91009D", "Netzspannung, 20s, Ohne Beleuchtung")
     if PLOT_20S:
-        draw_series(ax, x_b20_plot, U_b20, std_b20, "#3366CC", "#3366CC97", "Batterie, 20s Messung")
+        draw_series(ax, x_b20_plot, U_b20, std_b20, "#3366CC", "#3366CC97", "Batterie, 20s")
     if PLOT_60S:
-        draw_series(ax, x_b60_plot, U_b60, std_b60, "#9933CC", "#9933CC97", "Batterie, 60s Messung")
+        draw_series(ax, x_b60_plot, U_b60, std_b60, "#9933CC", "#9933CC97", "Batterie, 60s")
 
     ax.set_xlabel(xlabel)
-    ax.set_ylabel(r"U [$\mu V$]")
+    ax.set_ylabel(r"U / $\mu V$")
     ax.legend()
     ax.grid()
 
@@ -413,7 +413,7 @@ plot_combined(
     1 / np.sqrt(x_wi), 1 / np.sqrt(x_oi),
     1 / np.sqrt(x_b20) if PLOT_20S else None,
     1 / np.sqrt(x_b60) if PLOT_60S else None,
-    r"$1/\sqrt{\tau}$ [1/s]", f"{OUTDIR}/time_constant_combined.pdf",
+    r"$1/\sqrt{\tau}$ / $1/\sqrt{s}$", f"{OUTDIR}/time_constant_combined.pdf",
     zoom_xlim=(0.5, 2), zoom_ylim=(0, 0.3),
 )
 # Bei der tau-Variante kein Zoom-Inset (zoom_xlim/zoom_ylim weggelassen).
@@ -421,5 +421,5 @@ plot_combined(
     x_wi, x_oi,
     x_b20 if PLOT_20S else None,
     x_b60 if PLOT_60S else None,
-    r"$\tau$ [s]", f"{OUTDIR}/time_constant_combined_vs_tau.pdf",
+    r"$\tau$ / s", f"{OUTDIR}/time_constant_combined_vs_tau.pdf",
 )

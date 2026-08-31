@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.4.13)  28 AUG 2026 16:53
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.4.13)  29 AUG 2026 13:55
  restricted system commands enabled.
 **Em-spek.tex
 (./Em-spek.tex
@@ -1016,7 +1016,7 @@ Here is how much of LuaTeX's memory you used:
  526 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 7 attribute, 59 glue_spec,
  7 attribute_list, 2 write nodes
-   avail lists: 2:1812,3:1544,4:70,5:60,6:2,7:1689,8:4,9:738,11:33
+   avail lists: 2:1812,3:1544,4:70,5:60,6:2,7:1686,8:4,9:738,11:33
  51163 multiletter control sequences out of 65536+600000
  57 fonts using 19027143 bytes
  125i,7n,126p,10918b,819s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1026,7 +1026,7 @@ lmroman10-bold.otf></home/max/.local/texlive/2025/texmf-dist/fonts/opentype/publ
 ic/lm/lmroman9-regular.otf></home/max/.local/texlive/2025/texmf-dist/fonts/opent
 ype/public/lm-math/latinmodern-math.otf></home/max/.local/texlive/2025/texmf-dis
 t/fonts/opentype/public/lm-math/latinmodern-math.otf>
-Output written on Em-spek.pdf (1 page, 17335 bytes).
+Output written on Em-spek.pdf (1 page, 17215 bytes).
 
 PDF statistics: 48 PDF objects out of 1000 (max. 8388607)
  28 compressed objects within 1 object stream

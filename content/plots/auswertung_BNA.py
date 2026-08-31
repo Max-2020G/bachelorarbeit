@@ -42,9 +42,9 @@ for i, path in enumerate(filenames):
     sn_results.append((dateiname, mean, ptp, SN))
 
     fig, ax = plt.subplots(layout="constrained")
-    ax.plot(t, u, "-", color="#639A00")
-    ax.set_xlabel("t / ps")
-    ax.set_ylabel("U / V")
+    ax.plot(t, u*10**3, "-", color="#639A00")
+    ax.set_xlabel(r"$\Delta$t / ps")
+    ax.set_ylabel(r"U / mV")
     if dateiname == "470mW,naha,am,fokuspunkt,lange,Messung":
         ax.set_xlim(-6,11)
     else:

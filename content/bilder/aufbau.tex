@@ -92,7 +92,7 @@
     \laser[name=Amplifier,angle=180] at (1,0);
 
     \splitter[angle=45] at      (A1);
-    \node[anchor=south] at      (2,0.6){beam sampler};
+    \node[anchor=south] at      (2,0.6){Strahlteiler};
     \mirror[angle=-135] at      (PR1);
     \mirror[angle=-45]  at      (PR2);
     \mirror[angle=135]  at      (PR4);
@@ -103,13 +103,13 @@
 
 
     \planconvexlens[angle=90] at (PRL);
-    \node[anchor=south] at (4.8,-7.4){PC \\ Lense};
+    \node[anchor=south] at (4.8,-7.1){Linse};
     \tinysplitter[angle=90] at (PRL4);
     \node[anchor=east] at (1.5,-1.9){$\lambda/2$};
     \tinysplitter[angle=90, color=black] at (PRP);
-    \node[anchor=east] at (1.5,-2.9){GTP};
+    \node[anchor=east] at (1.5,-2.9){Glan \\ Taylor \\ Prisma};
 % ----------------------------------Delay stage
-    \node[anchor=west] (A) at (3,-0.8){delay stage };
+    \node[anchor=west] (A) at (2.6,-0.8){Verzögerungsstrecke };
     \filldraw[fill opacity = 0.1, rounded
     corners =1mm , very thick]
     (3,-1) rectangle (5.5 ,-4);
@@ -123,7 +123,7 @@
     \mirror[angle=135] at      (PU6);
 
     \splitter[color=green] at (12,0);
-    \node[anchor=south]   at (12.15,0.5){Organischer Kristall};
+    \node[anchor=south]   at (12.15,0.5){Generationskristall};
     \planconvexlens[angle=180]     at      (PUL);
     \parabola[angle=90] at     (PU7);
     \parabola[angle=0] at     (PU8);
@@ -133,9 +133,9 @@
     \tinysplitter[angle=0] at (4,0);
     \node[anchor=south] at (4,0.3){$\lambda/2$};
     \tinysplitter[angle=180, color=black] at (5,0);
-    \node[anchor=south] at (4.93,0.3){GTP};
+    \node[anchor=south] at (6,0.3){Glan Taylor Prisma};
     \splitter[angle=-135, color=black, width=1.3, thickness=0.7] at (16,-2);
-    \node[anchor=west] at (16.5,-2){SI-Wafer};
+    \node[anchor=west] at (16.5,-2){Si-Scheibe};
 
 
 % ----------------------------------EOS Linien
@@ -148,15 +148,15 @@
     \splitter[color=black] at (E1);
     \node[anchor=south]   at (15.15,-7){$\lambda/4$};
     \splitter[color=black] at (E2);
-    \node[anchor=south]   at (16.65,-6.9){WP};
+    \node[anchor=south]   at (16.65,-5.5){Wollaston-Prisma};
     \splitter[color=orange] at (E0);
     \node[anchor=south]   at (14.15,-5.5){ZnTe};
     \planconvexlens[angle=21.80140949-180,width=0.7]     at      (E31);
     \planconvexlens[angle=-21.80140949+180,width=0.7]     at      (E32);
     \diode[angle=21.80140949] at (E41);
-    \node[anchor=south]   at (20.5,-8.5){PD2};
+    \node[anchor=south]   at (20.5,-8.5){Photodiode2};
     \diode[angle=-21.80140949] at (E42);
-    \node[anchor=south]   at (20.5,-3.9){PD1};
+    \node[anchor=south]   at (20.5,-3.9){Photodiode1};
 
 % ----------------------------------Chopper
     % Chopper-Symbol: segmentierte rotierende Scheibe
@@ -171,7 +171,7 @@
     }
     % Aufruf an gewünschter Position im Strahlengang, z.B. nach dem Generatorkristall:
     \chopper{13}{0};
-    \node at (13,-0.6){Chopper};
+    \node at (13,-0.7){Strahlzerhacker};
 
 
 \end{tikzpicture}

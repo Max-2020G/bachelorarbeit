@@ -1,32 +1,30 @@
 \chapter{Einleitung}
 Licht besitzt laut Welle-Teilchen-Dualismus einen Teilchen- und einen Wellencharakter \cite{meschede2006gerthsen}.
-Im Wellenbild ist die Wellenlänge, und damit auch die Frequenz, ausschlaggebend dafür ob das Licht sichtbar ist und welche Farbe es hat.
-Zum beispiel ist das Licht zwischen einer Wellenlänge von \SIrange{380}{750}{\nano\meter} im sichtbaren bereich. 
-Aufgrund der elektromagnetischen Eigenschaften des Lichts wird das gesamte Spektrum auch als elektromagnetisches Spektrum, 
-kurz EM-Spektrum, bezeichnet. 
-Dieses ist in \autoref{fig:Spek} dargestellt. \\ 
+Im Wellenbild ist die Wellenlänge, und damit auch die Frequenz, ausschlaggebend dafür, ob das Licht sichtbar ist und welche Farbe es hat.
+Zum Beispiel liegt Licht mit einer Wellenlänge von \SIrange{380}{750}{\nano\meter} im sichtbaren Bereich \cite{meschede2006gerthsen}. 
+Licht ist eine elektromagnetische Welle. Die Gesamtheit aller möglichen Frequenzen wird als elektromagnetisches Spektrum (kurz EM-Spektrum), 
+welches in \autoref{fig:Spek} zu sehen ist, bezeichnet.  
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{content/bilder/Em-spek.pdf}
     \caption{Elektromagnetisches-Spektrum mit Frequenzskala. 
-    Rot Markiert ist der THz-Bereich, welcher zwischen dem Mikrowellen und dem Sichtbaren Spektrum liegt.
-    Oben die Haupt erzeugungsarten für Strahlung in dem Jeweiligen Frequenzbereich.}
+    Rot markiert ist der THz-Bereich, welcher zwischen dem Mikrowellen- und dem Infrarotbereich liegt.
+    Oben die Haupterzeugungsarten für Strahlung in dem jeweiligen Frequenzbereich.}
     \label{fig:Spek}
 \end{figure}
-Wobei ein Großteil dieses Spektrum ohne viel aufwand zu erzeugen ist, gibt es bei gewissen Frequenzbereichen erhebliche Herausforderungen.
-Dieser herausfordernde Bereich ist die sogenannte Teraheartz-Lücke, sie beschreibt 
-einen Frequenzbereich in welchem es technisch besonders schwierig ist elektromagnetische-Wellen zu erzeugen und zu detektieren. 
-Das ist in \autoref{fig:THz-lucke} zu sehen. 
-Dort ist zu sehen, dass auf der seiter der niedrigeren Frequenzen als THz also auf der Linken seite die Leistung von Elektronischen erzeugern 
-bei verschiedenen Frequenzen aufgetragen ist. Auf der Rechten seite sind die Leistungen von Quantenkaskaden-Lasern bei verschiedenen Frequenzen 
-auufgetragen. Auf der Abbildung ist somit zu sehen, dass knapp über \SI{1000}{GHz} also \SI{1}{THz} die Leistungen von beiden seiten 
-nahe 0 gehen. \\
-Diese THz-Lücke liegt im Frequenzbereich von \SIrange{0.1}{10}{\tera\hertz} oder, im Wellenlängen spektrum von \SIrange{3000}{30}{\micro\meter} \cite{Williams_2006}.
+Während ein Großteil dieses Spektrums ohne viel Aufwand zu erzeugen ist, gibt es bei gewissen Frequenzbereichen erhebliche Herausforderungen.
+Dieser herausfordernde Bereich ist die sogenannte Terahertz-Lücke. Sie beschreibt 
+einen Frequenzbereich, in welchem es technisch besonders schwierig ist, elektromagnetische Wellen zu erzeugen und zu detektieren. 
+Das ist in \autoref{fig:THz-lucke} dargestellt. 
+Dort ist zu sehen, dass auf der Seite der niedrigeren Frequenzen als THz, also auf der Linken Seite die Leistung von elektronischen erzeugern 
+bei verschiedenen Frequenzen aufgetragen ist. Auf der rechten Seite sind die Leistungen von QuantenkaskadenLasern bei verschiedenen Frequenzen 
+aufgetragen. Auf der Abbildung ist gezeigt, dass knapp über \SI{1000}{GHz}, also \SI{1}{THz}, die Leistungen von beiden Seiten 
+um mehrere Größenordnungen einbricht. \\
+Diese THz-Lücke liegt im Frequenzbereich von \SIrange{0.1}{10}{\tera\hertz} oder im Wellenlängenbereich von \SIrange{3000}{30}{\micro\meter} \cite{Williams_2006}.
 Frequenzen unterhalb der THz-Lücke sind gut durch elektronische Oszillatoren zu erzeugen. 
-Bei ansteigenden Frequenzen entstehen aber immer mehr Herausforderungen, zum Beispiel durch 
-parasitäre Kapazitäten, welche zur Folge haben, dass immer weniger Leistung als Strahlung 
-abgegeben werden kann.  
-Dazu können einfache Schwarzkörper oder Diodenlaser hohe Leistung 
+Bei ansteigenden Frequenzen entstehen aber immer mehr Herausforderungen, welche zur Folge haben, dass immer weniger Leistung als Strahlung 
+abgegeben werden kann \cite{thz_gap}.  
+Dazu können einfache Schwarzkörper, welche nicht in der Grafik eingezeichnet sind, oder Diodenlaser hohe Leistung 
 im Bereich über der THz-Lücke erzeugen. 
 Dies nimmt aber stark mit sinkender Frequenz ab.
 Somit ergibt sich eine Lücke im Spektrum, in welcher es sehr schwierig ist, eine elektromagnetische Welle mit THz-Frequenzen
@@ -34,35 +32,38 @@ und hoher Leistung zu erzeugen.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{content/bilder/THz-gap.png}
-    \caption{Graf der THz-Lücke Wobei Links der Lücke bei niedrigeren Frequenzen die Leistung von Elektrischen Strahlungserzeugern zu sehen ist. 
-    Auf der Rechten seite sind die Leistung von Quantenkaskaden-Laser eingezeitnet.
-    Die beiden Leistungen sinken in richtung der eingzeichneten THz-Lücke in der mitte, Grafik aus \cite{thz_gap}.}
+    \caption{Graph der THz-Lücke. Links der Lücke bei niedrigeren Frequenzen die Leistung von elektronischen Strahlungserzeugern zu sehen ist. 
+    Auf der rechten Seite sind die Leistungen von Quantenkaskadenlasern eingezeichnet.
+    Die beiden Leistungen sinken in Richtung der eingetragenen THz-Lücke in der Mitte, Grafik aus \cite{thz_gap}.}
     \label{fig:THz-lucke}
 \end{figure}
-Dabei ist THz-Strahlung aus verschiedenen Gründen interessant. THz-Strahlung kann wie 
-Röntgenstrahlung zum Finden und zur Detektion von Tumoren und anderen Gewebeanomalien genutzt werden, wobei es 
-nicht die Erbschäden wie Röntgenstrahlung verursacht \cite{pickwell2006biomedical}. 
-In den Naturwissenschaften wird sie zur nicht-destruktiven Materialbestimmung und Untersuchung, 
-sowie nieder energetischen Anregung benutzt. \cite{PAWAR2013157}.
-Die Erzeugung von Strahlung innerhalb der THz-Lücke ist heute durch die Nutzung von verschiedenen THz-Generations-Techniken, wie zum Beispiel photoleitenden Antennen 
-\cite{10.1117/1.OE.56.1.010901}, optischer Gleichrichtung und THz-Quantenkaskaden \cite{Dean_2014}, 
-in höheren Intensitäten möglich.
+THz-Strahlung ist aus verschiedenen Gründen interessant. THz-Strahlung kann wie 
+Röntgenstrahlung zum Finden und zur Detektion von oberflächennahen Tumoren und anderen Gewebeanomalien, etwa von Hautkrebs, genutzt werden. Wobei es 
+nicht ionisierned ist und keine Erbgutschäde wie Röntgenstrahlung verursacht \cite{pickwell2006biomedical}. 
+In den Naturwissenschaften wird sie zur nicht-destruktiven Materialbestimmung und -untersuchung, 
+sowie niederenergetischen Anregung benutzt \cite{PAWAR2013157}.
+Die Erzeugung von Strahlung innerhalb der THz-Lücke ist heute durch die Nutzung von verschiedenen Techniken zur THz-Generations, wie zum Beispiel photoleitenden Antennen 
+\cite{10.1117/1.OE.56.1.010901}, optischer Gleichrichtung und THz-Quantenkaskadenlasern \cite{Dean_2014}, 
+mit höheren Intensitäten möglich.
 In dieser Bachelorarbeit liegt besonderes Interesse auf der optischen Gleichrichtung. 
-Sie ist der Hauptmechanismus, mit dem die organischen Emitter THz-Strahlung erzeugen, 
-welche in dieser Arbeit auf ihre Fähigkeit zur THz-Erzeugung geprüft werden. \\ \\
-Sie werden mit anorganischen Kristallen verglichen. ZnTe ist ein anorganischer Kristall der ebenfalls durch optische Gleichrichtung THz-Strahlung erzeugen kann.
-Durch zu hohe optische Leistung auf dem Kristall kann dieser zerstört werden, 
-durch die geringe Anzahl an Produzenten und der ökonomischen Entwicklung der letzten Jahre hat sich der Preis hier in den letzten 
-fünf Jahren verdoppelt. \\ \\
-In dieser Bachelorarbeit werden zwei organische Kristallsysteme auf ihre Eigenschaften bezüglich der THz-Generation untersucht und mit 
+Sie ist der Hauptmechanismus, mit dem die organischen Emitter, die in dieser Arbeit auf ihre Eignung zur THz-Erzeugung geprüft werden,
+THz-Strahlung erzeugen. \\ \\
+Sie werden mit anorganischen Kristallen verglichen. ZnTe ist ein anorganischer Kristall, der ebenfalls durch optische Gleichrichtung THz-Strahlung erzeugen kann.
+Durch zu hohe optische Leistung auf dem Kristall kann dieser zerstört werden. 
+Da sich der Preis von ZnTe aufgrund geringer Anzahl an Herstellern und die ökonomischen Entwicklungen in den letzten Jahren 
+etwa verdoppelt hat, ist die Suche nach kostengünstigen Alternativen von großem Interesse. 
+Hinzu kommt, dass einige organische Kristalle einen deutlich höheren nichtlinearen Koeffizienten besitzen und so auch potentiell 
+eine höhere Leistung an THz-Strahlung erzeugen können. \\ \\
+In dieser Bachelorarbeit werden OH1 und BNA auf ihre Eigenschaften bezüglich der THz-Generation untersucht und mit 
 Generierung in ZnTe verglichen. \\
-Die organischen Kristalle werden in der Arbeitsgruppe Steffen an der TU Dortmund gezüchtet/hergestellt, 
-welches eine schnelle Iteration bezüglich des Designs der Kristalle ermöglicht.  \\
-So können Anwendungsspezifische Kristalle hinsichtlich Größe und Stärke gezüchtet werden, 
+Die organischen Kristalle werden in der Arbeitsgruppe Steffen an der TU Dortmund gezüchtet, 
+was eine schnelle Iteration bezüglich des Designs der Kristalle ermöglicht.  \\
+So können anwendungsspezifische Kristalle hinsichtlich Größe und Dicke gezüchtet werden, 
 im Kontrast zu kommerziell erwerbbaren anorganischen Kristallen. \\
 Anschließend wird diskutiert, ob diese Kristalle die ZnTe-Kristalle ersetzen können. 
-Die vorliegende Arbeit beginnt in Kapitel zwei mit einer theoretischen Beschreibung der Generation und Detektion von 
-THz-Strahlung um darauf in Kapitel drei aufbauend die Terahertz-Zeitbereichsspektroskopie zu erklären. 
-Diese wird folgend  mit THz-TDS abgekürzt, aus der englischen Bezeichnung Terahertz-time domain spectroscopy.
-Die mit dieser Messmethode gemessenen Ergebnisse der verschiedenen Kristalle werden in Kapitel vier dargestellt und diskutiert.
-Kapitel fünf schließt mit einem Überblick über die Ergebnisse und einem Ausblick in weitere Messungen ab.
+Die vorliegende Arbeit beginnt in \autoref{sec:Theo} mit einer theoretischen Beschreibung der Generation und Detektion von
+THz-Strahlung, um darauf in \autoref{sec:ME} die genutzten Materialien vorzustellen.
+Auf diesem aufbauend wird in \autoref{sec:auf} die Terahertz-Zeitbereichsspektroskopie erklärt. 
+Diese wird folgend, aus der englischen Bezeichnung \"terahertz time-domain spectroscopy\", mit THz-TDS abgekürzt.
+Die mit dieser Messmethode gemessenen Ergebnisse der verschiedenen Kristalle werden in \autoref{sec:aus} dargestellt und diskutiert.
+\autoref{sec:za} schließt mit einem Überblick über die Ergebnisse und einem Ausblick auf weitere Messungen ab.

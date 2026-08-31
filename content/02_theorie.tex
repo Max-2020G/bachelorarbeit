@@ -1,95 +1,96 @@
 \chapter{Theorie}
 \label{sec:Theo}
 In dieser Bachelorarbeit wird untersucht, wie mithilfe von organischen Kristallen THz-Strahlung erzeugt wird. 
-Dabei wird in diesem Kapitel erläutert, welches die physikalischen Grundlagen für diese Erzeugung sind.
+Dabei werden in diesem Kapitel die physikalischen Grundlagen für diese Erzeugung erläutert.
 Zu Beginn wird in \autoref{sec:NLO} 
-erklärt, wie die nichtlinearen Prozesse genutzt werden, um THz-Strahlung zu erzeugen. 
+erklärt, wie die nichtlinearen Prozesse genutzt werden, um THz-Strahlung zu erzeugen und was diese auszeichnet. 
 Danach wird in \autoref{sec:OR} erklärt, wie die THz-Strahlung im Kristall erzeugt wird. 
-Dazu wird in \autoref{sec:PA} genauer erläutert, warum die organischen Kristalle eine größere
-Dicke des Kristalls zum Erzeugen der THz-Strahlung zulassen könnten.
-Diese Kristalle, die zur Erzeugung von THz-Strahlung in der Bachelorarbeit genutzt wurden, 
-werden in \autoref{sec:ME} genauer beleuchtet. 
-Zum Abschluss wird in \autoref{sec:TEOS} die Theorie hinter dem Messverfahren des Aufbaus erklärt.
+Dazu wird in \autoref{sec:PA} genauer erläutert, wie Phasenanpassung
+die nutzbaren Kristalldicke begrenzen.
+% Diese Kristalle, die zur Erzeugung von THz-Strahlung in der Bachelorarbeit genutzt wurden, 
+% werden in \autoref{sec:ME} genauer beleuchtet. 
+Zum Abschluss wird in \autoref{sec:TEOS} die Theorie hinter dem Messverfahren und der Signalverarbeitung des Aufbaus erklärt.
+
 
 
 \section{Nichtlineare Optik}
 \label{sec:NLO}
-In der Optik sind die meisten Phänomene linearer Natur, dies bedeutet, 
-dass wenn an ein Medium ein externes Elektrisches Fled $E$ angelegt 
-wird, gibt die elektrische Polarisation 
-eine lineare Antwort auf dieses angelegte Feld.
+In der Optik sind die meisten Phänomene linearer Natur. 
+Dies bedeutet, dass die elektrische Polarisation eines Mediums 
+linear auf ein extern angelegtes elektrisches Feld $E$ antwortet.
 Doch wenn das elektrische Feld eine 
-Stärke von $~3\cdot10^{11}\,\unit{V/m}$ oder mehr erreicht, werden nicht-lineare Beiträge wichtig. 
-So eine Stärke ist nur mit der Nutzung von Lasern erreichbar, welche 
+Stärke von $\sim3\cdot10^{11}\,\unit{V/m}$ oder mehr erreicht, werden nichtlineare Beiträge wichtig. 
+Eine solche Feldstärke ist nur mit der Nutzung von Lasern erreichbar, welche 
 hier für diese Arbeit genutzt werden \cite{Butcher_Cotter_1990}. 
 Die Nichtlinearität wird sichtbar, wenn ein Medium semiklassisch genähert wird und zuerst 
 die lineare Lösung gezeigt wird. 
-Das Medium wird genähert als ein positiver Kern und ein daran durch eine Feder befestigtes Elektron. 
+Das Medium wird genähert als ein positive Kern und ein daran durch eine Feder befestigtes Elektron. 
 Dabei kann der positiver Kern als räumlich fest angenommen werden, da die 
-Elektronen deutlich leichter sind.
-An dieses System wird ein elektrisches Feld angelegt. 
-Dieses System kann in erster Näherung als getriebener harmonischer Oszillator genähert werden. 
-Es ergibt sich aufgrund der Coulomb Wechselwirkung zwischen dem Elektron und dem $E$-Feld die Bewegungsgleichung 
+Elektronen deutlich leichter als die Protonen sind.
+Wenn an dieses System ein elektrisches Feld angelegt wird, kann 
+dieses in erster Näherung als getriebener harmonischer Oszillator genähert werden. 
+Es ergibt sich aufgrund der Coulomb-Wechselwirkung zwischen dem Elektron und dem $E$-Feld die Bewegungsgleichung 
 \begin{equation}
     \label{eqn:bew}
-    m\left(\frac{\text d^2x}{\text d t^2}+2\Gamma \frac{\text d x}{\text d t}+\Omega^2\cdot x-\left(\xi^{(2)}x^2+\xi^{(3)}x^3+\dotsb\right)\right)= -e E(t)\,.
+    m\left(\frac{\text d^2x}{\text d t^2}+2\Gamma \frac{\text d x}{\text d t}+\Omega^2\cdot x-\left(\xi^{(2)}x^2+\xi^{(3)}x^3+\dotsb\right)\right)= -e E(t)
 \end{equation}
+für das Elektron.
 Hier ist $m$ die Masse des Elektrons, $x$ die Auslenkung aus der Ruhelage, $\Gamma$ 
 die Dämpfungskonstante, 
 $\Omega$ die Eigenfrequenz des Systems und $\xi$ die anharmonischen Kraftterme.
-Wobei im linearen Fall nur die harmonischen Lösungen, also $xi^{(i)}= \forall i \ge 2$, verwendet werden. 
+Dabei werden im linearen Fall die anharmonischen Lösungen, $\xi^{(i)}=0\, \forall i \ge 2$, angemommen. 
 %Genaueres dazu kann in \cite{Butcher_Cotter_1990} gelesen werden.
 Dies ist der Unterschied zum nichtlinearen Ansatz, da dort die anharmonischen Teile 
 nicht vernachlässigt werden können. 
-Bildlich gesprochen wird in diesem Fall die Feder, die den positive Kern und das Elektron 
+Bildlich gesprochen wird in diesem Fall die Feder, die den positiven Kern und das Elektron 
 miteinander verbindet, so weit auseinandergezogen, dass die Reaktion der Feder nicht mehr 
 Linear ist.\\ 
 Die Polarisation $P$ ist wiederum nicht so einfach im Federbild darstellbar. 
-Die Polarisation beschreibt die Antwort vom Medium von einem 
-eingehenden elektrischen Feld beschreibt. 
+Die Polarisation beschreibt die Antwort des Mediums von einem 
+eingehenden elektrischen Felds. 
 Mathematisch beschrieben wird diese als $P(t)= -N\cdot e\cdot x(t)$, mit $N$ als Teilchendichte, 
 $e$ als Ladung des Elektrons und $x(t)$ als Auslenkung des Elektrons aus der Ruhelage. 
-Somit lässt sich mit der Lösung von \eqref{eqn:bew} im Linearen, harmonischen Fall, die Polarisation 
+Somit lässt sich mit der Lösung von \eqref{eqn:bew} im linearen, harmonischen Fall, die Polarisation 
 \begin{equation}
     P =  \epsilon_0 \chi^{(1)}E  
 \end{equation}
 bestimmen.
-Im nicht harmonischen, also nicht-linearen Fall ist dies aber nicht exakt zu bestimmen und 
+Im nicht harmonischen, also nichtlinearen Fall ist dies aber nicht exakt zu bestimmen und 
 eine Taylor-Reihen-Entwicklung wird angewendet. 
-Wodurch sich 
+Dadurch ergibt sich
 \begin{equation}
     \label{eqn:NLP}
-    P_{i,j} = \epsilon_0 \left(\chi^{(1)}_{i_1,j_1}E+\chi^{(2)}_{i_2,j_2}E^2+\chi^{(3)}_{i_3,j_3}E^3+\dotsb\right)
+    P_{i} = \epsilon_0 \left(\chi^{(1)}_{i,j}E_J+\chi^{(2)}_{i,j,k}E_j E_k+\chi^{(3)}_{i,j,k,l}E_j E_k E_l\dotsb\right)\, .
 \end{equation}
-ergibt. Dort beschreibt $\chi^{(1)}$ die lineare Suszeptibilität und die folgenden $\chi^{(2)}$, $\chi^{(3)}$,
+Dort beschreibt $\chi^{(1)}$ die lineare Suszeptibilität und die folgenden $\chi^{(2)}_{i,j,k}$, $\chi^{(3)}_{i,j,k,l}$,
 die nichtlinearen Suszeptibilitäten des Mediums \cite{Butcher_Cotter_1990}.
-Das $\chi^{(2)}$ ist hierbei ein Tensor dritter Stufe und besitzt zusätzlich die Abhängikeiten 
-$i$ welche die Polarisation beschreibt, und $j$ welche Komponenten des Feldes sind.
-Die Unabhängigkeit dieser Komponenten lässt sich durch Kristall- und Permutationssymmetrien reduzieren.
-Für den Prozess der optischen Gleichrichtung ist der $\chi^{(2)}$ Term entscheidend. 
-Dabei ist entscheidend, dass dieser Term in bestimmten Fällen wegfällt, 
-zum Beispiel bei einem Medium welches inversionssymmetrisch ist. \\
+Das $\chi^{(2)}_{i,j,k}$ ist hierbei ein Tensor dritter Stufe und besitzt zusätzlich die Abhängigkeiten 
+$i$, welche die Polarisation beschreibt, und $j$ und $k$ welche Komponenten des Feldes sind.
+Die Anzahl der unabhängigen Komponenten lässt sich durch Kristall- und Permutationssymmetrien reduzieren.
+Für den Prozess der optischen Gleichrichtung ist der $\chi^{(2)}_{i,j,k}$-Term entscheidend. 
+Dabei ist wichtig, dass dieser Term in bestimmten Fällen wegfällt, 
+zum Beispiel bei einem Medium, welches inversionssymmetrisch ist. \\
 Das kann mithilfe der Inversionsoperation als Symmetrietransformation gezeigt werden \cite[Kap. 5.3.2]{Butcher_Cotter_1990}. 
 Diese Symmetrieeigenschaft wird auch als Zentrosymmetrie bezeichnet, 
-welche in nur 21 der 32 Kristallgruppen vorliegt und somit nicht für die Generation von THz infrage kommen. 
-
-Des Weiteren ist es von Vorteil, wenn die Polarisation im Frequenzbild betrachtet wird um zum Beispiel die Differenzfrequenz zu nutzen. 
+welche in nur 11 der 32 Kristallgruppen vorliegt und die somit nicht für die Generation von THz infrage kommen \cite{Jazbinsek2019}. 
+Des Weiteren ist es von Vorteil, wenn die Polarisation im Frequenzbild betrachtet wird, um zum Beispiel die Differenzfrequenz zu nutzen. 
 Dafür wird angenommen, dass sich das elektrische Feld $E$ aus mehreren Frequenzkomponenten 
 zusammensetzt, also definiert ist durch
 \begin{equation}
     \label{eqn:frq}
-    E(t)=E_1e^{i\omega_1 t}+E_2e^{i\omega_2 t} + \dots \ .
+    E(t)=E_1e^{i\omega_1 t}+E_2e^{i\omega_2 t} + \text{c.c.}\ .
 \end{equation}
-Wenn anschließend \eqref{eqn:frq} in \eqref{eqn:NLP} eingesetzt wird, entstehen durch 
-das Quadrieren erzeugt weitere Frequenzen wie die Summenfrequenz $\omega_1+\omega_2$, die Differenzfrequenz 
-$\omega_1-\omega_2$ und die Frequenzverdopplungen $2\omega_1,2\omega_2$. 
+Wird \eqref{eqn:frq} in \eqref{eqn:NLP} eingesetzt, so entstehen durch das Quadrieren
+Terme bei neuen Frequenzen wie die zweiten Harmonischen $2\omega_1$ und $2\omega_2$, die
+Summenfrequenz $\omega_1+\omega_2$ sowie die Differenzfrequenz $\omega_1-\omega_2$.
+Die beiden letztgenannten Prozesse entstehen aus den Kreuztermen der beiden Felder,
+wobei die Differenzfrequenz erst durch die Berücksichtigung des komplex konjugierten
+Anteils auftritt.
 Dies wird Drei-Wellen-Mischung genannt, da die zwei Eingangsfelder und das eine Ausgangsfeld betrachtet werden \cite{Boyd2023}. 
-Das Problem, das sich nun aber ergibt, ist, dass beide Strahlen von demselben Laser 
-erzeugt werden und so nicht verschiedene Frequenzkomponenten haben, um die Differenz von diesen zu 
-bestimmen. 
+Beide Strahlen stammen jedoch aus demselben Laser und besitzen daher zunächhst identische Frequenzkomponenten.
 Hierbei ist aber entscheidend, dass der Laser ein Ultrakurzpulslaser im fs-Bereich ist 
-und durch die Zeit-Bandbreiten-Unschärfe $\Delta t\cdot \Delta \nu \ge \text{const.}$ 
-eine große Frequenzbandbreite besitzt. 
+und durch die Zeit-Bandbreiten-Unschärfe $\symup{\Delta} t\cdot \symup{\Delta} \nu \ge \text{const.}$ 
+eine große Frequenzbandbreite besitzt \cite{Boyd2023}. 
 Somit besitzt dieser ultrakurze Puls eine große Bandbreite an Frequenzen, welche sich in 
 der Drei-Wellen-Mischung mischen können. 
 % Im anschließenden Kapitel wird gezeigt, wie mithilfe der Differenzfrequenzerzeugung 
@@ -99,65 +100,60 @@ der Drei-Wellen-Mischung mischen können.
 
 \section{Optische Gleichrichtung}
 \label{sec:OR}
-Die optische Gleichrichtung erzeugt die THz-Strahlung über den nicht linearen Prozess der 
+Die optische Gleichrichtung erzeugt die THz-Strahlung über den nichtlinearen Prozess der 
 Differenzfrequenz. 
-Wobei die optische Gleichrichtung auftritt, wenn ein Grenzfall auftritt. 
 Dieser liegt vor, wenn die beiden elektromagnetischen Wellen, welche auf das 
 Material treffen, 
 hier zwei Teile des selben breitbandigen Nah-Infrarot-Pulses, 
 eine sehr ähnliche Frequenz besitzen und, somit die Differenz 
-$\omega = \omega_1 - \omega_2$ sehr klein ist und im Bereich der THz liegt. 
+$\omega = \omega_1 - \omega_2$ sehr klein ist und im THz-Bereich liegt. 
 Für die Polarisation, bei der die beiden elektrischen Felder betrachtet werden, bedeutet das 
 \begin{equation}
      P(\omega)=\epsilon_0\chi^{(2)}(\omega=\omega_1-\omega_2)E(\omega_1)E^*(\omega_2) \, .
 \end{equation}
 Diese Polarisation beschreibt die Bewegung der durch das Feld erzeugten Dipole, wobei diese 
 Dipole wieder ein elektrisches Feld erzeugen. 
-
 \begin{wrapfigure}[15]{r}{0.45\textwidth}
   \centering
   \vspace{-\intextsep}
   \includegraphics[width=\linewidth]{content/bilder/thz_erz.pdf}
   \caption{Grafische Darstellung der Erzeugung von THz-Strahlung, wobei nur ein kleiner 
          THz-Puls erzeugt wird und ein Großteil des optischen Pulses durch das Medium 
-         hindurch dringt \cite{Yu2022}.}
+         hindurch dringt.}
   \label{fig:erz}
 \end{wrapfigure}
-
 Diese Polarisation wird von einem Teil der NIR-Welle erzeugt, aber nicht vollständig absorbiert, 
 was in \autoref{fig:erz} anschaulich dargestellt ist. 
-
-\noindent
 Berechnet wird das elektrische Feld, indem die Polarisation zuerst durch eine Fourier-Rücktransformation in die 
 Zeitdomäne gebracht wird und anschließend durch die Maxwellgleichungen über die 
-zweite Ableitung das erzeugte Feld berechnet werden \cite{Yu2022}. 
+zweite Ableitung des erzeugten Feld berechnet werden \cite{Yu2022}. 
 Somit ergibt sich für das elektrische Feld
 \begin{equation}
     \label{eqn:ENL}
-    E_\text{THz}\approx \frac{\partial^2P(t)}{\partial t^2}\, .
+    E_\text{THz}\propto \frac{\partial^2P(t)}{\partial t^2}\, .
 \end{equation}
-Damit die beiden Felder, die auf den Generationskristall treffen, keine destruktive Interferenz 
-erzeugen, muss vorher eine Phasenanpassung durchgeführt werden, dies wird im Folgenden erklärt.
+Damit die an verschiedenen Stellen im Kristall erzeugte THz-Strahlung konstruktiv interferieren, 
+muss vorher eine Phasenanpassung durchgeführt werden. Dies wird im Folgenden erklärt.
 \section{Phasenanpassung und Kohärenzlänge}
 \label{sec:PA}
-Die Laser im Aufbau erzeugen aber kein so ideales Elektrisches Feld wie vorher angenommen. 
-Dadurch entsteht eine Phasenverschiebung zwischen dem Pump strahl und dem generierten THz. 
-Dadurch ist es möglich, dass destruktive Interferenz entsteht und die Intensität der Strahlung 
+Da der erzeugte THz-Puls eine unterschiedliche Phasengeschwindigkeit zu dem erzeugenden Pump-Puls besitzt, entsteht innerhalb des Kristalls Dispersion. 
+Dadurch entsteht eine Phasenverschiebung zwischen dem Pumpstrahl und die erzeugte THz-Strahlung. 
+Durch diese ist es möglich, dass destruktive Interferenz entsteht und die Intensität der Strahlung 
 geringer ausfällt. 
-Zum einen müssen nämlich die zwei eintreffenden Wellen in Phase sein, und dazu auch die 
-erzeugt THz-Strahlung. 
-Um die zu gewährleisten, werden als erzeugendes Medium doppeltbrechende Kristalle verwendet. 
-Dieses hat auf ihren verschiedenen Achsen verschiedene Brechungsindizes und erzeugt so eine unterschiedliche 
+Um zu gewährleisten, dass der erzeugte THz-Puls und der Pump-Puls dieselbe Phase haben, 
+werden als erzeugendes Medium doppeltbrechende Kristalle verwendet. 
+Diese haben entlang ihren Achsen verschiedene Brechungsindizes und erzeugt so eine unterschiedliche 
 Phasenverschiebung. 
 Um die Verschiebung anzupassen, kann der Kristall gedreht werden, wodurch die Phasen 
 der beiden Felder angepasst werden. \\ \\
 Entscheidend ist, dass das Kristallmaterial und die 
 Wellenlänge des Pumpstrahls so gewählt werden, dass die Gruppengeschwindigkeit des 
 Pumpstrahls möglichst nah an der Phasengeschwindigkeit des THz-Pulses ist. 
-Innerhalb des Kristalls wird nicht nur an einem Punkt THz-Strahlung erzeugt, also 
-die Strahlung Strecke zurücklegt und dabei auseinanderfließen kann, wenn die Gruppengeschwindigkeit des Pumpstrahls 
-nicht gleich der Phasengeschwindigkeit des erzeugten THz-Strahls ist. 
-ausschlaggebend sind die Brechungsindizes bei der Wellenlänge des Pump-Strahls $n_g^\text{NIR}$ 
+Innerhalb des Kristalls wird THz-Strahlung nur an einem Punkt, 
+sondern entlang der gesamten Propagationsstrecke erzeugt. 
+Unterscheiden sich Gruppengeschwindigkeit des Pumppulses und Phasengeschwindigkeit der THz-Welle, 
+laufen die erzeugten Beiträge auseinander.
+Ausschlaggebend sind die Brechungsindizes bei der Wellenlänge des Pumpstrahls $n_g^\text{NIR}$ 
 und $n^\text{THz}$ bei der Wellenlänge von THz-Strahlung, zwischen denen  
 \begin{equation}
     \label{eqn:brech}
@@ -165,8 +161,8 @@ und $n^\text{THz}$ bei der Wellenlänge von THz-Strahlung, zwischen denen
 \end{equation}
 gelten muss. In der Realität ist diese perfekte Anpassung aber nicht möglich und 
 die Pulse laufen über längere Distanzen immer auseinander, wodurch der erzeugte Puls auch 
-auseinanderläft und so die Maxima und Minima verschwimmen. 
-Wie weit ein Puls stabil bleibt ist durch die Kohärenzlänge gegeben.
+auseinanderläuft und so die Maxima und Minima verschwimmen. 
+Wie weit ein Puls stabil bleibt, ist durch die Kohärenzlänge gegeben.
 Diese Kohärenzlänge $l_\text{k}$ ist durch 
 \begin{equation}
     \label{eqn:koh}
@@ -179,38 +175,38 @@ Hierbei ist $c$ die Lichtgeschwindigkeit im Vakuum und $\nu$ die Frequenz der er
 \section{Elektrooptische Detektion und Signalverabeitung}
 \label{sec:TEOS}
 Die elektrooptische Detektion ist ein Messverfahren, mit welchem die generierte THz-Strahlung 
-Zeit aufgelößt gemessen werden kann. 
+Zeitaufgelöst gemessen werden kann. 
 Die Detektion startet im Detektionskristall, welcher ein nicht inversionssymmetrischer 
-Kristall sein muss. In diesem wird der THz-Strahl und der Detektions-Strahl Räumlich und Zeitlich überlappt. 
-Wobei der Detektionsstrahl eine deutlich geringere Intensität als der THz-Puls besizt.
-Durch das Elektrische Feld im Kristall tritt der Pockels Effekt auf.
-Dieser ist ein nichtlinearer Prozess Zweiter Ordnung, und wird durch durch \autoref{eqn:NLP} beschrieben. 
-Durch diesen wird der Kristall doppeltbrechend,  
-die Stärke der Doppelbrechung ist abhängig von der Intensität der THz-Strahlung. 
+Kristall sein muss. In diesem werden der THz-Strahl und der Detektions-Strahl räumlich und zeitlich überlappt. 
+Durch das elektrische Feld im Kristall tritt der Pockels-Effekt auf.
+Dieser ist ein nichtlinearer Prozess zweiter Ordnung und wird durch \autoref{eqn:NLP} beschrieben. 
+Durch diesen wird der Kristall doppeltbrechend,   
+die Stärke der Doppelbrechung ist proportional zu der elektrischen Feldstärke der THz-Strahlung. 
 Durch die Doppelbrechung wird die Polarisation von dem Detektionsstrahl gedreht. 
-Somit wird aus der linearen polarisation des Lichts vom Laser eine elliptische polarisiertion \cite{zheng2023probing}. 
-Der THz-Puls ist hierbei mehrere ps lang und der Detektionspuls nur $\approx\SI{30}{fs}$ dadurch kann der deutlich kürzere Detektionspuls 
+Somit wird aus der linearen Polarisation des Lichts vom Laser eine elliptische Polarisation \cite{zheng2023probing}. 
+Der THz-Puls ist hierbei mehrere ps lang und der Detektionspuls nur $\approx\SI{30}{fs}$. Dadurch kann der deutlich kürzere Detektionspuls 
 den längeren THz-Puls abtasten.
-\autoref{fig:EOS} zeigt schematisch den Aufbau einer Elektrooptischen Detektion, wobei sich die Strahlen von Links nach Rechts bewegen. 
+\autoref{fig:EOS} zeigt schematisch den Aufbau einer elektrooptischen Detektion, wobei sich die Strahlen von links nach rechts bewegen. 
 Die Pfeile zeigen die Polarisation des Pulses an verschiedenen Stellen.
-als Änderung nach dem ZnTe zu sehen. 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{content/bilder/eos_p.png}
-    \caption{Schematischer Aufbau der Elektrooptischen Detektion \cite{zheng2023probing}.
-    Oben ist der Pulas gang von Links nach Rechts zu sehen, wobei der Detetkionspuls und Thzpuls gleichzeitig durch den Aufbau gehen. 
-    Der Aufbau besteht in dieser Reihenfolge aus einem ZnTe Kristall, einer $\lambda/4$-Platte, eine Wollaston strahlteiler und Zwei Photodioden. 
-    Unter dem Aufbau ist schematisch die Polarisation des Pulses einmal mit und ohne den THzpuls zu sehen und wie diese sich über den Aufbau verhählt.}
+    \caption{Schematischer Aufbau der elektrooptischen Detektion, Grafik entnommen aus \cite{zheng2023probing}.
+     Oben ist der Pulsverlauf von links nach rechts zu sehen, wobei der Detektionspuls und der Thz-Puls gleichzeitig durch den Aufbau gehen. 
+     Der Aufbau besteht in dieser Reihenfolge aus einem ZnTe-Kristall, einer $\lambda/4$-Platte, einem Wollaston-Prisma und zwei Photodioden. 
+     Unter dem Aufbau ist schematisch die Polarisation des Pulses einmal mit und einmal ohne den THz-Puls zu sehen und wie diese sich über den Aufbau verhält.}
     \label{fig:EOS}
 \end{figure}
-Anschließend geht der nun veränderte Detektionsstrahl durch eine $\lambda/4$-Platte. Diese 
-verzögert die Polarisation einer Achse um $90°$ was zur Folge hat, dass die Polarisation eines 
-Linear polarisiertem Strahl ein perfekter Kreis wäre. 
-In diesem Fall ist der eintreffende Fall jedoch kein linear polarisiertes Licht mehr, sondern 
-ein leicht elliptisch polariserter Strahl. 
-Das hat zur Folge, dass der resultierende Strahl auch elliptisch ist und somit 
-nicht dieselbe Amplitude in der horizontalen und vertikalen Achse der Polarisation besitzt. 
-Dies wird im Folgenden entscheidend. 
+Anschließend durchläuft der im ZnTe-Kristall elliptisch polarisierte Detektionsstrahl eine
+$\lambda/4$-Platte. Diese führt zwischen der ordentlichen und der außerordentlichen
+Polarisationskomponente eine Phasenverzögerung von \SI{90}{\degree} ein. Steht die
+Polarisation eines linear polarisierten Strahls unter \SI{45}{\degree} zur optischen Achse
+der Platte, so werden beide Komponenten mit gleicher Amplitude angeregt und der Strahl
+verlässt die Platte zirkular polarisiert. Dieser Winkel wird durch Drehen der
+$\lambda/4$-Platte eingestellt.
+Ohne THz-Feld ist der Detektionsstrahl hinter der $\lambda/4$-Platte somit zirkular
+polarisiert. 
+Während unter Einfluss des THz-Feldes ein elliptisch polarisierter Strahl entsteht.
 Anschließend trifft dieser Strahl auf ein Wollaston-Prisma, 
 dieser unterteilt die horizontale und vertikale Polarisation räumlich. 
 Diese abgelenkten Strahlen werden auf die Photodioden gelenkt.
@@ -221,48 +217,48 @@ sind nicht mehr identisch.
 Somit ist die Intensität auf den Photodioden nicht gleich. 
 Der Intensitätsunterschied, den die Photodioden messen, ist proportional zur Feldstärke der 
 THz-Strahlung. 
-Diese Proportionalität ist gegeben durch
+Diese Proportionalität ist, bei optimaler Orientierung des Kristalls, gegeben durch
 \begin{equation}
     \symup{\Delta} I  =  \frac{ \pi}{2\cdot\lambda_0\cdot n_0}I_0 Ld_\text{THz}E_\text{THz}\propto E_\text{THz}\ .
 \end{equation}
 Hierbei ist $\symup{\Delta}I$ die gemessene Intensitätsdifferenz an den Photodioden, $I_0$ ist die Intensität des Detektionsstrahls 
-vor dem Detetkionskristall, $\lambda_0$ ist die Wellenlänge des Detektionsstrahls, $L$ die Dicke des Detektionskristalls, 
-$n_0$ der Brechungsindex des Detektionskristalls bei der Wellenlänge $\lambda_0$, $d_\text{THz}$ ist nichtlineare Koeffizient des 
-ZnTe für die Richtung durch welche der Strahl auf den ZnTe Kristall trifft und $E_\text{THz}$ ist die Elektrischefeldstärke des 
-THz-Strahls an der Stelle wo es mit dem Detektions-Strahl überlappt. 
+vor dem Detektionskristall, $\lambda_0$ ist die Wellenlänge des Detektionsstrahls, $L$ die Dicke des Detektionskristalls, 
+$n_0$ der Brechungsindex des Detektionskristalls bei der Wellenlänge $\lambda_0$, $d_\text{THz}$ ist der nichtlineare Koeffizient des 
+ZnTe für die Richtung, durch welche der Strahl auf den ZnTe-Kristall trifft und $E_\text{THz}$ ist die elektrische Feldstärke des 
+THz-Strahls an der Stelle, and der er mit dem Detektionsstrahl überlappt \cite{Planken2001}.
+Hierbei ist die entscheidende Erkenntnis, dass der gemessene Stromunterschied an den Photodioden proportional zu dem 
+THz-Feld und dadurch auch zu dem nichtlinearen Koeffizienten des Kristalls.
 
 % \section{Elektro-Optische-Detektion und Signalverabeitung}
 % \label{sec:EOS}
 
 % Durch den Pockelseffekt wird wie in \autoref{sec:TEOS} beschrieben die Polarisation gedreht und die änderung 
 % wird über die Elektro Optische Detektion gemessen.
-Des weiteren gibt es im gesamten aufbau verschiedene Rauschquellen wie das Intensitätsrauschen des Lasers, 
-Streulicht oder Elektroinisches Rauschen der elektrischen komponenten der detektionsbauteile.
-Zur Abschirmung gegenüber Raumlicht und Streulicht, wurde der Detektionsteil des Aufbaus eingehaust. 
-Das Auslesen der Intensität erfolgt durch den Lock-In-Verstärker, durch die demodulation des 
-Thz-Strahls auf die halbe Repetationsrate des Lasers. 
+Des Weiteren gibt es im gesamten Aufbau verschiedene Rauschquellen wie das Intensitätsrauschen des Lasers, 
+Streulicht oder elektronisches Rauschen der elektrischen Komponenten der Detektionsbauteile.
+Der THz-Strahl wird durch den Chopper mit der halben Repetitionsrate des Lasers moduliert. 
+Im Lock-In-Verstärker wird das Photodiodensignal ausgelesen. 
 Somit wird immer ein Puls mit und ohne THz-Strahlung detektiert. 
-Im Lock-In wird die demodulationsfrequenz mit dem Signal der Photodioden mutlipliziert. 
+Im Lock-In wird die Demodulationsfrequenz mit dem Signal der Photodioden multipliziert. 
 Dadurch landet der Signalanteil, welcher dieselbe Frequenz wie das Referenzsignal besitzt 
 bei ungefähr $\SI{0}{Hz}$. 
-Die restlichen Signale, welche nicht auf der Modulationsfrequenz liegen, werden auf eine andere Frequenzen 
+Die restlichen Signale, welche nicht auf der Modulationsfrequenz liegen, werden auf andere Frequenzen 
 verschoben. 
 Anschließend wird das Produkt der Signale durch einen Tiefpassfilter geleitet, 
 dieser lässt nur ein sehr schmales Frequenzband um $\SI{0}{Hz}$ passieren. 
-Der Tiefpassfilter Integriert über eine Zeit $\tau$, welche auch Zeitkonstante genannt wird. In dieser Bachelorarbeit 
-werden verschiedene Zeitkonstanten, welche meherere Größenordnungen über der Periodendauer des Lasers liegen genutzt. 
-Die Proportionalität zwischen Rauschen und Zeitkonstante werden beschrieben durch 
+Der Tiefpassfilter integriert über eine Zeit $\tau$, welche auch Zeitkonstante genannt wird. In dieser Bachelorarbeit 
+werden verschiedene Zeitkonstanten, welche mehrere Größenordnungen über der Periodendauer des Lasers liegen, genutzt. 
+Die Proportionalität zwischen Rauschen und Zeitkonstante wird beschrieben durch 
 \begin{equation}
     \label{eqn:tc}
     U_\text{Rauschen} \approx \frac{A}{\sqrt{\tau}}\,.
 \end{equation} 
-Wobei $U$ die vom Lock-in-Verstärker ausgegebene Rauschspannung ist. 
-$A$ ist hierbei eine Konstane,  
-welche die Rauschamplitude beschreibt, $b$ ist das Grundrauschen 
-welches nicht abhängig von der Zeitkonstante ist \cite{zhinst_lockin_whitepaper}.
-Zusätzlich ist das Rauschen Invers-Proportional mit $\propto \frac 1 f$ zur Modulationsfrequenz \cite{10.1063/1.5047659}. 
-In dieser Bachelorarbeit wird eine Modulationsfrequenz von \SI{1500}{HZ} genutzt, welche die größtmögliche fundamentale der 
-Wiederholrate der Laser-Pulse entspricht.
+$U_\text{Rauschen}$ ist die vom Lock-in-Verstärker ausgegebene Rauschspannung. 
+$A$ ist hierbei eine Konstante, 
+welche die Rauschamplitude beschreibt \cite{zhinst_lockin_whitepaper}.
+Zusätzlich ist das Rauschen invers proportional mit $\propto \frac 1 f$ zur Modulationsfrequenz \cite{10.1063/1.5047659}. 
+In dieser Bachelorarbeit wird eine Modulationsfrequenz von \SI{1500}{HZ}, was der halben Repetitionsrate des Lasers entspricht, genutzt, 
+welche die größtmögliche fundamentale der Wiederholrate der Laser-Pulse entspricht.
 
 
 
@@ -270,6 +266,7 @@ Wiederholrate der Laser-Pulse entspricht.
 
 \chapter{Materialeigenschaften}
 \label{sec:ME}
+
 Wie in dem vorangegangenen Kapitel beschrieben, müssen die Materialien verschiedene Eigenschaften besitzen um 
 THz Effektiv zu erzeugen. 
 In dieser Bachelorarbeit werden ZnTe, OH1 und BNA genutzt und im folgenden kurz vorgestellt.
@@ -292,13 +289,13 @@ Die Kristallstruktur von ZnTe ist in \autoref{fig:ZnTe} zu sehen, wobei Zink Ora
 Die Gitterkonstanten von ZnTe betragen $a = b = c = \SI{6.101}{\angstrom}$. Der Kristall gehört zu der Raumgruppe 
 F43m. 
 und ist <110> orientiert \cite{Brach}. 
-Dazu ist der nicht lineare Koeffizient bei $\SI{800}{nm}$-Strahlung $d_{THz}= \SI{66.6}{pm/V}$ \cite{wu2014comparison}.
-Die Brechungsindizes gemäß \eqref{eqn:brech} betragen $n^*_\text{g}=n^*_\text{THz}\approx \SI{3.285}{}$ bei 
-$ \nu^*\approx \SI{2.55}{THz}$ und $\lambda^*\approx \SI{788}{nm}$ \cite{Hier fehlt Quelle}. 
+Dazu ist der nicht lineare Koeffizient bei $\SI{800}{nm}$-Strahlung $d_{\text{THz}}= \SI{59.9}{pm/V}$ \cite{Planken2001}.
+Die Brechungsindizes  betragen $n_\text{THz}\approx \SI{3.276}{}$ bei 
+$ \nu^*\approx \SI{2.43}{THz}$ \cite{tripathi2013accurate}und $n_\text{NIR}^\text{phase}\approx \SI{3.239}{}$ bei $\lambda^*\approx \SI{800}{nm}$ \cite{Planken2001}. 
 Diese hier angenommene Wellenlänge ist wiederum nicht exakt die des $\SI{808}{nm}$-Lasers, welcher in diesem Aufbau 
 genutzt wird. 
 Deshalb werden in der Realität die Werte minimal abweichen.
-Die Kohärenzlänge beträgt 
+Mit diesen Werten berechnet sich die Kohärenzlänge zu
 $l_\text{k}\approx \SI{3}{mm}$.
 Die transversale Phonenresonanzfrequenz ist $\Omega_\text{TO}/2\pi=\SI{5.32}{THz}$. 
 Nahe dieser Frequenz absorbieren die Phonen einen großen Teil der Leistung und die THz-Generation 

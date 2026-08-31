@@ -1,27 +1,27 @@
 \chapter{Experimenteller Aufbau}
 \label{sec:auf}
-In dieser Bachelorarbeit wird ein Terahertz-Zeitbereichsspektrometer genutzt 
+In dieser Bachelorarbeit wird ein Terahertz-Zeitbereichsspektrometer genutzt, 
 um die THz-Emissionen verschiedener Kristalle zu bestimmen. 
-Ein schematischer Aufbau des THz-TDs ist in \autoref{fig:thz-aufbau} zu sehen.
-Der Laser, der dem Setup zugrunde liegt, ist ein gepulster Titan-Sapphire-Laser, welcher Nahinfrarot-Pulse  
-mit Wiederholraten im kHz-Bereich erzeugt. 
+Der schematische Aufbau des THz-TDS-Systems ist in \autoref{fig:thz-aufbau} zu sehen.
+Der Laser, der dem Aufbau zugrunde liegt, ist ein gepulster Titan-Saphir-Laser, welcher Nahinfrarot-Pulse  
+mit einer Wiederholrate von $\SI{3000}{\kilo\hertz}$ und einer Pulsdauer von $\SI{30}{fs}$ erzeugt. 
 Diese haben eine Zentralwellenlänge von $\SI{808}{nm}$. 
-Für den Optischen aufbaue steht eine Leistung von $\SI{500}{mW}$ zur verfügung.
-Der Laser-Strahl wird zu begin mithilfe eines Strahlteilers in Pumpstrahl mit $99\%$ der Leistung 
-und Probestrahl mit $1\%$ der Leistung aufgeteilt. Das ist Oben Links in \autoref{fig:thz-aufbau} gezeigt. 
-Der Pumpstrahl ist im Aufbau Grün dargestellt und wird von dem Strahlteiler transmitiert, wobei dieser Pfad in \autoref{sec:pump} näher erläutert wird. 
-Der Probestrahl wird im Aufbau Orange dargestellt und wird von dem Strahlteiler reflektiert, dieser Pfad wird in \autoref{sec:probe} näher erklärt. 
+Für den Optischen Aufbau steht eine Leistung von $\SI{500}{\milli\watt}$ zur verfügung.
+Der Laserstrahl wird zu Begin mithilfe eines Strahlteilers in einen Pumpstrahl mit $99\%$ der Leistung 
+und einen Detektionsstrahl mit $1\%$ der Leistung aufgeteilt. Das ist oben links in \autoref{fig:thz-aufbau} gezeigt. 
+Der Pumpstrahl ist im Aufbau grün dargestellt und wird von dem Strahlteiler transmittiert, wobei dieser Pfad in \autoref{sec:pump} näher erläutert wird. 
+Der Detektionsstrahl wird im Aufbau orange dargestellt und wird von dem Strahlteiler reflektiert, dieser Pfad wird in \autoref{sec:probe} näher erklärt. 
 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{content/bilder/aufbau.pdf}
-    \caption{Schematischer Aufbau von einem Terahertz-Zeitbereichsspektroskopie aufbau.
-    Der Grüne Strahl ist der Pump-Strahl, 
+    \caption{Schematischer Aufbau von einem Terahertz-Zeitbereichsspektrometers.
+    Der grüne Strahl ist der Pump-Strahl, 
     welcher durch den Strahlteiler transmitiert wird und eine Verzögerungsstrecke durchläuft. 
-    Anschließend trifft er die Proben Position. 
-    Hinter diesem wird der Strahl von Parabolspiegeln in das EOS geleitet. 
-    Der Detektionsstrahl, der Orange Strahl, wird von dem Strahlteiler reflektiert und 
-    wird über meherer Spiegel in das EOS geführt. 
+    Anschließend trifft er auf die Generationskristallposition. 
+    Hinter dieser wird der Strahl von Parabolspiegeln in die elektrooptische Detektion geleitet. 
+    Der Detektionsstrahl, der orange Strahl, wird von dem Strahlteiler reflektiert und 
+    wird über mehere Spiegel in die elektrooptische Detektion geführt. 
     }
     \label{fig:thz-aufbau}
 \end{figure}
@@ -38,25 +38,25 @@ Der Probestrahl wird im Aufbau Orange dargestellt und wird von dem Strahlteiler 
 
 \section{Pump-Strahl}
 \label{sec:pump}
-Der Pumpstrahl wird zu beginn durch durch ein $\lambda/2$-Plättchen, gefolgt von einem Glan-Taylor-Prisma geführt. 
-Das $\lambda/2$-Plättchen dreht die Polarisation des Strahls und der Glan-Taylor-Prisma trennt die p- und s-Polarisation 
+Der Pumpstrahl wird zu Beginn durch ein $\lambda/2$-Plättchen, gefolgt von einem Glan-Taylor-Prisma geführt. 
+Das $\lambda/2$-Plättchen dreht die Polarisation des Strahls und das Glan-Taylor-Prisma trennt die p- und s-Polarisation 
 voneinander. 
-Somit lässt sich über diesen Aufbau die Intensität des Strahls einstellen. 
+Somit lässt sich über diesen Aufbau die Leistung des Strahls einstellen. 
 Nach dieser Intensitätseinstellung wird der Pumpstrahl auf die Verzögerungsstrecke geleitet. 
-Der aktive Teil dieser besteht aus einem linearen positioniertrisch, auf welchem ein Retroreflektor sitzt.
-Diese kann auf einer länge von $20\,\unit{\milli\meter}$ verfahren werden. Was eine Zeitlich verzögerung von $\SI{133}{ps}$ beträgt.
+Der aktive Teil dieser Strecke besteht aus einem linearen Positioniertrisch, auf welchem ein Retroreflektor sitzt.
+Dieser kann auf einer Länge von $20\,\unit{\milli\meter}$ verfahren werden.
+Aufgrund des doppelten Lichtwegs im Retroreflektor entspricht dies einer zeitlichen Verzögerung von $\SI{133}{ps}$.
 Auf die Verzögerungsstrecke folgt eine plankonvexe Linse mit einer Brennweite von $100\,\unit{\milli\meter}$. 
-Dieser Fokuspunkt liegt $100\,\unit{\milli\meter}$ vor dem ersten darauffolgenden Parabolspiegel, 
-der ebenfalls eine Brennweite von $100\,\unit{\milli\meter}$ besitzt und somit ist der Strahl nach dem ersten 
-Parabolspiegel kollimiert, was in \autoref{fig:thz-aufbau} durch den Breiten Strahl gekennzeichnet ist. 
-Zwischen dem ersten Parabolspiegel und der Linse befindet sich die Position der Generationskristalle.  
-Hinter dem Generationskristall ist ein Optischer Strahlzerhacker platziert. Dieser moduliert das Signal mit  
-$1500\,\unit{Hz}$, was für die Rauschunterdrückung und Detektion genutzt wird, 
-mehr dazu in \autoref{sec:EOS}.
-Anschließend wird der THz-Puls über 3 weitere Parabolspiegel geführt.
+Der Fokuspunkt dieser Linse liegt $100\,\unit{\milli\meter}$ vor dem ersten darauffolgenden Parabolspiegel, 
+der ebenfalls eine Brennweite von $100\,\unit{\milli\meter}$ besitzt. Somit ist der Strahl nach dem ersten 
+Parabolspiegel kollimiert, was in \autoref{fig:thz-aufbau} durch den breiten Strahl gekennzeichnet ist. 
+Zwischen dem ersten Parabolspiegel und der Linse befindet sich die Position der Generationskristalle.  
+Hinter dem Generationskristall ist ein mechanischer Strahlzerhacker platziert. Dieser moduliert den Strahl mit  
+$1500\,\unit{Hz}$, was für die Rauschunterdrückung und Detektion genutzt wird, siehe \autoref{sec:TEOS}.
+Anschließend wird der THz-Puls über drei weitere Parabolspiegel geführt.
 Zwischen dem ersten und dem zweiten Parabolspiegel ist eine Siliziumscheibe, welche das 
-restliche Nahinfrarotlicht, welches nicht in THz-Strahlung umgewandelt wurde herausfiltert. 
-Der Vierte und letzte Parabolspiegel fokussiert den Strahl auf den Detektionskristall. 
+restliche Nahinfrarotlicht, welches nicht in THz-Strahlung umgewandelt wurde, herausfiltert. 
+Der vierte und letzte Parabolspiegel fokussiert den Strahl auf den Detektionskristall. 
 
 
 
@@ -64,15 +64,27 @@ Der Vierte und letzte Parabolspiegel fokussiert den Strahl auf den Detektionskri
 \label{sec:probe}
 
 
-Zu beginn durchläuft der Detektionsstrahl ein $\lambda/2$-Plättchen gefolgt von einem Glan-Taylor-Prismal, zur Regulierung 
-der Leistung, analog zum Pump-Strahl. \\
-Der weitere Pfad besteht aus meheren Spiegeln um die Optische Weglänge zwischem dem Pumpstrahl und Detektionsstrahl gleich lang zu machen. 
-Mit einer plankonvexen Linse(\SI{500}{mm}) wird der Strahl durch ein Loch im Vierten Parabolspiegel auf den ZnTe Kristall fokussiert.
-Dort überlappt er räumlich mit dem THz-Puls, die zeitliche überlappunh kann durch die Verzögerungsstrecke variiert werden. 
-Räumlicher überlapp bedeutet, dass der Fokuspunkt an der Stelle des ZnTe von Pump- und Detektionsstrahl identisch ist. 
-Der Punkt des überlapps wird bestimmt indem an die stelle des ZnTe eine Kamera platziert wird und über diese geptrüft wird ob die 
-Fokuspunkte übereinander liegen. Wenn dem nicht so sei kann mithilfe der ausrichtung des letzten Parabolspiegels und dem lezten Spiegel 
-des Detektionspfades diese Korregiert werden.
+Zu Beginn durchläuft der Detektionsstrahl ein $\lambda/2$-Plättchen, gefolgt von einem Glan-Taylor-Prisma zur Regulierung 
+der Leistung, analog zum Pumpstrahl. 
+
+Der weitere Pfad besteht aus mehreren Spiegeln, um die optische Weglänge zwischen dem Pumpstrahl und dem Detektionsstrahl anzugleichen. 
+Mit einer plankonvexen Linse (Brennweite \SI{500}{mm}) wird der Strahl durch ein Loch im vierten Parabolspiegel auf den ZnTe-Kristall fokussiert.
+Dort überlappt er räumlich mit dem THz-Puls. Die zeitliche Überlappung kann durch die Verzögerungsstrecke variiert werden. 
+Räumlicher Überlapp bedeutet, dass der Fokuspunkt an der Stelle des ZnTe von Pump- und Detektionsstrahl identisch ist. 
+Der Punkt des Überlapps wird bestimmt, indem zuerst die Siliziumscheibe entfernt wird, um den Pumpstrahl zu detektieren. 
+Anschließend wird an die Stelle des Detektionskristalls eine Kamera platziert, über welche geprüft wird, ob die 
+Fokuspunkte übereinander liegen. 
+Ist dies nicht der Fall, kann mithilfe der Ausrichtung des letzten Parabolspiegels und des letzten Spiegels 
+des Detektionspfades dies korrigiert werden.
+
+Die Messung selber folgt in einer elektrooptischen Detektion, kurz EOS (siehe \autoref{sec:TEOS}). 
+Um Streulicht zu vermeiden, wird der Aufbau eingehaust. 
+Dazu werden die bancierten Photodioden von verschiedenen Stromversorgungen betrieben. 
+Die Dioden werden mit Labornetzgeräten betrieben und auch mit externen Batterien. 
+Das gemessene Signal der Photodioden wird anschließend in den Lock-In-Verstärker geleitet und dort zum Auslesen demoduliert.
+
+
+
 
 
 % bei welchem ein 

@@ -44,15 +44,16 @@ for i, path in enumerate(filenames):
 
     fig, ax = plt.subplots(layout="constrained")
     t_Z, u_Z= np.genfromtxt("data_mag_txt/ZnTe/202608061722_1Dx1D_0fb685_110mW_pulse.txt", unpack=True)
-    ax.plot(t_Z, u_Z*10**3, "--", color="#FF9100")
-    ax.plot(t, u*10**3, "-", color="#639A00")
+    ax.plot(t_Z, u_Z*10**3, "--", color="#FF9100",label="Transient ZnTe")
+    ax.plot(t, u*10**3, "-", color="#639A00",label="Transient OH1")
     ax.set_xlabel(r"$\Delta$t / ps")
-    ax.set_ylabel(r"U / $\mu$V")
+    ax.set_ylabel(r"U / mV")
     if dateiname == "470mW,naha,am,fokuspunkt,lange,Messung":
         ax.set_xlim(-6,11)
     else:
         ax.set_xlim(-2,5)
     ax.grid()
+    ax.legend()
     fig.savefig(f"pdf/{savedir}/{dateiname}.pdf")
     plt.close(fig)
 
@@ -78,10 +79,10 @@ for i, path in enumerate(filenames):
     #freq[:36] *= -1
     spektrum_norm = spektrum / np.max(spektrum)
     ax.plot(freq, spektrum_norm, "-", color="#639A00")
-    ax.set_xlabel("f / THZ")
-    ax.set_ylabel("|FFT|")
-    plt.axvline(x=1.2,linestyle="--",color="#FF9100")
-    plt.axvline(x=1.7,linestyle="--",color="#FF9100")
+    ax.set_xlabel(r"$\nu$ / THz")
+    ax.set_ylabel("Spektrale Amplitude (normiert)")
+    # plt.axvline(x=1.2,linestyle="--",color="#FF9100")
+    # plt.axvline(x=1.7,linestyle="--",color="#FF9100")
     ax.set_xlim(np.min(freq),3)
     ax.grid()
     fig.savefig(f"pdf/{savedir}/{dateiname}_fft.pdf")
